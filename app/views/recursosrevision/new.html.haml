@@ -1,0 +1,19 @@
+- content_for :head do
+  = javascript_include_tag 'recursosrevision.js'
+
+- @forview = "NEW"
+= render :partial => "breadcrumbs"
+
+%h1.alt= Recursorevision.human_name.pluralize
+
+= render :partial => "solicitudes/solicitud"
+
+.mantform
+  %h2
+    Nuevo 
+    = Recursorevision.human_name
+
+  - semantic_form_for [@solicitud, @recursorevision] do |form|
+    = form.semantic_errors
+    = render :partial => 'form', :locals => {:form => form}
+    = buttons_create(solicitud_recursosrevision_path(@solicitud))

@@ -1,0 +1,36 @@
+%h1 Solicitudes Ingresadas
+
+%table
+  %thead
+    %tr
+      %th= Solicitud.human_attribute_name(:rpt_institucion)
+      %th= Solicitud.human_attribute_name(:rpt_correlativo)
+      %th= Solicitud.human_attribute_name(:rpt_solicitud)
+      %th=  Solicitud.human_attribute_name(:rpt_fechasolicitud)
+      %th= Solicitud.human_attribute_name(:rpt_tipodesolicitud)
+      %th= Solicitud.human_attribute_name(:rpt_tipoderesolucion)
+      %th= Solicitud.human_attribute_name(:rpt_fecharesolucion)
+      %th= Solicitud.human_attribute_name(:rpt_tiempoderespuesta)
+      %th= Solicitud.human_attribute_name(:rpt_sehasolicitadoampliacion)
+      %th= Solicitud.human_attribute_name(:rpt_fechanotificacionampliacion)
+      %th= Solicitud.human_attribute_name(:rpt_tiemposolicitadoampliacion)
+      %th= Solicitud.human_attribute_name(:rpt_recursorevision)
+      %th= Solicitud.human_attribute_name(:rpt_fechapresentacionrecursorevision)
+      %th= Solicitud.human_attribute_name(:rpt_fechanotificacionrecursorevision)
+  %tbody
+    - @solicitudes.each do |s|
+      %tr
+        %td= s.institucion.nombre
+        %td= s.codigo
+        %td= s.textosolicitud.tr('"','\'').gsub(/\n/,"").gsub(/\r/,"").gsub(/\t/,"")
+        %td= I18n.l(s.fecha_creacion).to_s
+        %td= (s.via.nil? ? '' : s.via.nombre)
+        %td= s.tipo_resolucion
+        %td= (I18n.l(s.fecha_resolucion).to_s unless s.fecha_resolucion.nil?)
+        %td= s.dias_transcurridos.to_s
+        %td= s.hay_prorroga
+        %td= (I18n.l(s.fecha_notificacion_prorroga).to_s unless s.fecha_notificacion_prorroga.nil?)
+        %td= s.tiempo_ampliacion.to_s
+        %td= s.hay_revision
+        %td= (I18n.l(s.fecha_revision).to_s unless s.fecha_revision.nil?)
+        %td= (I18n.l(s.fecha_notificacion_revision).to_s unless s.fecha_notificacion_revision.nil?)

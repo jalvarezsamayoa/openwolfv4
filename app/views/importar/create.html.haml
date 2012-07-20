@@ -1,0 +1,14 @@
+.listing
+  %h2
+    Estado de proceso
+  %table.minimalist-b
+    %thead
+      %th= 'Estado Actual'
+      %th= 'Ultimo Error'
+      %th= 'Actualizado'
+    %tbody
+      - @log.each do |log|
+        %tr
+          %td= log.status
+          %td= log.last_error
+          %td= l(log.created_at)

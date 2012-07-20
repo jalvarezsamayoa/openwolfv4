@@ -1,0 +1,6 @@
+%fieldset
+  %legend
+    = image_tag('edit22.png')
+    = t("seguimientos.title_edit")
+  - form_for [@institucion, @solicitud, @actividad, @seguimiento], {:remote => true}, {:class=>"mantform"} do |f|
+    = render :partial=>'form', :locals=>{:f => f, :submittext => t("data.submit_edit")}

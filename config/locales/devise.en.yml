@@ -1,0 +1,39 @@
+en:
+  errors:
+    messages:
+      not_found: "no encontrado"
+      already_confirmed: "ya ha sido confirmado"
+      not_locked: "no ha sido bloqueado"
+
+  devise:
+    failure:
+      unauthenticated: 'Debe de autenticarse para poder continuar.'
+      unconfirmed: 'Debe confirmar su cuenta para poder continuar.'
+      locked: 'Su cuenta ha sido bloqueada.'
+      invalid: 'Correo electrónico o contraseña no son validos.'
+      invalid_token: 'Token de autenticación es inválido.'
+      timeout: 'Su sesión ha expirado, por favor autentíquese de nuevo para poder continuar.'
+      inactive: 'Su cuenta no está activa.'
+    sessions:
+      signed_in: 'Sesión iniciada con éxito.'
+      signed_out: 'Sesión cerrada con éxito.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'

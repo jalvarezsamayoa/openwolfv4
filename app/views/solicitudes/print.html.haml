@@ -1,0 +1,36 @@
+.container
+  .span-24.last.center.bold
+    = @solicitud.institucion.nombre
+    %br/
+    Unidad de Información Pública
+    %br/
+    = @solicitud.institucion.direccion
+    %br/
+    = @solicitud.institucion.telefono
+    %br/
+  %hr.space/
+  .span-12.bold
+    %h3 SOLICITUD DE INFORMACIÓN PÚBLICA
+  .span-12.last.right.bold
+    %h3
+      Correlativo -
+      %span.red= @solicitud.codigo
+  #solicitud.span-24.last
+    .span-12.left
+      = label :fecha_creacion, Solicitud.human_attribute_name(:fecha_creacion)
+      = l(@solicitud.fecha_creacion)
+    .span-12.last.right
+      = label :solicitud, t("solicitudes.label_fecha_entregada")
+      = l(@solicitud.fecha_entregada) unless @solicitud.fecha_entregada.nil?
+    %hr.space/
+   = render :partial => "print_datos_solicitante" if @mostrar_datos_solicitante
+    %h3 Solicitud de Información
+    %hr/
+    .span-24.last
+      %p
+        = @solicitud.textosolicitud
+    %hr.space/
+    %h3 Firma del Solicitante
+    f:_______________________________________________________
+  / end - solcitud
+/ end - container

@@ -1,0 +1,42 @@
+- @forview = "SHOW"
+= render :partial => "breadcrumbs"
+
+%h1.alt= Resolucion.human_name.pluralize
+
+= render :partial => "solicitudes/solicitud"
+
+.show
+  %h2= Resolucion.human_name
+
+  %div{:id=>"options"}
+    = button_new(new_solicitud_resolucion_path(@solicitud))
+    = button_edit(edit_solicitud_resolucion_path(@solicitud.id,@resolucion))
+    = button_delete(solicitud_resolucion_path(@solicitud.id,@resolucion))
+    = button_cancel(solicitud_resoluciones_path(@solicitud))
+    %br
+
+  .box
+    %table
+      %colgroup.show-table-header
+      %colgroup.show-table-data
+      %tr
+        %th= label :fecha, Resolucion.human_attribute_name(:fecha)
+        %td= l(@resolucion.fecha)
+      %tr
+        %th= label :numero, Resolucion.human_attribute_name(:numero)
+        %td= @resolucion.numero
+      %tr
+        %th= label :usuario_id, Resolucion.human_attribute_name(:usuario_id)
+        %td= @resolucion.usuario.nombre
+      %tr
+        %th= label :tiporesolucion_id, Resolucion.human_attribute_name(:tiporesolucion_id)
+        %td= @resolucion.tiporesolucion.nombre
+      %tr
+        %th= label :razonresolucion_id, Resolucion.human_attribute_name(:razonresolucion_id)
+        %td= @resolucion.razontiporesolucion.nombre
+      %tr
+        %th= label :fecha_notificacion, Resolucion.human_attribute_name(:fecha_notificacion)
+        %td= l(@resolucion.fecha_notificacion)
+      %tr
+        %th= label :nueva_fecha, Resolucion.human_attribute_name(:nueva_fecha)
+        %td= l(@resolucion.nueva_fecha) unless @resolucion.nueva_fecha.nil?

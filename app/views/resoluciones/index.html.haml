@@ -1,0 +1,32 @@
+- @forview = "INDEX"
+= render :partial => "breadcrumbs"
+
+%h1.alt= Resolucion.human_name.pluralize
+
+= render :partial => "solicitudes/solicitud"
+
+%fieldset
+  %legend
+    = image_tag('refresh22.png')
+    = Resolucion.human_name.pluralize
+
+  .listing
+    %div{:id => "options"}
+      = button_new(new_solicitud_resolucion_path(@solicitud))
+      = button_cancel(solicitud_path(@solicitud),'Regresar a solicitud')
+    %table.minimalist-b
+      %thead
+        %tr
+          %th{:width => "20%"}= Resolucion.human_attribute_name(:numero)
+          %th{:width => "10%"}= Resolucion.human_attribute_name(:fecha)
+          %th{:width => "10%"}= Resolucion.human_attribute_name(:tiporesolucion_id)
+          %th{:width => "15%"}= Resolucion.human_attribute_name(:tiporazonresolucion_id)
+          %th= Resolucion.human_attribute_name(:descripcion)
+        %tbody
+        - for resolucion in @resoluciones do
+          %tr
+            %td= link_to resolucion.numero, solicitud_resolucion_path(@solicitud,resolucion)
+            %td= l(resolucion.fecha.to_date)
+            %td= resolucion.tiporesolucion.nombre
+            %td= resolucion.razontiporesolucion.nombre
+            %td= resolucion.descripcion

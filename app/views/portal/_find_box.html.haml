@@ -1,0 +1,9 @@
+.row
+  .rounded-shadow-box
+    .span2
+      = link_to image_tag('logopenwolf.png',:size => "167x61"), portal_index_url
+    .span10.center
+      #widget-find-box
+        = simple_form_for @busqueda, { :url => buscar_portal_index_path, :method => :get, :html => {:class => "form-inline"}} do |f|
+          = f.input :q, :placeholder => "Buscar documentos, solicitudes de información, etc.", :input_html => {:class => "span6"}, :label => 'Buscar'
+          = f.submit 'Buscar Solicitudes'

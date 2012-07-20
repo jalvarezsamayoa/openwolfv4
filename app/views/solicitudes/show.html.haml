@@ -1,0 +1,94 @@
+- content_for :head do
+  = javascript_include_tag 'solicitudes.js', 'jquery-blockui.js'
+- @forview = "SHOW"
+= render :partial=>"breadcrums"
+%h1.alt= Solicitud.human_name
+
+
+- if @solicitud.errors.any?
+  #errorExplanation
+    %h2= "#{pluralize(@solicitud.errors.count, "error")} han ocurrido:"
+    %ul
+      - @solicitud.errors.full_messages.each do |msg|
+        %li= msg
+
+%fieldset
+  %legend
+    = image_tag("infoabout22.png")
+    Visualizar #{Solicitud.human_name}
+  = render :partial => 'opciones'
+  = render :partial => "estado_solicitud" 
+  %table
+    %tr
+      %th= label :id, Solicitud.human_attribute_name(:id)
+      %td= @solicitud.id
+    %tr
+      %th{:width => "20%"}= label :codigo, Solicitud.human_attribute_name(:codigo)
+      %td{:width => "80%"}= link_to_solicitud_portal(@solicitud, true)
+    %tr
+      %th= label :fecha_creacion, Solicitud.human_attribute_name(:fecha_creacion)
+      %td= l(@solicitud.fecha_creacion)
+    %tr
+      %th= label :institucion_id, Solicitud.human_attribute_name(:institucion_id)
+      %td= @solicitud.usuario.nombre_institucion
+    %tr
+      %th= label :via_id, Solicitud.human_attribute_name(:via_id)
+      %td= @solicitud.via.nombre
+    %tr
+      %th= label :forma_entrega, Solicitud.human_attribute_name(:forma_entrega)
+      %td= @solicitud.forma_entrega
+  %hr/
+  %h4 Asignado a
+  #solicitud_no_asignada.error{ @actividades.size > 0 ? {:style => "display:none"} : {} }
+    La solicitud no ha sido asignada.
+  #asignaciones
+    = render(:partial => 'asignaciones')
+  = render :partial => "datos_solicitante" if @mostrar_datos_solicitante
+  %h4 Información de la solicitud
+  %table
+    %tr
+      %th{:width => "20%"}= label :solicitud, t("solicitudes.label_estado_id")
+      %td= @solicitud.estado.nombre
+    %tr
+      %th= label :solicitud, t("solicitudes.label_fecha_programada")
+      %td= l(@solicitud.fecha_programada)
+    %tr
+      %th= label :solicitud, t("solicitudes.label_fecha_entregada")
+      %td= l(@solicitud.fecha_entregada) unless @solicitud.fecha_entregada.nil?
+    %tr
+      %th= label :solicitud, t("solicitudes.label_fecha_resolucion")
+      %td= l(@solicitud.fecha_resolucion) unless @solicitud.fecha_resolucion.nil?
+    %tr
+      %th= label :solicitud, t("solicitudes.label_fecha_prorroga")
+      %td= l(@solicitud.fecha_prorroga) unless @solicitud.fecha_prorroga.nil?
+    %tr
+      %th= label :solicitud, t("solicitudes.label_forma_entrega")
+      %td= @solicitud.forma_entrega
+    %tr
+      %th= label :solicitud, t("solicitudes.label_observaciones")
+      %td= @solicitud.observaciones
+  %hr/
+  %h4
+    = t("solicitudes.label_textosolicitud")
+  = @solicitud.texto_solicitud(current_user)
+  %hr.space/
+
+  %h4= "Seguimientos de enlaces"
+  #seguimientos
+    = render :partial => 'seguimientos'
+
+  %h4= Resolucion.human_name.pluralize
+  #resoluciones
+    = render :partial => 'resoluciones'
+  %h4= t("activerecord.models.recursosrevision")
+  #recursosrevision
+    = render :partial => 'recursosrevision'
+  %h4= t("activerecord.models.nota")
+  #notasseguimiento
+    = render :partial => 'notas_seguimiento'
+  #adjuntos
+    = render :partial => 'adjuntos'
+#newactividad.popup{:style => "display: none; height: 440px; text-align:left;"}
+#newadjunto.popup{:style => "display: none; height: 400px;"}
+#newresolucion.popup{:style => "display: none; height: 550px;"}
+#newrecursorevision.popup{:style => "display: none; height: 550px;"}
