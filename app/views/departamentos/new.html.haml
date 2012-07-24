@@ -1,10 +1,12 @@
-- @forview = "NEW"
-= render :partial => "breadcrums"
-.mantform
-  %h2
-    Nuevo #{Departamento.human_name}
-  %fieldset
-    - semantic_form_for @departamento do |form|
-      = form.semantic_errors
+#page-title.clearfix
+  %h1= "Nuevo #{Departamento.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3 Nuevo Departamento
+  .widget-content
+    = simple_form_for(@departamento, :html => {:class => 'form-horizontal'}) do |form|
       = render :partial => 'form', :locals => {:form => form}
-      = buttons_create(departamentos_path)
+      .form-actions
+        = buttons_create(departamentos_path)

@@ -1,17 +1,21 @@
-- @forview = "SHOW"
-= render :partial=>"breadcrums"
-.show
-  %h2= Institucion.human_name
-  #options
+#page-title.clearfix
+  %h1= Institucion.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @institucion.errors.any?
+  .error
+    %ul
+    - @institucion.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
     = button_new(new_institucion_path)
     = button_edit(edit_institucion_path(@institucion))
     = button_delete(institucion_path(@institucion))
     = button_cancel(instituciones_path)
-    %br/
-  .box
-    %table
-      %colgroup.show-table-header
-      %colgroup.show-table-data
+  .widget-content
+    %table.table.table-bordered
       %tr
         %th= label :codigo, Institucion.human_attribute_name(:codigo)
         %td= @institucion.codigo

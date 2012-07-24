@@ -6,10 +6,10 @@
 
 .mantform
   %h2
-    Nuevo 
-    = Archivo.human_name
+    Nuevo
+    = Archivo.model_name.human
 
-  - semantic_form_for @archivo do |form|
-    = form.semantic_errors
+  = simple_form_for @archivo do |form|
+
     = render :partial => 'form', :locals => {:form => form}
     = buttons_create(archivos_path)

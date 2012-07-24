@@ -1,9 +1,9 @@
 .listing
-  %h2= Documentocategoria.human_name.pluralize
+  %h2= Documentocategoria.model_name.human.pluralize
   #options
     = button_new(new_documentocategoria_path)
     = render :partial => 'shared/findbox', :locals => {:url => documentocategorias_path}
-  %table.minimalist-b
+  %table.table
     %thead
       %tr
         %th= Documentocategoria.human_attribute_name(:nombre)

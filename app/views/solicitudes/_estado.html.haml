@@ -6,7 +6,7 @@
     = t("solicitudes.label_nuevo_estado")
   = error_messages_for :solicitud
   - remote_form_for  @solicitud, :url => actualizar_estado_solicitud_path(@solicitud), :html=>{:method => :put, :class=>"mantform"} do |f|
-    %table{:border => "0", :cellpadding => "0"}
+    %table.table{:border => "0", :cellpadding => "0"}
       %tr
         %td
           = f.label :estado_id, t('solicitudes.label_estado_id')

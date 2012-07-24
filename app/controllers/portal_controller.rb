@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class PortalController < ApplicationController
+  layout "portal"
   before_filter :get_solicitud, :only => [:solicitud, :print]
   before_filter :inicializar_busqueda, :except => [:buscar]
 
@@ -113,10 +114,10 @@ class PortalController < ApplicationController
   end
 
   def mostrar_datos_solicitante
-    if usuario_actual
-      @es_pertinente_a_usuario = @solicitud.es_pertinente?(usuario_actual)
-      @usuario_es_supervisor =  nivel_seguridad(usuario_actual,'encargadoudip')
-      @usuario_es_udip = nivel_seguridad(usuario_actual,'personaludip')
+    if current_usuario
+      @es_pertinente_a_usuario = @solicitud.es_pertinente?(current_usuario)
+      @usuario_es_supervisor =  nivel_seguridad(current_usuario,'encargadoudip')
+      @usuario_es_udip = nivel_seguridad(current_usuario,'personaludip')
 
       @mostrar_datos_solicitante = (@es_pertinente_a_usuario and (@usuario_es_supervisor or @usuario_es_udip))
     else

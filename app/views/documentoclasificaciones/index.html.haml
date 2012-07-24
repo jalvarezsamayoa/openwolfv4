@@ -1,9 +1,9 @@
 .listing
-  %h2= Documentoclasificacion.human_name.pluralize
+  %h2= Documentoclasificacion.model_name.human.pluralize
   #options
     = button_new(new_documentoclasificacion_path)
     = render :partial => 'shared/findbox', :locals => {:url => documentoclasificaciones_path}
-  %table.minimalist-b
+  %table.table
     %thead
       %tr
         %th= Documentoclasificacion.human_attribute_name(:nombre)

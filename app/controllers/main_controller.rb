@@ -1,6 +1,6 @@
 class MainController < ApplicationController
-  before_filter :requiere_usuario
-  
+  before_filter :authenticate_usuario!
+
   def index
 
   end

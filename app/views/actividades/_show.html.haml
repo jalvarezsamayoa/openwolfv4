@@ -3,7 +3,7 @@
     %h2.alt
       = image_tag("infoabout22.png")
       Asignacion
-  %table
+  %table.table
     %tr
       %th{:width => "20%"}= label :actividad, t("actividades.label_numero")
       %td= @actividad.id
@@ -19,7 +19,7 @@
     %tr
       %th= label :actividad, t("actividades.label_textoactividad")
       %td= @actividad.textoactividad
-  %table.minimalist-a
+  %table.table.minimalist-a
     %thead
       %tr
         %th{:width => "20%"}= Seguimiento.human_attribute_name(:fecha_creacion)

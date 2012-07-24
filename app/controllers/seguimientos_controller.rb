@@ -15,7 +15,7 @@ class SeguimientosController < ApplicationController
   # POST /seguimientos.xml
   def create
     @seguimiento = @institucion.seguimientos.new(params[:seguimiento])
-    @seguimiento.usuario_id = usuario_actual.id
+    @seguimiento.usuario_id = current_usuario.id
     @seguimiento.actividad = @actividad
     @dom_id = "#seguimientos_actividad_"+@seguimiento.actividad_id.to_s
     respond_to do |format|
@@ -100,7 +100,7 @@ class SeguimientosController < ApplicationController
   private
 
   def get_data
-    @institucion = current_user.institucion
+    @institucion = current_usuario.institucion
 
     begin
       @solicitud = @institucion.solicitudes.find(params[:solicitud_id]) if params[:solicitud_id]
@@ -112,7 +112,7 @@ class SeguimientosController < ApplicationController
 
     # si no se encontro datos verificamos si es una asignacion inter
     # institucional
-    if current_user.has_role?(:superudip)
+    if current_usuario.has_role?(:superudip)
       @solicitud = Solicitud.find(params[:solicitud_id]) if params[:solicitud_id]
       @actividad = Actividad.find(params[:actividad_id]) if params[:actividad_id]
     end

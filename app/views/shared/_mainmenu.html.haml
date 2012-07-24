@@ -1,13 +1,13 @@
-- if usuario_actual
+- if current_usuario
   #mainmenu.span-24.last
     %ul.cssMenu.cssMenum
       = menu_item("Inicio", root_path, "Menu Principal Sistema de Proyectos", "home32.png")
       - render(:layout => 'shared/menuitem', :locals=>{:text => "Actividades", :title => "Opciones", :image=>"folder.png"}) do
-        = menu_item("Agregar Soli. Informacion", new_institucion_solicitud_path(usuario_actual.institucion), "Ingresar Nueva Solicitud de Informacion", "infoabout32.png")
-        = menu_item("Documentos", institucion_mensajes_path(usuario_actual.institucion), "Documentos de Correspondencia", "mail32.png")
+        = menu_item("Agregar Soli. Informacion", new_institucion_solicitud_path(current_usuario.institucion), "Ingresar Nueva Solicitud de Informacion", "infoabout32.png")
+        = menu_item("Documentos", institucion_mensajes_path(current_usuario.institucion), "Documentos de Correspondencia", "mail32.png")
         = menu_item("Agregar Denuncia", root_path, "Ingresar Nueva Denuncia", "bug32.png")
         = menu_item("Ver Rutas de Trabajo", root_path, "Ingresar Nueva Solicitud de Informacion", "infoabout32.png")
-        = menu_item("Mis Asignaciones", institucion_actividades_path(usuario_actual.institucion), "Mostrar Tareas / Asignaciones", "foldermove32.png")
+        = menu_item("Mis Asignaciones", institucion_actividades_path(current_usuario.institucion), "Mostrar Tareas / Asignaciones", "foldermove32.png")
       = menu_item("Busqueda", root_path, "Filtros de Busqueda", "find32.png")
       - render :partial => "navigation_documentos"
       - render(:layout => 'shared/menuitem', :locals=>{:text => "Utilitarios", :title => "Opciones Administrativas", :image=>"configure.png"}) do

@@ -3,7 +3,7 @@
     %li
       = link_to t("breadcrums.homepage"), main_index_path
     %li
-      = link_to Institucion.human_name.pluralize, instituciones_path
+      = link_to Institucion.model_name.human.pluralize, instituciones_path
     - if @forview
       - if @forview == "NEW"
         %li= t("data.title_new")

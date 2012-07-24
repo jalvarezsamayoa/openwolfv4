@@ -1,9 +1,9 @@
 class DocumentocategoriasController < ApplicationController
-  before_filter :requiere_usuario
+  before_filter :authenticate_usuario!
   access_control do
     allow :superadmin
   end
-  
+
   # GET /documentocategorias
   # GET /documentocategorias.xml
   def index

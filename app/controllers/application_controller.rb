@@ -10,8 +10,9 @@ class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
 
   rescue_from 'Acl9::AccessDenied', :with => :acceso_denegado
-  
-  helper_method :usuario_actual, :current_user, :nivel_seguridad, :fix_date, :usuario_autenticado?, :usuario_actual_admin?
+  rescue_from CanCan::AccessDenied, :with => :acceso_denegado
+
+  #helper_method :current_usuario, :current_usuario, :nivel_seguridad, :fix_date, :usuario_autenticado?, :current_usuario_admin?
 
   layout :layout_por_recurso
 
@@ -22,61 +23,60 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
-  
-   
-  def usuario_actual
-    return @usuario_actual if defined?(@usuario_actual)
-    @usuario_actual = current_user
+
+  def set_home_breadcrumb
+    add_crumb "Inicio", main_index_path
+  end
+
+
+  def current_usuario_admin?
+    return false if current_usuario.nil?
+    return current_usuario.has_role?(:superadmin)
   end
 
   def current_user
     current_usuario
   end
 
-  def usuario_actual_admin?
-    return false if usuario_actual.nil?
-    return usuario_actual.has_role?(:superadmin)
-  end
+  # def usuario_autenticado?
+  #   return (current_usuario ? true : false)
+  # end
 
-  def usuario_autenticado?
-    return (usuario_actual ? true : false)
-  end
-  
-  def requiere_usuario
-    unless usuario_actual
-      store_location
-      flash[:notice] = "Debe autenticarse para ver esta pagina."
-      redirect_to login_path
-      return false
-    end
-  end
-  
-  def no_requiere_usuario
-    if usuario_actual
-      store_location
-      flash[:notice] = "Debe cerrar sesión para ver esta pagina."
-      redirect_to root_path
-      return false
-    end
-  end
-  
-  def store_location
-    session[:return_to] = request.fullpath
-  end
+  # def authenticate_usuario!
+  #   unless current_usuario
+  #     store_location
+  #     flash[:notice] = "Debe autenticarse para ver esta pagina."
+  #     redirect_to login_path
+  #     return false
+  #   end
+  # end
 
-  def redirect_back_or_default(default)
-    redirect_to(session[:return_to] || default)
-    session[:return_to] = nil
-  end
+  # def no_authenticate_usuario!
+  #   if current_usuario
+  #     store_location
+  #     flash[:notice] = "Debe cerrar sesión para ver esta pagina."
+  #     redirect_to root_path
+  #     return false
+  #   end
+  # end
 
-  def acceso_denegado
-    if usuario_actual
-      render :template => 'shared/acceso_denegado'
-    else
-      flash[:notice] = 'Acceso Denegado. Debe identificarse antes de ingresar.'
-      redirect_to login_path
-    end
-  end   
+  # def store_location
+  #   session[:return_to] = request.fullpath
+  # end
+
+  # def redirect_back_or_default(default)
+  #   redirect_to(session[:return_to] || default)
+  #   session[:return_to] = nil
+  # end
+
+  # def acceso_denegado
+  #   if current_usuario
+  #     render :template => 'shared/acceso_denegado'
+  #   else
+  #     flash[:notice] = 'Acceso Denegado. Debe identificarse antes de ingresar.'
+  #     redirect_to login_path
+  #   end
+  # end
 
   def parse_date(fecha)
     return nil if fecha.nil? or fecha.empty?
@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
    # helpers para seguridad
   def nivel_seguridad(u = nil, nivel = 'public')
     return false if u.nil?
-    
+
     logger.debug { "Verificando nivel: #{nivel}" }
     l_ok = false
     case nivel
@@ -115,7 +115,7 @@ class ApplicationController < ActionController::Base
     logger.debug { "c_date>#{c_date}" }
     return nil if c_date.nil?
 
-    a_date = c_date.split('/')   
+    a_date = c_date.split('/')
     return nil unless a_date.size == 3
 
     if a_date[2].size == 2
@@ -126,9 +126,23 @@ class ApplicationController < ActionController::Base
 
     logger.debug { "#{new_date}" }
 
-   
+
     return new_date
   end
 
- 
+
+  def get_usuario
+    if @usuario_es_superadmin
+      @usuario = Usuario.find(params[:id])
+    else
+      @usuario = current_usuario.institucion.usuarios.find(params[:id])
+    end
+  end
+
+  def obtener_nivel_de_seguridad
+    @usuario_es_admin = nivel_seguridad(current_usuario,'administrador')
+    @usuario_es_superadmin =  nivel_seguridad(current_usuario,'superadmin')
+  end
+
+
 end

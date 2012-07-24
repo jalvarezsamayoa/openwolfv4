@@ -29,8 +29,8 @@ class Solicitud < ActiveRecord::Base
   attr_accessor :dont_set_estado
 
   attr_accessible :solicitante_nombre, :email, :textosolicitud, :reserva_temporal, \
-  :genero_id, :idioma_id, :captcha, :origen_id, :institucion_id, \
-  :solicitante_telefonos, :captcha_key
+    :genero_id, :idioma_id, :captcha, :origen_id, :institucion_id, \
+    :solicitante_telefonos, :captcha_key
 
   #####################
   # Modulos y Plugins
@@ -165,15 +165,19 @@ class Solicitud < ActiveRecord::Base
 
   scope :tiempoejecucion, lambda { |tiempo_desde, tiempo_hasta| {
       :conditions => ["(((fecha_programada - ?)*100)/10) between ? and ?",Date.today, tiempo_desde, tiempo_hasta]
-    }}
+  }}
 
   scope :tiempo_transcurrido, lambda { |tiempo_desde, tiempo_hasta| {
       :conditions => ["(current_date - fecha_creacion) between ? and ?",tiempo_desde, tiempo_hasta]
-    }}
+  }}
 
   scope :tiempo_restante, lambda { |tiempo_desde, tiempo_hasta| {
       :conditions => ["(fecha_programada - current_date) between ? and ?",tiempo_desde, tiempo_hasta]
-    }}
+  }}
+
+  scope :ingresadas, lambda { |desde, hasta| {
+      :conditions => ["solicitudes.fecha_creacion between ? and ?",desde, hasta]
+  }}
 
 
   ################################
@@ -619,274 +623,221 @@ class Solicitud < ActiveRecord::Base
     [s.institucion.nombre,
      s.codigo,
      s.textosolicitud.tr('"','\'').gsub(/\n/,"").gsub(/\r/,"").gsub(/\t/,""),
-     I18n.l(s.fecha_creacion).to_s,
-     (s.via.nil? ? '' : s.via.nombre),
-     s.tipo_resolucion,
-     (I18n.l(s.fecha_resolucion).to_s unless s.fecha_resolucion.nil?),
-     s.razon_nopositiva.gsub(/\n/,"").gsub(/\r/,""),
-     s.dias_transcurridos.to_s,
-     s.hay_prorroga,
-     (I18n.l(s.fecha_notificacion_prorroga).to_s unless s.fecha_notificacion_prorroga.nil?),
-     s.razon_prorroga.gsub(/\n/,"").gsub(/\r/,""),
-     s.tiempo_ampliacion.to_s,
-     s.hay_revision,
-     (I18n.l(s.fecha_revision).to_s unless s.fecha_revision.nil?),
-     (I18n.l(s.fecha_notificacion_revision).to_s unless s.fecha_notificacion_revision.nil?),
-     s.razon_revision.gsub(/\n/,"").gsub(/\r/,"")]
-  end
-
-
-  def self.export_to_csv(opts = {})
-
-    if opts[:solicitudes]
-      solicitudes = opts[:solicitudes]
-    else
-      if opts[:institucion_id]
-        i_institucion_id = opts[:institucion_id] #  usuario_actual.institucion_id
-
-        d_desde = Date.new(opts[:desde][2].to_i, opts[:desde][1].to_i, opts[:desde][0].to_i)
-        d_hasta = Date.new(opts[:hasta][2].to_i, opts[:hasta][1].to_i, opts[:hasta][0].to_i)
-
-        solicitudes = Solicitud.find(:all, :conditions => ["solicitudes.institucion_id = ? and solicitudes.anulada = ? and solicitudes.fecha_creacion between ? and ?", i_institucion_id, false, d_desde, d_hasta], :order => :numero)
-      end
-    end
-
-    csv_string = FasterCSV.generate do |csv|
-      csv <<  [Solicitud.human_attribute_name(:rpt_institucion),
-               Solicitud.human_attribute_name(:rpt_correlativo),
-               Solicitud.human_attribute_name(:rpt_solicitud),
-               Solicitud.human_attribute_name(:rpt_fechasolicitud),
-               Solicitud.human_attribute_name(:rpt_tipodesolicitud),
-               Solicitud.human_attribute_name(:rpt_tipoderesolucion),
-               Solicitud.human_attribute_name(:rpt_fecharesolucion),
-               Solicitud.human_attribute_name(:rpt_razonnopositiva),
-               Solicitud.human_attribute_name(:rpt_tiempoderespuesta),
-               Solicitud.human_attribute_name(:rpt_sehasolicitadoampliacion),
-               Solicitud.human_attribute_name(:rpt_fechanotificacionampliacion),
-               Solicitud.human_attribute_name(:rpt_razonampliacion),
-               Solicitud.human_attribute_name(:rpt_tiemposolicitadoampliacion),
-               Solicitud.human_attribute_name(:rpt_recursorevision),
-               Solicitud.human_attribute_name(:rpt_fechapresentacionrecursorevision),
-               Solicitud.human_attribute_name(:rpt_fechanotificacionrecursorevision),
-               Solicitud.human_attribute_name(:rpt_sentidoresolucion)
-              ]
-
-      self.get_csv_records(csv, solicitudes)
-    end
-    return csv_string
-  end
-
-
-  ################################
-  # Metodos de Instancia Privados
-  # http://apidock.com/ruby/Module/private
-  ################################
-
-  def notificar_creacion
-    unless (self.email.nil? or self.email.blank?)
-      Notificaciones.delay.nueva_solicitud(self, Time.now, true) unless (self.dont_send_email == true)
-    end
-
-    Notificaciones.delay.nueva_solicitud(self, Time.now, false) unless (self.dont_send_email == true)
-  end
-
-  def calcular_fecha_entrega
-    Solicitud.calcular_fecha_entrega(self.fecha_creacion, nil,  self.institucion_id)
-  end
-
-  def self.calcular_fecha_entrega(d_fecha_creacion = Date.today, d_fecha_entrega = nil, i_institucion_id = 1)
-    logger.debug { "Solicitud: calculando fecha de entrega" }
-    d_fecha_creacion = d_fecha_creacion.to_date if d_fecha_creacion.class == String
-    d_fecha_entrega = d_fecha_creacion + 14.days unless d_fecha_entrega
-
-    logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
-
-    #obtenemos feriados entre las fechas
-    feriados_locales = []
-    feriados_nacionales = Feriado.nacional.entre_fechas(d_fecha_creacion, d_fecha_entrega)
-    feriados_locales = Feriado.local.por_institucion(i_institucion_id).entre_fechas(d_fecha_creacion, d_fecha_entrega) unless i_institucion_id == 1
-
-    logger.debug { "Solicitud Aumentando dias segun feriados nacinales" }
-    #aumentamos los dias de la solicitud segun los feriados
-    unless feriados_nacionales.blank?
-      for feriado in feriados_nacionales
-        if feriado.es_dia_laboral?
-          d_fecha_entrega += 1.day
-        end
-      end
-    end
-
-    logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
-
-    logger.debug { "Solicitud Aumentando dias segun feriados locales" }
-    unless feriados_locales.blank?
-      for feriado in feriados_locales
-        if feriado.es_dia_laboral?
-          d_fecha_entrega += 1.day
-        end
-      end
-    end
-
-    logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
-
-    logger.debug { "Solicitud Aumentando dias segun dias laborales" }
-    # verificamos que la nueve fecha sea dia laboral
-    d_fecha_entrega += 1.day if (d_fecha_entrega.wday == 6)
-    d_fecha_entrega += 1.day if (d_fecha_entrega.wday == 0)
-
-    logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
-
-    d_fecha_entrega = Feriado.obtener_fecha_valida(d_fecha_entrega, i_institucion_id)
-
-
-    logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
-
-    return d_fecha_entrega
-  end
-
-  private
-
-  def completar_informacion
-    #validamos el origen de la solicitud
-    # y determinamos institucion y usuario a utilizar
-
-    if self.origen_id == ORIGEN_DEFAULT
-      # usa current_user para obtenerlo
-      self.institucion_id = self.usuario.institucion_id
-    elsif self.origen_id == ORIGEN_PORTAL
-      #si el orgen es el portal no hay usuario
-      # asi que usamos el usuario de tipo ciudadano
-
-      #verificamos si hay institucion
-      unless self.institucion_id.nil?
-        ciudadano = self.institucion.usuarios.activos.ciudadanos.first
-        self.usuario_id = ciudadano.id
+          I18n.l(s.fecha_creacion).to_s,
+          (s.via.nil? ? '' : s.via.nombre),
+          s.tipo_resolucion,
+          (I18n.l(s.fecha_resolucion).to_s unless s.fecha_resolucion.nil?),
+          s.razon_nopositiva.gsub(/\n/,"").gsub(/\r/,""),
+          s.dias_transcurridos.to_s,
+          s.hay_prorroga,
+          (I18n.l(s.fecha_notificacion_prorroga).to_s unless s.fecha_notificacion_prorroga.nil?),
+          s.razon_prorroga.gsub(/\n/,"").gsub(/\r/,""),
+          s.tiempo_ampliacion.to_s,
+          s.hay_revision,
+          (I18n.l(s.fecha_revision).to_s unless s.fecha_revision.nil?),
+          (I18n.l(s.fecha_notificacion_revision).to_s unless s.fecha_notificacion_revision.nil?),
+          s.razon_revision.gsub(/\n/,"").gsub(/\r/,"")
+        ]
       end
 
-      #si es orgien portal la via es internet
-      self.via_id = 4 #internet
-    else
-      # si es migracion usamos al primer usario de UDIP
-      superudip = self.institucion.usuarios.activos.supervisores.first
-      self.usuario_id = superudip.id
-    end
 
-    # validamos si hay institucion asignada
-    unless self.institucion.nil?
+      def self.export_to_csv(opts = {})
 
-      if self.origen_id != ORIGEN_MIGRACION
-        logger.debug { "#{self.fecha_creacion}" }
-        self.fecha_creacion = Date.today if self.fecha_creacion.nil?
-        logger.debug { "#{self.fecha_creacion}" }
+        if opts[:solicitudes]
+          solicitudes = opts[:solicitudes]
+        else
+          if opts[:institucion_id]
+            i_institucion_id = opts[:institucion_id] #  current_usuario.institucion_id
 
-        self.fecha_programada = calcular_fecha_entrega()
+            d_desde = Date.new(opts[:desde][2].to_i, opts[:desde][1].to_i, opts[:desde][0].to_i)
+            d_hasta = Date.new(opts[:hasta][2].to_i, opts[:hasta][1].to_i, opts[:hasta][0].to_i)
 
-        self.departamento_id = municipio.departamento_id unless municipio.nil?
-
-        if self.dont_set_estado.nil?
-          self.estado_id = ESTADO_NORMAL if self.estado_id.nil?
+            solicitudes = Solicitud.find(:all, :conditions => ["solicitudes.institucion_id = ? and solicitudes.anulada = ? and solicitudes.fecha_creacion between ? and ?", i_institucion_id, false, d_desde, d_hasta], :order => :numero)
+          end
         end
 
-        self.asignada = false
-        self.solicitante_identificacion = 'No Disponible' if self.solicitante_identificacion.nil?
+        csv_string = FasterCSV.generate do |csv|
+          csv <<  [Solicitud.human_attribute_name(:rpt_institucion),
+                   Solicitud.human_attribute_name(:rpt_correlativo),
+                   Solicitud.human_attribute_name(:rpt_solicitud),
+                   Solicitud.human_attribute_name(:rpt_fechasolicitud),
+                   Solicitud.human_attribute_name(:rpt_tipodesolicitud),
+                   Solicitud.human_attribute_name(:rpt_tipoderesolucion),
+                   Solicitud.human_attribute_name(:rpt_fecharesolucion),
+                   Solicitud.human_attribute_name(:rpt_razonnopositiva),
+                   Solicitud.human_attribute_name(:rpt_tiempoderespuesta),
+                   Solicitud.human_attribute_name(:rpt_sehasolicitadoampliacion),
+                   Solicitud.human_attribute_name(:rpt_fechanotificacionampliacion),
+                   Solicitud.human_attribute_name(:rpt_razonampliacion),
+                   Solicitud.human_attribute_name(:rpt_tiemposolicitadoampliacion),
+                   Solicitud.human_attribute_name(:rpt_recursorevision),
+                   Solicitud.human_attribute_name(:rpt_fechapresentacionrecursorevision),
+                   Solicitud.human_attribute_name(:rpt_fechanotificacionrecursorevision),
+                   Solicitud.human_attribute_name(:rpt_sentidoresolucion)
+                   ]
+
+          self.get_csv_records(csv, solicitudes)
+        end
+        return csv_string
       end
 
-      self.ano = self.fecha_creacion.year
-      self.tiposolicitud_id = TIPO_INFORMACION
-      self.documentoclasificacion_id = Documentoclasificacion.find_by_codigo(Documentoclasificacion::SOLICITUDINFOPUBLICA).id
-      self.numero = proximo_numero_solicitud
-      self.codigo = generar_codigo()
-      self.forma_entrega = 'No Disponible' if self.forma_entrega.nil?
-      self.idioma_id = IDIOMA_DEFAULT if self.idioma_id.nil?
 
-    end # institucion.nil?
+      ################################
+      # Metodos de Instancia Privados
+      # http://apidock.com/ruby/Module/private
+      ################################
 
-  end
+      def notificar_creacion
+        unless (self.email.nil? or self.email.blank?)
+          Notificaciones.delay.nueva_solicitud(self, Time.now, true) unless (self.dont_send_email == true)
+        end
 
-  def proximo_numero_solicitud
-    Solicitud.maximum(:numero, :conditions => ["solicitudes.institucion_id = ? and solicitudes.ano = ?",self.institucion_id, self.ano]).to_i + 1
-  end
+        Notificaciones.delay.nueva_solicitud(self, Time.now, false) unless (self.dont_send_email == true)
+      end
 
-  def generar_codigo
-    self.institucion.codigo + '-'+Documentoclasificacion::SOLICITUDINFOPUBLICA+'-' +  self.ano.to_s + '-' + self.numero.to_s.rjust(6,'0')
-  end
+      def calcular_fecha_entrega
+        Solicitud.calcular_fecha_entrega(self.fecha_creacion, nil,  self.institucion_id)
+      end
 
-  #limpia la informacion de la solicitud
-  def cleanup
-    self.solicitante_nombre = self.solicitante_nombre.slice(0..254)
-  end
+      def self.calcular_fecha_entrega(d_fecha_creacion = Date.today, d_fecha_entrega = nil, i_institucion_id = 1)
+        logger.debug { "Solicitud: calculando fecha de entrega" }
+        d_fecha_creacion = d_fecha_creacion.to_date if d_fecha_creacion.class == String
+        d_fecha_entrega = d_fecha_creacion + 14.days unless d_fecha_entrega
 
-  #removes spetial characters for indexing
-  def clean_string(c_name)
+        logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
 
-    c_name = c_name.tr('á','a')
-    c_name = c_name.tr('é','e')
-    c_name = c_name.tr('í','i')
-    c_name = c_name.tr('ó','o')
-    c_name = c_name.tr('ú','u')
+        #obtenemos feriados entre las fechas
+        feriados_locales = []
+        feriados_nacionales = Feriado.nacional.entre_fechas(d_fecha_creacion, d_fecha_entrega)
+        feriados_locales = Feriado.local.por_institucion(i_institucion_id).entre_fechas(d_fecha_creacion, d_fecha_entrega) unless i_institucion_id == 1
 
-    c_name = c_name.tr('Á','A')
-    c_name = c_name.tr('É','E')
-    c_name = c_name.tr('Í','I')
-    c_name = c_name.tr('Ó','O')
-    c_name = c_name.tr('Ú','U')
+        logger.debug { "Solicitud Aumentando dias segun feriados nacinales" }
+        #aumentamos los dias de la solicitud segun los feriados
+        unless feriados_nacionales.blank?
+          for feriado in feriados_nacionales
+            if feriado.es_dia_laboral?
+              d_fecha_entrega += 1.day
+            end
+          end
+        end
 
-    return c_name
-  end
+        logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+
+        logger.debug { "Solicitud Aumentando dias segun feriados locales" }
+        unless feriados_locales.blank?
+          for feriado in feriados_locales
+            if feriado.es_dia_laboral?
+              d_fecha_entrega += 1.day
+            end
+          end
+        end
+
+        logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+
+        logger.debug { "Solicitud Aumentando dias segun dias laborales" }
+        # verificamos que la nueve fecha sea dia laboral
+        d_fecha_entrega += 1.day if (d_fecha_entrega.wday == 6)
+        d_fecha_entrega += 1.day if (d_fecha_entrega.wday == 0)
+
+        logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+
+        d_fecha_entrega = Feriado.obtener_fecha_valida(d_fecha_entrega, i_institucion_id)
 
 
+        logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+
+        return d_fecha_entrega
+      end
+
+      private
+
+      def completar_informacion
+        #validamos el origen de la solicitud
+        # y determinamos institucion y usuario a utilizar
+
+        if self.origen_id == ORIGEN_DEFAULT
+          # usa current_user para obtenerlo
+          self.institucion_id = self.usuario.institucion_id
+        elsif self.origen_id == ORIGEN_PORTAL
+          #si el orgen es el portal no hay usuario
+          # asi que usamos el usuario de tipo ciudadano
+
+          #verificamos si hay institucion
+          unless self.institucion_id.nil?
+            ciudadano = self.institucion.usuarios.activos.ciudadanos.first
+            self.usuario_id = ciudadano.id
+          end
+
+          #si es orgien portal la via es internet
+          self.via_id = 4 #internet
+        else
+          # si es migracion usamos al primer usario de UDIP
+          superudip = self.institucion.usuarios.activos.supervisores.first
+          self.usuario_id = superudip.id
+        end
+
+        # validamos si hay institucion asignada
+        unless self.institucion.nil?
+
+          if self.origen_id != ORIGEN_MIGRACION
+            logger.debug { "#{self.fecha_creacion}" }
+            self.fecha_creacion = Date.today if self.fecha_creacion.nil?
+            logger.debug { "#{self.fecha_creacion}" }
+
+            self.fecha_programada = calcular_fecha_entrega()
+
+            self.departamento_id = municipio.departamento_id unless municipio.nil?
+
+            if self.dont_set_estado.nil?
+              self.estado_id = ESTADO_NORMAL if self.estado_id.nil?
+            end
+
+            self.asignada = false
+            self.solicitante_identificacion = 'No Disponible' if self.solicitante_identificacion.nil?
+          end
+
+          self.ano = self.fecha_creacion.year
+          self.tiposolicitud_id = TIPO_INFORMACION
+          self.documentoclasificacion_id = Documentoclasificacion.find_by_codigo(Documentoclasificacion::SOLICITUDINFOPUBLICA).id
+          self.numero = proximo_numero_solicitud
+          self.codigo = generar_codigo()
+          self.forma_entrega = 'No Disponible' if self.forma_entrega.nil?
+          self.idioma_id = IDIOMA_DEFAULT if self.idioma_id.nil?
+
+        end # institucion.nil?
+
+      end
+
+      def proximo_numero_solicitud
+        Solicitud.maximum(:numero, :conditions => ["solicitudes.institucion_id = ? and solicitudes.ano = ?",self.institucion_id, self.ano]).to_i + 1
+      end
+
+      def generar_codigo
+        self.institucion.codigo + '-'+Documentoclasificacion::SOLICITUDINFOPUBLICA+'-' +  self.ano.to_s + '-' + self.numero.to_s.rjust(6,'0')
+      end
+
+      #limpia la informacion de la solicitud
+      def cleanup
+        self.solicitante_nombre = self.solicitante_nombre.slice(0..254)
+      end
+
+      #removes spetial characters for indexing
+      def clean_string(c_name)
+
+        c_name = c_name.tr('á','a')
+        c_name = c_name.tr('é','e')
+        c_name = c_name.tr('í','i')
+        c_name = c_name.tr('ó','o')
+        c_name = c_name.tr('ú','u')
+
+        c_name = c_name.tr('Á','A')
+        c_name = c_name.tr('É','E')
+        c_name = c_name.tr('Í','I')
+        c_name = c_name.tr('Ó','O')
+        c_name = c_name.tr('Ú','U')
+
+        return c_name
+      end
 
 
-
-end
-# == Schema Information
-#
-# Table name: solicitudes
-#
-#  id                          :integer         not null, primary key
-#  usuario_id                  :integer         not null
-#  codigo                      :string(255)     default("XXXXX-999999-9999"), not null
-#  institucion_id              :integer         not null
-#  tiposolicitud_id            :integer         default(1)
-#  via_id                      :integer         default(1), not null
-#  fecha_creacion              :date
-#  fecha_programada            :date
-#  fecha_entregada             :date
-#  fecha_resolucion            :date
-#  fecha_prorroga              :date
-#  fecha_completada            :date
-#  solicitante_nombre          :string(255)     not null
-#  solicitante_identificacion  :string(255)
-#  solicitante_direccion       :string(255)
-#  solicitante_telefonos       :string(255)
-#  solicitante_institucion     :string(255)
-#  departamento_id             :integer
-#  municipio_id                :integer
-#  email                       :string(255)
-#  forma_entrega               :string(255)
-#  observaciones               :text
-#  ubicacion_url               :string(255)
-#  estado_id                   :integer         default(1)
-#  created_at                  :datetime
-#  updated_at                  :datetime
-#  textosolicitud              :text
-#  asignada                    :boolean
-#  ano                         :integer         not null
-#  numero                      :integer         not null
-#  profesion_id                :integer
-#  genero_id                   :integer
-#  rangoedad_id                :integer
-#  clasificacion_id            :integer
-#  dias_respuesta              :integer
-#  dias_prorroga               :integer
-#  motivonegativa_id           :integer
-#  motivoprorroga_id           :integer
-#  informacion_publica         :boolean         default(TRUE), not null
-#  origen_id                   :integer         default(1)
-#  documentoclasificacion_id   :integer         default(1)
-#  idioma_id                   :integer         default(12), not null
-#  anulada                     :boolean         default(FALSE)
-#  tiempo_respuesta            :integer         default(0)
-#  tiempo_respuesta_calendario :integer         default(0)
-#  reserva_temporal            :boolean         default(FALSE)
-#
+    end

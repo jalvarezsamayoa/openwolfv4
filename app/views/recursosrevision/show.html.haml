@@ -6,7 +6,7 @@
 = render :partial => "solicitudes/solicitud"
 
 .show
-  %h2= Recursorevision.human_name
+  %h2= Recursorevision.model_name.human
 
   %div{:id=>"options"}
     = button_new(new_solicitud_recursorevision_path(@solicitud))
@@ -16,7 +16,7 @@
     %br
 
   .box
-    %table
+    %table.table
       %colgroup.show-table-header
       %colgroup.show-table-data
       %tr

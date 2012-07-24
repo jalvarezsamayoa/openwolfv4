@@ -1,7 +1,7 @@
 class ResolucionesController < ApplicationController
   before_filter :get_solicitud, :except => [:actualizar_razones]
   before_filter :obtener_privilegios, :only => [:new, :edit]
-  
+
   access_control do
     allow :superudip
     allow :userudip
@@ -14,7 +14,7 @@ class ResolucionesController < ApplicationController
   def show
     @resolucion = @solicitud.resoluciones.find(params[:id])
   end
-  
+
   # GET /resoluciones/new
   # GET /resoluciones/new.xml
   def new
@@ -22,11 +22,11 @@ class ResolucionesController < ApplicationController
 
     @resolucion.numero = ''
     @resolucion.solicitud_id = @solicitud.id
-    @resolucion.usuario_id = current_user.id
-    @resolucion.institucion_id = current_user.institucion_id
+    @resolucion.usuario_id = current_usuario.id
+    @resolucion.institucion_id = current_usuario.institucion_id
     @resolucion.descripcion = 'No Disponible'
     @resolucion.numero = @resolucion.nuevo_numero
-    
+
     @resolucion.fecha = l(Date.today)
     @resolucion.fecha_notificacion = l(Date.today)
 
@@ -49,9 +49,9 @@ class ResolucionesController < ApplicationController
   def create
 
     @resolucion = @solicitud.resoluciones.new(params[:resolucion])
-    @resolucion.institucion_id = current_user.institucion_id
+    @resolucion.institucion_id = current_usuario.institucion_id
     @resolucion.solicitud_id = @solicitud.id
-    @resolucion.usuario_id = current_user.id
+    @resolucion.usuario_id = current_usuario.id
 
     if params[:resolucion][:fecha]
      #limpiamos fecha de creacion pasandola a formato MM/DD/YYYY
@@ -64,7 +64,7 @@ class ResolucionesController < ApplicationController
      end
 
      @resolucion.nueva_fecha = fix_date(params[:resolucion][:nueva_fecha]) if params[:resolucion][:nueva_fecha]
-   
+
 
     respond_to do |format|
       if @resolucion.save
@@ -81,12 +81,12 @@ class ResolucionesController < ApplicationController
   # PUT /resoluciones/1.xml
   def update
     @resolucion = @solicitud.resoluciones.find(params[:id])
-     
+
     #limpiamos fecha de creacion pasandola a formato MM/DD/YYYY
     params[:resolucion][:fecha] = fix_date(params[:resolucion][:fecha]) if params[:resolucion][:fecha]
     params[:resolucion][:fecha_notificacion] = fix_date(params[:resolucion][:fecha_notificacion]) if params[:resolucion][:fecha_notificacion]
     params[:resolucion][:nueva_fecha] = fix_date(params[:resolucion][:nueva_fecha]) if params[:resolucion][:nueva_fecha]
-   
+
 
     respond_to do |format|
       if @resolucion.update_attributes(params[:resolucion])
@@ -116,7 +116,7 @@ class ResolucionesController < ApplicationController
 
     # si una solicitud no esta termindada? = 100%
     # solo se pueden emitir prorrogas
-    
+
     if @solicitud.terminada?
       @tiposresoluciones = Tiporesolucion.all
       @razones = Tiporesolucion.first.razonestiposresoluciones.all(:order => "razonestiposresoluciones.nombre")
@@ -137,9 +137,9 @@ class ResolucionesController < ApplicationController
   end
 
   def obtener_privilegios
-    @es_pertinente_a_usuario = @solicitud.es_pertinente?(usuario_actual)
-    @usuario_es_supervisor =  nivel_seguridad(usuario_actual,'encargadoudip')
+    @es_pertinente_a_usuario = @solicitud.es_pertinente?(current_usuario)
+    @usuario_es_supervisor =  nivel_seguridad(current_usuario,'encargadoudip')
     @puede_modificar_fecha = (@es_pertinente_a_usuario && @usuario_es_supervisor)
   end
-    
+
 end

@@ -1,12 +1,12 @@
-- @forview = "EDIT"
-= render :partial=>"breadcrumbs"
+#page-title.clearfix
+  %h1= "Editar #{Idioma.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
 
-.mantform
-  %h2
-    Editar 
-    = Idioma.human_name
-
-  - semantic_form_for @idioma do |form|
-    = form.semantic_errors
-    = render :partial => 'form', :locals => {:form => form}
-    = buttons_update(idiomas_path)
+.show.widget
+  .widget-header
+    %h3 Editar Idioma
+  .widget-content
+    = simple_form_for(@idioma, :html => {:class => 'form-horizontal'}) do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        = buttons_update(idiomas_path)

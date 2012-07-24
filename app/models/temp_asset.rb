@@ -20,11 +20,12 @@ class TempAsset < ActiveRecord::Base
     h.importar_solicitudes(opciones)
   end
 end
+
 # == Schema Information
 #
 # Table name: temp_assets
 #
-#  id                   :integer         not null, primary key
+#  id                   :integer          not null, primary key
 #  institucion_id       :integer
 #  usuario_id           :integer
 #  options              :text

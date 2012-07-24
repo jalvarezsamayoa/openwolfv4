@@ -1,17 +1,21 @@
 class UsuariosController < ApplicationController
-  before_filter :requiere_usuario
-  before_filter :obtener_nivel_de_seguridad
+  before_filter :authenticate_usuario!
+  load_and_authorize_resource
   before_filter :get_extra_data
+  before_filter :set_home_breadcrumb
 
-  
+  add_crumb("Usuarios") { |instance| instance.send :usuarios_path }
+
+
   # GET /usuarios
   # GET /usuarios.xml
   def index
-    
+
+    q = ( params[:search].blank? ? '' : params[:search][0] )
     if @usuario_es_superadmin
-      @usuarios = Usuario.nombre_like(params[:search]).paginate :page=>params[:page], :per_page=>25
+      @usuarios = Usuario.nombre_like(q).paginate :page=>params[:page], :per_page=>25
     else
-      @usuarios = usuario_actual.institucion.usuarios.nombre_like(params[:search]).paginate :page=>params[:page], :per_page=>25
+      @usuarios = current_usuario.institucion.usuarios.nombre_like(q).paginate :page=>params[:page], :per_page=>25
     end
 
     respond_to do |format|
@@ -35,11 +39,11 @@ class UsuariosController < ApplicationController
   # GET /usuarios/new.xml
   def new
     @usuario = Usuario.new
-    @disabled = !@usuario_es_superadmin    
+    @disabled = !@usuario_es_superadmin
 
     #verificar a que institucion pueden asignar usuarios
     unless @usuario_es_superadmin
-      @usuario.institucion_id = usuario_actual.institucion_id      
+      @usuario.institucion_id = current_usuario.institucion_id
     end
 
     respond_to do |format|
@@ -50,21 +54,21 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
-    get_usuario()    
-    @disabled = !@usuario_es_superadmin    
+    get_usuario()
+    @disabled = !@usuario_es_superadmin
   end
 
   # POST /usuarios
   # POST /usuarios.xml
-  def create    
+  def create
     @usuario = Usuario.new(params[:usuario])
-    @usuario.institucion_id = usuario_actual.institucion_id unless @usuario_es_superadmin
+    @usuario.institucion_id = current_usuario.institucion_id unless @usuario_es_superadmin
 
     if @usuario.save
       flash[:notice] = 'Usuario creado con exito.'
-      redirect_to(@usuario) 
+      redirect_to(@usuario)
     else
-      render :action => "new" 
+      render :action => "new"
     end #save
 
   end #create
@@ -73,21 +77,21 @@ class UsuariosController < ApplicationController
   # PUT /usuarios/1.xml
   def update
     get_usuario()
-    
+
     if params[:usuario][:password].nil? or params[:usuario][:password].empty?
       params[:usuario].delete(:password)
       params[:usuario].delete(:password_confirmation)
     end
-    
+
     if @usuario.update_attributes(params[:usuario])
       flash[:notice] = 'Usuario actualizado con exito.'
-      if usuario_actual.has_role?(:superadmin) or usuario_actual.has_role?(:localadmin)
+      if current_usuario.has_role?(:superadmin) or current_usuario.has_role?(:localadmin)
         redirect_to(@usuario)
       else
         redirect_to(main_index_path)
       end
     else
-      render :action => "edit" 
+      render :action => "edit"
     end #result
 
   end
@@ -95,27 +99,27 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1
   # DELETE /usuarios/1.xml
   def destroy
-    get_usuario()   
+    get_usuario()
     @usuario.destroy
 
     respond_to do |format|
       if @usuario.destroy
-      format.html { redirect_to(estados_url) }
+      format.html { redirect_to(usuarios_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "show"}
       end
-    end 
+    end
   end
 
   # Muestra forma para actualizacion de datos de perfil de usuario
   def perfil
-    @usuario = usuario_actual
+    @usuario = current_usuario
     @perfil = true
   end
-  
+
   private
-  
+
   def get_extra_data
     #    @puestos = Puesto.all
   end
@@ -124,13 +128,13 @@ class UsuariosController < ApplicationController
     if @usuario_es_superadmin
       @usuario = Usuario.find(params[:id])
     else
-      @usuario = usuario_actual.institucion.usuarios.find(params[:id])
+      @usuario = current_usuario.institucion.usuarios.find(params[:id])
     end
   end
 
   def obtener_nivel_de_seguridad
-    @usuario_es_admin = nivel_seguridad(usuario_actual,'administrador')
-    @usuario_es_superadmin =  nivel_seguridad(usuario_actual,'superadmin')
+    @usuario_es_admin = nivel_seguridad(current_usuario,'administrador')
+    @usuario_es_superadmin =  nivel_seguridad(current_usuario,'superadmin')
   end
-  
+
 end

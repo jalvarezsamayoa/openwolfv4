@@ -1,15 +1,27 @@
-.show
-  %h2= Estado.human_name
-  #options
+#page-title.clearfix
+  %h1= Estado.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @estado.errors.any?
+  .error
+    %ul
+    - @estado.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
     = button_new(new_estado_path)
     = button_edit(edit_estado_path(@estado))
     = button_delete(estado_path(@estado))
     = button_cancel(estados_path)
-    %br/
-  .box
-    %table
-      %colgroup.show-table-header
-      %colgroup.show-table-data
+  .widget-content
+    %table.table.table-bordered
       %tr
-        %th= label :nombre, Estado.human_attribute_name(:nombre)
+        %th= Estado.human_attribute_name(:nombre)
         %td= @estado.nombre
+      %tr
+        %th= Estado.human_attribute_name(:final)
+        %td= @estado.final ? 'Si' : 'No'
+      %tr
+        %th= Estado.human_attribute_name(:modulo_id)
+        %td= @estado.nombre_modulo

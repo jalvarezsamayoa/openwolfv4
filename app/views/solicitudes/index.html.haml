@@ -1,11 +1,12 @@
 - content_for :head do
   = javascript_include_tag 'jquery-blockui.js','solicitudes.js', 'seguimientos.js'
 = render :partial => "breadcrums"
-%h1.alt Solicitudes y Tareas
+.page-header
+  %h1 Solicitudes y Tareas
 .solicitudes-y-tareas
   #solicitudes-y-tareas-tabs
-    %ul
-      %li= link_to "Tareas Asignadas (#{@asignaciones.size})", "#tareas", :title => "Tareas que debo de completar."
+    %ul.nav.nav-tabs
+      %li.active= link_to "Tareas Asignadas (#{@asignaciones.size})", "#tareas", :title => "Tareas que debo de completar."
       - if @usuario_es_udip
         %li= link_to "No Asignadas (#{@noasignadas.size})", "#no-asignadas", :title => "Nuevas solicitudes que debo asignar a enlaces."
         %li= link_to "En Tramite (#{@entramite.size})", "#en-tramite", :title => "Solicitudes ya asignadas que enlaces deben completar."

@@ -3,10 +3,10 @@
 
 .mantform
   %h2
-    Editar 
-    = Feriado.human_name
+    Editar
+    = Feriado.model_name.human
 
-  - semantic_form_for @feriado do |form|
-    = form.semantic_errors
+  = simple_form_for @feriado do |form|
+
     = render :partial => 'form', :locals => {:form => form}
     = buttons_update(feriados_path)

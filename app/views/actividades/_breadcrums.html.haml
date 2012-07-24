@@ -1,7 +1,8 @@
 #breadcrumbs.span-24.last
-  %ul#crumbs
+  %ul.breadcrumb
     %li
       = link_to t("breadcrums.homepage"), main_index_path
+      %span.divider /
     %li
       = link_to t("breadcrums.actividades"), actividades_path
     - if @forview

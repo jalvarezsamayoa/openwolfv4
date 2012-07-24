@@ -2,7 +2,7 @@
 = render :partial=>"breadcrumbs"
 
 .show
-  %h2= Feriado.human_name
+  %h2= Feriado.model_name.human
 
   %div{:id=>"options"}
     = button_new(new_feriado_path)
@@ -12,7 +12,7 @@
     %br
 
   .box
-    %table
+    %table.table
       %colgroup.show-table-header
       %colgroup.show-table-data
       %tr

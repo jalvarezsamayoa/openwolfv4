@@ -1,17 +1,21 @@
-- @forview = "SHOW"
-= render :partial=>"breadcrums"
-.show
-  %h2= Departamento.human_name
-  #options
+#page-title.clearfix
+  %h1= Departamento.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @departamento.errors.any?
+  .error
+    %ul
+    - @departamento.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
     = button_new(new_departamento_path)
     = button_edit(edit_departamento_path(@departamento))
     = button_delete(departamento_path(@departamento))
     = button_cancel(departamentos_path)
-    %br/
-  .box
-    %table
-      %colgroup.show-table-header
-      %colgroup.show-table-data
+  .widget-content
+    %table.table.table-bordered
       %tr
         %th= label :nombre, Departamento.human_attribute_name(:nombre)
         %td= @departamento.nombre

@@ -1,7 +1,7 @@
 %h1= t('.title')
 %p= link_to t('.new_documentotraslado'), new_documentotraslado_path
 
-%table
+%table.table
   %thead
     %tr
       %th= Documentotraslado.human_attribute_name :institucion_id
@@ -14,7 +14,7 @@
       %th= Documentotraslado.human_attribute_name :fecha_envio
       %th= Documentotraslado.human_attribute_name :fecha_respuesta
       %th{:colspan => 3}= t 'actions'
-  
+
   %tbody
     - for documentotraslado in @documentotraslados
       %tr{ :class => cycle(:odd, :even) }

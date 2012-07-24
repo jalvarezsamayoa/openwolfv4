@@ -3,7 +3,7 @@
 
 .show
   .box
-    - form_tag reporte_solicitudes_csv_url, :method=>:get do
+    = form_tag reporte_solicitudes_csv_url, :method=>:get do
       %h3 Rango de Fecha
       %p
         = label_tag 'ano', "Desde: "

@@ -1,30 +1,30 @@
 class SolicitudesController < ApplicationController
-  before_filter :requiere_usuario, :except => [:print]
+  before_filter :authenticate_usuario!, :except => [:print]
   before_filter :get_institucion, :except => [:cambiar_estado, :actualizar_estado, :marcar_entregada, :print]
   before_filter :get_data, :except => [:find, :print]
-  
+
 
   # GET /solicitudes
   # GET /solicitudes.xml
   def index
     @solicitudes = Solicitud.all
 
-    @usuario_es_udip = nivel_seguridad(usuario_actual,'personaludip')
+    @usuario_es_udip = nivel_seguridad(current_usuario,'personaludip')
 
     if @usuario_es_udip
-      
-      @noasignadas = usuario_actual.institucion.solicitudes.activas.noasignadas.recientes.correlativo
-      @entramite = usuario_actual.institucion.solicitudes.activas.asignadas.nocompletadas.recientes.correlativo
-      @terminadas = usuario_actual.institucion.solicitudes.activas.completadas.conresolucionfinal.noentregadas.recientes.correlativo
-      
-      @pendresolucion = usuario_actual.institucion.solicitudes.activas.completadas.sinresolucionfinal.recientes.correlativo
 
-      @entregadas = usuario_actual.institucion.solicitudes.activas.entregadas.recientes.correlativo.limit(50)
-      @entregadas_cnt = usuario_actual.institucion.solicitudes.activas.entregadas.recientes.correlativo.count
+      @noasignadas = current_usuario.institucion.solicitudes.activas.noasignadas.recientes.correlativo
+      @entramite = current_usuario.institucion.solicitudes.activas.asignadas.nocompletadas.recientes.correlativo
+      @terminadas = current_usuario.institucion.solicitudes.activas.completadas.conresolucionfinal.noentregadas.recientes.correlativo
+
+      @pendresolucion = current_usuario.institucion.solicitudes.activas.completadas.sinresolucionfinal.recientes.correlativo
+
+      @entregadas = current_usuario.institucion.solicitudes.activas.entregadas.recientes.correlativo.limit(50)
+      @entregadas_cnt = current_usuario.institucion.solicitudes.activas.entregadas.recientes.correlativo.count
 
 
-      @anuladas = usuario_actual.institucion.solicitudes.anuladas
-      
+      @anuladas = current_usuario.institucion.solicitudes.anuladas
+
     else
       @noasignadas = nil
       @entramite = nil
@@ -33,16 +33,16 @@ class SolicitudesController < ApplicationController
       @entregadas = nil
       @anuladas = nil
     end
-    
-    @asignaciones = usuario_actual.actividades.nocompletadas
-    
+
+    @asignaciones = current_usuario.actividades.nocompletadas
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @solicitudes }
     end
   end
 
-  
+
   # GET /solicitudes/1
   # GET /solicitudes/1.xml
   def show
@@ -50,9 +50,9 @@ class SolicitudesController < ApplicationController
     @actividades = @solicitud.actividades
     @adjuntos = @solicitud.adjuntos
 
-    @es_pertinente_a_usuario = @solicitud.es_pertinente?(usuario_actual)
-    @usuario_es_supervisor =  nivel_seguridad(usuario_actual,'encargadoudip')
-    @usuario_es_udip = nivel_seguridad(usuario_actual,'personaludip')
+    @es_pertinente_a_usuario = @solicitud.es_pertinente?(current_usuario)
+    @usuario_es_supervisor =  nivel_seguridad(current_usuario,'encargadoudip')
+    @usuario_es_udip = nivel_seguridad(current_usuario,'personaludip')
 
     @mostrar_datos_solicitante = (@es_pertinente_a_usuario and (@usuario_es_supervisor or @usuario_es_udip))
 
@@ -61,16 +61,16 @@ class SolicitudesController < ApplicationController
     # 2. si la solicitud no esta en un Estado FINAL
     @puede_remover_asignacion = ( (@es_pertinente_a_usuario and @usuario_es_udip) and !@solicitud.con_resolucion_final?)
 
-    
+
     @restringir_seguimientos_privados = !(@es_pertinente_a_usuario && @usuario_es_udip)
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @solicitud }
     end
   end
-  
-  
+
+
   # GET /solicitudes/new
   # GET /solicitudes/new.xml
   def new
@@ -80,8 +80,8 @@ class SolicitudesController < ApplicationController
     @solicitud.solicitante_identificacion = "No Disponible"
     @solicitud.motivonegativa_id = 1
     @solicitud.motivoprorroga_id = 1
-    
-    @usa_solicitudes_privadas = usuario_actual.institucion.usasolicitudesprivadas
+
+    @usa_solicitudes_privadas = current_usuario.institucion.usasolicitudesprivadas
 
     respond_to do |format|
       format.html # new.html.erb
@@ -93,14 +93,14 @@ class SolicitudesController < ApplicationController
   # POST /solicitudes.xml
   def create
 
-    
-    @solicitud = Solicitud.new(params[:solicitud])    
-    @solicitud.usuario_id = usuario_actual.id
+
+    @solicitud = Solicitud.new(params[:solicitud])
+    @solicitud.usuario_id = current_usuario.id
     @solicitud.origen_id = Solicitud::ORIGEN_DEFAULT
 
     #limpiamos fecha de creacion pasandola a formato MM/DD/YYYY
     @solicitud.fecha_creacion = fix_date(params[:solicitud][:fecha_creacion])
-    
+
     respond_to do |format|
       if @solicitud.save
         flash[:success] = 'Solicitud creada con exito.'
@@ -113,7 +113,7 @@ class SolicitudesController < ApplicationController
       end
     end
   end
-  
+
 
 
 
@@ -131,7 +131,7 @@ class SolicitudesController < ApplicationController
 
     #limpiamos fecha de creacion pasandola a formato MM/DD/YYYY
     params[:solicitud][:fecha_creacion] = fix_date(params[:solicitud][:fecha_creacion]) if params[:solicitud][:fecha_creacion]
-    
+
     respond_to do |format|
       if @solicitud.update_attributes(params[:solicitud])
         flash[:notice] = 'Solicitud actualizada con exito.'
@@ -173,11 +173,11 @@ class SolicitudesController < ApplicationController
     respond_to do |format|
       format.js do
         if @solicitud.update_attributes(params[:solicitud])
-          flash[:success] = 'Estado actualizado con exito.'                  
-        end        
+          flash[:success] = 'Estado actualizado con exito.'
+        end
       end
     end
-    
+
   end
 
   #marcar como entregada
@@ -197,10 +197,10 @@ class SolicitudesController < ApplicationController
   def print
     @solicitud = Solicitud.find(params[:id])
 
-    if usuario_actual
-      @es_pertinente_a_usuario = @solicitud.es_pertinente?(usuario_actual)
-      @usuario_es_supervisor =  nivel_seguridad(usuario_actual,'encargadoudip')
-      @usuario_es_udip = nivel_seguridad(usuario_actual,'personaludip')
+    if current_usuario
+      @es_pertinente_a_usuario = @solicitud.es_pertinente?(current_usuario)
+      @usuario_es_supervisor =  nivel_seguridad(current_usuario,'encargadoudip')
+      @usuario_es_udip = nivel_seguridad(current_usuario,'personaludip')
 
       @mostrar_datos_solicitante = (@es_pertinente_a_usuario and (@usuario_es_supervisor or @usuario_es_udip))
     else
@@ -226,7 +226,7 @@ class SolicitudesController < ApplicationController
     # si no se esta solicitando un filtro
     # solo mostramos las solicitudes de la institucion
     # del usuario actual
-    params[:institucion_id] = usuario_actual.institucion_id unless (params[:filtrar] or usuario_actual_admin?)
+    params[:institucion_id] = current_usuario.institucion_id unless (params[:filtrar] or current_usuario_admin?)
 
     # guardamos el estado del filtro para agregarlo a la paginacion
     if params[:filtrar]
@@ -236,18 +236,24 @@ class SolicitudesController < ApplicationController
     end
 
     params[:anuladas] = true
-    
-    @solicitudes = Solicitud.buscar(params)
 
-    @desde = ( params[:fecha_desde] ? Date.strptime(params[:fecha_desde], "%d/%m/%Y") : Date.today - Date.today.yday + 1 )
-    @hasta = ( params[:fecha_hasta] ? Date.strptime(params[:fecha_hasta], "%d/%m/%Y") : Date.today )
+    @busqueda = Busqueda.new(params)
+
+    @solicitudes = @busqueda.solicitudes
+
+    @desde = @busqueda.fecha_desde
+    @hasta = @busqueda.fecha_hasta
+
+    @q = @busqueda.q
+
+    @url = buscar_path
 
   end
 
   private
 
-  def get_institucion    
-    @institucion = usuario_actual.institucion
+  def get_institucion
+    @institucion = current_usuario.institucion
   end
 
   def get_data
@@ -255,7 +261,7 @@ class SolicitudesController < ApplicationController
     @municipios = Departamento.first.municipios.all(:order => "municipios.nombre")
   end
 
-  
+
 
 end
 

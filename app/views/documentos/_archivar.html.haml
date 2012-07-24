@@ -2,10 +2,10 @@
   %h2
     Archivar Documento
 
-  - semantic_form_for @documento do |form|
-    = form.semantic_errors
-    
-    - form.inputs do
+  = simple_form_for @documento do |form|
+
+
+    = form.inputs do
       = form.input :archivo, :collection => @archivos, :include_blank => false
 
     = submit_popup("Archivar")

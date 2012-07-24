@@ -1,14 +1,16 @@
-- content_for :head do
-  = javascript_include_tag 'combobox.js', 'usuarios.js'
-- @forview = "EDIT"
-= render :partial => "breadcrums"
-.mantform
-  %h2
-    Editar #{Usuario.human_name}
-  - semantic_form_for @usuario do |form|
-    = form.semantic_errors
-    = render :partial => 'form', :locals => {:form => form}
-    - if action_name == 'perfil'
-      = buttons_update(main_path)
-    - else
-      = buttons_update(usuarios_path)
+#page-title.clearfix
+  %h1= "Editar #{Usuario.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3
+      Editar #{Usuario.model_name.human}
+  .widget-content
+    = simple_form_for @usuario, html: {class: "form-horizontal"} do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        - if action_name == 'perfil'
+          = buttons_update(main_path)
+        - else
+          = buttons_update(usuarios_path)

@@ -1,7 +1,11 @@
-class Role < ActiveRecord::Base 
+class Role < ActiveRecord::Base
+  attr_accessible :name
+
   acts_as_authorization_role :join_table_name => "roles_usuarios"
-  
+
   scope :basicos, :conditions => "name != 'superadmin' and name != 'localadmin' and name != 'ciudadano'"
+
+  validates :name, :uniqueness => true, :presence => true
 
   scope :name_like, lambda { |nombre|
     unless nombre.nil? || nombre.empty? || nombre.first.nil?
@@ -9,11 +13,12 @@ class Role < ActiveRecord::Base
     end
   }
 end
+
 # == Schema Information
 #
 # Table name: roles
 #
-#  id                :integer         not null, primary key
+#  id                :integer          not null, primary key
 #  name              :string(40)
 #  authorizable_type :string(40)
 #  authorizable_id   :integer

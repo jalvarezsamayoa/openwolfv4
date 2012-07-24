@@ -3,7 +3,7 @@
     %li
       = link_to t("breadcrums.homepage"), main_index_path
     %li
-      = link_to Feriado.human_name.pluralize, feriados_path(@feriado)
+      = link_to Feriado.model_name.human.pluralize, feriados_path(@feriado)
     - if @forview
       - if @forview == "NEW"
         %li= t("data.title_new")

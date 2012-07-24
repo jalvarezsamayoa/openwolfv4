@@ -1,8 +1,8 @@
 .mantform.addpadding
   %h2
-    Nuevo #{Recursorevision.human_name}
-  - semantic_form_for [@solicitud.institucion,@solicitud, @recursorevision]  do |form|
-    = form.semantic_errors
+    Nuevo #{Recursorevision.model_name.human}
+  = simple_form_for [@solicitud.institucion,@solicitud, @recursorevision]  do |form|
+
     = render :partial => 'form', :locals => {:form => form}
     = buttons_create(solicitud_path(@solicitud))
 :javascript

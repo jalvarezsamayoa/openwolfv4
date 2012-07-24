@@ -1,9 +1,13 @@
 #flash-messages
   - if flash[:notice]
-    .notice= flash[:notice]
+    %div
+      %p.notice= flash[:notice]
   - if flash[:error]
-    .error= flash[:error]
+    %div
+      %p.error= flash[:error]
   - if flash[:success]
-    .success= flash[:success]
+    %div
+      %p.success= flash[:success]
   - if flash[:alert]
-    .notice.span-24.last= flash[:alert]
+    %div
+      %p.notice= flash[:alert]

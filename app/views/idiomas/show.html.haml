@@ -1,20 +1,21 @@
-- @forview = "SHOW"
-= render :partial=>"breadcrumbs"
+#page-title.clearfix
+  %h1= Idioma.model_name.human
+  = render :partial => "shared/breadcrumbs"
 
-.show
-  %h2= Idioma.human_name
+- if @idioma.errors.any?
+  .error
+    %ul
+    - @idioma.errors.full_messages.each do |msg|
+      %li= msg
 
-  %div{:id=>"options"}
+.show.widget.widget-table
+  #options.widget-toolbar
     = button_new(new_idioma_path)
     = button_edit(edit_idioma_path(@idioma))
     = button_delete(idioma_path(@idioma))
     = button_cancel(idiomas_path)
-    %br
-
-  .box
-    %table
-      %colgroup.show-table-header
-      %colgroup.show-table-data
+  .widget-content
+    %table.table.table-bordered
       %tr
-        %th= label :nombre, Idioma.human_attribute_name(:nombre)
+        %th= Idioma.human_attribute_name(:nombre)
         %td= @idioma.nombre

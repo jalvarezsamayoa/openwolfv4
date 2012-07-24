@@ -1,9 +1,9 @@
 .listing
-  %h2= Profesion.human_name.pluralize
+  %h2= Profesion.model_name.human.pluralize
   #options
     = button_new(new_profesion_path)
     = render :partial => 'shared/findbox', :locals => {:url => profesiones_path}
-  %table.minimalist-b
+  %table.table
     %thead
       %tr
         %th= Profesion.human_attribute_name(:nombre)

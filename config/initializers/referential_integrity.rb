@@ -1,5 +1,5 @@
 class ActiveRecord::Base
-  
+
   private
 
   #previene el borrar el registro si las relaciones tienen hijos
@@ -12,8 +12,8 @@ class ActiveRecord::Base
         errors.add_to_base("No es posible borrar este registro ya que tiene #{n} #{value} asociados.")
         l_ok_to_delete = false
       end
-    end    
+    end
     return l_ok_to_delete
   end
-  
+
 end

@@ -46,6 +46,9 @@ body.estadisticas {
 /*--------------------------------------------*/
 
 body.portal {
+
+  padding-top: 60px;
+
   &#portal-index {
     @include portal-background;
     h2 {  @include font-georgia; }

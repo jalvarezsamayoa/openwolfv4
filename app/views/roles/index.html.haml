@@ -1,15 +1,17 @@
-.listing
-  %h2= Role.human_name.pluralize
-  #options
+#page-title.clearfix
+  %h1= Role.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
     = button_new(new_role_path)
     = render :partial => 'shared/findbox', :locals => {:url => roles_path}
-  %table.minimalist-b
-    %thead
-      %tr
-        %th= Role.human_attribute_name(:name)
-    %tbody
-      - for role in @roles  do
+  .widget-content
+    %table.table
+      %thead
         %tr
-          %td
-            = link_to role.name, role_path(role)
-  = will_paginate @roles
+          %th= Role.human_attribute_name(:name)
+      %tbody
+        - @roles.each do |role|
+          %tr
+            %td= link_to role.name, role
+    = will_paginate @roles

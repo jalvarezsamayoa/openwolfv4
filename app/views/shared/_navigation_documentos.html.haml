@@ -1,5 +1,5 @@
-- if nivel_seguridad(usuario_actual,'superadmin')
-  %div 
+- if nivel_seguridad(current_usuario,'superadmin')
+  %div
     %span Mesajería
     = link_to "Nuevo Documento", new_documento_path, :title => "Crear nuevo documento."
     = link_to "Mis Documentos", documentos_path, :title => "Listar documentos que he creado."

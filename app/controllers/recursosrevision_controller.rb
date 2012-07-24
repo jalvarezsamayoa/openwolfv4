@@ -10,7 +10,7 @@ class RecursosrevisionController < ApplicationController
   def index
     @recursosrevision = @solicitud.recursosrevision
   end
-    
+
   # GET /recursosrevision/1
   # GET /recursosrevision/1.xml
   def show
@@ -24,22 +24,22 @@ class RecursosrevisionController < ApplicationController
   # GET /recursosrevision/new
   # GET /recursosrevision/new.xml
   def new
-    @recursorevision = @solicitud.recursosrevision.new    
+    @recursorevision = @solicitud.recursosrevision.new
     @recursorevision.solicitud_id = @solicitud.id
     @recursorevision.institucion_id = @solicitud.institucion_id
-    @recursorevision.usuario_id = usuario_actual.id
+    @recursorevision.usuario_id = current_usuario.id
     @recursorevision.descripcion = 'No Disponible'
     @recursorevision.numero = @recursorevision.nuevo_numero
     @recursorevision.fecha_presentacion = l(Date.today)
     @recursorevision.fecha_notificacion = l(Date.today)
     @recursorevision.fecha_resolucion = l(Date.today)
-    
-    
+
+
     respond_to do |format|
       format.html
       format.js
     end
-    
+
   end
 
   # GET /recursosrevision/1/edit
@@ -51,9 +51,9 @@ class RecursosrevisionController < ApplicationController
   # POST /recursosrevision.xml
   def create
     @recursorevision = @solicitud.recursosrevision.new(params[:recursorevision])
-    @recursorevision.institucion_id = current_user.institucion_id
+    @recursorevision.institucion_id = current_usuario.institucion_id
     @recursorevision.solicitud_id = @solicitud.id
-    @recursorevision.usuario_id = current_user.id
+    @recursorevision.usuario_id = current_usuario.id
 
     #limpiamos fecha pasandola a formato MM/DD/YYYY
     @recursorevision.fecha_presentacion = fix_date(params[:recursorevision][:fecha_presentacion])
@@ -65,7 +65,7 @@ class RecursosrevisionController < ApplicationController
       else
         logger.debug { "Error: #{@recursorevision.errors}" }
         flash[:error] = 'No fue posible generar el recurso de revisión.'
-        format.html { render :action => 'new' } 
+        format.html { render :action => 'new' }
         format.xml  { render :xml => @recursorevision.errors, :status => :unprocessable_entity }
       end
     end
@@ -80,7 +80,7 @@ class RecursosrevisionController < ApplicationController
       if @recursorevision.update_attributes(params[:recursorevision])
         format.html { redirect_to([@solicitud,@recursorevision], :notice => 'Recurso revisión actualizado con exito.') }
         format.xml  { head :ok }
-      else        
+      else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @recursorevision.errors, :status => :unprocessable_entity }
       end
@@ -101,6 +101,6 @@ class RecursosrevisionController < ApplicationController
 
   def get_solicitud
     #TODO: filtrar por institucion
-    @solicitud = Solicitud.find(params[:solicitud_id])   
+    @solicitud = Solicitud.find(params[:solicitud_id])
   end
 end

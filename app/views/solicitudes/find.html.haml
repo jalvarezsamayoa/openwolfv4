@@ -1,22 +1,23 @@
 - content_for :head do
   = javascript_include_tag 'filtro_solicitudes', 'jquery.ui.datepicker-es.js'
 .listing
-  %h2= Solicitud.model_name.human.pluralize
+  .page-header
+    %h1= Solicitud.model_name.human.pluralize
   #options
-    #buttons
-      = link_to image_tag('filesearch16.png')+' Filtrar', '#', :class => "button filtro"
     #findbox
-      = form_tag buscar_path, :method=>:get do
+      = form_tag buscar_path, :method=>:get, :class => 'form-search well' do
         = image_tag("find16.png")
         = text_field_tag 'search', '', :id=>'search'
         = submit_tag 'Buscar'
+        %a{:class=>"btn", "data-toggle"=>"modal", :href=>"#myModal"} Busqueda Avanzada
   #solicitudes
-    - unless @solicitudes.nil?
+    - unless @solicitudes.blank?
       %h3
-        = @solicitudes.total
+        = @solicitudes.count
         Solicitudes Encontradas
-      = will_paginate @solicitudes.results, :params => @filtros
-      %table.minimalist-b
+      .center
+        = will_paginate @solicitudes
+      %table.table
         %thead
           %tr
             %th= Solicitud.human_attribute_name(:codigo)
@@ -26,18 +27,27 @@
             %th= Solicitud.human_attribute_name(:dias)
             %th= Solicitud.human_attribute_name(:avance)
             %th= Solicitud.human_attribute_name(:textosolicitud)
-        %tbody      
-        - @solicitudes.each_hit_with_result do |hit, solicitud|
+        %tbody
+        - @solicitudes.each do |solicitud|
           %tr{:class => "#{  solicitud.anulada? ? 'notice' : '' }"}
             %td= link_to solicitud.codigo, solicitud_path(solicitud)
             %td= l(solicitud.fecha_creacion)
-            %td= solicitud.institucion.abreviatura
+            %td
+              %small= truncate(solicitud.institucion.nombre)
             %td= solicitud.estado_actual
             %td= solicitud.dias_restantes
             %td= solicitud.avance
-            %td= solicitud.extracto(usuario_actual)
-      = will_paginate @solicitudes.results, :params => @filtros
+            %td= solicitud.extracto(current_usuario)
+      .center
+        = will_paginate @solicitudes
     - else
       No se han encontrado solicitudes.
-#filtro.popup{:style => "display: none; height: 500px; width: 650px;"}
-  = render :partial => 'solicitudes/filtro', :locals => {:url => buscar_url}
+#myModal.modal.hide
+  .modal-header
+    %button.close{"data-dismiss" => "modal", :type => "button"} ×
+    %h3 Busqueda Avanzada
+  .modal-body
+    = render :partial => 'solicitudes/filtro'
+  .modal-footer
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+

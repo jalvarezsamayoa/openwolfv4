@@ -1,7 +1,12 @@
-.mantform
-  %h2
-    Editar #{Estado.human_name}
-  - semantic_form_for @estado do |form|
-    = form.semantic_errors
-    = render :partial => 'form', :locals => {:form => form}
-    = buttons_update(estados_path)
+#page-title.clearfix
+  %h1= "Editar #{Estado.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3 Editar Estado
+  .widget-content
+    = simple_form_for(@estado, :html => {:class => 'form-horizontal'}) do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        = buttons_update(estados_path)

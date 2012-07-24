@@ -1,20 +1,20 @@
 - @forview = "INDEX"
 = render :partial => "breadcrumbs"
 
-%h1.alt= Resolucion.human_name.pluralize
+%h1.alt= Resolucion.model_name.human.pluralize
 
 = render :partial => "solicitudes/solicitud"
 
 %fieldset
   %legend
     = image_tag('refresh22.png')
-    = Resolucion.human_name.pluralize
+    = Resolucion.model_name.human.pluralize
 
   .listing
     %div{:id => "options"}
       = button_new(new_solicitud_resolucion_path(@solicitud))
       = button_cancel(solicitud_path(@solicitud),'Regresar a solicitud')
-    %table.minimalist-b
+    %table.table
       %thead
         %tr
           %th{:width => "20%"}= Resolucion.human_attribute_name(:numero)

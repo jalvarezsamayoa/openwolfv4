@@ -1,4 +1,4 @@
-- form.inputs do
+= form.inputs do
   = form.input :origen_id, :as => :select, :collection => [["Interno",1], ["Externo",2]], :hint => "De donde provino el documento.", :include_blank => false
   = form.input :documentoclasificacion, :include_blank => false, :input_html => {:class => "combobox"}, :hint => "Tipo de documento a generar."
   = form.input :fecha_recepcion, :as => :string, :input_html => {:size => 20 }, :hint => "Fecha de recepcion - documento externo"

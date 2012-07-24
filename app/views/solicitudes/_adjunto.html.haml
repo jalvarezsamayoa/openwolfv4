@@ -4,7 +4,7 @@
   %td= adjunto.usuario.nombre
   %td
     = image_tag('delete16.png')
-    - if nivel_seguridad(usuario_actual,'encargadoudip')
+    - if nivel_seguridad(current_usuario,'encargadoudip')
       = link_to t("data.delete"), solicitud_adjunto_path(adjunto.proceso, adjunto), :method => :delete, :confirm => t("data.rusure")
     - else
       = t("data.delete")

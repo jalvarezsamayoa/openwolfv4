@@ -4,8 +4,8 @@
 = render :partial => "breadcrums"
 .mantform
   %h2
-    Nueva #{Solicitud.human_name}
-  - semantic_form_for @solicitud do |form|
-    = form.semantic_errors
+    Nueva #{Solicitud.model_name.human}
+  = simple_form_for @solicitud do |form|
+
     = render :partial => 'form', :locals => {:form => form}
     = buttons_create(solicitudes_path)

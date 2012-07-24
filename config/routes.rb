@@ -1,4 +1,4 @@
-OpenwolfV3::Application.routes.draw do
+OpenwolfV4::Application.routes.draw do
 
   resources :feriados
 

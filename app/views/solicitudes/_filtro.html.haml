@@ -1,20 +1,20 @@
 - if @desde.nil? or @hasta.nil?
   - @desde =  (Date.today - Date.today.yday + 1)
   - @hasta = Date.today
-- if usuario_actual.nil?
+- if current_usuario.nil?
   - @url = url
-  - @method = usuario_actual.nil? ? :get : :post
-  
+  - @method = current_usuario.nil? ? :get : :post
+
 
 #filtros.rounded-shadow-box.glow-border
   %h2.center Filtrar Solicitudes
   = simple_form_for @busqueda, :url => @url, :method => @method  do |f|
-    - if usuario_actual.nil?
+    - if current_usuario.nil?
       = f.input :institucion_id, :collection => Institucion.asignables.activas, :input_html => {:class => "span5"}, :prompt => "Todas las instituciones"
     - else
-      = f.input :institucion_id, :collection => ([[usuario_actual.institucion.nombre,usuario_actual.institucion_id], |
+      = f.input :institucion_id, :collection => ([[current_usuario.institucion.nombre,current_usuario.institucion_id], |
         ['Todas','ALL']]), :class => "span5"
-        
+
     %fieldset
       %legend Rango Fechas
       = f.input :fecha_desde, :as => :date, :input_html => {:class => "span2"}
@@ -22,7 +22,7 @@
 
     %fieldset
       %legend Otros Filtros
-      
+
       = f.input :q, :label => "Palabras Clave", :input_html => {:class => "span5"}
 
       = f.input :solicitud_via, :collection => Via.all, :prompt => "Todas las vias", :input_html => {:class => "span5"}

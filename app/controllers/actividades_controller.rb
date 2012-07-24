@@ -1,26 +1,26 @@
 class ActividadesController < ApplicationController
-  before_filter :requiere_usuario
+  before_filter :authenticate_usuario!
   before_filter :get_data, :except =>[:marcar_como_completada, :index, :actualizar_usuarios]
   before_filter :obtener_privilegios, :only => [:show, :create]
 
   def index
-    # @asignaciones = usuario_actual.actividades
-    @asignaciones = usuario_actual.actividades.paginate(:page => params[:page])
+    # @asignaciones = current_usuario.actividades
+    @asignaciones = current_usuario.actividades.paginate(:page => params[:page])
   end
 
   def show
     @actividad = Actividad.find(params[:id])
-    
+
     respond_to do |format|
       format.js
     end
   end
-  
+
   # GET /actividades/new
   # GET /actividades/new.xml
   def new
-    @actividad = usuario_actual.institucion.actividades.new
-    @instituciones = usuario_actual.institucion.familia_activa
+    @actividad = current_usuario.institucion.actividades.new
+    @instituciones = current_usuario.institucion.familia_activa
     respond_to do |format|
       format.js
     end
@@ -40,16 +40,16 @@ class ActividadesController < ApplicationController
   def create
     @actividad = @solicitud.actividades.new(params[:actividad])
     @actividades = @solicitud.actividades
-    
+
     respond_to do |format|
       if @actividad.save
         flash[:success] = 'Asignacion creada con exito.'
         format.js
       else
-        @actividad.institucion_id = current_user.institucion_id
-        @instituciones = usuario_actual.institucion.familia
+        @actividad.institucion_id = current_usuario.institucion_id
+        @instituciones = current_usuario.institucion.familia
         @usuarios = @institucion.usuarios.enlaces
-        
+
         flash[:error] = 'Asignacion fallida.'
         format.js do
           render :failed
@@ -90,10 +90,10 @@ class ActividadesController < ApplicationController
   #cambia estado de actividad
   def marcar_como_completada
     @actividad = Actividad.find(params[:id])
-    
+
     respond_to do |format|
       if @actividad.marcar_como_terminada
-        flash[:success] = 'Asignacion marcada como Completada.'        
+        flash[:success] = 'Asignacion marcada como Completada.'
       else
         c_errores = "Asignacion no pudo ser actualizada. "
         @actividad.errors.full_messages.each do |msg|
@@ -102,20 +102,20 @@ class ActividadesController < ApplicationController
         @actividad.solicitud.errors.full_messages.each do |msg|
           c_errores += msg + ". "
         end
-        
+
         flash[:error] = c_errores
       end
 
       @solicitud = @actividad.solicitud
-      @asignaciones = usuario_actual.actividades.nocompletadas
-      
+      @asignaciones = current_usuario.actividades.nocompletadas
+
       format.html { redirect_to solicitud_path(@solicitud) }
-    end    
+    end
   end
 
   def actualizar_usuarios
     institucion = Institucion.find(params[:institucion_id])
-    if institucion.id == usuario_actual.institucion_id
+    if institucion.id == current_usuario.institucion_id
       @usuarios = institucion.usuarios.activos.enlaces
     else
       @usuarios = institucion.usuarios.activos.supervisores
@@ -129,16 +129,16 @@ class ActividadesController < ApplicationController
 
   private
 
- 
+
   def obtener_privilegios
-    @es_pertinente_a_usuario = @solicitud.es_pertinente?(usuario_actual)
-    # @usuario_es_supervisor =  nivel_seguridad(usuario_actual,'encargadoudip')
-    @usuario_es_udip = nivel_seguridad(usuario_actual,'personaludip')
+    @es_pertinente_a_usuario = @solicitud.es_pertinente?(current_usuario)
+    # @usuario_es_supervisor =  nivel_seguridad(current_usuario,'encargadoudip')
+    @usuario_es_udip = nivel_seguridad(current_usuario,'personaludip')
     @puede_remover_asignacion = (@es_pertinente_a_usuario && @usuario_es_udip)
   end
-  
+
   def get_data
-    @institucion = usuario_actual.institucion
+    @institucion = current_usuario.institucion
     @solicitud = Solicitud.find(params[:solicitud_id])
     @usuarios = @institucion.usuarios.activos.enlaces
   end

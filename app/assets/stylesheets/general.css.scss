@@ -1,3 +1,44 @@
 .center {
   text-align: center;
 }
+
+.pagination {
+  text-align: center;
+}
+
+body.private {
+
+  // .show {
+  //   #options {
+  //    margin-bottom: 20px;
+  //   }
+
+  //   table {
+  //     th {
+  //       width: 20%;
+  //     }
+
+  //     label {
+  //       font-weight: bold;
+  //     }
+  //   }
+  // }
+  .show {
+    table {
+      th {
+        width: 20%;
+      }
+    }
+
+    input.string {
+      width: 400px;
+    }
+  }
+
+  tr.inactive {
+    text-decoration: line-through;
+    color: gray;
+    a { color: gray; }
+  }
+
+}

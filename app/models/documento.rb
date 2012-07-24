@@ -1,7 +1,7 @@
 class Documento < ActiveRecord::Base
   #versioned
   acts_as_nested_set
-  
+
   ORIGEN_INTERNO = 1
   ORIGEN_EXTERNO = 2
   ORIGENES = [["Interno", ORIGEN_INTERNO], ["Externo", ORIGEN_EXTERNO]]
@@ -10,11 +10,11 @@ class Documento < ActiveRecord::Base
   ESTADOS = [["Borrador",ESTADO_BORRADOR], ["Enviado", ESTADO_ENVIADO]]
   ORIGINAL = 1
   COPIA = 0
-  
+
   before_validation(:on => :create) do
     completar_informacion
   end
-  
+
   belongs_to :institucion
   belongs_to :documentocategoria
   belongs_to :documentoclasificacion
@@ -28,45 +28,17 @@ class Documento < ActiveRecord::Base
   validates_presence_of :numero, :fecha_documento, :asunto, :texto
   validates_uniqueness_of :numero
 
-#  acts_as_solr :fields => [:numero, :clasificacion_nombre,
-#  :categoria_nombre, :fecha_documento, :autor_datos, :asunto, :texto,
-#  :fecha_recepcion, :remitente_nombre, :remitente_direccion,
-  #  :remitente_telefonos, :remitente_email, :institucion_nombre]
-
-   #######################
-  # Configuracion Solr
-  ######################
-
-  searchable do
-    text :numero
-    text :clasificacion_nombre
-    text :categoria_nombre
-    date :fecha_documento
-    text :autor_datos
-    text :asunto
-    text :texto
-    date :fecha_recepcion
-    text :remitente_nombre
-    text :remitente_direccion
-    text :remitente_telefonos
-    text :remitente_email
-    text :institucion_nombre
-    time :created_at
-    integer :archivo_id, :references => Archivo
-    integer :institucion_id, :references => Institucion
-    integer :usuario_id, :references => Usuario    
-  end
 
   default_scope :include => [:documentoclasificacion, :documentocategoria, :autor, :usuario, :institucion]
 
   def archivado?
     return (!self.archivo_id.nil?)
   end
-  
+
   def archivo_nombre
     self.archivo.nil? ? 'Documento NO Archivado' : self.archivo.nombre
   end
-  
+
   def clasificacion_nombre
     self.documentoclasificacion.nombre
   end
@@ -97,7 +69,7 @@ class Documento < ActiveRecord::Base
     return 'Enviado' if self.estado_envio_id == ESTADO_ENVIADO
   end
 
-  
+
   private
 
   def completar_informacion
@@ -116,20 +88,20 @@ class Documento < ActiveRecord::Base
     #asignamos archivo
 #    a = self.institucion.archivos.first
 #    self.archivo_id = a.id unless a.nil?
-    
+
     #asignamos numero a documento si este es interno
     if generar_numero?
 
       self.numero = Documento.nuevo_numero(self.institucion, codigo)
-      
+
       codigo = self.documentoclasificacion.codigo
-      
-      i = Documento.count(:conditions => ["documentos.institucion_id = ? and date_part(\'year\',documentos.created_at) = ?", self.institucion_id, Date.today.year ] ).to_i + 1    
+
+      i = Documento.count(:conditions => ["documentos.institucion_id = ? and date_part(\'year\',documentos.created_at) = ?", self.institucion_id, Date.today.year ] ).to_i + 1
       self.numero = self.institucion.codigo + '-'+ codigo + '-' +  Date.today.year.to_s + '-' + i.to_s.rjust(6,'0')
-      
+
     end
 
-    
+
   end
 
   def generar_numero?
@@ -140,34 +112,35 @@ class Documento < ActiveRecord::Base
       l_generar = true
     end
     end
-    
+
     return l_generar
   end
 
-  
+
 end
+
 # == Schema Information
 #
 # Table name: documentos
 #
-#  id                        :integer         not null, primary key
-#  numero                    :string(255)     not null
-#  origen_id                 :integer         default(1), not null
-#  documentoclasificacion_id :integer         not null
-#  documentocategoria_id     :integer         not null
-#  fecha_documento           :date            not null
-#  autor_id                  :integer         not null
-#  asunto                    :string(255)     not null
+#  id                        :integer          not null, primary key
+#  numero                    :string(255)      not null
+#  origen_id                 :integer          default(1), not null
+#  documentoclasificacion_id :integer          not null
+#  documentocategoria_id     :integer          not null
+#  fecha_documento           :date             not null
+#  autor_id                  :integer          not null
+#  asunto                    :string(255)      not null
 #  texto                     :text
 #  fecha_recepcion           :date
 #  remitente_nombre          :string(255)
 #  remitente_direccion       :text
 #  remitente_telefonos       :string(255)
 #  remitente_email           :string(255)
-#  estado_envio_id           :integer         default(1), not null
-#  original                  :boolean         not null
-#  usuario_id                :integer         not null
-#  institucion_id            :integer         not null
+#  estado_envio_id           :integer          default(1), not null
+#  original                  :boolean          not null
+#  usuario_id                :integer          not null
+#  institucion_id            :integer          not null
 #  parent_id                 :integer
 #  lft                       :integer
 #  rgt                       :integer

@@ -15,11 +15,12 @@ class Documentocategoria < ActiveRecord::Base
     nombre
   end
 end
+
 # == Schema Information
 #
 # Table name: documentocategorias
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  nombre     :string(255)
 #  parent_id  :integer
 #  lft        :integer

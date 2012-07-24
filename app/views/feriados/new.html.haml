@@ -3,10 +3,10 @@
 
 .mantform
   %h2
-    Nuevo 
-    = Feriado.human_name
+    Nuevo
+    = Feriado.model_name.human
 
-  - semantic_form_for @feriado do |form|
-    = form.semantic_errors
+  = simple_form_for @feriado do |form|
+
     = render :partial => 'form', :locals => {:form => form}
     = buttons_create(feriados_path)

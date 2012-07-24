@@ -1,7 +1,7 @@
 .mantform
   %h2
-    Editar #{Documentoclasificacion.human_name}
-  - semantic_form_for @documentoclasificacion do |form|
-    = form.semantic_errors
+    Editar #{Documentoclasificacion.model_name.human}
+  = simple_form_for @documentoclasificacion do |form|
+
     = render :partial => 'form', :locals => {:form => form}
     = buttons_update(documentoclasificaciones_path)

@@ -9,5 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap_and_overrides
+ *= require slate-bootstrap-overrides
+ *= require devise
+ *= require slate
+ *= require general
  */

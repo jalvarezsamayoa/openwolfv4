@@ -11,7 +11,7 @@
     = stylesheet_link_tag 'reset.css', 'tablas.css', 'buttons.css', 'formtastic_changes.css', 'redmond/jquery-ui-1.8.4.custom.css','portal.css'
 
     %link{:href => "http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin", :rel => "stylesheet", :type => "text/css"}
- 
+
     = yield :head
   %body
     - if Rails.env == 'staging'
@@ -21,17 +21,17 @@
         %ul
           %li
             %b Opciones:
-          %li= link_to "Portal Estatal", ( usuario_actual.nil? ? login_url : main_index_url), :title => "Portal Administrativo"
+          %li= link_to "Portal Estatal", ( current_usuario.nil? ? login_url : main_index_url), :title => "Portal Administrativo"
           %li= link_to "Busqueda", portal_index_url, :title => "Buscar Solicitudes de Información Pública o Documentos"
           %li= link_to "Crear Solicitud de Información Pública", new_solicitud_informacion_url, :title => "Generar una nueva solicitud de información pública."
           %li= link_to "Estadisticas", portal_estadisticas_path(1), :title => "Estadísticas por Institución"
           %li= link_to "Ayuda", "http://docs.openwolf.org", :title => "Documentación OpenWolf"
       #account-menu.hlist
         %ul
-          - unless usuario_actual.nil?
+          - unless current_usuario.nil?
             %li
               %b
-                = usuario_actual.nombre_institucion
+                = current_usuario.nombre_institucion
                 |
           - if usuario_signed_in?
             %li= link_to 'Cerrar Sesion', logout_path
@@ -42,7 +42,7 @@
       ©2010 Open Wolf - Plataforma virtual para la transparencia
       %br/
       %br/
-      = link_to "Blog", "http://openwolf.org/blog"      
+      = link_to "Blog", "http://openwolf.org/blog"
       |
       = link_to "Acerca del Proyecto", "http://openwolf.org/sobre-openwolf-libre-acceso-informacion-guatemala/"
       |

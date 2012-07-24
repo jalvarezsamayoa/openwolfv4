@@ -7,5 +7,5 @@
     = image_tag('add22.png')
     = t("puestos.title_new")
   = error_messages_for :puesto
-  - form_for @puesto, :html=>{:class=>"mantform"} do |f|
+  = form_for @puesto, :html=>{:class=>"mantform"} do |f|
     = render :partial=>'form', :locals=>{:f => f, :submittext => t("data.submit_new")}

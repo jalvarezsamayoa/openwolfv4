@@ -1,8 +1,8 @@
 class Via < ActiveRecord::Base
-  #versioned
+  attr_accessible :nombre
 
   validates :nombre, :presence => true, :uniqueness => true
-  
+
   has_many :solicitudes
 
   scope :nombre_like, lambda { |nombre|
@@ -16,12 +16,13 @@ class Via < ActiveRecord::Base
   end
 
 end
+
 # == Schema Information
 #
 # Table name: vias
 #
-#  id         :integer         not null, primary key
-#  nombre     :string(255)     not null
+#  id         :integer          not null, primary key
+#  nombre     :string(255)      not null
 #  created_at :datetime
 #  updated_at :datetime
 #

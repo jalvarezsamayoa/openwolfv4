@@ -1,12 +1,12 @@
 = render :partial => "breadcrums"
-%h1.alt
-  = t("actividades.title")
+.page-header
+  %h1= t("actividades.title")
 %fieldset
   %legend
     = image_tag('textfile22.png')
     = t("actividades.title")
   = will_paginate @asignaciones
-  %table#minimalist-a{:width => "100%"}
+  %table.table{:width => "100%"}
     %thead
       %th.col= t("solicitudes.label_estado_id")
       %th.col= t("solicitudes.label_codigo")
@@ -21,6 +21,6 @@
           %td= asignacion.solicitud.institucion.nombre
           %td= l(asignacion.solicitud.fecha_creacion)
           %td= asignacion.solicitud.dias_restantes
-    %tfoot
+    %tfootp
       %td{:colspan => "10"}
         *Solicitudes pendiente de ser entregada a solicitantes.

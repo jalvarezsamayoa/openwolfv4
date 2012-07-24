@@ -55,7 +55,7 @@ class SolicitudInformacionController < ApplicationController
   private
 
   def get_institucion
-    @institucion = usuario_actual.institucion
+    @institucion = current_usuario.institucion
   end
 
   def get_data

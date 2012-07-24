@@ -5,10 +5,10 @@
 .row
   #main-search.span6.offset3.center
     = simple_form_for @busqueda, { :url => buscar_portal_index_path, |
-    :method => :get } do |f|
-  
+    :method => :get} do |f|
+
       = f.input :q, :label => "Palabras clave", :placeholder => 'Buscar Documentos, Solicitudes de Información, etc.', :title=>'Buscar Documentos, Solicitudes de Información, etc.', :input_html => {:class => "span6"}
-        
+
       %br
       = f.submit "Buscar Solicitudes", :class => "btn btn-large"
       %br

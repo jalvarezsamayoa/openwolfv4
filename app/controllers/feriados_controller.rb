@@ -1,6 +1,6 @@
 class FeriadosController < ApplicationController
-  before_filter :requiere_usuario
-  
+  before_filter :authenticate_usuario!
+
   # GET /feriados
   # GET /feriados.xml
   def index

@@ -6,7 +6,7 @@
       %li= link_to "Portal Ciudadano", portal_index_url
 #loginlogo
 #logintable
-  - form_for @usuario_session, :url => usuario_sessions_path, :html => {:class => "form"} do |f|
+  = form_for @usuario_session, :url => usuario_sessions_path, :html => {:class => "form"} do |f|
     #usuario
       %img.iconoslogin{:alt => "iconusuario", :height => "35", :src => "../images/iconusuario.gif", :width => "35"}/
       = f.text_field :username, :class => "textfieldlogin", :title => 'Nombre de Usuario'

@@ -8,7 +8,7 @@ class Usuario < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :lockable, :timeoutable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, \
@@ -17,7 +17,7 @@ class Usuario < ActiveRecord::Base
 
   # atributo virtual necesario para que plugin Devise
   # pueda utilizar campo login en lugar de email
-  attr_accessor :login
+  #attr_accessor :login
 
   # configuracion plugin acl9
   # agrega funcion usuario.has_role?
@@ -30,7 +30,7 @@ class Usuario < ActiveRecord::Base
   belongs_to :institucion
 
   has_and_belongs_to_many :roles, :join_table => "roles_usuarios"
-  
+
   has_many :actividades
   has_many :solicitudes
   has_many :documentos
@@ -53,15 +53,15 @@ class Usuario < ActiveRecord::Base
     check_for_children({:actividades => "Actividades", :solicitudes => "Solicitudes", :documentos => "Documentos"})
   end
 
-  
 
-  
+
+
   #################
   # Filtros
   #################
 
-  default_scope :include => :institucion, :order => "activo desc, instituciones.nombre asc, usuarios.nombre asc"
-  
+#  default_scope :include => :institucion, :order => "activo desc, instituciones.nombre asc, usuarios.nombre asc"
+
   scope :udip, :joins => :roles, :conditions => "roles.name = 'userudip' or roles.name = 'superudip'"
   scope :supervisores, :joins => :roles, :conditions => "roles.name = 'superudip'"
   scope :enlaces, :joins => :roles, :conditions => "roles.name = 'userudip' or roles.name = 'superudip' or roles.name = 'enlace'"
@@ -69,10 +69,8 @@ class Usuario < ActiveRecord::Base
   scope :activos, where("usuarios.activo = ?",true)
 
   scope :nombre_like, lambda { |nombre|
-    unless nombre.nil? || nombre.empty? || nombre.first.nil?
-      valor = "%#{nombre}%".upcase
-      where("UPPER(usuarios.username) like ? or UPPER(usuarios.nombre) like ? or UPPER(usuarios.cargo) like ? or UPPER(instituciones.nombre) like ?", valor, valor, valor, valor )
-   end
+    valor = '%'+nombre+'%'
+    where("usuarios.email ilike ? or usuarios.username ilike ? or usuarios.nombre ilike ? or usuarios.cargo ilike ? or instituciones.nombre ilike ?", valor, valor, valor, valor, valor ).includes(:institucion)
   }
 
   ###############################
@@ -98,52 +96,53 @@ class Usuario < ActiveRecord::Base
   ################################
   # Metodos protegidos
   ################################
-  
 
-    protected
-  # Permite que plugin Devise pueda utilizar 'username' en lugar de 'email'
-  def self.find_for_database_authentication(conditions)
-    login = conditions.delete(:login)
-    where(conditions).where(["usuarios.username = :value OR usuarios.email = :value", { :value => login }]).first
-  end
-  
+
+  #   protected
+  # # Permite que plugin Devise pueda utilizar 'username' en lugar de 'email'
+  # def self.find_for_database_authentication(conditions)
+  #   login = conditions.delete(:login)
+  #   where(conditions).where(["usuarios.username = :value OR usuarios.email = :value", { :value => login }]).first
+  # end
+
 end
+
 # == Schema Information
 #
 # Table name: usuarios
 #
-#  id                   :integer         not null, primary key
-#  username             :string(255)
-#  email                :string(255)
-#  nombre               :string(255)
-#  cargo                :string(255)
-#  puesto_id            :integer
-#  institucion_id       :integer
-#  essupervisorarea     :boolean
-#  encrypted_password   :string(255)
-#  password_salt        :string(255)
-#  sign_in_count        :integer
-#  failed_attempts      :integer
-#  last_request_at      :datetime
-#  current_sign_in_at   :datetime
-#  last_sign_in_at      :datetime
-#  current_sign_in_ip   :string(255)
-#  last_sign_in_ip      :string(255)
-#  created_at           :datetime
-#  updated_at           :datetime
-#  genero               :boolean         default(FALSE)
-#  fecha_nacimiento     :date
-#  direccion            :string(255)     default("No Disponible"), not null
-#  telefonos            :string(255)     default("No Disponible"), not null
-#  openid_identifier    :string(255)
-#  confirmation_token   :string(255)
-#  confirmed_at         :datetime
-#  confirmation_sent_at :datetime
-#  reset_password_token :string(255)
-#  remember_token       :string(255)
-#  remember_created_at  :datetime
-#  unlock_token         :string(255)
-#  locked_at            :datetime
-#  activo               :boolean         default(TRUE)
+#  id                     :integer          not null, primary key
+#  username               :string(255)
+#  email                  :string(255)      default(""), not null
+#  nombre                 :string(255)
+#  cargo                  :string(255)
+#  puesto_id              :integer
+#  institucion_id         :integer
+#  essupervisorarea       :boolean
+#  encrypted_password     :string(255)      default(""), not null
+#  sign_in_count          :integer
+#  failed_attempts        :integer
+#  last_request_at        :datetime
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  created_at             :datetime
+#  updated_at             :datetime
+#  genero                 :boolean          default(FALSE)
+#  fecha_nacimiento       :date
+#  direccion              :string(255)      default("No Disponible"), not null
+#  telefonos              :string(255)      default("No Disponible"), not null
+#  openid_identifier      :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  reset_password_token   :string(255)
+#  remember_token         :string(255)
+#  remember_created_at    :datetime
+#  unlock_token           :string(255)
+#  locked_at              :datetime
+#  activo                 :boolean          default(TRUE)
+#  reset_password_sent_at :datetime
 #
 

@@ -1,5 +1,5 @@
 .show
-  %h2= Profesion.human_name
+  %h2= Profesion.model_name.human
   #options
     = button_new(new_profesion_path)
     = button_edit(edit_profesion_path(@profesion))
@@ -7,7 +7,7 @@
     = button_cancel(profesiones_path)
     %br/
   .box
-    %table
+    %table.table
       %colgroup.show-table-header
       %colgroup.show-table-data
       %tr

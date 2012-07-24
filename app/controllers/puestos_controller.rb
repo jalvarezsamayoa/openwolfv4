@@ -1,5 +1,5 @@
 class PuestosController < ApplicationController
-  before_filter :requiere_usuario
+  before_filter :authenticate_usuario!
   before_filter :get_data
   # GET /puestos
   # GET /puestos.xml

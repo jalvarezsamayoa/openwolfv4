@@ -2,7 +2,7 @@
 = render :partial=>"breadcrumbs"
 
 .show
-  %h2= Archivo.human_name
+  %h2= Archivo.model_name.human
 
   %div{:id=>"options"}
     = button_new(new_archivo_path)
@@ -12,7 +12,7 @@
     %br
 
   .box
-    %table
+    %table.table
       %colgroup.show-table-header
       %colgroup.show-table-data
       %tr
@@ -21,4 +21,3 @@
       %tr
         %th= label :institucion_id, Archivo.human_attribute_name(:institucion_id)
         %td= @archivo.institucion.nombre
-        

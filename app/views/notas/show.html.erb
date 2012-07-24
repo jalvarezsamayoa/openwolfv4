@@ -4,8 +4,8 @@
 <%= render :partial => 'solicitud'  %>
 
 <div class="show">
-  <h2><%= Nota.human_name %></h2>
-  
+  <h2><%= Nota.model_name.human %></h2>
+
   <div id="options">
     <%= button_new(new_solicitud_nota_path(@solicitud)) %>
     <%= button_edit(edit_solicitud_nota_path(@solicitud,@nota)) %>
@@ -13,7 +13,7 @@
     <%= button_cancel(solicitud_notas_path(@solicitud)) %>
     <br />
   </div>
-  
+
   <div class="box">
     <table>
       <colgroup class="show-table-header"></colgroup>
@@ -22,7 +22,7 @@
         <th><%= label :texto, Nota.human_attribute_name(:texto) %></th>
         <td><%= @nota.texto %></td>
       </tr>
-    </table>     
+    </table>
   </div>
-  
+
 </div>

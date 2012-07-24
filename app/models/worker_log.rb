@@ -15,11 +15,12 @@ class WorkerLog < ActiveRecord::Base
   end
   
 end
+
 # == Schema Information
 #
 # Table name: worker_logs
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  status     :text
 #  process_id :integer
 #  last_error :text

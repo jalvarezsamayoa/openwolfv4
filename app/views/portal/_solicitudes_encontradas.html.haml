@@ -7,7 +7,7 @@
 
   .center
     = will_paginate @solicitudes
-    
+
   %table.table-striped.table
     %thead
       %tr
@@ -21,7 +21,7 @@
     %tbody
       - @solicitudes.each do |solicitud|
         %tr
-          %td= link_to_solicitud_portal(solicitud) 
+          %td= link_to_solicitud_portal(solicitud)
           %td= l(solicitud.fecha_creacion)
           %td= solicitud.estado_actual
           %td= solicitud.avance

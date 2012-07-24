@@ -1,10 +1,10 @@
 = render :partial => "breadcrumbs"
 .listing
-  %h2= Feriado.human_name.pluralize
+  %h2= Feriado.model_name.human.pluralize
   %div{:id => "options"}
     = button_new(new_feriado_path)
     = render :partial => 'shared/findbox', :locals => {:url => feriados_path}
-  %table.minimalist-b
+  %table.table
     %thead
       %tr
         %th= Feriado.human_attribute_name(:nombre)

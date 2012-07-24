@@ -41,13 +41,13 @@ class DocumentotrasladosController < ApplicationController
   # POST /documentotraslados.xml
   def create
     @documentotraslado = Documentotraslado.new(params[:documentotraslado])
-    @documentotraslado.usuario_id = usuario_actual.id
-    @documentotraslado.institucion_id = usuario_actual.institucion_id
+    @documentotraslado.usuario_id = current_usuario.id
+    @documentotraslado.institucion_id = current_usuario.institucion_id
     @documentotraslado.estado_entrega_id = 1
     @documentotraslado.fecha_envio = Date.today
-    
+
     @documento = @documentotraslado.documento
-    
+
 
     respond_to do |format|
       if @documentotraslado.save

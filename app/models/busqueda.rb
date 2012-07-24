@@ -15,9 +15,9 @@ class Busqueda
     "fecha_desde" => (Date.today - Date.today.yday + 1),
     "fecha_hasta" => Date.today  }
 
-  def initialize(args = nil)
+  def initialize(args = {})
 
-    args = args ? DEFAULTS.merge(args['busqueda']) : DEFAULTS
+    args = args.blank? ? DEFAULTS : DEFAULTS.merge(args['busqueda'] ||= {})
 
     ATTRIBUTES.each do |attr|
       if (args.key?(attr.to_s))
@@ -25,7 +25,6 @@ class Busqueda
       end
     end
 
-    super
   end
 
   def inspect
@@ -50,6 +49,8 @@ class Busqueda
     l_filtrar_tiempo_restante = (self.solicitud_tiempo && !self.solicitud_tiempo.blank?)
 
     i_institucion_id = self.institucion_id if (self.institucion_id && !self.institucion_id.blank?)
+    i_institucion_id = nil if i_institucion_id == 0
+
     i_via_id = self.solicitud_via if (self.solicitud_via && !self.solicitud_via.blank?)
     i_estado_id = self.solicitud_estado if (self.solicitud_estado && !self.solicitud_estado.blank?)
 
@@ -91,7 +92,7 @@ class Busqueda
     end
 
 
-    solicitudes = Solicitud.order('fecha_creacion desc')
+    solicitudes = Solicitud.includes(:institucion).order('fecha_creacion desc')
 
     solicitudes = solicitudes.where(numero: i_numero) unless (i_numero.nil? or i_numero == 0)
     solicitudes = solicitudes.where(institucion_id: i_institucion_id) if i_institucion_id
@@ -103,6 +104,7 @@ class Busqueda
     solicitudes = solicitudes.text_search(self.q) unless (self.q.nil? or self.q.empty?)
 
     solicitudes = solicitudes.paginate(:page => self.page)
+    solicitudes
   end
 
 end

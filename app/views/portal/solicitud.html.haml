@@ -49,7 +49,7 @@
           = render :partial => 'asignaciones'
 
       = render :partial => "datos_solicitante" if @mostrar_datos_solicitante
-      
+
       %fieldset
         %legend Detalle de la Solicitud
 
@@ -75,11 +75,11 @@
           %tr
             %th= t("solicitudes.label_observaciones")
             %td= @solicitud.observaciones
-             
+
       %fieldset
         %legend= t("solicitudes.label_textosolicitud")
         #texto-solicitud
-          = @solicitud.texto_solicitud(usuario_actual)
+          = @solicitud.texto_solicitud(current_usuario)
 
 
       %fieldset
@@ -91,12 +91,12 @@
         %legend= Resolucion.model_name.human
         #resoluciones
           = render :partial => 'resoluciones' if @informacion_publica
-          
+
       %fieldset
         %legend= t("activerecord.models.recursosrevision")
         #recursosrevision
           = render :partial => 'solicitudes/recursosrevision' if @informacion_publica
-          
+
       %fieldset
         %legend= t("activerecord.models.nota")
         #notasseguimiento

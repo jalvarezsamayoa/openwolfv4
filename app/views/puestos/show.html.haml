@@ -15,7 +15,7 @@
     \#{image_tag('add16.png')}#{link_to t("data.new"), new_puesto_path} |
     \#{image_tag('undo16.png')}#{link_to( t("data.cancel"), puestos_path )}
   %hr/
-  %table
+  %table.table
     %tr
       %th{:width => "20%"}= label :puesto, t("puestos.label_nombre")
       %td{:width => "80%"}= @puesto.nombre

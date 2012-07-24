@@ -2,8 +2,8 @@
   #logo
   #options-wraper
     #user
-      = usuario_actual.nombre
-      , #{usuario_actual.cargo}
+      = current_usuario.nombre
+      , #{current_usuario.cargo}
     #menu
       #b5= link_to '', logout_url, :title => "Cerrar Sesion"
       #b4

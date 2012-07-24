@@ -1,0 +1,16 @@
+/ parametros_fecha.haml.haml
+%h1.alt Solicitudes Ingresadas
+.notice Seleccione el rango de fechas de ingreso de las solicitudes
+
+#filtros.rounded-shadow-box.glow-border
+  .report-params
+    = form_tag(solicitudes_ingresadas_reportes_url(:format => :pdf), :method=>:get) do
+      %h3 Rango de Fecha
+      %p
+        = label_tag 'ano', "Desde: "
+        = select_date Date.today.beginning_of_year, {:order => [:day, :month, :year]}, {:id => "desde", :name => "desde[]"}
+      %p
+        = label_tag 'ano', "Hasta: "
+        = select_date Date.today, {:order => [:day, :month, :year]}, {:id => "hasta", :name => "hasta[]"}
+      %p
+        = submit_tag 'Generar Reporte >'

@@ -48,7 +48,7 @@ class MensajesController < ApplicationController
   def create
     @mensaje = Mensaje.new(params[:mensaje])
 
-    @mensaje.usuario_id = usuario_actual.id
+    @mensaje.usuario_id = current_usuario.id
     @mensaje.institucion_id = @institucion.id
 
     respond_to do |format|
@@ -95,6 +95,6 @@ class MensajesController < ApplicationController
   private
 
   def get_data
-    @institucion = usuario_actual.institucion
+    @institucion = current_usuario.institucion
   end
 end

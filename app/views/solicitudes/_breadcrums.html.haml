@@ -1,9 +1,10 @@
 #breadcrumbs
-  %ul#crumbs
+  %ul.breadcrumb
     %li
       = link_to t("breadcrums.homepage"), main_index_path
+      %span.divider /
     %li
-      = link_to Solicitud.human_name.pluralize, solicitudes_path
+      = link_to Solicitud.model_name.human.pluralize, solicitudes_path
     - if @forview
       - if @forview == "NEW"
         %li= t("data.title_new")

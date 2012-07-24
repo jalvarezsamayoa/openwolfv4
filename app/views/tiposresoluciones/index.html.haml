@@ -1,15 +1,17 @@
-.listing
-  %h2= Tiporesolucion.human_name.pluralize
-  #options
+#page-title.clearfix
+  %h1= Tiporesolucion.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
     = button_new(new_tiporesolucion_path)
     = render :partial => 'shared/findbox', :locals => {:url => tiposresoluciones_path}
-  %table.minimalist-b
-    %thead
-      %tr
-        %th= Tiporesolucion.human_attribute_name(:nombre)
-    %tbody
-      - for tiporesolucion in @tiposresoluciones  do
+  .widget-content
+    %table.table
+      %thead
         %tr
-          %td
-            = link_to tiporesolucion.nombre, tiporesolucion_path(tiporesolucion)
-  = will_paginate @tiposresoluciones
+          %th= Tiporesolucion.human_attribute_name(:nombre)
+      %tbody
+        - @tiposresoluciones.each do |tiporesolucion|
+          %tr
+            %td= link_to tiporesolucion.nombre, tiporesolucion
+    = will_paginate @tiposresoluciones

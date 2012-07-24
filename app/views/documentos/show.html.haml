@@ -1,7 +1,7 @@
 - content_for :head do
   = javascript_include_tag 'combobox.js', 'documentos.js', 'jquery.ui.datepicker-es.js'
 .show
-  %h2= Documento.human_name
+  %h2= Documento.model_name.human
   #options
     = button_new(new_documento_path)
     = button_edit(edit_documento_path(@documento))
@@ -12,7 +12,7 @@
     = documento_boton_trasladar(@documento, @hay_archivos)
     %br/
   .box
-    %table
+    %table.table
       %colgroup.show-table-header
       %colgroup.show-table-data
       %tr{:class => "#{@documento.archivado? ? 'success' : 'error' }"}

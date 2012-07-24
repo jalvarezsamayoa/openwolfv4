@@ -1,10 +1,10 @@
 = render :partial => "breadcrumbs"
 .listing
-  %h2= Archivo.human_name.pluralize
+  %h2= Archivo.model_name.human.pluralize
   %div{:id => "options"}
     = button_new(new_archivo_path)
     = render :partial => 'shared/findbox', :locals => {:url => archivos_path}
-  %table.minimalist-b
+  %table.table
     %thead
       %tr
         %th= Archivo.human_attribute_name(:nombre)

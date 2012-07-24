@@ -1,5 +1,6 @@
-- @forview = "SHOW"
-= render :partial=>"breadcrums"
+#page-title.clearfix
+  %h1= Usuario.model_name.human
+  = render :partial => "shared/breadcrumbs"
 
 - if @usuario.errors.any?
   .error
@@ -7,30 +8,26 @@
     - @usuario.errors.full_messages.each do |msg|
       %li= msg
 
-.show
-  %h2= Usuario.human_name
-  #options
+.show.widget.widget-table
+  #options.widget-toolbar
     = button_new(new_usuario_path)
     = button_edit(edit_usuario_path(@usuario))
     = button_delete(usuario_path(@usuario))
     = button_cancel(usuarios_path)
-    %br/
-  .box
-    %table
-      %colgroup.show-table-header
-      %colgroup.show-table-data
+  .widget-content
+    %table.table.table-bordered
       %tr
-        %th= label :nombre, Usuario.human_attribute_name(:nombre)
+        %th= Usuario.human_attribute_name(:nombre)
         %td= @usuario.nombre
       %tr
-        %th= label :username, Usuario.human_attribute_name(:username)
+        %th= Usuario.human_attribute_name(:username)
         %td= @usuario.username
       %tr
-        %th= label :email, Usuario.human_attribute_name(:email)
+        %th= Usuario.human_attribute_name(:email)
         %td= @usuario.email
       %tr
-        %th= label :institucion_id, Usuario.human_attribute_name(:institucion_id)
+        %th= Usuario.human_attribute_name(:institucion_id)
         %td= @usuario.institucion.nombre
       %tr
-        %th= label :cargo, Usuario.human_attribute_name(:cargo)
+        %th= Usuario.human_attribute_name(:cargo)
         %td= @usuario.cargo

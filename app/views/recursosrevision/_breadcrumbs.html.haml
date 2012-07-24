@@ -3,12 +3,12 @@
     %li
       = link_to t("breadcrums.homepage"), main_index_path
     %li
-      = link_to Solicitud.human_name.pluralize, solicitud_path(@solicitud)
+      = link_to Solicitud.model_name.human.pluralize, solicitud_path(@solicitud)
     - if @forview
       - if @forview == "NEW"
         %li= t("data.title_new")
       - elsif @forview == "EDIT"
         %li= t("data.title_edit")
       - else
-        %li= Recursorevision.human_name.pluralize
+        %li= Recursorevision.model_name.human.pluralize
 .clear &nbsp;

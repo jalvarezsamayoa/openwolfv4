@@ -1,7 +1,7 @@
 class NotasController < ApplicationController
-  before_filter :requiere_usuario
+  before_filter :authenticate_usuario!
   before_filter :get_solicitud
-  
+
   # GET /notas
   # GET /notas.xml
   def index
@@ -43,7 +43,7 @@ class NotasController < ApplicationController
   # POST /notas
   # POST /notas.xml
   def create
-    params[:nota][:usuario_id] = usuario_actual.id
+    params[:nota][:usuario_id] = current_usuario.id
     @nota = @solicitud.notas.new(params[:nota])
 
     respond_to do |format|

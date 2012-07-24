@@ -1,5 +1,5 @@
 .show
-  %h2= Documentocategoria.human_name
+  %h2= Documentocategoria.model_name.human
   #options
     = button_new(new_documentocategoria_path)
     = button_edit(edit_documentocategoria_path(@documentocategoria))
@@ -7,7 +7,7 @@
     = button_cancel(documentocategorias_path)
     %br/
   .box
-    %table
+    %table.table
       %colgroup.show-table-header
       %colgroup.show-table-data
       %tr

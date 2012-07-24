@@ -4,16 +4,16 @@
 - @forview = "NEW"
 = render :partial => "breadcrumbs"
 
-%h1.alt= Recursorevision.human_name.pluralize
+%h1.alt= Recursorevision.model_name.human.pluralize
 
 = render :partial => "solicitudes/solicitud"
 
 .mantform
   %h2
-    Nuevo 
-    = Recursorevision.human_name
+    Nuevo
+    = Recursorevision.model_name.human
 
-  - semantic_form_for [@solicitud, @recursorevision] do |form|
-    = form.semantic_errors
+  = simple_form_for [@solicitud, @recursorevision] do |form|
+
     = render :partial => 'form', :locals => {:form => form}
     = buttons_create(solicitud_recursosrevision_path(@solicitud))

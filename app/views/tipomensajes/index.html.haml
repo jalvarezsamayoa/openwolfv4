@@ -1,9 +1,9 @@
 .listing
-  %h2= Tipomensaje.human_name.pluralize
+  %h2= Tipomensaje.model_name.human.pluralize
   #options
     = button_new(new_tipomensaje_path)
     = render :partial => 'shared/findbox', :locals => {:url => tipomensajes_path}
-  %table.minimalist-b
+  %table.table
     %thead
       %tr
         %th= Tipomensaje.human_attribute_name(:nombre)

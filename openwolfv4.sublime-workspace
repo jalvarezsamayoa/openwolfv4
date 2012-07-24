@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"actua",
+				"actualiza_fecha_notificacion"
+			],
+			[
+				"es",
+				"estado_id"
+			],
+			[
+				"td",
+				"td	text-decoration: line-through"
+			],
+			[
+				"t",
+				"td	text-decoration: overline"
+			],
+			[
+				"contain",
+				"container-fluid"
+			],
+			[
+				"dep",
+				"departamento_id"
+			],
+			[
+				"has",
+				"has_role"
+			],
+			[
+				"f",
+				"fw	font-weight"
+			],
+			[
+				"para",
+				"params"
+			],
+			[
 				"solic",
 				"Solicitudes"
 			],
@@ -99,20 +135,103 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/controllers/razonestiposresoluciones_controller.rb",
+			"settings":
+			{
+				"buffer_size": 446,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/razontiporesolucion.rb",
+			"settings":
+			{
+				"buffer_size": 821,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/razonestiposresoluciones/index.html.haml",
+			"settings":
+			{
+				"buffer_size": 630,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/razonestiposresoluciones/show.html.haml",
+			"settings":
+			{
+				"buffer_size": 1029,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/razonestiposresoluciones/new.html.haml",
+			"settings":
+			{
+				"buffer_size": 435,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/razonestiposresoluciones/edit.html.haml",
+			"settings":
+			{
+				"buffer_size": 436,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "= form.input :nombre, :input_html => {:size => 60}\n= form.tiporesolucionlo :association\n= form.input :informacion_publica\n",
+			"file": "app/views/razonestiposresoluciones/_form.html.haml",
+			"file_size": 120,
+			"file_write_time": 1343114536000000,
+			"settings":
+			{
+				"buffer_size": 122,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 222.0,
 		"selected_items":
 		[
 			[
-				"rein",
-				"Indentation: Reindent Lines"
+				"b",
+				"BeautifyRuby"
+			],
+			[
+				"Snippet: div",
+				"Snippet: div"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"",
+				"BeautifyRuby"
 			],
 			[
 				"bea",
 				"BeautifyRuby"
+			],
+			[
+				"beau",
+				"BeautifyRuby"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
 			],
 			[
 				"dele",
@@ -131,10 +250,6 @@
 				"Trailing Spaces: Delete Trailing Spaces"
 			],
 			[
-				"beau",
-				"BeautifyRuby"
-			],
-			[
 				"del",
 				"Trailing Spaces: Delete Trailing Spaces"
 			],
@@ -149,10 +264,6 @@
 			[
 				"DEL",
 				"Trailing Spaces: Delete Trailing Spaces"
-			],
-			[
-				"rei",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"REIN",
@@ -213,10 +324,6 @@
 			[
 				"paca",
 				"Package Control: Remove Package"
-			],
-			[
-				"b",
-				"BeautifyRuby"
 			]
 		],
 		"width": 593.0
@@ -236,87 +343,134 @@
 	},
 	"file_history":
 	[
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/openwolf.sublime-project",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/Guardfile",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/config/application.rb",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/config/initializers/pdfkit.rb",
-		"/home/javier/Documents/Projects/MagnetCo/HGTV/hgtvmag/config/initializers/wiked_pdf.rb",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/config/initializers/wiked_pdf.rb",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/estadisticas/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/portal/institucion.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/models/busqueda.rb",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/controllers/estadisticas_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/solicitud_informacion/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/portal/_find_box.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/shared/_findbox.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/assets/stylesheets/portal.css.scss",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/portal/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/controllers/portal_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/controllers/solicitud_informacion_controller.rb",
-		"/home/javier/.config/sublime-text-2/Packages/User/flag-sass.sublime-snippet",
-		"/home/javier/.config/sublime-text-2/Packages/User/flag-scss.sublime-snippet",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/assets/stylesheets/application.css",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/Gemfile",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/tour.css.scss",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/config/locales/en.yml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/config/locales/es.yml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/controllers/tours_controller.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/_recomendations.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/_recomended_tours.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/_top_destinations.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/_top_destination.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/decorators/service_decorator.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/show.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/controllers/application_controller.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/spec/decorators/application_decorator_spec.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/_tour_slides.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/_tour_purchase.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/vendor/assets/stylesheets/flexslider.css",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/sourcetour.css.scss",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/tours.css.scss",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/application.css",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/javascripts/tours.js.coffee",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/_aboutus.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/controllers/home_controller.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/models/search.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/models/service.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/layouts/application.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/shared/_header.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/controllers/regions_controller.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/_slides.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/shared/_filter.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/_destinations.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/locations.css.scss",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/shared/_top_nav.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/controllers/locations_controller.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/_tour_tabs.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/_slider.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/db/fixtures/locations.csv",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/index.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/tours/_tour.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/shared/_breadcrumbs.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/controllers/main_controller.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/bootstrap_and_overrides.css.less",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/aboutus.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/shared/_footer.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/config/routes.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/config/initializers/quiet_assets.rb",
-		"/home/javier/.config/sublime-text-2/Packages/User/flag.sublime-snippet",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/color.css.scss",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/index.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/sourcetour.css.css",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/locations/show.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/_links.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/models/category.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/assets/stylesheets/regions.css.scss",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/config/database.yml",
-		"/home/javier/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/javier/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/home/javier/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/static_page.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/views/home/securitypolicy.html.haml",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/app/models/service_image.rb",
-		"/home/javier/Documents/Projects/SourceTour/sourcetour.com/config/s3.yml"
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/tiposresoluciones_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/tiporesolucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/roles_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/role.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/estados_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/estado.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estadisticas/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/vias_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/via.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/fuentes_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/fuente.rb",
+		"/home/javier/.config/sublime-text-2/Packages/User/slate-index-page.sublime-snippet",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/application.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/municipio.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/instituciones_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/institucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/general.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/idiomas_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/idioma.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/edit.html.haml",
+		"/home/javier/.config/sublime-text-2/Packages/User/slate-show-page.sublime-snippet",
+		"/home/javier/.config/sublime-text-2/Packages/User/slate-edit-page.sublime-snippet",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/index.html.haml",
+		"/home/javier/.config/sublime-text-2/Packages/User/slate-new-page.sublime-snippet",
+		"/home/javier/.config/sublime-text-2/Packages/User/params.sublime-snippet",
+		"/home/javier/.config/sublime-text-2/Packages/User/ruby-tag.sublime-snippet",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/application.css",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_navigation.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate-bootstrap-overrides.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/openwolfv4.sublime-workspace",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/font-awesome.css",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/bootstrap_and_overrides.css.less",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/departamentos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuario_sessions/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/_breadcrumbs.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/ability.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/municipios_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/_breadcrums.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/departamento.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_findbox.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/application_controller.rb",
+		"/home/javier/.config/sublime-text-2/Packages/User/attribute_asseccible.sublime-snippet",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/usuarios_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Gemfile",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/actividades/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/archivos/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentocategorias/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentoclasificaciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentos/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estadisticas/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/feriados/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/importar/create.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/importar/status.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/notificaciones/solicitudes_por_vencer.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_adjuntos.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_datos_solicitante.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_documentos_encontrados.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_resoluciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_seguimientos.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_solicitudes_encontradas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/solicitud.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/profesiones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/razonestiposresoluciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/recursosrevision/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/reportes/instituciones_activas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/resoluciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_anuladas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_asignadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_entramite.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_entregadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_noasignadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_notas_seguimiento.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_pendientesresolucion.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_recursosrevision.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_terminadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/find.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tipomensajes/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentocategorias/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentoclasificaciones/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentos/show.html.haml"
 	],
 	"find":
 	{
@@ -324,9 +478,11 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4",
 			"/home/javier/Documents/Projects/OpenWolf/openwolf_v3"
 		]
 	},
@@ -335,6 +491,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"razontiporesolucions",
+			"tiporesolucions",
+			"nombre",
+			"Estados",
+			"institucions",
+			"Usuario",
+			"../font/",
+			"radius",
+			"position:",
+			"../themes/slate/",
+			"../img/",
+			"Departamentos",
+			".table.table",
+			"%table",
+			"close_fil",
+			"form_cla",
+			"form",
+			"- simple_",
+			"3-",
+			"- form",
+			"btn negative",
+			"btn positive",
+			"negative",
+			"positive",
+			"dash",
+			".minimalist-b",
+			"close",
+			"usuarios",
+			"defaults.js",
+			"default.js",
+			"../images/",
 			"pdfkit",
 			"linked_ima",
 			"    ",
@@ -379,6 +566,22 @@
 		"regex": false,
 		"replace_history":
 		[
+			"razonestiposresoluciones",
+			"tiposresoluciones",
+			"name",
+			"instituciones",
+			"",
+			".table",
+			"%table.table",
+			"= simple_",
+			"=",
+			"= form",
+			"btn-danger",
+			"btn",
+			"btn-danger",
+			"",
+			".table",
+			"",
 			"green",
 			"light-blue",
 			"blue"
@@ -392,13 +595,199 @@
 	"groups":
 	[
 		{
+			"selected": 6,
 			"sheets":
 			[
-			]
-		},
-		{
-			"sheets":
-			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/razonestiposresoluciones_controller.rb",
+					"settings":
+					{
+						"buffer_size": 446,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/models/razontiporesolucion.rb",
+					"settings":
+					{
+						"buffer_size": 821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/razonestiposresoluciones/index.html.haml",
+					"settings":
+					{
+						"buffer_size": 630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/razonestiposresoluciones/show.html.haml",
+					"settings":
+					{
+						"buffer_size": 1029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								705,
+								705
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/razonestiposresoluciones/new.html.haml",
+					"settings":
+					{
+						"buffer_size": 435,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								434,
+								434
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/razonestiposresoluciones/edit.html.haml",
+					"settings":
+					{
+						"buffer_size": 436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								436,
+								436
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/razonestiposresoluciones/_form.html.haml",
+					"settings":
+					{
+						"buffer_size": 122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								122,
+								122
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -419,18 +808,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -440,6 +822,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"output.git":
 	{
 		"height": 100.0
@@ -455,20 +841,412 @@
 		"selected_items":
 		[
 			[
+				"razonind",
+				"app/views/razonestiposresoluciones/index.html.haml"
+			],
+			[
+				"razon",
+				"app/models/razontiporesolucion.rb"
+			],
+			[
+				"razoncont",
+				"app/controllers/razonestiposresoluciones_controller.rb"
+			],
+			[
+				"tiporesoind",
+				"app/views/tiposresoluciones/index.html.haml"
+			],
+			[
+				"tipore",
+				"app/models/tiporesolucion.rb"
+			],
+			[
+				"tiporesocont",
+				"app/controllers/tiposresoluciones_controller.rb"
+			],
+			[
+				"rolecon",
+				"app/controllers/roles_controller.rb"
+			],
+			[
+				"role.r",
+				"app/models/role.rb"
+			],
+			[
+				"rolesin",
+				"app/views/roles/index.html.haml"
+			],
+			[
+				"estadosinde",
+				"app/views/estados/index.html.haml"
+			],
+			[
+				"estaindex",
+				"app/views/estadisticas/index.html.haml"
+			],
+			[
+				"estado",
+				"app/models/estado.rb"
+			],
+			[
+				"estadoscon",
+				"app/controllers/estados_controller.rb"
+			],
+			[
+				"via",
+				"app/models/via.rb"
+			],
+			[
+				"viasinde",
+				"app/views/vias/index.html.haml"
+			],
+			[
+				"viascon",
+				"app/controllers/vias_controller.rb"
+			],
+			[
+				"fuente.r",
+				"app/models/fuente.rb"
+			],
+			[
+				"fuente",
+				"app/models/fuente.rb"
+			],
+			[
+				"fueinde",
+				"app/views/fuentes/index.html.haml"
+			],
+			[
+				"fuentesco",
+				"app/controllers/fuentes_controller.rb"
+			],
+			[
+				"ins",
+				"app/models/institucion.rb"
+			],
+			[
+				"gene",
+				"app/assets/stylesheets/general.css.scss"
+			],
+			[
+				"insind",
+				"app/views/instituciones/index.html.haml"
+			],
+			[
+				"idiomas",
+				"app/controllers/idiomas_controller.rb"
+			],
+			[
+				"insti",
+				"app/controllers/instituciones_controller.rb"
+			],
+			[
+				"idiomascon",
+				"app/controllers/idiomas_controller.rb"
+			],
+			[
+				"idioma",
+				"app/models/idioma.rb"
+			],
+			[
+				"idiomain",
+				"app/views/idiomas/index.html.haml"
+			],
+			[
+				"muni",
+				"app/models/municipio.rb"
+			],
+			[
+				"muniind",
+				"app/views/municipios/index.html.haml"
+			],
+			[
+				"depaind",
+				"app/views/departamentos/index.html.haml"
+			],
+			[
+				"usuarinew",
+				"app/views/usuarios/new.html.haml"
+			],
+			[
+				"general",
+				"app/assets/stylesheets/general.css.scss"
+			],
+			[
+				"application.h",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"usuariosnew",
+				"app/views/usuarios/new.html.haml"
+			],
+			[
+				"usuashow",
+				"app/views/usuarios/show.html.haml"
+			],
+			[
+				"usuaind",
+				"app/views/usuarios/index.html.haml"
+			],
+			[
+				"font",
+				"vendor/assets/stylesheets/font-awesome.css"
+			],
+			[
+				"applicaion.",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"navi",
+				"app/views/shared/_navigation.html.haml"
+			],
+			[
+				"sharenavi",
+				"app/views/shared/_navigation.html.haml"
+			],
+			[
+				"over",
+				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
+			],
+			[
+				"applicahaml",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"sla",
+				"vendor/assets/stylesheets/slate.css"
+			],
+			[
+				"usunew",
+				"app/views/usuario_sessions/new.html.haml"
+			],
+			[
+				"idioedi",
+				"app/views/idiomas/edit.html.haml"
+			],
+			[
+				"idionew",
+				"app/views/idiomas/new.html.haml"
+			],
+			[
+				"idiofo",
+				"app/views/idiomas/_form.html.haml"
+			],
+			[
+				"idiomasbre",
+				"app/views/idiomas/_breadcrumbs.html.haml"
+			],
+			[
+				"depacon",
+				"app/controllers/departamentos_controller.rb"
+			],
+			[
+				"findbo",
+				"app/views/shared/_findbox.html.haml"
+			],
+			[
+				"depa",
+				"app/models/departamento.rb"
+			],
+			[
+				"usuacon",
+				"app/controllers/usuarios_controller.rb"
+			],
+			[
+				"municon",
+				"app/controllers/municipios_controller.rb"
+			],
+			[
+				"appli",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"abi",
+				"app/models/ability.rb"
+			],
+			[
+				"munifor",
+				"app/views/municipios/_form.html.haml"
+			],
+			[
+				"muninew",
+				"app/views/municipios/new.html.haml"
+			],
+			[
+				"depanew",
+				"app/views/departamentos/new.html.haml"
+			],
+			[
 				"gem",
 				"Gemfile"
+			],
+			[
+				"munici",
+				"app/controllers/municipios_controller.rb"
+			],
+			[
+				"munibrea",
+				"app/views/municipios/_breadcrums.html.haml"
+			],
+			[
+				"gen",
+				"app/assets/stylesheets/general.css.scss"
+			],
+			[
+				"depasho",
+				"app/views/departamentos/show.html.haml"
+			],
+			[
+				"usuariosin",
+				"app/views/usuarios/index.html.haml"
+			],
+			[
+				"usuabrea",
+				"app/views/usuarios/_breadcrums.html.haml"
+			],
+			[
+				"depabre",
+				"app/views/departamentos/_breadcrums.html.haml"
+			],
+			[
+				"usuaiocon",
+				"app/controllers/usuarios_controller.rb"
+			],
+			[
+				"usuaros",
+				"app/controllers/usuarios_controller.rb"
+			],
+			[
+				"docum",
+				"app/models/documento.rb"
+			],
+			[
+				"us",
+				"app/models/usuario.rb"
+			],
+			[
+				"refer",
+				"config/initializers/referential_integrity.rb"
+			],
+			[
+				"usua",
+				"app/controllers/usuarios_controller.rb"
+			],
+			[
+				"hel",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"scaffold",
+				"lib/templates/haml/scaffold/_form.html.haml"
+			],
+			[
+				"portalin",
+				"app/views/portal/index.html.haml"
+			],
+			[
+				"usuanew",
+				"app/views/usuarios/new.html.haml"
+			],
+			[
+				"usuariosform",
+				"app/views/usuarios/_form.html.haml"
+			],
+			[
+				"help",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"sho",
+				"app/views/actividades/show.html.haml"
+			],
+			[
+				"usuarioscon",
+				"app/controllers/usuarios_controller.rb"
+			],
+			[
+				"applicationhel",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"applicationcon",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"usuarios",
+				"app/controllers/usuarios_controller.rb"
+			],
+			[
+				"usuarioin",
+				"app/views/usuarios/index.html.haml"
+			],
+			[
+				"bus",
+				"app/models/busqueda.rb"
+			],
+			[
+				"portal",
+				"app/views/layouts/portal.html.haml"
+			],
+			[
+				"header",
+				"app/views/shared/_header.html.haml"
+			],
+			[
+				"usuario",
+				"app/models/usuario.rb"
+			],
+			[
+				"devi",
+				"config/initializers/devise.rb"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"rke",
+				"lib/tasks/passwords.rake"
+			],
+			[
+				"portal.h",
+				"app/views/layouts/portal.html.haml"
+			],
+			[
+				"devics",
+				"app/assets/stylesheets/devise.css.scss"
+			],
+			[
+				"por",
+				"app/assets/stylesheets/portal.css.scss"
+			],
+			[
+				"busqu",
+				"app/models/busqueda.rb"
+			],
+			[
+				"portalcon",
+				"app/controllers/portal_controller.rb"
 			],
 			[
 				"gua",
 				"Guardfile"
 			],
 			[
-				"repor",
-				"app/controllers/reportes_controller.rb"
+				"applica",
+				"app/assets/stylesheets/application.css"
 			],
 			[
-				"rou",
-				"config/routes.rb"
+				"appica",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"repor",
+				"app/controllers/reportes_controller.rb"
 			],
 			[
 				"depl",
@@ -477,10 +1255,6 @@
 			[
 				"portal.",
 				"app/views/layouts/portal.html.haml"
-			],
-			[
-				"application.h",
-				"app/views/layouts/application.html.haml"
 			],
 			[
 				"login",
@@ -501,14 +1275,6 @@
 			[
 				"find",
 				"app/views/shared/_findbox.html.haml"
-			],
-			[
-				"bus",
-				"app/models/busqueda.rb"
-			],
-			[
-				"insti",
-				"app/views/portal/institucion.html.haml"
 			],
 			[
 				"estadisticassho",
@@ -583,288 +1349,8 @@
 				"app/views/home/_top_destination.html.haml"
 			],
 			[
-				"applica",
-				"app/controllers/application_controller.rb"
-			],
-			[
 				"top",
 				"app/views/home/_top_destinations.html.haml"
-			],
-			[
-				"",
-				"app/views/home/_top_destination.html.haml"
-			],
-			[
-				"reco",
-				"app/views/tours/_recomended_tours.html.haml"
-			],
-			[
-				"top_des",
-				"app/views/home/_top_destination.html.haml"
-			],
-			[
-				"tour_con",
-				"app/controllers/tours_controller.rb"
-			],
-			[
-				"recomended",
-				"app/views/tours/_recomended_tours.html.haml"
-			],
-			[
-				"sho",
-				"app/views/tours/show.html.haml"
-			],
-			[
-				"es.y",
-				"config/locales/es.yml"
-			],
-			[
-				"en.y",
-				"config/locales/en.yml"
-			],
-			[
-				"purch",
-				"app/views/tours/_tour_purchase.html.haml"
-			],
-			[
-				"flex",
-				"vendor/assets/stylesheets/flexslider.css"
-			],
-			[
-				"tour.css",
-				"app/assets/stylesheets/tour.css.scss"
-			],
-			[
-				"tour.cs",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"tours.c",
-				"app/assets/stylesheets/tours.css.scss"
-			],
-			[
-				"tour_sli",
-				"app/views/tours/_tour_slides.html.haml"
-			],
-			[
-				"search",
-				"app/models/search.rb"
-			],
-			[
-				"se",
-				"app/models/service.rb"
-			],
-			[
-				"home",
-				"app/controllers/home_controller.rb"
-			],
-			[
-				"tabs",
-				"app/views/tours/_tour_tabs.html.haml"
-			],
-			[
-				"tours.s",
-				"app/assets/stylesheets/tours.css.scss"
-			],
-			[
-				"sourc",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"slide",
-				"app/views/home/_slider.html.haml"
-			],
-			[
-				"sear",
-				"app/models/search.rb"
-			],
-			[
-				"tours",
-				"app/controllers/tours_controller.rb"
-			],
-			[
-				"sea",
-				"app/models/search.rb"
-			],
-			[
-				"tour",
-				"app/controllers/tours_controller.rb"
-			],
-			[
-				"location_co",
-				"app/controllers/locations_controller.rb"
-			],
-			[
-				"regions",
-				"app/controllers/regions_controller.rb"
-			],
-			[
-				"filter",
-				"app/views/shared/_filter.html.haml"
-			],
-			[
-				"fil",
-				"db/fixtures/locations.csv"
-			],
-			[
-				"header",
-				"app/views/shared/_header.html.haml"
-			],
-			[
-				"appli",
-				"app/views/layouts/application.html.haml"
-			],
-			[
-				"servi",
-				"app/models/service.rb"
-			],
-			[
-				"service.r",
-				"app/models/service.rb"
-			],
-			[
-				"sourcetour.cs",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"less",
-				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
-			],
-			[
-				"_tour",
-				"app/views/tours/_tour.html.haml"
-			],
-			[
-				"es.",
-				"config/locales/es.yml"
-			],
-			[
-				"source",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"foo",
-				"app/views/shared/_footer.html.haml"
-			],
-			[
-				"_abou",
-				"app/views/home/_aboutus.html.haml"
-			],
-			[
-				"abou",
-				"app/views/home/aboutus.html.haml"
-			],
-			[
-				"route",
-				"config/routes.rb"
-			],
-			[
-				"g",
-				"Gemfile"
-			],
-			[
-				"qui",
-				"config/initializers/quiet_assets.rb"
-			],
-			[
-				"app",
-				"app/controllers/application_controller.rb"
-			],
-			[
-				"brea",
-				"app/views/shared/_breadcrumbs.html.haml"
-			],
-			[
-				"hea",
-				"app/views/shared/_header.html.haml"
-			],
-			[
-				"sourcetour",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"locations.c",
-				"app/assets/stylesheets/locations.css.scss"
-			],
-			[
-				"color",
-				"app/assets/stylesheets/color.css.scss"
-			],
-			[
-				"destination",
-				"app/views/home/_destinations.html.haml"
-			],
-			[
-				"destina",
-				"app/views/home/_top_destination.html.haml"
-			],
-			[
-				"source.cs",
-				"app/assets/stylesheets/sourcetour.css.css"
-			],
-			[
-				"inde",
-				"app/views/home/index.html.haml"
-			],
-			[
-				"links",
-				"app/views/home/_links.html.haml"
-			],
-			[
-				"homecon",
-				"app/controllers/home_controller.rb"
-			],
-			[
-				"contro",
-				"app/controllers/home_controller.rb"
-			],
-			[
-				"scss",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"cate",
-				"app/models/category.rb"
-			],
-			[
-				"service",
-				"app/models/service.rb"
-			],
-			[
-				"sourcetour.css",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"home/top",
-				"app/views/home/_top_destinations.html.haml"
-			],
-			[
-				"locations.cs",
-				"app/assets/stylesheets/locations.css.scss"
-			],
-			[
-				"tours_cono",
-				"app/controllers/tours_controller.rb"
-			],
-			[
-				"data",
-				"config/database.yml"
-			],
-			[
-				"_a",
-				"app/views/home/_aboutus.html.haml"
-			],
-			[
-				"sour",
-				"app/assets/stylesheets/sourcetour.css.scss"
-			],
-			[
-				"foote",
-				"app/views/shared/_footer.html.haml"
-			],
-			[
-				"stati",
-				"app/views/home/static_page.html.haml"
 			]
 		],
 		"width": 0.0
@@ -885,6 +1371,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 404.0,
+	"side_bar_width": 239.0,
 	"status_bar_visible": true
 }

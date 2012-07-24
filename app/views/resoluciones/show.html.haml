@@ -1,12 +1,12 @@
 - @forview = "SHOW"
 = render :partial => "breadcrumbs"
 
-%h1.alt= Resolucion.human_name.pluralize
+%h1.alt= Resolucion.model_name.human.pluralize
 
 = render :partial => "solicitudes/solicitud"
 
 .show
-  %h2= Resolucion.human_name
+  %h2= Resolucion.model_name.human
 
   %div{:id=>"options"}
     = button_new(new_solicitud_resolucion_path(@solicitud))
@@ -16,7 +16,7 @@
     %br
 
   .box
-    %table
+    %table.table
       %colgroup.show-table-header
       %colgroup.show-table-data
       %tr

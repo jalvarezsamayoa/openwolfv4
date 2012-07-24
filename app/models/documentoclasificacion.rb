@@ -24,11 +24,12 @@ class Documentoclasificacion < ActiveRecord::Base
     nombre
   end
 end
+
 # == Schema Information
 #
 # Table name: documentoclasificaciones
 #
-#  id                    :integer         not null, primary key
+#  id                    :integer          not null, primary key
 #  nombre                :string(255)
 #  documentocategoria_id :integer
 #  codigo                :string(255)

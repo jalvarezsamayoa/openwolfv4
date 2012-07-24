@@ -1,9 +1,9 @@
 .listing
-  %h2= Documento.human_name.pluralize
+  %h2= Documento.model_name.human.pluralize
   #options
     = button_new(new_documento_path)
     = render :partial => 'shared/findbox', :locals => {:url => documentos_path}
-  %table.minimalist-b
+  %table.table
     %thead
       %tr
         %th= Documento.human_attribute_name(:numero)

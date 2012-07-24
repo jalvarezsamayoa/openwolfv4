@@ -2,10 +2,10 @@
   %h2
     Archivar Documento
 
-  - semantic_form_for @documentotraslado do |form|
-    = form.semantic_errors
-    
-    - form.inputs do
+  = simple_form_for @documentotraslado do |form|
+
+
+    = form.inputs do
       = form.input :usuario, :collection => @enlaces, :include_blank => false, :label => "De:"
       = form.input :destinatario, :collection => @enlaces, :include_blank => false, :label => "Para: "
       = form.input :original

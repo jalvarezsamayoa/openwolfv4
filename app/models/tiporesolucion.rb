@@ -1,7 +1,9 @@
 class Tiporesolucion < ActiveRecord::Base
+  attr_accessible :nombre, :actualiza_fecha, :estado_id, \
+  :actualiza_fecha_notificacion, :positiva, :aliaspdh
+
   TIPO_PRORROGA = 4
-  #versioned
-  
+
   validates_presence_of :nombre
   validates_uniqueness_of :nombre
 
@@ -21,18 +23,19 @@ class Tiporesolucion < ActiveRecord::Base
     nombre
   end
 end
+
 # == Schema Information
 #
 # Table name: tiposresoluciones
 #
-#  id                           :integer         not null, primary key
-#  nombre                       :string(255)     not null
-#  actualiza_fecha              :boolean         default(FALSE)
-#  estado_id                    :integer         default(1), not null
+#  id                           :integer          not null, primary key
+#  nombre                       :string(255)      not null
+#  actualiza_fecha              :boolean          default(FALSE)
+#  estado_id                    :integer          default(1), not null
 #  created_at                   :datetime
 #  updated_at                   :datetime
-#  actualiza_fecha_notificacion :boolean         default(FALSE)
-#  positiva                     :boolean         default(FALSE)
+#  actualiza_fecha_notificacion :boolean          default(FALSE)
+#  positiva                     :boolean          default(FALSE)
 #  aliaspdh                     :string(255)
 #
 
