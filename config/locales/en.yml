@@ -233,7 +233,7 @@ en:
       resolucion: "Resolucion"
       recursorevision: "Recurso revisión"
       recursosrevision: "Recursos revisión"
-      sentidoresolucion: "Sentido Resolucion"      
+      sentidoresolucion: "Sentido Resolucion"
       actividad: "Asignación"
       tipomensaje: "Tipo Mensaje"
       documentoclasificacion: "Clasificación Documental"
@@ -246,7 +246,7 @@ en:
         username: "Usuario"
         nombre: "Nombre Completo"
         password: "Contraseña"
-        password_confirmation: "Confirme su contraseña"   
+        password_confirmation: "Confirme su contraseña"
       institucion:
         nombre: "Nombre Institucion"
         parent_id: "Dependencia de"
@@ -351,7 +351,7 @@ en:
         institucion_id: "Institución"
         usuario_id: "Usuario"
         fecha_asignacion: "Fecha Asignación"
-        textoactividad: "Descripción Asignación" 
+        textoactividad: "Descripción Asignación"
         estado_id: "Estado"
         fecha_resolucion: "Fecha Resolución"
         solicitud_id: "Solicitud"
@@ -394,6 +394,9 @@ en:
       documentoclasificacion:
         nombre: "Nombre Clasificacion"
         documentocategoria_id: "Categoria Documental"
+        documentocategoria: "Categoria Documental"
+        codigo: "Código"
+        plantilla: "Plantilla"
       documentocategoria:
         nombre: "Nombre Categoria"
       nota:
@@ -461,7 +464,7 @@ en:
     label_dias_restantes: "Dias Restantes:"
     label_cambiar_estado: "Cambiar Estado"
     label_avance: "% Avance"
-    label_adjuntaradjunto: "Adjuntar Doc."    
+    label_adjuntaradjunto: "Adjuntar Doc."
     label_accion: "Acccion"
     label_entregar: "Entregar"
     label_nuevo_estado: "Nuevo Estado"
@@ -470,7 +473,7 @@ en:
     label_resoluciones: "Resoluciones"
     label_recursosrevision: "Recursos Revision"
 
-    
+
   actividades:
     label_numero: "No."
     label_usuario_id: "Nombre Empleado"
@@ -482,7 +485,7 @@ en:
     label_fecha_resolucion: "Fecha Resolucion:"
     label_institucion: "Institución"
     title: "Asignaciones"
-    title_new: "Asignar"
+    title_new: "Asignar a Enlace"
     label_mistareas: "Mis Asignaciones"
     label_cargo: "Cargo"
 
@@ -491,7 +494,7 @@ en:
     label_textoseguimiento: "Descripcion:"
     title: "Seguimiento"
     title_new: "Agregar Seguimiento"
-    title_edit: "Modificar Seguimiento"    
+    title_edit: "Modificar Seguimiento"
 
   adjuntos:
     title: "Adjunto"

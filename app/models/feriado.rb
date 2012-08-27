@@ -1,4 +1,6 @@
 class Feriado < ActiveRecord::Base
+  attr_accessible :nombre, :dia, :mes, :institucion_id, :tipoferiado_id, :fecha
+
   TIPO_NACIONAL = 1
   TIPO_LOCAL = 2
   TIPOS = [["Nacional", 1], ["Local", 2]]
@@ -8,7 +10,7 @@ class Feriado < ActiveRecord::Base
   validates :mes, :presence => true
   validates :tipoferiado_id, :presence => true
   validates :institucion, :associated => true
-  
+
   belongs_to :institucion
 
   before_validation :cleanup
@@ -16,7 +18,7 @@ class Feriado < ActiveRecord::Base
   default_scope :order => "feriados.mes asc, feriados.dia asc"
   scope :nacional, where("tipoferiado_id = ?",TIPO_NACIONAL)
   scope :local, where("tipoferiado_id = ?",TIPO_LOCAL)
-  
+
   scope :nombre_like, lambda { |nombre|
     unless nombre.nil? || nombre.empty? || nombre.first.nil?
       valor = "%#{nombre}%".upcase
@@ -47,7 +49,7 @@ class Feriado < ActiveRecord::Base
       where("(fecha between ? and ?) or (fecha between ? and ?)", desde, ultimo_dia_ano, primer_dia_ano, hasta)
     end
   }
-  
+
 
   def tipo_feriado
     return 'Nacional' if tipoferiado_id == TIPO_NACIONAL
@@ -73,7 +75,7 @@ class Feriado < ActiveRecord::Base
   # modifica una fecha hasta retornar un dia laborarl
   def self.obtener_fecha_valida(d_fecha_entrega, institucion_id)
     logger.debug { "Obteniendo fecha valida" }
-    
+
     #es la ultima fecha feriado nacional
     logger.debug { "Verificando feriado nacional" }
     feriado_nacional = Feriado.hay_feriado?({:fecha => d_fecha_entrega})
@@ -90,7 +92,7 @@ class Feriado < ActiveRecord::Base
     if feriado_local == true
       logger.debug { "Hay feriado recalculando..." }
       d_fecha_entrega += 1.day
-      
+
       d_fecha_entrega = self.obtener_fecha_valida(d_fecha_entrega, institucion_id)
     end
 
@@ -112,23 +114,23 @@ class Feriado < ActiveRecord::Base
     logger.debug { "Fecha valida obtenida" }
     return d_fecha_entrega
   end
-  
+
 
   def es_dia_laboral?(hoy = nil)
     hoy = Date.civil(Date.today.year,self.mes,self.dia) if hoy.nil?
     l_finsemana = (hoy.wday == 0 or hoy.wday == 6)
     return !l_finsemana
   end
-  
+
 
   #calcula los dias calendario de respuesta
-  def self.calcular_dias_no_laborales(opts = {})   
+  def self.calcular_dias_no_laborales(opts = {})
     opts[:fecha] = Date.today if opts[:fecha].nil?
     opts[:dias] = 10 if opts[:dias].nil?
 
     fecha = opts[:fecha]
     dias = opts[:dias]
-    
+
     #removermos dias no habiles
     dias_no_laborales = 0
     dias.times do |i|
@@ -138,7 +140,7 @@ class Feriado < ActiveRecord::Base
       if (dia.wday == 0 or dia.wday == 6)
         dias_no_laborales += 1
       else
-        
+
         # es feriado global
         if Feriado.hay_feriado?(:fecha => dia,
                                 :institucion_id => Institucion::ESTADO_GUATEMALA)
@@ -146,29 +148,29 @@ class Feriado < ActiveRecord::Base
         end
 
         # es feriado local
-        unless opts[:institucion_id].nil?        
+        unless opts[:institucion_id].nil?
           if Feriado.hay_feriado?(:fecha => dia,
                                   :institucion_id => opts[:institucion_id])
             dias_no_laborales += 1
           end
         end
-        
-      end #(6..7)      
+
+      end #(6..7)
     end #dias.times
 
     return dias_no_laborales
   end #self.calcular_dias_no_laborales
-  
+
   private
 
   def cleanup
     self.fecha = Date.civil(Date.today.year, self.mes, self.dia)
-    
+
     if self.tipoferiado_id == TIPO_NACIONAL
       self.institucion_id = Institucion::ESTADO_GUATEMALA
-    end      
+    end
   end
-  
+
 end
 
 # == Schema Information

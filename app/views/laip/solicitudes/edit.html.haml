@@ -1,0 +1,16 @@
+#page-title.clearfix
+  %h1= "Editar #{Solicitud.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3
+      %i.icon-edit.icon-white
+      = "Editar #{Solicitud.model_name.human}"
+    .widget-actions
+      = button_cancel(laip_solicitud_path(@solicitud))
+  .widget-content
+    = simple_form_for([:laip,@solicitud], :html => {:class => 'form-horizontal mant-form'}) do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        = buttons_create(laip_solicitudes_path)

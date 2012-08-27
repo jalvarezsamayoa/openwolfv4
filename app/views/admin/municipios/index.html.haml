@@ -1,0 +1,19 @@
+#page-title.clearfix
+  %h1= Municipio.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_municipio_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_municipios_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Municipio.human_attribute_name(:nombre)
+          %th= Municipio.human_attribute_name(:departamento_id)
+      %tbody
+        - @municipios.each do |municipio|
+          %tr
+            %td= link_to municipio.nombre, admin_municipio_path(municipio)
+            %td= municipio.departamento.nombre
+    = will_paginate @municipios

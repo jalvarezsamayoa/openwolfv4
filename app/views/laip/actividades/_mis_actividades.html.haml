@@ -1,0 +1,7 @@
+#tareas.tab-pane
+  #asignaciones
+    - if @asignaciones.size > 0
+      = render :partial => 'laip/actividades/asignadas_no_completadas'
+    - else
+      .alert.alert-success
+        No tiene tareas asignadas.

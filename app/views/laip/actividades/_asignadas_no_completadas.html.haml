@@ -1,0 +1,16 @@
+.widget.widget-accordion
+  .widget-content
+    #asignadas-no-completadas.accordion
+      - @asignaciones.each do |actividad|
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#asignadas-no-completadas", "data-toggle" => "collapse", :href => "#tab_actividad_#{actividad.id}"}
+              %span.badge
+                = actividad.solicitud.dias_restantes
+              &nbsp;
+              = "Asignacion no. #{actividad.id}"
+            %i.icon-plus.toggle-icon
+          .accordion-body.collapse{:id => "tab_actividad_#{actividad.id}"}
+            .accordion-inner
+              = render :partial => "laip/actividades/actividad", :locals => {:actividad => actividad}
+#newseguimiento.modal.hide.fade

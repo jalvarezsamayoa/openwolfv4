@@ -1,0 +1,8 @@
+.widget
+  .widget-header
+    %h3
+      %i{:class => widget_icon}
+      = widget_title
+    = yield :widget_actions if content_for?(:widget_actions)
+  .widget-content
+    = yield

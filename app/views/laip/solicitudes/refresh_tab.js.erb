@@ -1,0 +1,4 @@
+// refresh_tab.js.erb
+<% unless @with_partial.blank? %>
+$("<%= @refresh_tab %>").html("<%= escape_javascript( render :partial => @with_partial  )%>")
+<% end %>

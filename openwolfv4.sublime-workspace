@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"moti",
+				"motivoprorroga_id"
+			],
+			[
+				"motivo",
+				"motivonegativa_id"
+			],
+			[
+				"soli",
+				"solicitante_identificacion"
+			],
+			[
+				"fech",
+				"fecha_creacion"
+			],
+			[
+				"con",
+				"content_tag"
+			],
+			[
+				"usua",
+				"usuario_id"
+			],
+			[
+				"insti",
+				"institucion_id"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"j",
+				"jqready	jquery-document-ready"
+			],
+			[
+				"en",
+				"entregadas"
+			],
+			[
+				"penre",
+				"pendresolucion"
+			],
+			[
+				"widget",
+				"widget_actions"
+			],
+			[
+				"ass",
+				"association"
+			],
+			[
+				"documen",
+				"documentocategoria_id"
+			],
+			[
 				"actua",
 				"actualiza_fecha_notificacion"
 			],
@@ -50,10 +106,6 @@
 			[
 				"ba",
 				"background-color"
-			],
-			[
-				"text",
-				"text-align"
 			],
 			[
 				"padding",
@@ -136,47 +188,55 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/razonestiposresoluciones_controller.rb",
+			"file": "app/views/laip/seguimientos/new.js.erb",
 			"settings":
 			{
-				"buffer_size": 446,
+				"buffer_size": 180,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/razontiporesolucion.rb",
+			"file": "app/views/laip/actividades/_actividad.html.haml",
 			"settings":
 			{
-				"buffer_size": 821,
+				"buffer_size": 1080,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/razonestiposresoluciones/index.html.haml",
+			"file": "app/views/laip/seguimientos/_new.html.haml",
 			"settings":
 			{
-				"buffer_size": 630,
+				"buffer_size": 439,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/razonestiposresoluciones/show.html.haml",
+			"file": "app/controllers/laip/actividades_controller.rb",
 			"settings":
 			{
-				"buffer_size": 1029,
+				"buffer_size": 4205,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/razonestiposresoluciones/new.html.haml",
+			"file": "app/controllers/laip/seguimientos_controller.rb",
 			"settings":
 			{
-				"buffer_size": 435,
+				"buffer_size": 3283,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/razonestiposresoluciones/edit.html.haml",
+			"file": "app/views/laip/actividades/_asignadas_no_completadas.html.haml",
+			"settings":
+			{
+				"buffer_size": 752,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/laip/actividades/_new.html.haml",
 			"settings":
 			{
 				"buffer_size": 436,
@@ -184,13 +244,42 @@
 			}
 		},
 		{
-			"contents": "= form.input :nombre, :input_html => {:size => 60}\n= form.tiporesolucionlo :association\n= form.input :informacion_publica\n",
-			"file": "app/views/razonestiposresoluciones/_form.html.haml",
-			"file_size": 120,
-			"file_write_time": 1343114536000000,
+			"file": "app/views/laip/actividades/_form.html.haml",
 			"settings":
 			{
-				"buffer_size": 122,
+				"buffer_size": 349,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/general.css.scss",
+			"settings":
+			{
+				"buffer_size": 890,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/solicitudes.js.coffee",
+			"settings":
+			{
+				"buffer_size": 1396,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/laip/actividades/new.js.erb",
+			"settings":
+			{
+				"buffer_size": 169,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 3777,
 				"line_ending": "Unix"
 			}
 		}
@@ -202,6 +291,30 @@
 		"selected_items":
 		[
 			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"BeautifyRuby"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: j	",
+				"Snippet: jquery-document-ready"
+			],
+			[
+				"Snippet: jrea",
+				"Snippet: jquery-document-ready"
+			],
+			[
 				"b",
 				"BeautifyRuby"
 			],
@@ -212,10 +325,6 @@
 			[
 				"Snippet: ",
 				"Snippet: html"
-			],
-			[
-				"",
-				"BeautifyRuby"
 			],
 			[
 				"bea",
@@ -240,10 +349,6 @@
 			[
 				"delete",
 				"Trailing Spaces: Delete Trailing Spaces"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"de",
@@ -276,10 +381,6 @@
 			[
 				"beu",
 				"BeautifyRuby"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			],
 			[
 				"install",
@@ -343,134 +444,134 @@
 	},
 	"file_history":
 	[
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/tiposresoluciones_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/tiporesolucion.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tiposresoluciones/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/roles_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/roles/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/role.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/estados_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/estado.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estados/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estadisticas/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/vias_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/vias/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/via.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/fuentes_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/fuentes/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/fuente.rb",
-		"/home/javier/.config/sublime-text-2/Packages/User/slate-index-page.sublime-snippet",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/application.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/municipio.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuarios/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/instituciones_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/instituciones/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/institucion.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/general.css.scss",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/idiomas_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/idioma.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/edit.html.haml",
-		"/home/javier/.config/sublime-text-2/Packages/User/slate-show-page.sublime-snippet",
-		"/home/javier/.config/sublime-text-2/Packages/User/slate-edit-page.sublime-snippet",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/departamentos/index.html.haml",
-		"/home/javier/.config/sublime-text-2/Packages/User/slate-new-page.sublime-snippet",
-		"/home/javier/.config/sublime-text-2/Packages/User/params.sublime-snippet",
-		"/home/javier/.config/sublime-text-2/Packages/User/ruby-tag.sublime-snippet",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/application.css",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_navigation.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate-bootstrap-overrides.css.scss",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate.css.scss",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/openwolfv4.sublime-workspace",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/font-awesome.css",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/bootstrap_and_overrides.css.less",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/departamentos_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuario_sessions/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/idiomas/_breadcrumbs.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/seguimiento.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_actividad_seguimientos.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/helpers/solicitudes_helper.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_actividad.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_asignadas_no_completadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_mis_actividades.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/main/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/main_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/solicitudes_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/solicitud.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/seguimientos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/new.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/show.js.erb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/ability.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/municipios_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/_breadcrums.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/departamento.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/municipios/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_findbox.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/new.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_adjuntos.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/general.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_entramite.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_noasignadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/actividades_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/routes.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/new.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/usuario.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/actualizar_usuarios.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/helpers/application_helper.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/adjuntos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_opciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_form.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/application_controller.rb",
-		"/home/javier/.config/sublime-text-2/Packages/User/attribute_asseccible.sublime-snippet",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/usuarios_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/institucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/javascripts/solicitudes.js.coffee",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/actividad.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/create.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/solicitudes/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/solicitudes/_opciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/mailers/notificaciones.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/javascripts/application.js",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/initializers/client_side_validations.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Gemfile",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/actividades/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/archivos/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentocategorias/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentoclasificaciones/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentos/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estadisticas/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/feriados/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/importar/create.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/importar/status.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/notificaciones/solicitudes_por_vencer.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_adjuntos.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_datos_solicitante.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_documentos_encontrados.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_resoluciones.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_seguimientos.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_solicitudes_encontradas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_asignaciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/javascripts/jquery.validate.js",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitud_informacion/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_asignaciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_entregadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_anuladas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/locales/en.yml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_terminadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_pendientesresolucion.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_tab.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/refresh_tab.js.erb",
+		"/home/javier/.config/sublime-text-2/Packages/User/jquery-document-ready.sublime-snippet",
+		"/home/javier/.config/sublime-text-2/Packages/User/attribute_asseccible.sublime-snippet",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/application.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_widget.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate-reports.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/application.css",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/solicitud.pdf.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/portal_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/print.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/solicitud.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/profesiones/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/razonestiposresoluciones/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/recursosrevision/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_asignaciones.pdf.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/reportes/solicitudes_csv.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Guardfile",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/widget.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/admin/usuarios_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios/new.html.haml",
+		"/home/javier/Documents/Projects/Vripple/Vripple/app/models/resume.rb",
+		"/home/javier/Documents/Projects/Vripple/Vripple/app/models/interest.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_navigation.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuario_sessions/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/portal.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/archivos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/initializers/inflections.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/importar/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/admin/importar_controller.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/reportes/instituciones_activas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/resoluciones/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_anuladas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_asignadas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_entramite.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_entregadas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_noasignadas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_notas_seguimiento.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_pendientesresolucion.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_recursosrevision.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/_terminadas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/find.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitudes/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/tipomensajes/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentocategorias/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentoclasificaciones/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/documentos/show.html.haml"
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_header.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/new.html.haml",
+		"/home/javier/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/javier/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/_breadcrumbs.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentoclasificaciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentoclasificaciones/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentoclasificaciones/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentoclasificaciones/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/razonestiposresoluciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/razonestiposresoluciones/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/razonestiposresoluciones/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/razonestiposresoluciones/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/razonestiposresoluciones/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/razontiporesolucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/tiposresoluciones/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/tiposresoluciones/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/tiposresoluciones/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/tiposresoluciones/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/admin/razonestiposresoluciones_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/admin/vias_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/roles/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/roles/new.html.haml"
 	],
 	"find":
 	{
@@ -478,9 +579,26 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentoclasificaciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/razonestiposresoluciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/tiposresoluciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/roles",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/estados",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/vias",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/fuentes",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/instituciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/idiomas",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/municipios",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/departamentos",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios",
 			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views",
 			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4",
 			"/home/javier/Documents/Projects/OpenWolf/openwolf_v3"
@@ -491,6 +609,78 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"informacion",
+			"solicitud.",
+			"show",
+			"newseguimiento",
+			"solicitud.",
+			"nstitucion_id",
+			"(.",
+			"solicitud",
+			"dias_re",
+			"newadjunto",
+			"def show",
+			"#newactividad",
+			"actividades",
+			"actividad:",
+			"actividad",
+			"new_actividad",
+			"fecha_entre",
+			"dias_re",
+			"nivel",
+			"solicitante_nombre",
+			"solicitante_nom",
+			"laip_menu",
+			"importar_index",
+			"admin_admin",
+			"feriados_path",
+			"feriado_path",
+			"ctrl+alt+s",
+			"profesiones_path",
+			"profesion_path",
+			"archivos_path",
+			"archivo_path",
+			"documentocategorias_path",
+			"documentocategoria_path",
+			"documentoclasificaciones_path",
+			"documentoclasificacion_path",
+			"razonestiposresoluciones_path",
+			"razonestiporesoluciones_path",
+			"razontiporesolucion_path",
+			"tiposresoluciones_path",
+			"tiporesolucion_path",
+			"roles_path",
+			"role_path",
+			"estados_path",
+			"estado_path",
+			"vias_path",
+			"via_path",
+			"fuentes_path",
+			"fuente_path",
+			"instituciones_path",
+			"institucion_path",
+			"admin_admin",
+			"idiomas_path",
+			"idioma_path",
+			"municipios_path",
+			"municipio_path",
+			"departamentos_path",
+			"departamento_path",
+			"usuarios_path",
+			"usuario_path",
+			"busquedas",
+			"busque",
+			"profesions",
+			"archivos_path",
+			"Archivos",
+			"razonestiposresoluciones_path",
+			"documentocate",
+			"documentocla",
+			"documentoclasificacions",
+			"razonestiposresoluciones_path",
+			"clasificacions",
+			"razonestiposresoluciones_path",
+			"Razón",
 			"razontiporesolucions",
 			"tiporesolucions",
 			"nombre",
@@ -546,19 +736,7 @@
 			"bright-blue",
 			"header",
 			"hover",
-			"recomen",
-			".places",
-			"recom",
-			"base-blue",
-			"recomen",
-			"for_de",
-			"about",
-			"static",
-			"(' ",
-			"Terminos",
-			"about",
-			"static",
-			"link"
+			"recomen"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -566,6 +744,47 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\nactividad.solicitud.\nactividad.solicitud.",
+			"\n\nactividad.solicitud.",
+			"admin_importar_index",
+			"admin",
+			"admin_feriados_path",
+			"admin_feriado_path",
+			"admin_profesiones_path",
+			"admin_profesion_path",
+			"admin_archivos_path",
+			"admin_archivo_path",
+			"admin_documentocategorias_path",
+			"admin_documentocategoria_path",
+			"admin_documentoclasificaciones_path",
+			"admin_documentoclasificacion_path",
+			"admin_razonestiposresoluciones_path",
+			"admin_razonestiporesoluciones_path",
+			"admin_razontiporesolucion_path",
+			"admin_tiposresoluciones_path",
+			"admin_tiporesolucion_path",
+			"admin_roles_path",
+			"admin_role_path",
+			"admin_estados_path",
+			"admin_estado_path",
+			"admin_vias_path",
+			"admin_via_path",
+			"admin_fuentes_path",
+			"admin_fuente_path",
+			"admin_instituciones_path",
+			"admin_institucion_path",
+			"admin",
+			"admin_idiomas_path",
+			"admin_idioma_path",
+			"admin_municipios_path",
+			"admin_municipio_path",
+			"admin_departamentos_path",
+			"admin_departamento_path",
+			"admin_usuarios_path",
+			"admin_usuario_path",
+			"profesiones",
+			"documentoclasificaciones",
+			"clasificaciones",
 			"razonestiposresoluciones",
 			"tiposresoluciones",
 			"name",
@@ -595,30 +814,28 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 11,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/razonestiposresoluciones_controller.rb",
+					"file": "app/views/laip/seguimientos/new.js.erb",
 					"settings":
 					{
-						"buffer_size": 446,
+						"buffer_size": 180,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17,
-								17
+								180,
+								180
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -628,23 +845,23 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/models/razontiporesolucion.rb",
+					"file": "app/views/laip/actividades/_actividad.html.haml",
 					"settings":
 					{
-						"buffer_size": 821,
+						"buffer_size": 1080,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								114,
-								114
+								438,
+								438
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -656,74 +873,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/views/razonestiposresoluciones/index.html.haml",
+					"file": "app/views/laip/seguimientos/_new.html.haml",
 					"settings":
 					{
-						"buffer_size": 630,
+						"buffer_size": 439,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								630,
-								630
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/razonestiposresoluciones/show.html.haml",
-					"settings":
-					{
-						"buffer_size": 1029,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								705,
-								705
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/razonestiposresoluciones/new.html.haml",
-					"settings":
-					{
-						"buffer_size": 435,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								434,
-								434
+								439,
+								439
 							]
 						],
 						"settings":
@@ -737,8 +898,92 @@
 					"type": "text"
 				},
 				{
+					"buffer": 3,
+					"file": "app/controllers/laip/actividades_controller.rb",
+					"settings":
+					{
+						"buffer_size": 4205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/controllers/laip/seguimientos_controller.rb",
+					"settings":
+					{
+						"buffer_size": 3283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
 					"buffer": 5,
-					"file": "app/views/razonestiposresoluciones/edit.html.haml",
+					"file": "app/views/laip/actividades/_asignadas_no_completadas.html.haml",
+					"settings":
+					{
+						"buffer_size": 752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								730,
+								730
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/laip/actividades/_new.html.haml",
 					"settings":
 					{
 						"buffer_size": 436,
@@ -763,19 +1008,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/views/razonestiposresoluciones/_form.html.haml",
+					"buffer": 7,
+					"file": "app/views/laip/actividades/_form.html.haml",
 					"settings":
 					{
-						"buffer_size": 122,
+						"buffer_size": 349,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								122,
-								122
+								349,
+								349
 							]
 						],
 						"settings":
@@ -784,6 +1029,116 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/assets/stylesheets/general.css.scss",
+					"settings":
+					{
+						"buffer_size": 890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								449,
+								449
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime-text-haml-sass/SASS/Syntaxes/SASS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 208.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/assets/javascripts/solicitudes.js.coffee",
+					"settings":
+					{
+						"buffer_size": 1396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								971,
+								971
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/views/laip/actividades/new.js.erb",
+					"settings":
+					{
+						"buffer_size": 169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								169,
+								169
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 3777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1224.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -841,516 +1196,516 @@
 		"selected_items":
 		[
 			[
-				"razonind",
-				"app/views/razonestiposresoluciones/index.html.haml"
+				"gem",
+				"Gemfile"
 			],
 			[
-				"razon",
-				"app/models/razontiporesolucion.rb"
+				"segui",
+				"app/models/seguimiento.rb"
 			],
 			[
-				"razoncont",
-				"app/controllers/razonestiposresoluciones_controller.rb"
+				"actividanewjs",
+				"app/views/laip/actividades/new.js.erb"
 			],
 			[
-				"tiporesoind",
-				"app/views/tiposresoluciones/index.html.haml"
+				"js",
+				"app/assets/javascripts/solicitudes.js.coffee"
 			],
 			[
-				"tipore",
-				"app/models/tiporesolucion.rb"
-			],
-			[
-				"tiporesocont",
-				"app/controllers/tiposresoluciones_controller.rb"
-			],
-			[
-				"rolecon",
-				"app/controllers/roles_controller.rb"
-			],
-			[
-				"role.r",
-				"app/models/role.rb"
-			],
-			[
-				"rolesin",
-				"app/views/roles/index.html.haml"
-			],
-			[
-				"estadosinde",
-				"app/views/estados/index.html.haml"
-			],
-			[
-				"estaindex",
-				"app/views/estadisticas/index.html.haml"
-			],
-			[
-				"estado",
-				"app/models/estado.rb"
-			],
-			[
-				"estadoscon",
-				"app/controllers/estados_controller.rb"
-			],
-			[
-				"via",
-				"app/models/via.rb"
-			],
-			[
-				"viasinde",
-				"app/views/vias/index.html.haml"
-			],
-			[
-				"viascon",
-				"app/controllers/vias_controller.rb"
-			],
-			[
-				"fuente.r",
-				"app/models/fuente.rb"
-			],
-			[
-				"fuente",
-				"app/models/fuente.rb"
-			],
-			[
-				"fueinde",
-				"app/views/fuentes/index.html.haml"
-			],
-			[
-				"fuentesco",
-				"app/controllers/fuentes_controller.rb"
-			],
-			[
-				"ins",
-				"app/models/institucion.rb"
-			],
-			[
-				"gene",
+				"css",
 				"app/assets/stylesheets/general.css.scss"
 			],
 			[
-				"insind",
-				"app/views/instituciones/index.html.haml"
+				"activinew",
+				"app/views/laip/actividades/_new.html.haml"
 			],
 			[
-				"idiomas",
-				"app/controllers/idiomas_controller.rb"
+				"nocom",
+				"app/views/laip/actividades/_asignadas_no_completadas.html.haml"
 			],
 			[
-				"insti",
-				"app/controllers/instituciones_controller.rb"
+				"seguimicon",
+				"app/controllers/laip/seguimientos_controller.rb"
 			],
 			[
-				"idiomascon",
-				"app/controllers/idiomas_controller.rb"
+				"actividadcon",
+				"app/controllers/laip/actividades_controller.rb"
 			],
 			[
-				"idioma",
-				"app/models/idioma.rb"
+				"seguimientosnew",
+				"app/views/laip/seguimientos/new.js.erb"
 			],
 			[
-				"idiomain",
-				"app/views/idiomas/index.html.haml"
+				"actividadse",
+				"app/views/laip/actividades/_actividad_seguimientos.html.haml"
 			],
 			[
-				"muni",
-				"app/models/municipio.rb"
+				"actividadesacti",
+				"app/views/laip/actividades/_actividad.html.haml"
 			],
 			[
-				"muniind",
-				"app/views/municipios/index.html.haml"
+				"no_com",
+				"app/views/laip/actividades/_asignadas_no_completadas.html.haml"
 			],
 			[
-				"depaind",
-				"app/views/departamentos/index.html.haml"
+				"mis",
+				"app/views/laip/actividades/_mis_actividades.html.haml"
 			],
 			[
-				"usuarinew",
-				"app/views/usuarios/new.html.haml"
+				"soli",
+				"app/models/solicitud.rb"
 			],
 			[
-				"general",
-				"app/assets/stylesheets/general.css.scss"
+				"solicitudcon",
+				"app/controllers/laip/solicitudes_controller.rb"
 			],
 			[
-				"application.h",
-				"app/views/layouts/application.html.haml"
+				"solicitudshow",
+				"app/views/laip/solicitudes/show.html.haml"
 			],
 			[
-				"usuariosnew",
-				"app/views/usuarios/new.html.haml"
+				"soliciind",
+				"app/views/laip/solicitudes/index.html.haml"
 			],
 			[
-				"usuashow",
-				"app/views/usuarios/show.html.haml"
+				"solicon",
+				"app/controllers/laip/solicitudes_controller.rb"
 			],
 			[
-				"usuaind",
-				"app/views/usuarios/index.html.haml"
+				"maincon",
+				"app/controllers/main_controller.rb"
 			],
 			[
-				"font",
-				"vendor/assets/stylesheets/font-awesome.css"
+				"mainin",
+				"app/views/main/index.html.haml"
 			],
 			[
-				"applicaion.",
-				"app/assets/stylesheets/application.css"
+				"adjuntonew",
+				"app/views/laip/adjuntos/_new.html.haml"
 			],
 			[
-				"navi",
-				"app/views/shared/_navigation.html.haml"
+				"seguimientnew",
+				"app/views/laip/seguimientos/_new.html.haml"
 			],
 			[
-				"sharenavi",
-				"app/views/shared/_navigation.html.haml"
+				"activishow",
+				"app/views/laip/actividades/show.js.erb"
 			],
 			[
-				"over",
-				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
+				"seguinew.js",
+				"app/views/laip/seguimientos/new.js.erb"
 			],
 			[
-				"applicahaml",
-				"app/views/layouts/application.html.haml"
-			],
-			[
-				"sla",
-				"vendor/assets/stylesheets/slate.css"
-			],
-			[
-				"usunew",
-				"app/views/usuario_sessions/new.html.haml"
-			],
-			[
-				"idioedi",
-				"app/views/idiomas/edit.html.haml"
-			],
-			[
-				"idionew",
-				"app/views/idiomas/new.html.haml"
-			],
-			[
-				"idiofo",
-				"app/views/idiomas/_form.html.haml"
-			],
-			[
-				"idiomasbre",
-				"app/views/idiomas/_breadcrumbs.html.haml"
-			],
-			[
-				"depacon",
-				"app/controllers/departamentos_controller.rb"
-			],
-			[
-				"findbo",
-				"app/views/shared/_findbox.html.haml"
-			],
-			[
-				"depa",
-				"app/models/departamento.rb"
-			],
-			[
-				"usuacon",
-				"app/controllers/usuarios_controller.rb"
-			],
-			[
-				"municon",
-				"app/controllers/municipios_controller.rb"
-			],
-			[
-				"appli",
-				"app/controllers/application_controller.rb"
+				"solicicon",
+				"app/controllers/laip/solicitudes_controller.rb"
 			],
 			[
 				"abi",
 				"app/models/ability.rb"
 			],
 			[
-				"munifor",
-				"app/views/municipios/_form.html.haml"
-			],
-			[
-				"muninew",
-				"app/views/municipios/new.html.haml"
-			],
-			[
-				"depanew",
-				"app/views/departamentos/new.html.haml"
-			],
-			[
-				"gem",
-				"Gemfile"
-			],
-			[
-				"munici",
-				"app/controllers/municipios_controller.rb"
-			],
-			[
-				"munibrea",
-				"app/views/municipios/_breadcrums.html.haml"
-			],
-			[
-				"gen",
-				"app/assets/stylesheets/general.css.scss"
-			],
-			[
-				"depasho",
-				"app/views/departamentos/show.html.haml"
-			],
-			[
-				"usuariosin",
-				"app/views/usuarios/index.html.haml"
-			],
-			[
-				"usuabrea",
-				"app/views/usuarios/_breadcrums.html.haml"
-			],
-			[
-				"depabre",
-				"app/views/departamentos/_breadcrums.html.haml"
-			],
-			[
-				"usuaiocon",
-				"app/controllers/usuarios_controller.rb"
-			],
-			[
-				"usuaros",
-				"app/controllers/usuarios_controller.rb"
-			],
-			[
-				"docum",
-				"app/models/documento.rb"
-			],
-			[
-				"us",
-				"app/models/usuario.rb"
-			],
-			[
-				"refer",
-				"config/initializers/referential_integrity.rb"
-			],
-			[
-				"usua",
-				"app/controllers/usuarios_controller.rb"
-			],
-			[
-				"hel",
-				"app/helpers/application_helper.rb"
-			],
-			[
-				"scaffold",
-				"lib/templates/haml/scaffold/_form.html.haml"
-			],
-			[
-				"portalin",
-				"app/views/portal/index.html.haml"
-			],
-			[
-				"usuanew",
-				"app/views/usuarios/new.html.haml"
-			],
-			[
-				"usuariosform",
-				"app/views/usuarios/_form.html.haml"
+				"seguimien",
+				"app/controllers/laip/seguimientos_controller.rb"
 			],
 			[
 				"help",
-				"app/helpers/application_helper.rb"
+				"app/helpers/solicitudes_helper.rb"
 			],
 			[
-				"sho",
-				"app/views/actividades/show.html.haml"
-			],
-			[
-				"usuarioscon",
-				"app/controllers/usuarios_controller.rb"
-			],
-			[
-				"applicationhel",
-				"app/helpers/application_helper.rb"
+				"soliccon",
+				"app/controllers/laip/solicitudes_controller.rb"
 			],
 			[
 				"rou",
 				"config/routes.rb"
 			],
 			[
-				"applicationcon",
-				"app/controllers/application_controller.rb"
+				"actividadseui",
+				"app/views/laip/actividades/_actividad_seguimientos.html.haml"
 			],
 			[
-				"usuarios",
-				"app/controllers/usuarios_controller.rb"
+				"asignadas",
+				"app/views/laip/actividades/_asignadas_no_completadas.html.haml"
 			],
 			[
-				"usuarioin",
-				"app/views/usuarios/index.html.haml"
+				"laipactivinew",
+				"app/views/laip/actividades/_new.html.haml"
 			],
 			[
-				"bus",
-				"app/models/busqueda.rb"
+				"activinew.j",
+				"app/views/laip/actividades/new.js.erb"
 			],
 			[
-				"portal",
-				"app/views/layouts/portal.html.haml"
-			],
-			[
-				"header",
-				"app/views/shared/_header.html.haml"
-			],
-			[
-				"usuario",
+				"usuario.",
 				"app/models/usuario.rb"
 			],
 			[
-				"devi",
-				"config/initializers/devise.rb"
+				"actuali",
+				"app/views/laip/actividades/actualizar_usuarios.js.erb"
 			],
 			[
-				"data",
-				"config/database.yml"
+				"actividaco",
+				"app/controllers/laip/actividades_controller.rb"
 			],
 			[
-				"rke",
-				"lib/tasks/passwords.rake"
+				"entra",
+				"app/views/laip/solicitudes/_entramite.html.haml"
 			],
 			[
-				"portal.h",
-				"app/views/layouts/portal.html.haml"
+				"_noas",
+				"app/views/laip/solicitudes/_noasignadas.html.haml"
 			],
 			[
-				"devics",
-				"app/assets/stylesheets/devise.css.scss"
+				"solicishow",
+				"app/views/laip/solicitudes/show.html.haml"
 			],
 			[
-				"por",
-				"app/assets/stylesheets/portal.css.scss"
+				"adjuntos",
+				"app/views/laip/solicitudes/_adjuntos.html.haml"
 			],
 			[
-				"busqu",
-				"app/models/busqueda.rb"
+				"",
+				"app/views/laip/seguimientos/_new.html.haml"
 			],
 			[
-				"portalcon",
-				"app/controllers/portal_controller.rb"
+				"asignnew",
+				"app/views/laip/seguimientos/_new.html.haml"
 			],
 			[
-				"gua",
-				"Guardfile"
+				"adjun",
+				"app/controllers/laip/adjuntos_controller.rb"
 			],
 			[
-				"applica",
-				"app/assets/stylesheets/application.css"
+				"op",
+				"app/views/laip/solicitudes/_opciones.html.haml"
 			],
 			[
-				"appica",
-				"app/assets/javascripts/application.js"
+				"appicahel",
+				"app/helpers/application_helper.rb"
 			],
 			[
-				"repor",
-				"app/controllers/reportes_controller.rb"
+				"solicitu",
+				"app/helpers/solicitudes_helper.rb"
 			],
 			[
-				"depl",
-				"config/deploy.rb"
+				"appli",
+				"app/controllers/application_controller.rb"
 			],
 			[
-				"portal.",
-				"app/views/layouts/portal.html.haml"
+				"solicitudescon",
+				"app/controllers/laip/solicitudes_controller.rb"
 			],
 			[
-				"login",
-				"app/views/layouts/login.html.haml"
+				"solici",
+				"app/models/solicitud.rb"
 			],
 			[
-				"solicitud_in",
-				"app/controllers/solicitud_informacion_controller.rb"
+				"solinew",
+				"app/views/laip/solicitudes/new.html.haml"
 			],
 			[
-				"estdis",
-				"app/controllers/estadisticas_controller.rb"
+				"soliedi",
+				"app/views/laip/solicitudes/edit.html.haml"
 			],
 			[
-				"portalinde",
-				"app/views/portal/index.html.haml"
+				"solicitudesshow",
+				"app/views/laip/solicitudes/show.html.haml"
 			],
 			[
-				"find",
-				"app/views/shared/_findbox.html.haml"
+				"opcion",
+				"app/views/laip/solicitudes/_opciones.html.haml"
 			],
 			[
-				"estadisticassho",
-				"app/views/estadisticas/show.html.haml"
+				"create.js",
+				"app/views/laip/actividades/create.js.erb"
 			],
 			[
-				"estatid",
-				"app/views/estadisticas/index.html.haml"
+				"noti",
+				"app/mailers/notificaciones.rb"
 			],
 			[
-				"new.h",
-				"app/views/solicitud_informacion/new.html.haml"
+				"acti",
+				"app/models/actividad.rb"
 			],
 			[
-				"application.c",
-				"app/assets/stylesheets/application.css"
+				"new.js",
+				"app/views/laip/actividades/new.js.erb"
 			],
 			[
-				"scss.",
-				"app/assets/stylesheets/portal.css.scss"
+				"clien",
+				"config/initializers/client_side_validations.rb"
 			],
 			[
-				"deco",
-				"app/decorators/service_decorator.rb"
+				"solicitudnew",
+				"app/views/laip/solicitudes/new.html.haml"
 			],
 			[
-				"recom",
-				"app/views/tours/_recomended_tours.html.haml"
+				"cient",
+				"config/initializers/client_side_validations.rb"
 			],
 			[
-				"tour.c",
-				"app/assets/stylesheets/tour.css.scss"
+				"actinew",
+				"app/views/laip/actividades/_new.html.haml"
 			],
 			[
-				"sourcetour.c",
-				"app/assets/stylesheets/sourcetour.css.scss"
+				"activi",
+				"app/models/actividad.rb"
 			],
 			[
-				"tours.cs",
-				"app/assets/stylesheets/tours.css.scss"
+				"jquer",
+				"vendor/assets/javascripts/jquery.validate.js"
 			],
 			[
-				"index",
-				"app/views/tours/index.html.haml"
+				"insti",
+				"app/models/institucion.rb"
 			],
 			[
-				"service.",
-				"app/models/service.rb"
+				"actividadform",
+				"app/views/laip/actividades/_form.html.haml"
 			],
 			[
-				"searc",
-				"app/models/search.rb"
+				"_form",
+				"app/views/solicitud_informacion/_form.html.haml"
 			],
 			[
-				"tourcon",
-				"app/controllers/tours_controller.rb"
+				"_show",
+				"app/views/laip/actividades/_show.html.haml"
 			],
 			[
-				"show",
-				"app/views/tours/show.html.haml"
+				"_asigna",
+				"app/views/laip/solicitudes/_asignaciones.html.haml"
 			],
 			[
-				"en.",
+				"asignacio",
+				"app/views/laip/solicitudes/_asignaciones.html.haml"
+			],
+			[
+				"asigna",
+				"app/views/portal/_asignaciones.html.haml"
+			],
+			[
+				"actividadnew.js",
+				"app/views/laip/actividades/new.js.erb"
+			],
+			[
+				"en.y",
 				"config/locales/en.yml"
 			],
 			[
-				"decora",
-				"app/decorators/service_decorator.rb"
+				"actividacon",
+				"app/controllers/laip/actividades_controller.rb"
 			],
 			[
-				"top_de",
-				"app/views/home/_top_destination.html.haml"
+				"a",
+				"app/models/ability.rb"
 			],
 			[
-				"top",
-				"app/views/home/_top_destinations.html.haml"
+				"activiadsho",
+				"app/views/laip/actividades/_show.html.haml"
+			],
+			[
+				"actividadshowjs",
+				"app/views/laip/actividades/show.js.erb"
+			],
+			[
+				"actividades",
+				"app/controllers/laip/actividades_controller.rb"
+			],
+			[
+				"laipasigna",
+				"app/views/laip/solicitudes/_asignaciones.html.haml"
+			],
+			[
+				"asig",
+				"app/views/portal/_asignaciones.html.haml"
+			],
+			[
+				"solishow",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"anul",
+				"app/views/laip/solicitudes/_anuladas.html.haml"
+			],
+			[
+				"entre",
+				"app/views/laip/solicitudes/_entregadas.html.haml"
+			],
+			[
+				"termin",
+				"app/views/laip/solicitudes/_terminadas.html.haml"
+			],
+			[
+				"pendie",
+				"app/views/laip/solicitudes/_pendientesresolucion.html.haml"
+			],
+			[
+				"noasi",
+				"app/views/laip/solicitudes/_noasignadas.html.haml"
+			],
+			[
+				"solicitudhel",
+				"app/helpers/solicitudes_helper.rb"
+			],
+			[
+				"applihel",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"tab",
+				"app/views/laip/solicitudes/_tab.html.haml"
+			],
+			[
+				"entram",
+				"app/views/laip/solicitudes/_entramite.html.haml"
+			],
+			[
+				"slate",
+				"vendor/assets/stylesheets/slate.css.scss"
+			],
+			[
+				"mis_",
+				"app/views/laip/actividades/_mis_actividades.html.haml"
+			],
+			[
+				"wid",
+				"app/views/shared/_widget.html.haml"
+			],
+			[
+				"main",
+				"app/controllers/main_controller.rb"
+			],
+			[
+				"solicitude",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"application.cs",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"solicitudesindex",
+				"app/views/laip/solicitudes/index.html.haml"
+			],
+			[
+				"apli",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"porta",
+				"app/controllers/portal_controller.rb"
+			],
+			[
+				"prin",
+				"app/views/layouts/print.html.haml"
+			],
+			[
+				"solicitud.ht",
+				"app/views/portal/solicitud.html.haml"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"portal",
+				"app/controllers/portal_controller.rb"
+			],
+			[
+				"widge",
+				"app/views/shared/_widget.html.haml"
+			],
+			[
+				"solicitudes",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"laipsolicishow",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"laipsolicisho",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"guar",
+				"Guardfile"
+			],
+			[
+				"laipsolic",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"solicitudes_c",
+				"app/views/reportes/solicitudes_csv.html.haml"
+			],
+			[
+				"gene",
+				"app/assets/stylesheets/general.css.scss"
+			],
+			[
+				"usuarionew",
+				"app/views/admin/usuarios/new.html.haml"
+			],
+			[
+				"laipsolinew",
+				"app/views/laip/solicitudes/new.html.haml"
+			],
+			[
+				"usuariocon",
+				"app/controllers/admin/usuarios_controller.rb"
+			],
+			[
+				"usu",
+				"app/models/usuario.rb"
+			],
+			[
+				"usuariosfor",
+				"app/views/admin/usuarios/_form.html.haml"
+			],
+			[
+				"navi",
+				"app/views/shared/_navigation.html.haml"
+			],
+			[
+				"usuariosin",
+				"app/views/admin/usuarios/index.html.haml"
+			],
+			[
+				"mainind",
+				"app/views/main/index.html.haml"
+			],
+			[
+				"usuarioscon",
+				"app/controllers/admin/usuarios_controller.rb"
+			],
+			[
+				"usuariosind",
+				"app/views/admin/usuarios/index.html.haml"
+			],
+			[
+				"abili",
+				"app/models/ability.rb"
+			],
+			[
+				"usuariosform",
+				"app/views/admin/usuarios/_form.html.haml"
+			],
+			[
+				"usuariosnew",
+				"app/views/admin/usuarios/new.html.haml"
+			],
+			[
+				"head",
+				"app/views/shared/_header.html.haml"
+			],
+			[
+				"solicitud",
+				"app/models/solicitud.rb"
+			],
+			[
+				"ab",
+				"app/models/ability.rb"
 			]
 		],
 		"width": 0.0
@@ -1370,7 +1725,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 239.0,
+	"side_bar_visible": false,
+	"side_bar_width": 233.0,
 	"status_bar_visible": true
 }

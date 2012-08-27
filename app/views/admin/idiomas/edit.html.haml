@@ -1,0 +1,12 @@
+#page-title.clearfix
+  %h1= "Editar #{Idioma.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3 Editar Idioma
+  .widget-content
+    = simple_form_for([:admin,@idioma], :html => {:class => 'form-horizontal'}) do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        = buttons_update(admin_idiomas_path)

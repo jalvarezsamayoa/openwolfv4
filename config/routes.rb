@@ -1,39 +1,145 @@
 OpenwolfV4::Application.routes.draw do
 
-  resources :feriados
+  devise_for :usuarios, :path_prefix => 'd'
 
-  resources :documentotraslados
+  devise_scope :usuario do
+    get "/login" => "devise/sessions#new", :as => "login"
+    get "/logout" => "devise/sessions#destroy", :as => "logout"
+  end
 
-  resources :archivos
-
-  resources :idiomas
-
+  # Dashboard portal gobierno
   resources :main
-  resources :importar do
-    member do
-      get :status
+
+  #---------------------------------
+  # Modulo Administracion
+  #---------------------------------
+  namespace :admin do
+    #usuarios
+    resources :usuarios
+    resources :roles
+
+    #general
+    resources :instituciones
+    resources :municipios
+    resources :departamentos
+
+    #laip
+    resources :feriados
+    resources :idiomas
+    resources :razonestiposresoluciones
+    resources :estados
+    resources :vias
+    resources :tiposresoluciones
+    resources :rangosedad
+    resources :profesiones
+    resources :fuentes
+
+    #archivo
+    resources :archivos
+    resources :documentocategorias
+    resources :documentoclasificaciones
+    resources :clasificaciones
+    resources :tipomensajes
+
+    #herramientas
+    resources :importar do
+      member do
+        get :status
+      end
+    end
+
+  end
+  match 'perfil', :to => "admin::usuarios#perfil", :as => "perfil"
+
+  #---------------------------------
+  # Modulo Archivo
+  #---------------------------------
+
+  namespace :archivo do
+    resources :documentotraslados
+
+    resource :institucion do
+      resources :mensajes do
+        collection do
+          get :recibidos
+          get :enviados
+        end
+      end
+
+      resources :documentos do
+        member do
+          get :plantilla
+          get :archivar
+          get :trasladar
+        end
+      end
+    end
+
+  end
+
+  #---------------------------------
+  # Modulo LAIP
+  #---------------------------------
+
+  namespace :laip do
+
+    resources :solicitudes do
+      member do
+        get :cambiar_estado
+        get :actualizar_estado
+        put :marcar_entregada
+      end
+      collection do
+        get :actualizar_municipios
+        get :refresh_tab
+      end
+      resources :adjuntos do
+        member do
+          get :download
+        end
+      end
+      resources :notas
+      resources :resoluciones
+      resources :recursosrevision
+      resources :actividades do
+        resources :seguimientos
+      end
+    end
+
+
+    resources :sentidosresolucion
+    resources :recursosrevision
+    resources :seguimientos
+    resources :motivosnegativa
+    resources :seguimientos
+
+    resources :resoluciones do
+      collection do
+        get :actualizar_razones
+      end
+    end
+
+
+    resources :adjuntos, :only => [:show] do
+      member do
+        get :download
+      end
+    end
+
+    resources :actividades do
+      member do
+        put :marcar_como_completada
+      end
+      collection do
+        get :actualizar_usuarios
+      end
     end
   end
-  resources :documentocategorias
-  resources :documentoclasificaciones
-  resources :sentidosresolucion
-  resources :recursosrevision
-  resources :seguimientos
-  resources :estados
-  resources :vias
-  resources :municipios
-  resources :departamentos
-  resource :solicitud_informacion
-  resources :razonestiposresoluciones
-  resources :tiposresoluciones
-  resources :motivosnegativa
-  resources :clasificaciones
-  resources :rangosedad
-  resources :roles
-  resources :profesiones
-  resources :fuentes
-  resources :tipomensajes
-  resources :seguimientos
+
+
+  #---------------------------------
+  # Portal ciudadano
+  #---------------------------------
 
   resources :portal, :only => [:index] do
     member do
@@ -50,94 +156,13 @@ OpenwolfV4::Application.routes.draw do
     end
     resources :estadisticas, :only => [:index, :show]
   end
+  resource :solicitud_informacion
 
-
-  resources :resoluciones do
-    collection do
-      get :actualizar_razones
-    end
-  end
-
-  resources :instituciones do
-    resources :solicitudes do
-      resources :actividades do
-        resources :seguimientos
-      end
-      resources :resoluciones
-      resources :recursosrevision
-    end
-
-    resources :mensajes do
-      collection do
-        get :recibidos
-        get :enviados
-      end
-    end
-  end
-
-  resources :documentos do
-    member do
-      get :plantilla
-      get :archivar
-      get :trasladar
-    end
-  end
-
-  # resources :mensajes, :only => [:destroy]
-
-  # resources :instituciones do |instituciones|
-  #   instituciones.resources :actividades
-  # end
-
-  resources :solicitudes do
-    member do
-      get :cambiar_estado
-      get :actualizar_estado
-      put :marcar_entregada
-    end
-    collection do
-      get :actualizar_municipios
-    end
-    resources :adjuntos do
-      member do
-        get :download
-      end
-    end
-    resources :notas
-    resources :resoluciones
-    resources :recursosrevision
-  end
-
-  resources :adjuntos, :only => [:show] do
-    member do
-      get :download
-    end
-  end
-
-  resources :actividades do
-    member do
-      put :marcar_como_completada
-    end
-    collection do
-      get :actualizar_usuarios
-    end
-  end
-
-  devise_for :usuarios, :path_prefix => 'd'
-
-  devise_scope :usuario do
-    get "/login" => "devise/sessions#new", :as => "login"
-    get "/logout" => "devise/sessions#destroy", :as => "logout"
-  end
-
-  match 'perfil', :to => "usuarios#perfil", :as => "perfil"
-
-  resources :usuarios
 
   match 'imprimir_solicitud/:id',
-  :to => 'solicitudes#print', :as => "imprimir_solicitud"
+    :to => 'solicitudes#print', :as => "imprimir_solicitud"
 
-  match 'buscar', :to => "solicitudes#find", :as => "buscar"
+  match 'buscar', :to => "admin::solicitudes#find", :as => "buscar"
 
 
   resources :reportes, :only => [:index] do
@@ -149,13 +174,13 @@ OpenwolfV4::Application.routes.draw do
   end
 
   match 'reportes/solicitudes',
-  :to => "reportes#solicitudes", :as =>"reporte_solicitudes"
+    :to => "reportes#solicitudes", :as =>"reporte_solicitudes"
 
   match 'reportes/solicitudes_csv',
-  :to => "reportes#solicitudes_csv",  :as => "reporte_solicitudes_csv"
+    :to => "reportes#solicitudes_csv",  :as => "reporte_solicitudes_csv"
 
   match 'reportes/solicitudes_xml',
-  :to => "reportes#solicitudes_xml",  :as => "reporte_solicitudes_xml"
+    :to => "reportes#solicitudes_xml",  :as => "reporte_solicitudes_xml"
 
 
 

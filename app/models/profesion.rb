@@ -1,6 +1,6 @@
 class Profesion < ActiveRecord::Base
-  #versioned
-  
+  attr_accessible :nombre
+
   validates_presence_of :nombre
   validates_uniqueness_of :nombre
 
@@ -16,7 +16,7 @@ class Profesion < ActiveRecord::Base
   def to_label
     nombre
   end
-  
+
 end
 
 # == Schema Information

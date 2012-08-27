@@ -1,4 +1,4 @@
-- if !current_page?(:action => 'print')
+- unless @print_mode
   = render :partial => "find_box"
   .row
     .span12
@@ -46,9 +46,9 @@
         #solicitud_no_asignada.error{ @actividades.size > 0 ? {:style => "display:none"} : {} }
           La solicitud no ha sido asignada.
         #asignaciones
-          = render :partial => 'asignaciones'
+          = render :partial => "portal/asignaciones"
 
-      = render :partial => "datos_solicitante" if @mostrar_datos_solicitante
+      = render :partial => "portal/datos_solicitante" if @mostrar_datos_solicitante
 
       %fieldset
         %legend Detalle de la Solicitud
@@ -85,24 +85,24 @@
       %fieldset
         %legend= "Seguimientos de enlances"
         #seguimientos
-          = render :partial => 'seguimientos' if @informacion_publica
+          = render :partial => 'portal/seguimientos' if @informacion_publica
 
       %fieldset
         %legend= Resolucion.model_name.human
         #resoluciones
-          = render :partial => 'resoluciones' if @informacion_publica
+          = render :partial => 'portal/resoluciones' if @informacion_publica
 
       %fieldset
         %legend= t("activerecord.models.recursosrevision")
         #recursosrevision
-          = render :partial => 'solicitudes/recursosrevision' if @informacion_publica
+          = render :partial => 'laip/solicitudes/recursosrevision' if @informacion_publica
 
       %fieldset
         %legend= t("activerecord.models.nota")
         #notasseguimiento
-          = render :partial => 'solicitudes/notas_seguimiento' if @informacion_publica
+          = render :partial => 'laip/solicitudes/notas_seguimiento' if @informacion_publica
 
       %fieldset
         %legend Archivos adjuntos
         #adjuntos
-          = render :partial => 'adjuntos' if @informacion_publica
+          = render :partial => 'portal/adjuntos' if @informacion_publica

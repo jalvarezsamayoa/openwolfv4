@@ -1,0 +1,17 @@
+#page-title.clearfix
+  %h1= Clasificacion.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_clasificacion_path)
+    = render :partial => 'shared/findbox', :locals => {:url => clasificaciones_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Clasificacion.human_attribute_name(:nombre)
+      %tbody
+        - @clasificaciones.each do |clasificacion|
+          %tr{:class => "#{ 'inactive' unless clasificacion.activo? }"}
+            %td= link_to clasificacion.nombre, clasificacion
+    = will_paginate @clasificaciones

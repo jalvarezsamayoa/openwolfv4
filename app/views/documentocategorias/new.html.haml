@@ -1,7 +1,0 @@
-.mantform
-  %h2
-    Nuevo #{Documentocategoria.model_name.human}
-  = simple_form_for @documentocategoria do |form|
-
-    = render :partial => 'form', :locals => {:form => form}
-    = buttons_create(documentocategorias_path)

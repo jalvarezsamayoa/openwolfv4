@@ -1,19 +1,63 @@
-%table.table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
-  %tr
-    %td
-      %h2
+.row-fluid
+  .span12
+    #page-title.clearfix
+      %h1
         Panel de Control: #{current_usuario.institucion.nombre}
-    %td{:style => "text-align: right;", :width => "30%"}= image_tag current_usuario.institucion.logo.url(:medium)
-%hr/
-%table.table{:border => "0", :cellpadding => "10", :cellspacing => "10", :width => "100%"}
-  %tr
-    %th{:style => "text-align: center;"}
-      %h2.alt Todas las Instituciones
-    %th{:style => "text-align: center;"}
-      %h2.alt Institución Actual
-  %tr
-    %td{:width => "50%"}= image_tag(solicitudes_por_mes())
-    %td= image_tag(solicitudes_por_mes(current_usuario))
-  %tr
-    %td= image_tag(solicitudes_por_estado())
-    %td= image_tag(solicitudes_por_estado(current_usuario))
+        .pull-right
+          = image_tag current_usuario.institucion.logo.url(:medium)
+.row-fluid
+  .span12
+    #big-stats-container.widget
+      .widget-header
+        %h3 Estado de solicitudes de información
+      .widget-content
+        #big_stats.cf
+          .stat
+            %h4 Pend. Asignación
+            %span.value
+              = link_to @noasignadas, laip_solicitudes_path(:tab => "#no-asignadas"), :title => "Pendientes de Asignación a enlaces."
+          .stat
+            %h4 En Trámite
+            %span.value
+              = link_to @entramite, laip_solicitudes_path(:tab => "#en-tramite"), :title => 'Ya asignadas. Pendientes de completar.'
+          .stat
+            %h4 Pend. Resolución
+            %span.value
+              = link_to @pendresolucion, laip_solicitudes_path(:tab => "#pendientes-resolucion"), :title => "Asignaciónes completadas. Pendientes de emitir resolución."
+          .stat
+            %h4 Pend. Entrega
+            %span.value
+              = link_to @terminadas, laip_solicitudes_path(:tab => "#terminadas"), :title => "Solicitudes listas para entregar a ciudadano."
+.row-fluid
+  .span6
+    %h2 Todas las instituciones
+    .widget
+      .widget-header
+        %h3
+          %i.icon-bar-chart
+          Solicitudes recibidas
+      .widget-content
+        = image_tag(solicitudes_por_mes())
+    .widget
+      .widget-header
+        %h3
+          %i.icon-bar-chart
+          Solicitudes por estado
+      .widget-content
+        = image_tag(solicitudes_por_estado())
+  .span6
+    %h2 Mi Institución
+    .widget
+      .widget-header
+        %h3
+          %i.icon-bar-chart
+          Solicitudes recibidas
+      .widget-content
+        = image_tag(solicitudes_por_mes(current_usuario))
+    .widget
+      .widget-header
+        %h3
+          %i.icon-bar-chart
+          Solicitudes por estado
+      .widget-content
+        = image_tag(solicitudes_por_estado(current_usuario))

@@ -1,0 +1,21 @@
+#page-title.clearfix
+  %h1= Estado.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_estado_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_estados_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Estado.human_attribute_name(:nombre)
+          %th= 'Estado Final'
+          %th= Estado.human_attribute_name(:modulo)
+      %tbody
+        - @estados.each do |estado|
+          %tr
+            %td= link_to estado.nombre, [:admin,estado]
+            %td= estado.final ? 'Si' : 'No'
+            %td= estado.nombre_modulo
+    = will_paginate @estados

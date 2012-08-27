@@ -1,0 +1,21 @@
+#page-title.clearfix
+  %h1= Role.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @role.errors.any?
+  .error
+    %ul
+    - @role.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_role_path)
+    = button_edit(edit_admin_role_path(@role))
+    = button_delete(admin_role_path(@role))
+    = button_cancel(admin_roles_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Role.human_attribute_name(:name)
+        %td= @role.name

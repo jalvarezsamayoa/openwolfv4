@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# encoding: utf-8
 class PortalController < ApplicationController
   layout "portal"
   before_filter :get_solicitud, :only => [:solicitud, :print]
@@ -52,12 +52,17 @@ class PortalController < ApplicationController
   def print
     @actividades = @solicitud.actividades
     @documentos = @solicitud.adjuntos
+    @print_mode = true
 
     mostrar_datos_solicitante()
 
     respond_to do |format|
-      format.html {render 'solicitud', :layout => 'print'}
+      format.pdf do
+        render :pdf => "solicitud", :layout => "layouts/print", :template => "portal/solicitud.pdf.html.haml"
+      end
     end
+
+
   end
 
   def busqueda

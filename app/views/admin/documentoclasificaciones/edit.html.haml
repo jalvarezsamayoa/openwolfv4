@@ -1,0 +1,12 @@
+#page-title.clearfix
+  %h1= "Editar #{Documentoclasificacion.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3 Editar Clasificación Documental
+  .widget-content
+    = simple_form_for([:admin,@documentoclasificacion], :html => {:class => 'form-horizontal'}) do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        = buttons_update(admin_documentoclasificaciones_path)

@@ -1,5 +1,5 @@
 class Actividad < ActiveRecord::Base
-  #versioned :if => :guardar_version?
+  attr_accessible :textoactividad, :usuario_id, :institucion_id
 
   ESTADO_ACTIVA = 1
   ESTADO_COMPLETADA = 3
@@ -44,7 +44,7 @@ class Actividad < ActiveRecord::Base
   private
 
   def notificar_asignacion
-    Notificaciones.delay.deliver_nueva_asignacion(self) unless (self.dont_send_email == true)
+    Notificaciones.delay.nueva_asignacion(self) unless (self.dont_send_email == true)
   end
 
   def actualizar_solicitud

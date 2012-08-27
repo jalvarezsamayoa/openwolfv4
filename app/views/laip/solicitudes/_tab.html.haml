@@ -1,0 +1,6 @@
+/ _tab.html.haml
+%li{:class => "#{ active ? 'active' : '' }" }
+  %a{:href => url, :title => title, "data-toggle"=>"tab", "data-tab-id"=>url}
+    %i.icon-th-list
+    = text
+    %span.badge{:class => badge}= cnt

@@ -1,0 +1,21 @@
+#page-title.clearfix
+  %h1= Idioma.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @idioma.errors.any?
+  .error
+    %ul
+    - @idioma.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_idioma_path)
+    = button_edit(edit_admin_idioma_path(@idioma))
+    = button_delete(admin_idioma_path(@idioma))
+    = button_cancel(admin_idiomas_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Idioma.human_attribute_name(:nombre)
+        %td= @idioma.nombre

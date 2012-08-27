@@ -1,0 +1,12 @@
+#page-title.clearfix
+  %h1= "Editar #{Municipio.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3 Editar Municipio
+  .widget-content
+    = simple_form_for([:admin,@municipio], :html => {:class => 'form-horizontal'}) do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        = buttons_update(admin_municipios_path)

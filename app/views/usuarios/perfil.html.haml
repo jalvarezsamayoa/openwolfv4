@@ -1,9 +1,0 @@
-.mantform
-  %h2
-    Perfil #{@usuario.nombre}
-  = simple_form_for @usuario do |form|
-    = render :partial => 'form_perfil', :locals => {:form => form}
-    - if action_name == 'perfil'
-      = buttons_update(main_index_path)
-    - else
-      = buttons_update(usuarios_path)

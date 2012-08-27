@@ -1,0 +1,25 @@
+#en-tramite
+  %h3 En Trámite
+  %table.table
+    %thead
+      %th.col= t("solicitudes.label_codigo")
+      %th.col= t("solicitudes.label_fecha_creacion")
+      %th.col= t("solicitudes.label_institucion_id")
+      %th.col= t("solicitudes.label_estado_id")
+      %th.col= t("solicitudes.label_dias_restantes")
+      %th.col= t("solicitudes.label_avance")
+    %tbody
+      - @entramite.each do |solicitud|
+        %tr
+          %td= link_to solicitud.codigo, laip_solicitud_path(solicitud)
+          %td= l(solicitud.fecha_creacion)
+          %td= solicitud.institucion.nombre
+          %td
+            = solicitud.estado.nombre
+            = "[COMPLETA]" if solicitud.terminada?
+          %td
+            = solicitud_dias_restantes_badge(solicitud)
+          %td= solicitud.avance
+    %tfoot
+      %td{:colspan => "10"}
+        *Solicitudes en tramite.

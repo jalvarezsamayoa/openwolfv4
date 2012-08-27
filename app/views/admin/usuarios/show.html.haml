@@ -1,0 +1,33 @@
+#page-title.clearfix
+  %h1= Usuario.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @usuario.errors.any?
+  .error
+    %ul
+    - @usuario.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_usuario_path)
+    = button_edit(edit_admin_usuario_path(@usuario))
+    = button_delete(admin_usuario_path(@usuario))
+    = button_cancel(admin_usuarios_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Usuario.human_attribute_name(:nombre)
+        %td= @usuario.nombre
+      %tr
+        %th= Usuario.human_attribute_name(:username)
+        %td= @usuario.username
+      %tr
+        %th= Usuario.human_attribute_name(:email)
+        %td= @usuario.email
+      %tr
+        %th= Usuario.human_attribute_name(:institucion_id)
+        %td= @usuario.institucion.nombre
+      %tr
+        %th= Usuario.human_attribute_name(:cargo)
+        %td= @usuario.cargo

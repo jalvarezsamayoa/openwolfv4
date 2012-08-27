@@ -8,21 +8,6 @@
 
 body.private {
 
-  // .show {
-  //   #options {
-  //    margin-bottom: 20px;
-  //   }
-
-  //   table {
-  //     th {
-  //       width: 20%;
-  //     }
-
-  //     label {
-  //       font-weight: bold;
-  //     }
-  //   }
-  // }
   .show {
     table {
       th {
@@ -39,6 +24,46 @@ body.private {
     text-decoration: line-through;
     color: gray;
     a { color: gray; }
+  }
+
+
+  /* -------------------------- */
+  /* Solicitudes */
+  /* -------------------------- */
+  .mant-form {
+    textarea {
+      width: 90%;
+    }
+
+    .date {
+      select {
+        width: 100px;
+      }
+    }
+  }
+
+  /* -------------------------- */
+  /* Asignaciones */
+  /* -------------------------- */
+
+  #newactividad {
+    width: 530px;
+
+    textarea {
+      width: 95%;
+      height: 150px;
+    }
+  }
+
+  /* -------------------------- */
+  /* Seguimientos */
+  /* -------------------------- */
+
+  #newseguimiento {
+    textarea {
+      width: 95%;
+      height: 250px;
+    }
   }
 
 }

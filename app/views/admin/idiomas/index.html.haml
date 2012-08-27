@@ -1,0 +1,17 @@
+#page-title.clearfix
+  %h1= Idioma.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_idioma_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_idiomas_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Idioma.human_attribute_name(:nombre)
+      %tbody
+        - @idiomas.each do |idioma|
+          %tr
+            %td= link_to idioma.nombre, admin_idioma_path(idioma)
+    = will_paginate @idiomas

@@ -1,0 +1,17 @@
+#page-title.clearfix
+  %h1= Razontiporesolucion.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_razontiporesolucion_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_razonestiposresoluciones_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Razontiporesolucion.human_attribute_name(:nombre)
+      %tbody
+        - @razonestiposresoluciones.each do |razontiporesolucion|
+          %tr
+            %td= link_to razontiporesolucion.nombre, [:admin,razontiporesolucion]
+    = will_paginate @razonestiposresoluciones

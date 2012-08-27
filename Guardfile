@@ -20,3 +20,7 @@ guard 'bundler' do
   # Uncomment next line if Gemfile contain `gemspec' command
   # watch(/^.+\.gemspec/)
 end
+
+guard 'delayed', :environment => 'development' do
+  watch(%r{^app/(.+)\.rb})
+end

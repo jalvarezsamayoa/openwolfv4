@@ -15,10 +15,6 @@ class Usuario < ActiveRecord::Base
   :nombre, :cargo, :departamento_id, :areadocumento_id, :puesto_id, \
   :institucion_id, :essupervisorarea, :username, :role_ids, :login, :activo
 
-  # atributo virtual necesario para que plugin Devise
-  # pueda utilizar campo login en lugar de email
-  #attr_accessor :login
-
   # configuracion plugin acl9
   # agrega funcion usuario.has_role?
   acts_as_authorization_subject  :association_name => :roles, :join_table_name => "roles_usuarios"
@@ -44,16 +40,22 @@ class Usuario < ActiveRecord::Base
   validates_associated :institucion
   accepts_nested_attributes_for :roles
 
-  validates_presence_of :nombre, :email, :cargo, :institucion_id, :username
-  validates_uniqueness_of :nombre, :email, :username
+  validates_presence_of :nombre, :email, :cargo, :institucion_id
+  validates_uniqueness_of :nombre, :email
 
   before_destroy :puede_borrar?
+
+      #---------------------------------
+      # Callbacks
+      #---------------------------------
+
+  before_validation(on: :create) do
+    cargar_predeterminados
+  end
 
   def puede_borrar?
     check_for_children({:actividades => "Actividades", :solicitudes => "Solicitudes", :documentos => "Documentos"})
   end
-
-
 
 
   #################
@@ -97,13 +99,11 @@ class Usuario < ActiveRecord::Base
   # Metodos protegidos
   ################################
 
+  private
 
-  #   protected
-  # # Permite que plugin Devise pueda utilizar 'username' en lugar de 'email'
-  # def self.find_for_database_authentication(conditions)
-  #   login = conditions.delete(:login)
-  #   where(conditions).where(["usuarios.username = :value OR usuarios.email = :value", { :value => login }]).first
-  # end
+  def cargar_predeterminados
+    self.username = self.email if self.username.blank?
+  end
 
 end
 

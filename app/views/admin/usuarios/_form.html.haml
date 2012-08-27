@@ -1,0 +1,18 @@
+= form.input :email, :input_html => {:size => 60}
+= form.input :password
+= form.input :password_confirmation
+= form.input :activo, :hint => "Usuario esta activo."
+= form.input :nombre, :input_html => {:size => 60}
+= form.input :cargo, :input_html => {:size => 60}
+- if can? :asignar_institucion, current_usuario
+  = form.association :institucion, :include_blank => false, |
+    :input_html => {:disabled => !(can? :asignar_all_institucion, current_usuario), |
+      :class => 'combobox', |
+      :style => "width: 450px;"}
+- if can? :asignar_roles, current_usuario
+  %hr/
+  %h4 Roles de Seguridad
+  - if can? :asignar_all_roles, current_usuario
+    = form.association :roles, :as => :check_boxes, :collection => Role.all
+  - else
+    = form.association :roles, :as => :check_boxes, :collection => Role.basicos

@@ -1,0 +1,21 @@
+#page-title.clearfix
+  %h1= Fuente.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @fuente.errors.any?
+  .error
+    %ul
+    - @fuente.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_fuente_path)
+    = button_edit(edit_admin_fuente_path(@fuente))
+    = button_delete(admin_fuente_path(@fuente))
+    = button_cancel(admin_fuentes_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Fuente.human_attribute_name(:nombre)
+        %td= @fuente.nombre

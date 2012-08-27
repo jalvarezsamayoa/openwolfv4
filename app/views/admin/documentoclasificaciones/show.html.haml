@@ -1,0 +1,30 @@
+#page-title.clearfix
+  %h1= Documentoclasificacion.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @documentoclasificacion.errors.any?
+  .error
+    %ul
+    - @documentoclasificacion.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_documentoclasificacion_path)
+    = button_edit(edit_admin_documentoclasificacion_path(@documentoclasificacion))
+    = button_delete(admin_documentoclasificacion_path(@documentoclasificacion))
+    = button_cancel(admin_documentoclasificaciones_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Documentoclasificacion.human_attribute_name(:nombre)
+        %td= @documentoclasificacion.nombre
+      %tr
+        %th= Documentoclasificacion.human_attribute_name(:documentocategoria_id)
+        %td= @documentoclasificacion.documentocategoria.nombre
+      %tr
+        %th= Documentoclasificacion.human_attribute_name(:codigo)
+        %td= @documentoclasificacion.codigo
+      %tr
+        %th= Documentoclasificacion.human_attribute_name(:plantilla)
+        %td= @documentoclasificacion.plantilla

@@ -1,0 +1,119 @@
+#page-title.clearfix
+  %h1 Solicitud de Información Pública
+  = render :partial => "shared/breadcrumbs"
+
+.row-fluid
+  .span12
+    - content_for :widget_actions do
+      .widget-actions
+        .btn-group
+          %button.btn.btn-primary.btn-small.dropdown-toggle{"data-toggle" => "dropdown"}
+            Opciones solicitud
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = render :partial => "opciones"
+
+    = render :layout => "shared/widget", :locals => {:widget_title => "Solcitud de Información Pública", :widget_icon => "icon-copy"} do
+
+      - if @solicitud.anulada?
+        .alert.alert-error.center
+          Solicitud ha sido ANULADA.
+
+      .documento
+        %h1.center Solicitud de Información Pública
+        %h2.center= @solicitud.codigo
+
+        - unless @solicitud.informacion_publica?
+          .alert.center
+            #info-not-public
+              Información de esta solicitud bajo reserva por solicitud del solicitante.
+
+        %fieldset
+          %legend Datos Generales
+          %br
+          %table.table
+            %tr
+              %th Estado Actual:
+              %td= @solicitud.estado_actual
+            %tr
+              %th{:width => "20%"}= Solicitud.human_attribute_name(:codigo)
+              %td{:width => "80%"}= @solicitud.codigo
+            %tr
+              %th= Solicitud.human_attribute_name(:fecha_creacion)
+              %td= l(@solicitud.fecha_creacion)
+            %tr
+              %th= Solicitud.human_attribute_name(:institucion_id)
+              %td= @solicitud.usuario.nombre_institucion
+            %tr
+              %th= Solicitud.human_attribute_name(:via_id)
+              %td= @solicitud.via.nombre
+            %tr
+              %th= Solicitud.human_attribute_name(:forma_entrega)
+              %td= @solicitud.forma_entrega
+
+        %fieldset
+          %legend Asignado A:
+          #solicitud_no_asignada.error{ @actividades.size > 0 ? {:style => "display:none"} : {} }
+            La solicitud no ha sido asignada.
+          #asignaciones
+            = render :partial => 'asignaciones'
+
+        = render :partial => "datos_solicitante" if @mostrar_datos_solicitante
+
+        %fieldset
+          %legend Detalle de la Solicitud
+
+          %table.table
+            %tr
+              %th{:width => "20%"}= t("solicitudes.label_estado_id")
+              %td= @solicitud.estado.nombre
+            %tr
+              %th= t("solicitudes.label_fecha_programada")
+              %td= l(@solicitud.fecha_programada)
+            %tr
+              %th= t("solicitudes.label_fecha_entregada")
+              %td= l(@solicitud.fecha_entregada) unless @solicitud.fecha_entregada.nil?
+            %tr
+              %th= t("solicitudes.label_fecha_resolucion")
+              %td= l(@solicitud.fecha_resolucion) unless @solicitud.fecha_resolucion.nil?
+            %tr
+              %th= t("solicitudes.label_fecha_prorroga")
+              %td= l(@solicitud.fecha_prorroga) unless @solicitud.fecha_prorroga.nil?
+            %tr
+              %th= t("solicitudes.label_forma_entrega")
+              %td= @solicitud.forma_entrega
+            %tr
+              %th= t("solicitudes.label_observaciones")
+              %td= @solicitud.observaciones
+
+        %fieldset
+          %legend= t("solicitudes.label_textosolicitud")
+          #texto-solicitud
+            = @solicitud.texto_solicitud(current_usuario)
+
+
+        %fieldset
+          %legend= "Seguimientos de enlances"
+          #seguimientos
+            = render :partial => 'seguimientos'
+
+        %fieldset
+          %legend= Resolucion.model_name.human
+          #resoluciones
+            = render :partial => 'resoluciones'
+
+        %fieldset
+          %legend= t("activerecord.models.recursosrevision")
+          #recursosrevision
+            = render :partial => 'recursosrevision'
+
+        %fieldset
+          %legend= t("activerecord.models.nota")
+          #notasseguimiento
+            = render :partial => 'notas_seguimiento'
+
+        %fieldset
+          %legend Archivos adjuntos
+          #adjuntos
+            = render :partial => 'adjuntos'

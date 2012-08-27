@@ -28,10 +28,9 @@
           #info-menu
             .info-details
               %h4
-                Bienvenido,
                 = current_usuario.nombre
               %p
-                Logged in as Admin.
+                = link_to 'Cerrar Sesión', logout_path
                 %br
                   Usted tiene
                   %a{:href => "javascript:;"} 5 messages.
@@ -59,3 +58,4 @@
       \==================================================
     / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
+    = yield :javascripts

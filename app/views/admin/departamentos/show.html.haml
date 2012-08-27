@@ -1,0 +1,24 @@
+#page-title.clearfix
+  %h1= Departamento.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @departamento.errors.any?
+  .error
+    %ul
+    - @departamento.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_departamento_path)
+    = button_edit(edit_admin_departamento_path(@departamento))
+    = button_delete(admin_departamento_path(@departamento))
+    = button_cancel(admin_departamentos_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= label :nombre, Departamento.human_attribute_name(:nombre)
+        %td= @departamento.nombre
+      %tr
+        %th= label :abreviatura, Departamento.human_attribute_name(:abreviatura)
+        %td= @departamento.abreviatura

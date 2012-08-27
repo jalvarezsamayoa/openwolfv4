@@ -32,7 +32,7 @@
             %ul.nav.pull-right
               - if usuario_signed_in?
                 %li
-                  = link_to current_usuario.nombre_institucion, perfil_path
+                  = link_to current_usuario.nombre, perfil_path
                 %li= link_to "Cerrar sesión", logout_path
               - else
                 %li= link_to "Iniciar sesión", login_path

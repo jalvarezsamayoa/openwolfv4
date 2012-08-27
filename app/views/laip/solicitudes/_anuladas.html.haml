@@ -1,0 +1,18 @@
+#anuladas
+  %h3 Anuladas
+  %table.table
+    %thead
+      %th.col= t("solicitudes.label_codigo")
+      %th.col= t("solicitudes.label_institucion_id")
+      %th.col= t("solicitudes.label_fecha_creacion")
+      %th.col= t("solicitudes.label_estado_id")
+    %tbody
+      - @anuladas.each do |solicitud|
+        %tr
+          %td= link_to solicitud.codigo, laip_solicitud_path(solicitud)
+          %td= solicitud.institucion.nombre
+          %td= l(solicitud.fecha_creacion)
+          %td= "Anulada"
+    %tfoot
+      %td{:colspan => "10"}
+        *Solicitudes anuladas

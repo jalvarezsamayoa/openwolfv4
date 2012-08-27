@@ -1,5 +1,6 @@
 class Documentocategoria < ActiveRecord::Base
-  #versioned
+  attr_accessible :nombre, :parent_id
+
   acts_as_nested_set
 
   validates_presence_of :nombre

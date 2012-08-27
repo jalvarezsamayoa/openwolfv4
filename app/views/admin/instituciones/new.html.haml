@@ -1,0 +1,12 @@
+#page-title.clearfix
+  %h1= "Nueva #{Institucion.model_name.human}"
+  = render :partial => "shared/breadcrumbs"
+
+.show.widget
+  .widget-header
+    %h3 Nuevo Institucion
+  .widget-content
+    = simple_form_for([:admin,@institucion], :html => {:class => 'form-horizontal', :multipart => true}) do |form|
+      = render :partial => 'form', :locals => {:form => form}
+      .form-actions
+        = buttons_create(admin_instituciones_path)

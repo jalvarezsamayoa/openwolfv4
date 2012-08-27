@@ -1,0 +1,3 @@
+$("#newactividad").html("<%= escape_javascript(render :partial => 'laip/actividades/new') %>");
+$("form.validate-remote").validate();
+$("#newactividad").modal('toggle');

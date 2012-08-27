@@ -13,5 +13,6 @@
  *= require slate-bootstrap-overrides
  *= require devise
  *= require slate
+ *= require slate-reports
  *= require general
  */

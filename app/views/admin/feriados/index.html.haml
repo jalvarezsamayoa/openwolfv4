@@ -1,0 +1,21 @@
+#page-title.clearfix
+  %h1= Feriado.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_feriado_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_feriados_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Feriado.human_attribute_name(:nombre)
+          %th= Feriado.human_attribute_name(:tipoferiado)
+          %th= Feriado.human_attribute_name(:institucion_id)
+      %tbody
+        - @feriados.each do |feriado|
+          %tr
+            %td= link_to feriado.nombre, [:admin,feriado]
+            %td= feriado.tipo_feriado
+            %td= feriado.institucion.nombre
+    = will_paginate @feriados

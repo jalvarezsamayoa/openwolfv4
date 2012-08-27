@@ -1,0 +1,21 @@
+#page-title.clearfix
+  %h1= Profesion.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @profesion.errors.any?
+  .error
+    %ul
+    - @profesion.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_profesion_path)
+    = button_edit(edit_admin_profesion_path(@profesion))
+    = button_delete(admin_profesion_path(@profesion))
+    = button_cancel(admin_profesiones_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Profesion.human_attribute_name(:nombre)
+        %td= @profesion.nombre

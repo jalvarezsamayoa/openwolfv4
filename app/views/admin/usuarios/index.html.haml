@@ -1,0 +1,27 @@
+#page-title.clearfix
+  %h1= Usuario.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_usuario_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_usuarios_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= 'Id'
+          %th= Usuario.human_attribute_name(:email)
+          %th= Usuario.human_attribute_name(:nombre)
+          %th= Usuario.human_attribute_name(:cargo)
+          %th= Usuario.human_attribute_name(:institucion_id)
+          %th= Usuario.human_attribute_name(:activo)
+      %tbody
+        - for usuario in @usuarios  do
+          %tr{:class => "#{ 'inactive' unless usuario.activo? }"}
+            %td= usuario.id
+            %td= link_to usuario.email, admin_usuario_path(usuario)
+            %td= usuario.nombre
+            %td= usuario.cargo
+            %td= usuario.institucion.nombre
+            %td= si_no(usuario.activo)
+    = will_paginate @usuarios

@@ -1,0 +1,792 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+$.validator	vendor/assets/javascripts/jquery.validate.js	/^});$/;"	c
+$.validator.format	vendor/assets/javascripts/jquery.validate.js	/^};$/;"	f
+Ability	app/models/ability.rb	/^class Ability$/;"	c
+ActionView	config/initializers/will_paginate.rb	/^  module ActionView$/;"	m	class:WillPaginate
+ActiveRecord	config/initializers/referential_integrity.rb	/^class ActiveRecord::Base$/;"	c
+Actividad	app/models/actividad.rb	/^class Actividad < ActiveRecord::Base$/;"	c
+AddActiveToUsers	db/migrate/20110613181238_add_active_to_users.rb	/^class AddActiveToUsers < ActiveRecord::Migration$/;"	c
+AddActualizaFechaNotificacionToTiposresoluciones	db/migrate/20110207174109_add_actualiza_fecha_notificacion_to_tiposresoluciones.rb	/^class AddActualizaFechaNotificacionToTiposresoluciones < ActiveRecord::Migration$/;"	c
+AddAnuladaToSolicitudes	db/migrate/20110420150723_add_anulada_to_solicitudes.rb	/^class AddAnuladaToSolicitudes < ActiveRecord::Migration$/;"	c
+AddArchivoIdToDocumentos	db/migrate/20110113161657_add_archivo_id_to_documentos.rb	/^class AddArchivoIdToDocumentos < ActiveRecord::Migration$/;"	c
+AddAttachmentArchivoToTempAsset	db/migrate/20110920200624_add_attachment_archivo_to_temp_asset.rb	/^class AddAttachmentArchivoToTempAsset < ActiveRecord::Migration$/;"	c
+AddAttachmentsArchivoToAdjunto	db/migrate/20091026032801_add_attachments_archivo_to_adjunto.rb	/^class AddAttachmentsArchivoToAdjunto < ActiveRecord::Migration$/;"	c
+AddAttachmentsArchivoToSeguimiento	db/migrate/20091027042355_add_attachments_archivo_to_seguimiento.rb	/^class AddAttachmentsArchivoToSeguimiento < ActiveRecord::Migration$/;"	c
+AddAttachmentsLogoToInstitucion	db/migrate/20101005040220_add_attachments_logo_to_institucion.rb	/^class AddAttachmentsLogoToInstitucion < ActiveRecord::Migration$/;"	c
+AddAuditsTable	db/migrate/20100825034756_add_audits_table.rb	/^class AddAuditsTable < ActiveRecord::Migration$/;"	c
+AddDescripcionToDocumentotraslados	db/migrate/20110113191755_add_descripcion_to_documentotraslados.rb	/^class AddDescripcionToDocumentotraslados < ActiveRecord::Migration$/;"	c
+AddDireccionToInstituciones	db/migrate/20100825160732_add_direccion_to_instituciones.rb	/^class AddDireccionToInstituciones < ActiveRecord::Migration$/;"	c
+AddExtraFieldsToSolicitudes	db/migrate/20100819081123_add_extra_fields_to_solicitudes.rb	/^class AddExtraFieldsToSolicitudes < ActiveRecord::Migration$/;"	c
+AddFechaNotificacionToResoluciones	db/migrate/20110207174002_add_fecha_notificacion_to_resoluciones.rb	/^class AddFechaNotificacionToResoluciones < ActiveRecord::Migration$/;"	c
+AddFechaToResoluciones	db/migrate/20110207170742_add_fecha_to_resoluciones.rb	/^class AddFechaToResoluciones < ActiveRecord::Migration$/;"	c
+AddFieldActivaToInstituciones	db/migrate/20101008001944_add_field_activa_to_instituciones.rb	/^class AddFieldActivaToInstituciones < ActiveRecord::Migration$/;"	c
+AddFieldAnoToSolicitudes	db/migrate/20090914225347_add_field_ano_to_solicitudes.rb	/^class AddFieldAnoToSolicitudes < ActiveRecord::Migration$/;"	c
+AddFieldAsignadaToSolicitudes	db/migrate/20090914200755_add_field_asignada_to_solicitudes.rb	/^class AddFieldAsignadaToSolicitudes < ActiveRecord::Migration$/;"	c
+AddFieldDocumentoclasificacionIdToRecursosrevision	db/migrate/20101103215053_add_field_documentoclasificacion_id_to_recursosrevision.rb	/^class AddFieldDocumentoclasificacionIdToRecursosrevision < ActiveRecord::Migration$/;"	c
+AddFieldDocumentoclasificacionIdToResoluciones	db/migrate/20101103215031_add_field_documentoclasificacion_id_to_resoluciones.rb	/^class AddFieldDocumentoclasificacionIdToResoluciones < ActiveRecord::Migration$/;"	c
+AddFieldDocumentoclasificacionIdToSolicitudes	db/migrate/20101103214952_add_field_documentoclasificacion_id_to_solicitudes.rb	/^class AddFieldDocumentoclasificacionIdToSolicitudes < ActiveRecord::Migration$/;"	c
+AddFieldEmailToInstituciones	db/migrate/20110226173548_add_field_email_to_instituciones.rb	/^class AddFieldEmailToInstituciones < ActiveRecord::Migration$/;"	c
+AddFieldFechaToFeriados	db/migrate/20110318043800_add_field_fecha_to_feriados.rb	/^class AddFieldFechaToFeriados < ActiveRecord::Migration$/;"	c
+AddFieldFinalToEstados	db/migrate/20090914224117_add_field_final_to_estados.rb	/^class AddFieldFinalToEstados < ActiveRecord::Migration$/;"	c
+AddFieldNumeroToRecursosrevision	db/migrate/20101006151153_add_field_numero_to_recursosrevision.rb	/^class AddFieldNumeroToRecursosrevision < ActiveRecord::Migration$/;"	c
+AddFieldOrigenIdToSolicitudes	db/migrate/20101028003305_add_field_origen_id_to_solicitudes.rb	/^class AddFieldOrigenIdToSolicitudes < ActiveRecord::Migration$/;"	c
+AddFieldProfesionIdToSolicitudes	db/migrate/20100819073952_add_field_profesion_id_to_solicitudes.rb	/^class AddFieldProfesionIdToSolicitudes < ActiveRecord::Migration$/;"	c
+AddFieldSolicitudIdToActividades	db/migrate/20090914233753_add_field_solicitud_id_to_actividades.rb	/^class AddFieldSolicitudIdToActividades < ActiveRecord::Migration$/;"	c
+AddFieldTextoToSolicitudes	db/migrate/20090914175413_add_field_texto_to_solicitudes.rb	/^class AddFieldTextoToSolicitudes < ActiveRecord::Migration$/;"	c
+AddFieldUnidadEjecutoraToInstituciones	db/migrate/20101028112108_add_field_unidad_ejecutora_to_instituciones.rb	/^class AddFieldUnidadEjecutoraToInstituciones < ActiveRecord::Migration$/;"	c
+AddFieldUsasolicitudesprivadasToInstituciones	db/migrate/20101008024016_add_field_usasolicitudesprivadas_to_instituciones.rb	/^class AddFieldUsasolicitudesprivadasToInstituciones < ActiveRecord::Migration$/;"	c
+AddFieldsCodigoAbreviaturaToInstituciones	db/migrate/20090914015453_add_fields_codigo_abreviatura_to_instituciones.rb	/^class AddFieldsCodigoAbreviaturaToInstituciones < ActiveRecord::Migration$/;"	c
+AddFieldsTiempoRespuestaToSolicitudes	db/migrate/20110421201519_add_fields_tiempo_respuesta_to_solicitudes.rb	/^class AddFieldsTiempoRespuestaToSolicitudes < ActiveRecord::Migration$/;"	c
+AddIdiomaIdToSolicitudes	db/migrate/20110113040220_add_idioma_id_to_solicitudes.rb	/^class AddIdiomaIdToSolicitudes < ActiveRecord::Migration$/;"	c
+AddInformacionPublicaToNotas	db/migrate/20110203225654_add_informacion_publica_to_notas.rb	/^class AddInformacionPublicaToNotas < ActiveRecord::Migration$/;"	c
+AddModuloIdToEstados	db/migrate/20101103145631_add_modulo_id_to_estados.rb	/^class AddModuloIdToEstados < ActiveRecord::Migration$/;"	c
+AddOpenIdAuthenticationTables	db/migrate/20100824035759_add_open_id_authentication_tables.rb	/^class AddOpenIdAuthenticationTables < ActiveRecord::Migration$/;"	c
+AddPositivaToTiporesoluciones	db/migrate/20110420041440_add_positiva_to_tiporesoluciones.rb	/^class AddPositivaToTiporesoluciones < ActiveRecord::Migration$/;"	c
+AddPublicaToSolicitud	db/migrate/20100901131839_add_publica_to_solicitud.rb	/^class AddPublicaToSolicitud < ActiveRecord::Migration$/;"	c
+AddQueueToDelayedJobs	db/migrate/20120313203152_add_queue_to_delayed_jobs.rb	/^class AddQueueToDelayedJobs < ActiveRecord::Migration$/;"	c
+AddReservaTemporalToSolicitudes	db/migrate/20110912215344_add_reserva_temporal_to_solicitudes.rb	/^class AddReservaTemporalToSolicitudes < ActiveRecord::Migration$/;"	c
+AddResolucionesToSolicitudes	db/migrate/20100819132833_add_resoluciones_to_solicitudes.rb	/^class AddResolucionesToSolicitudes < ActiveRecord::Migration$/;"	c
+AddUsuariosOpenIdField	db/migrate/20100811170252_add_usuarios_open_id_field.rb	/^class AddUsuariosOpenIdField < ActiveRecord::Migration$/;"	c
+AddWebpageToInstituciones	db/migrate/20101119121232_add_webpage_to_instituciones.rb	/^class AddWebpageToInstituciones < ActiveRecord::Migration$/;"	c
+Adjunto	app/models/adjunto.rb	/^class Adjunto < ActiveRecord::Base$/;"	c
+Admin	app/controllers/admin/archivos_controller.rb	/^class Admin::ArchivosController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/clasificaciones_controller.rb	/^class Admin::ClasificacionesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/departamentos_controller.rb	/^class Admin::DepartamentosController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/documentocategorias_controller.rb	/^class Admin::DocumentocategoriasController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/documentoclasificaciones_controller.rb	/^class Admin::DocumentoclasificacionesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/estados_controller.rb	/^class Admin::EstadosController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/feriados_controller.rb	/^class Admin::FeriadosController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/fuentes_controller.rb	/^class Admin::FuentesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/idiomas_controller.rb	/^class Admin::IdiomasController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/importar_controller.rb	/^class Admin::ImportarController < ApplicationController$/;"	c
+Admin	app/controllers/admin/instituciones_controller.rb	/^class Admin::InstitucionesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/municipios_controller.rb	/^class Admin::MunicipiosController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/profesiones_controller.rb	/^class Admin::ProfesionesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/razonestiposresoluciones_controller.rb	/^class Admin::RazonestiposresolucionesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/roles_controller.rb	/^class Admin::RolesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/tiposresoluciones_controller.rb	/^class Admin::TiposresolucionesController < InheritedResources::Base$/;"	c
+Admin	app/controllers/admin/usuarios_controller.rb	/^class Admin::UsuariosController < ApplicationController$/;"	c
+Admin	app/controllers/admin/vias_controller.rb	/^class Admin::ViasController <  InheritedResources::Base$/;"	c
+AgregarCamposToUsuarios	db/migrate/20090913170219_agregar_campos_to_usuarios.rb	/^class AgregarCamposToUsuarios < ActiveRecord::Migration$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:OpenwolfV4
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Archivo	app/models/archivo.rb	/^class Archivo < ActiveRecord::Base$/;"	c
+ArchivosController	app/controllers/archivos_controller.rb	/^class ArchivosController < InheritedResources::Base$/;"	c
+BootstrapLinkRenderer	config/initializers/will_paginate.rb	/^    class BootstrapLinkRenderer < LinkRenderer$/;"	c	class:WillPaginate.ActionView
+Busqueda	app/models/busqueda.rb	/^class Busqueda$/;"	c
+Clasificacion	app/models/clasificacion.rb	/^class Clasificacion < ActiveRecord::Base$/;"	c
+CleanupDeviseFields	db/migrate/20120720190005_cleanup_devise_fields.rb	/^class CleanupDeviseFields < ActiveRecord::Migration$/;"	c
+CreateActividades	db/migrate/20090914200125_create_actividades.rb	/^class CreateActividades < ActiveRecord::Migration$/;"	c
+CreateAdjuntos	db/migrate/20091025155813_create_adjuntos.rb	/^class CreateAdjuntos < ActiveRecord::Migration$/;"	c
+CreateArchivos	db/migrate/20110113161428_create_archivos.rb	/^class CreateArchivos < ActiveRecord::Migration$/;"	c
+CreateClasificaciones	db/migrate/20100819081644_create_clasificaciones.rb	/^class CreateClasificaciones < ActiveRecord::Migration$/;"	c
+CreateDelayedJobs	db/migrate/20110209143335_create_delayed_jobs.rb	/^class CreateDelayedJobs < ActiveRecord::Migration$/;"	c
+CreateDepartamentos	db/migrate/20090913174220_create_departamentos.rb	/^class CreateDepartamentos < ActiveRecord::Migration$/;"	c
+CreateDocumentocategorias	db/migrate/20101103214606_create_documentocategorias.rb	/^class CreateDocumentocategorias < ActiveRecord::Migration$/;"	c
+CreateDocumentoclasificaciones	db/migrate/20101103214535_create_documentoclasificaciones.rb	/^class CreateDocumentoclasificaciones < ActiveRecord::Migration$/;"	c
+CreateDocumentodestinatarios	db/migrate/20101105160653_create_documentodestinatarios.rb	/^class CreateDocumentodestinatarios < ActiveRecord::Migration$/;"	c
+CreateDocumentos	db/migrate/20091216175250_create_documentos.rb	/^class CreateDocumentos < ActiveRecord::Migration$/;"	c
+CreateDocumentotraslados	db/migrate/20110113175033_create_documentotraslados.rb	/^class CreateDocumentotraslados < ActiveRecord::Migration$/;"	c
+CreateEstados	db/migrate/20090914034415_create_estados.rb	/^class CreateEstados < ActiveRecord::Migration$/;"	c
+CreateFeriados	db/migrate/20110317161441_create_feriados.rb	/^class CreateFeriados < ActiveRecord::Migration$/;"	c
+CreateFuentes	db/migrate/20091216221150_create_fuentes.rb	/^class CreateFuentes < ActiveRecord::Migration$/;"	c
+CreateGeneros	db/migrate/20100819075151_create_generos.rb	/^class CreateGeneros < ActiveRecord::Migration$/;"	c
+CreateIdiomas	db/migrate/20110113035500_create_idiomas.rb	/^class CreateIdiomas < ActiveRecord::Migration$/;"	c
+CreateInstituciones	db/migrate/20090913024811_create_instituciones.rb	/^class CreateInstituciones < ActiveRecord::Migration$/;"	c
+CreateMotivosnegativa	db/migrate/20100819081709_create_motivosnegativa.rb	/^class CreateMotivosnegativa < ActiveRecord::Migration$/;"	c
+CreateMotivosprorroga	db/migrate/20100819081658_create_motivosprorroga.rb	/^class CreateMotivosprorroga < ActiveRecord::Migration$/;"	c
+CreateMunicipios	db/migrate/20090913174242_create_municipios.rb	/^class CreateMunicipios < ActiveRecord::Migration$/;"	c
+CreateNotas	db/migrate/20110112080136_create_notas.rb	/^class CreateNotas < ActiveRecord::Migration$/;"	c
+CreateProfesiones	db/migrate/20100819015644_create_profesiones.rb	/^class CreateProfesiones < ActiveRecord::Migration$/;"	c
+CreatePuestos	db/migrate/20090913160804_create_puestos.rb	/^class CreatePuestos < ActiveRecord::Migration$/;"	c
+CreateRangosedad	db/migrate/20100819081628_create_rangosedad.rb	/^class CreateRangosedad < ActiveRecord::Migration$/;"	c
+CreateRazonestiposresoluciones	db/migrate/20100901124635_create_razonestiposresoluciones.rb	/^class CreateRazonestiposresoluciones < ActiveRecord::Migration$/;"	c
+CreateRecursosrevision	db/migrate/20101006144701_create_recursosrevision.rb	/^class CreateRecursosrevision < ActiveRecord::Migration$/;"	c
+CreateResoluciones	db/migrate/20100901123943_create_resoluciones.rb	/^class CreateResoluciones < ActiveRecord::Migration$/;"	c
+CreateRoles	db/migrate/20100818133700_create_roles.rb	/^class CreateRoles < ActiveRecord::Migration$/;"	c
+CreateSeguimientos	db/migrate/20090915183636_create_seguimientos.rb	/^class CreateSeguimientos < ActiveRecord::Migration$/;"	c
+CreateSentidosresolucion	db/migrate/20101006145703_create_sentidosresolucion.rb	/^class CreateSentidosresolucion < ActiveRecord::Migration$/;"	c
+CreateSimpleCaptchaData	db/migrate/20120313151734_create_simple_captcha_data.rb	/^class CreateSimpleCaptchaData < ActiveRecord::Migration$/;"	c
+CreateSolicitudes	db/migrate/20090914035143_create_solicitudes.rb	/^class CreateSolicitudes < ActiveRecord::Migration$/;"	c
+CreateTempAssets	db/migrate/20110920200512_create_temp_assets.rb	/^class CreateTempAssets < ActiveRecord::Migration$/;"	c
+CreateTipomensajes	db/migrate/20091216221043_create_tipomensajes.rb	/^class CreateTipomensajes < ActiveRecord::Migration$/;"	c
+CreateTiposresoluciones	db/migrate/20100901124314_create_tiposresoluciones.rb	/^class CreateTiposresoluciones < ActiveRecord::Migration$/;"	c
+CreateUsuarios	db/migrate/20090811002731_create_usuarios.rb	/^class CreateUsuarios < ActiveRecord::Migration$/;"	c
+CreateVestalVersions	db/migrate/20110105174720_create_vestal_versions.rb	/^class CreateVestalVersions < ActiveRecord::Migration$/;"	c
+CreateVias	db/migrate/20090914031202_create_vias.rb	/^class CreateVias < ActiveRecord::Migration$/;"	c
+CreateWorkerLogs	db/migrate/20110920185416_create_worker_logs.rb	/^class CreateWorkerLogs < ActiveRecord::Migration$/;"	c
+DashboardHelper	app/helpers/dashboard_helper.rb	/^module DashboardHelper$/;"	m
+Departamento	app/models/departamento.rb	/^class Departamento < ActiveRecord::Base$/;"	c
+DevelopmentMailInterceptor	lib/development_mail_interceptor.rb	/^class DevelopmentMailInterceptor$/;"	c
+DeviseCreateUsers	db/migrate/20101230162907_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
+Documento	app/models/documento.rb	/^class Documento < ActiveRecord::Base$/;"	c
+Documentocategoria	app/models/documentocategoria.rb	/^class Documentocategoria < ActiveRecord::Base$/;"	c
+Documentoclasificacion	app/models/documentoclasificacion.rb	/^class Documentoclasificacion < ActiveRecord::Base$/;"	c
+Documentodestinatario	app/models/documentodestinatario.rb	/^class Documentodestinatario < ActiveRecord::Base$/;"	c
+DocumentosController	app/controllers/archivo/documentos_controller.rb	/^class DocumentosController < ApplicationController$/;"	c
+DocumentosHelper	app/helpers/documentos_helper.rb	/^module DocumentosHelper$/;"	m
+Documentotraslado	app/models/documentotraslado.rb	/^class Documentotraslado < ActiveRecord::Base$/;"	c
+DocumentotrasladosController	app/controllers/archivo/documentotraslados_controller.rb	/^class DocumentotrasladosController < ApplicationController$/;"	c
+EstadisticasController	app/controllers/estadisticas_controller.rb	/^class EstadisticasController < ApplicationController$/;"	c
+EstadisticasHelper	app/helpers/estadisticas_helper.rb	/^module EstadisticasHelper$/;"	m
+Estado	app/models/estado.rb	/^class Estado < ActiveRecord::Base$/;"	c
+Feriado	app/models/feriado.rb	/^class Feriado < ActiveRecord::Base$/;"	c
+Fuente	app/models/fuente.rb	/^class Fuente < ActiveRecord::Base$/;"	c
+Genero	app/models/genero.rb	/^class Genero < ActiveRecord::Base $/;"	c
+Herramienta	app/models/herramienta.rb	/^class Herramienta$/;"	c
+Idioma	app/models/idioma.rb	/^class Idioma < ActiveRecord::Base$/;"	c
+Institucion	app/models/institucion.rb	/^class Institucion < ActiveRecord::Base$/;"	c
+Laip	app/controllers/laip/actividades_controller.rb	/^class Laip::ActividadesController < ApplicationController$/;"	c
+Laip	app/controllers/laip/adjuntos_controller.rb	/^class Laip::AdjuntosController < ApplicationController$/;"	c
+Laip	app/controllers/laip/seguimientos_controller.rb	/^class Laip::SeguimientosController < ApplicationController$/;"	c
+Laip	app/controllers/laip/solicitudes_controller.rb	/^class Laip::SolicitudesController < ApplicationController$/;"	c
+MainController	app/controllers/main_controller.rb	/^class MainController < ApplicationController$/;"	c
+MainHelper	app/helpers/main_helper.rb	/^module MainHelper$/;"	m
+MensajesController	app/controllers/archivo/mensajes_controller.rb	/^class MensajesController < ApplicationController$/;"	c
+Motivonegativa	app/models/motivonegativa.rb	/^class Motivonegativa < ActiveRecord::Base$/;"	c
+Motivoprorroga	app/models/motivoprorroga.rb	/^class Motivoprorroga < ActiveRecord::Base$/;"	c
+MotivosnegativaController	app/controllers/laip/motivosnegativa_controller.rb	/^class MotivosnegativaController < ApplicationController$/;"	c
+MotivosprorrogaController	app/controllers/admin/motivosprorroga_controller.rb	/^class MotivosprorrogaController < ApplicationController$/;"	c
+Municipio	app/models/municipio.rb	/^class Municipio < ActiveRecord::Base$/;"	c
+Nota	app/models/nota.rb	/^class Nota < ActiveRecord::Base$/;"	c
+NotasController	app/controllers/laip/notas_controller.rb	/^class NotasController < ApplicationController$/;"	c
+Notificaciones	app/mailers/notificaciones.rb	/^class Notificaciones < ActionMailer::Base$/;"	c
+OpenwolfV4	config/application.rb	/^module OpenwolfV4$/;"	m
+Plantilla	app/models/plantilla.rb	/^class Plantilla$/;"	c
+PortalController	app/controllers/portal_controller.rb	/^class PortalController < ApplicationController$/;"	c
+PortalHelper	app/helpers/portal_helper.rb	/^module PortalHelper$/;"	m
+Profesion	app/models/profesion.rb	/^class Profesion < ActiveRecord::Base$/;"	c
+Puesto	app/models/puesto.rb	/^class Puesto < ActiveRecord::Base  $/;"	c
+Rangoedad	app/models/rangoedad.rb	/^class Rangoedad < ActiveRecord::Base$/;"	c
+RangosedadController	app/controllers/admin/rangosedad_controller.rb	/^class RangosedadController < ApplicationController$/;"	c
+Razontiporesolucion	app/models/razontiporesolucion.rb	/^class Razontiporesolucion < ActiveRecord::Base$/;"	c
+Recursorevision	app/models/recursorevision.rb	/^class Recursorevision < ActiveRecord::Base$/;"	c
+RecursosrevisionController	app/controllers/laip/recursosrevision_controller.rb	/^class RecursosrevisionController < ApplicationController$/;"	c
+RemoveResolucionesFromSolicitudes	db/migrate/20101116035232_remove_resoluciones_from_solicitudes.rb	/^class RemoveResolucionesFromSolicitudes < ActiveRecord::Migration$/;"	c
+ReportesController	app/controllers/reportes_controller.rb	/^class ReportesController < ApplicationController$/;"	c
+Resolucion	app/models/resolucion.rb	/^class Resolucion < ActiveRecord::Base$/;"	c
+ResolucionesController	app/controllers/laip/resoluciones_controller.rb	/^class ResolucionesController < ApplicationController$/;"	c
+Role	app/models/role.rb	/^class Role < ActiveRecord::Base$/;"	c
+Seguimiento	app/models/seguimiento.rb	/^class Seguimiento < ActiveRecord::Base$/;"	c
+Sentidoresolucion	app/models/sentidoresolucion.rb	/^class Sentidoresolucion < ActiveRecord::Base$/;"	c
+SentidosresolucionController	app/controllers/laip/sentidosresolucion_controller.rb	/^class SentidosresolucionController < ApplicationController$/;"	c
+Solicitud	app/models/solicitud.rb	/^class Solicitud < ActiveRecord::Base$/;"	c
+SolicitudInformacionController	app/controllers/solicitud_informacion_controller.rb	/^class SolicitudInformacionController < ApplicationController$/;"	c
+SolicitudesHelper	app/helpers/solicitudes_helper.rb	/^module SolicitudesHelper$/;"	m
+TempAsset	app/models/temp_asset.rb	/^class TempAsset < ActiveRecord::Base$/;"	c
+Tipomensaje	app/models/tipomensaje.rb	/^class Tipomensaje < ActiveRecord::Base  $/;"	c
+TipomensajesController	app/controllers/admin/tipomensajes_controller.rb	/^class TipomensajesController < ApplicationController$/;"	c
+Tiporesolucion	app/models/tiporesolucion.rb	/^class Tiporesolucion < ActiveRecord::Base$/;"	c
+Usuario	app/models/usuario.rb	/^class Usuario < ActiveRecord::Base$/;"	c
+Via	app/models/via.rb	/^class Via < ActiveRecord::Base$/;"	c
+WillPaginate	config/initializers/will_paginate.rb	/^module WillPaginate$/;"	m
+WorkerLog	app/models/worker_log.rb	/^class WorkerLog < ActiveRecord::Base$/;"	c
+actividad_boton_agregar_seguimiento	app/helpers/solicitudes_helper.rb	/^  def actividad_boton_agregar_seguimiento(actividad)$/;"	f
+actividad_boton_marcar_completada	app/helpers/solicitudes_helper.rb	/^  def actividad_boton_marcar_completada(actividad)$/;"	f
+actividad_terminada	app/models/solicitud.rb	/^  def actividad_terminada(fecha = Date.today)$/;"	f	class:Solicitud
+actualizar_asignaciones	app/models/solicitud.rb	/^  def actualizar_asignaciones$/;"	f	class:Solicitud
+actualizar_estado	app/controllers/laip/solicitudes_controller.rb	/^  def actualizar_estado$/;"	f	class:Laip
+actualizar_municipios	app/controllers/laip/solicitudes_controller.rb	/^  def actualizar_municipios$/;"	f	class:Laip
+actualizar_razones	app/controllers/laip/resoluciones_controller.rb	/^  def actualizar_razones$/;"	f	class:ResolucionesController
+actualizar_solicitud	app/models/actividad.rb	/^  def actualizar_solicitud$/;"	f	class:Actividad
+actualizar_solicitud	app/models/resolucion.rb	/^  def actualizar_solicitud$/;"	f	class:Resolucion
+actualizar_usuarios	app/controllers/laip/actividades_controller.rb	/^  def actualizar_usuarios$/;"	f	class:Laip
+add_this	app/helpers/application_helper.rb	/^  def add_this$/;"	f	class:ApplicationHelper
+agregar_resolucion	app/models/herramienta.rb	/^  def agregar_resolucion(solicitud, es_prorroga = false)$/;"	f	class:Herramienta
+agregar_seguimiento	app/models/herramienta.rb	/^  def agregar_seguimiento(solicitud, actividad)$/;"	f	class:Herramienta
+ajax_flash	app/helpers/application_helper.rb	/^  def ajax_flash$/;"	f	class:ApplicationHelper
+ano_minimo	app/models/institucion.rb	/^  def ano_minimo$/;"	f	class:Institucion
+anular	app/models/solicitud.rb	/^  def anular$/;"	f	class:Solicitud
+archivado?	app/models/documento.rb	/^  def archivado?$/;"	f	class:Documento
+archivar	app/controllers/archivo/documentos_controller.rb	/^  def archivar$/;"	f	class:DocumentosController
+archivo_nombre	app/models/documento.rb	/^  def archivo_nombre$/;"	f	class:Documento
+asignada?	app/models/solicitud.rb	/^  def asignada?$/;"	f	class:Solicitud
+asignar_a_enlace	app/models/herramienta.rb	/^  def asignar_a_enlace(solicitud, actividad_estado_id = 1)$/;"	f	class:Herramienta
+atrasada?	app/models/solicitud.rb	/^  def atrasada?$/;"	f	class:Solicitud
+autor_datos	app/models/documento.rb	/^  def autor_datos$/;"	f	class:Documento
+autor_nombre	app/models/documento.rb	/^  def autor_nombre$/;"	f	class:Documento
+avance	app/models/solicitud.rb	/^  def avance$/;"	f	class:Solicitud
+bookmark_delicious	app/helpers/application_helper.rb	/^  def bookmark_delicious$/;"	f	class:ApplicationHelper
+buscar	app/controllers/portal_controller.rb	/^  def buscar$/;"	f	class:PortalController
+busqueda	app/controllers/portal_controller.rb	/^  def busqueda$/;"	f	class:PortalController
+button	app/helpers/application_helper.rb	/^  def button(text = 'Grabar', icon = 'icon-ok')$/;"	f	class:ApplicationHelper
+button_cancel	app/helpers/application_helper.rb	/^  def button_cancel(url = "#", text = 'Cancelar')$/;"	f	class:ApplicationHelper
+button_create	app/helpers/application_helper.rb	/^  def button_create(text = 'Grabar Nuevo')$/;"	f	class:ApplicationHelper
+button_delete	app/helpers/application_helper.rb	/^  def button_delete(url = "#", text = 'Eliminar')$/;"	f	class:ApplicationHelper
+button_edit	app/helpers/application_helper.rb	/^  def button_edit(url = "#", text = 'Editar')$/;"	f	class:ApplicationHelper
+button_export	app/helpers/application_helper.rb	/^  def button_export(url = "#", text = 'Exportar')$/;"	f	class:ApplicationHelper
+button_link	app/helpers/application_helper.rb	/^  def button_link(url = "#", text = 'Click Me', title = 'Click me', icon = 'icon-ok', positive = true, delete = false  )$/;"	f	class:ApplicationHelper
+button_new	app/helpers/application_helper.rb	/^  def button_new(url = "#", text = 'Nuevo')$/;"	f	class:ApplicationHelper
+button_print	app/helpers/application_helper.rb	/^  def button_print(url = "#", text = 'Imprimir')$/;"	f	class:ApplicationHelper
+button_update	app/helpers/application_helper.rb	/^  def button_update(text = 'Grabar Cambios')$/;"	f	class:ApplicationHelper
+buttons_create	app/helpers/application_helper.rb	/^  def buttons_create(url = "#")$/;"	f	class:ApplicationHelper
+buttons_update	app/helpers/application_helper.rb	/^  def buttons_update(url = "#")$/;"	f	class:ApplicationHelper
+calcular_dias_no_laborales	app/models/feriado.rb	/^  def self.calcular_dias_no_laborales(opts = {})$/;"	F	class:Feriado
+calcular_fecha_entrega	app/models/solicitud.rb	/^      def calcular_fecha_entrega$/;"	f	class:Solicitud
+calcular_fecha_entrega	app/models/solicitud.rb	/^      def self.calcular_fecha_entrega(d_fecha_creacion = Date.today, d_fecha_entrega = nil, i_institucion_id = 1)$/;"	F	class:Solicitud
+calcular_series	app/helpers/estadisticas_helper.rb	/^  def calcular_series(datos, group_by)$/;"	f	class:EstadisticasHelper
+cambiar_estado	app/controllers/laip/solicitudes_controller.rb	/^  def cambiar_estado$/;"	f	class:Laip
+cargar_predeterminados	app/models/solicitud.rb	/^      def cargar_predeterminados$/;"	f	class:Solicitud
+cargar_predeterminados	app/models/usuario.rb	/^  def cargar_predeterminados$/;"	f	class:Usuario
+categoria_nombre	app/models/documento.rb	/^  def categoria_nombre$/;"	f	class:Documento
+change	db/migrate/20120720190005_cleanup_devise_fields.rb	/^  def change$/;"	f	class:CleanupDeviseFields
+check_for_children	config/initializers/referential_integrity.rb	/^  def check_for_children(relationships = {})$/;"	f	class:ActiveRecord
+clasificacion_nombre	app/models/documento.rb	/^  def clasificacion_nombre$/;"	f	class:Documento
+class_estado_asignacion	app/helpers/application_helper.rb	/^  def class_estado_asignacion(solicitud)$/;"	f	class:ApplicationHelper
+class_estado_asignacion	app/helpers/main_helper.rb	/^  def class_estado_asignacion(solicitud)$/;"	f	class:MainHelper
+clean_string	app/models/solicitud.rb	/^      def clean_string(c_name)$/;"	f	class:Solicitud
+cleanup	app/models/feriado.rb	/^  def cleanup$/;"	f	class:Feriado
+cleanup	app/models/institucion.rb	/^  def cleanup$/;"	f	class:Institucion
+cleanup	app/models/recursorevision.rb	/^  def cleanup$/;"	f	class:Recursorevision
+cleanup	app/models/resolucion.rb	/^  def cleanup$/;"	f	class:Resolucion
+cleanup	app/models/solicitud.rb	/^      def cleanup$/;"	f	class:Solicitud
+clear	app/models/worker_log.rb	/^  def self.clear$/;"	F	class:WorkerLog
+close_dialog	app/helpers/application_helper.rb	/^  def close_dialog(divname, text = 'Cancelar', image = 'close16.png')$/;"	f	class:ApplicationHelper
+close_popup	app/helpers/application_helper.rb	/^  def close_popup(divname, text = 'Cancelar', image = 'close16.png')$/;"	f	class:ApplicationHelper
+completar_informacion	app/models/actividad.rb	/^  def completar_informacion$/;"	f	class:Actividad
+completar_informacion	app/models/documento.rb	/^  def completar_informacion$/;"	f	class:Documento
+completar_informacion	app/models/seguimiento.rb	/^  def completar_informacion$/;"	f	class:Seguimiento
+completar_informacion	app/models/solicitud.rb	/^      def completar_informacion$/;"	f	class:Solicitud
+con_resolucion_final?	app/models/solicitud.rb	/^  def con_resolucion_final?$/;"	f	class:Solicitud
+context	app/helpers/application_helper.rb	/^  def context$/;"	f	class:ApplicationHelper
+correos_interesados	app/models/solicitud.rb	/^  def correos_interesados(l_incluir_ciudadano = true)$/;"	f	class:Solicitud
+crear_documento	app/models/documentotraslado.rb	/^  def crear_documento$/;"	f	class:Documentotraslado
+crear_solicitud	app/models/herramienta.rb	/^  def crear_solicitud(valores, estado_id)$/;"	f	class:Herramienta
+crear_solicitud_con_prorroga	app/models/herramienta.rb	/^  def crear_solicitud_con_prorroga(row, campos, estado_solicitud, institucion, enlace)$/;"	f	class:Herramienta
+crear_solicitud_denegada	app/models/herramienta.rb	/^  def crear_solicitud_denegada(row, campos, estado_solicitud, institucion, enlace)$/;"	f	class:Herramienta
+crear_solicitud_desechada	app/models/herramienta.rb	/^  def crear_solicitud_desechada(row, campos, estado_solicitud, institucion, enlace)$/;"	f	class:Herramienta
+crear_solicitud_en_tramite	app/models/herramienta.rb	/^  def crear_solicitud_en_tramite(row, campos, estado_solicitud, institucion, enlace)$/;"	f	class:Herramienta
+crear_solicitud_entregada	app/models/herramienta.rb	/^  def crear_solicitud_entregada(row,campos,estado_solicitud)$/;"	f	class:Herramienta
+crear_solicitud_entregada_parcial	app/models/herramienta.rb	/^  def crear_solicitud_entregada_parcial(row, campos, estado_solicitud, institucion, enlace)$/;"	f	class:Herramienta
+crear_solicitud_entregada_total	app/models/herramienta.rb	/^  def crear_solicitud_entregada_total(row, campos, estado_solicitud, institucion, enlace)$/;"	f	class:Herramienta
+crear_solicitud_no_recogida	app/models/herramienta.rb	/^  def crear_solicitud_no_recogida(row, campos, estado_solicitud, institucion, enlace)$/;"	f	class:Herramienta
+create	app/controllers/admin/importar_controller.rb	/^  def create$/;"	f	class:Admin
+create	app/controllers/admin/motivosprorroga_controller.rb	/^  def create$/;"	f	class:MotivosprorrogaController
+create	app/controllers/admin/rangosedad_controller.rb	/^  def create$/;"	f	class:RangosedadController
+create	app/controllers/admin/tipomensajes_controller.rb	/^  def create$/;"	f	class:TipomensajesController
+create	app/controllers/admin/usuarios_controller.rb	/^  def create$/;"	f	class:Admin
+create	app/controllers/archivo/documentos_controller.rb	/^  def create$/;"	f	class:DocumentosController
+create	app/controllers/archivo/documentotraslados_controller.rb	/^  def create$/;"	f	class:DocumentotrasladosController
+create	app/controllers/archivo/mensajes_controller.rb	/^  def create$/;"	f	class:MensajesController
+create	app/controllers/laip/actividades_controller.rb	/^  def create$/;"	f	class:Laip
+create	app/controllers/laip/adjuntos_controller.rb	/^  def create$/;"	f	class:Laip
+create	app/controllers/laip/motivosnegativa_controller.rb	/^  def create$/;"	f	class:MotivosnegativaController
+create	app/controllers/laip/notas_controller.rb	/^  def create$/;"	f	class:NotasController
+create	app/controllers/laip/recursosrevision_controller.rb	/^  def create$/;"	f	class:RecursosrevisionController
+create	app/controllers/laip/resoluciones_controller.rb	/^  def create$/;"	f	class:ResolucionesController
+create	app/controllers/laip/seguimientos_controller.rb	/^  def create$/;"	f	class:Laip
+create	app/controllers/laip/sentidosresolucion_controller.rb	/^  def create$/;"	f	class:SentidosresolucionController
+create	app/controllers/laip/solicitudes_controller.rb	/^  def create$/;"	f	class:Laip
+create	app/controllers/solicitud_informacion_controller.rb	/^  def create$/;"	f	class:SolicitudInformacionController
+current_user	app/controllers/application_controller.rb	/^  def current_user$/;"	f	class:ApplicationController
+current_usuario_admin?	app/controllers/application_controller.rb	/^  def current_usuario_admin?$/;"	f	class:ApplicationController
+date	app/models/herramienta.rb	/^  def date(c_date)$/;"	f	class:Herramienta
+default_body_attributes	app/helpers/application_helper.rb	/^  def default_body_attributes(base_class = '')$/;"	f	class:ApplicationHelper
+delivering_email	lib/development_mail_interceptor.rb	/^  def self.delivering_email(message)$/;"	F	class:DevelopmentMailInterceptor
+destroy	app/controllers/admin/motivosprorroga_controller.rb	/^  def destroy$/;"	f	class:MotivosprorrogaController
+destroy	app/controllers/admin/rangosedad_controller.rb	/^  def destroy$/;"	f	class:RangosedadController
+destroy	app/controllers/admin/tipomensajes_controller.rb	/^  def destroy$/;"	f	class:TipomensajesController
+destroy	app/controllers/admin/usuarios_controller.rb	/^  def destroy$/;"	f	class:Admin
+destroy	app/controllers/archivo/documentos_controller.rb	/^  def destroy$/;"	f	class:DocumentosController
+destroy	app/controllers/archivo/documentotraslados_controller.rb	/^  def destroy$/;"	f	class:DocumentotrasladosController
+destroy	app/controllers/archivo/mensajes_controller.rb	/^  def destroy$/;"	f	class:MensajesController
+destroy	app/controllers/laip/actividades_controller.rb	/^  def destroy$/;"	f	class:Laip
+destroy	app/controllers/laip/adjuntos_controller.rb	/^  def destroy$/;"	f	class:Laip
+destroy	app/controllers/laip/motivosnegativa_controller.rb	/^  def destroy$/;"	f	class:MotivosnegativaController
+destroy	app/controllers/laip/notas_controller.rb	/^  def destroy$/;"	f	class:NotasController
+destroy	app/controllers/laip/recursosrevision_controller.rb	/^  def destroy$/;"	f	class:RecursosrevisionController
+destroy	app/controllers/laip/resoluciones_controller.rb	/^  def destroy$/;"	f	class:ResolucionesController
+destroy	app/controllers/laip/seguimientos_controller.rb	/^  def destroy$/;"	f	class:Laip
+destroy	app/controllers/laip/sentidosresolucion_controller.rb	/^  def destroy$/;"	f	class:SentidosresolucionController
+destroy	app/controllers/laip/solicitudes_controller.rb	/^  def destroy$/;"	f	class:Laip
+dias_restantes	app/models/solicitud.rb	/^  def dias_restantes$/;"	f	class:Solicitud
+dias_transcurridos	app/models/solicitud.rb	/^  def dias_transcurridos$/;"	f	class:Solicitud
+documento	app/controllers/portal_controller.rb	/^  def documento$/;"	f	class:PortalController
+documento_boton_archivar	app/helpers/documentos_helper.rb	/^  def documento_boton_archivar(documento, hay_archivos = false)$/;"	f	class:DocumentosHelper
+documento_boton_trasladar	app/helpers/documentos_helper.rb	/^  def documento_boton_trasladar(documento, hay_archivos = false)$/;"	f	class:DocumentosHelper
+down	db/migrate/20090811002731_create_usuarios.rb	/^  def self.down$/;"	F	class:CreateUsuarios
+down	db/migrate/20090913024811_create_instituciones.rb	/^  def self.down$/;"	F	class:CreateInstituciones
+down	db/migrate/20090913160804_create_puestos.rb	/^  def self.down$/;"	F	class:CreatePuestos
+down	db/migrate/20090913170219_agregar_campos_to_usuarios.rb	/^  def self.down$/;"	F	class:AgregarCamposToUsuarios
+down	db/migrate/20090913174220_create_departamentos.rb	/^  def self.down$/;"	F	class:CreateDepartamentos
+down	db/migrate/20090913174242_create_municipios.rb	/^  def self.down$/;"	F	class:CreateMunicipios
+down	db/migrate/20090914015453_add_fields_codigo_abreviatura_to_instituciones.rb	/^  def self.down$/;"	F	class:AddFieldsCodigoAbreviaturaToInstituciones
+down	db/migrate/20090914031202_create_vias.rb	/^  def self.down$/;"	F	class:CreateVias
+down	db/migrate/20090914034415_create_estados.rb	/^  def self.down$/;"	F	class:CreateEstados
+down	db/migrate/20090914035143_create_solicitudes.rb	/^  def self.down$/;"	F	class:CreateSolicitudes
+down	db/migrate/20090914175413_add_field_texto_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddFieldTextoToSolicitudes
+down	db/migrate/20090914200125_create_actividades.rb	/^  def self.down$/;"	F	class:CreateActividades
+down	db/migrate/20090914200755_add_field_asignada_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddFieldAsignadaToSolicitudes
+down	db/migrate/20090914224117_add_field_final_to_estados.rb	/^  def self.down$/;"	F	class:AddFieldFinalToEstados
+down	db/migrate/20090914225347_add_field_ano_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddFieldAnoToSolicitudes
+down	db/migrate/20090914233753_add_field_solicitud_id_to_actividades.rb	/^  def self.down$/;"	F	class:AddFieldSolicitudIdToActividades
+down	db/migrate/20090915183636_create_seguimientos.rb	/^  def self.down$/;"	F	class:CreateSeguimientos
+down	db/migrate/20091025155813_create_adjuntos.rb	/^  def self.down$/;"	F	class:CreateAdjuntos
+down	db/migrate/20091026032801_add_attachments_archivo_to_adjunto.rb	/^  def self.down$/;"	F	class:AddAttachmentsArchivoToAdjunto
+down	db/migrate/20091027042355_add_attachments_archivo_to_seguimiento.rb	/^  def self.down$/;"	F	class:AddAttachmentsArchivoToSeguimiento
+down	db/migrate/20091216175250_create_documentos.rb	/^  def self.down$/;"	F	class:CreateDocumentos
+down	db/migrate/20091216221043_create_tipomensajes.rb	/^  def self.down$/;"	F	class:CreateTipomensajes
+down	db/migrate/20091216221150_create_fuentes.rb	/^  def self.down$/;"	F	class:CreateFuentes
+down	db/migrate/20100811170252_add_usuarios_open_id_field.rb	/^    def self.down$/;"	F	class:AddUsuariosOpenIdField
+down	db/migrate/20100818133700_create_roles.rb	/^  def self.down$/;"	F	class:CreateRoles
+down	db/migrate/20100819015644_create_profesiones.rb	/^  def self.down$/;"	F	class:CreateProfesiones
+down	db/migrate/20100819073952_add_field_profesion_id_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddFieldProfesionIdToSolicitudes
+down	db/migrate/20100819075151_create_generos.rb	/^  def self.down$/;"	F	class:CreateGeneros
+down	db/migrate/20100819081123_add_extra_fields_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddExtraFieldsToSolicitudes
+down	db/migrate/20100819081628_create_rangosedad.rb	/^  def self.down$/;"	F	class:CreateRangosedad
+down	db/migrate/20100819081644_create_clasificaciones.rb	/^  def self.down$/;"	F	class:CreateClasificaciones
+down	db/migrate/20100819081658_create_motivosprorroga.rb	/^  def self.down$/;"	F	class:CreateMotivosprorroga
+down	db/migrate/20100819081709_create_motivosnegativa.rb	/^  def self.down$/;"	F	class:CreateMotivosnegativa
+down	db/migrate/20100819132833_add_resoluciones_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddResolucionesToSolicitudes
+down	db/migrate/20100824035759_add_open_id_authentication_tables.rb	/^  def self.down$/;"	F	class:AddOpenIdAuthenticationTables
+down	db/migrate/20100825034756_add_audits_table.rb	/^  def self.down$/;"	F	class:AddAuditsTable
+down	db/migrate/20100825160732_add_direccion_to_instituciones.rb	/^  def self.down$/;"	F	class:AddDireccionToInstituciones
+down	db/migrate/20100901123943_create_resoluciones.rb	/^  def self.down$/;"	F	class:CreateResoluciones
+down	db/migrate/20100901124314_create_tiposresoluciones.rb	/^  def self.down$/;"	F	class:CreateTiposresoluciones
+down	db/migrate/20100901124635_create_razonestiposresoluciones.rb	/^  def self.down$/;"	F	class:CreateRazonestiposresoluciones
+down	db/migrate/20100901131839_add_publica_to_solicitud.rb	/^  def self.down$/;"	F	class:AddPublicaToSolicitud
+down	db/migrate/20101005040220_add_attachments_logo_to_institucion.rb	/^  def self.down$/;"	F	class:AddAttachmentsLogoToInstitucion
+down	db/migrate/20101006144701_create_recursosrevision.rb	/^  def self.down$/;"	F	class:CreateRecursosrevision
+down	db/migrate/20101006145703_create_sentidosresolucion.rb	/^  def self.down$/;"	F	class:CreateSentidosresolucion
+down	db/migrate/20101006151153_add_field_numero_to_recursosrevision.rb	/^  def self.down$/;"	F	class:AddFieldNumeroToRecursosrevision
+down	db/migrate/20101008001944_add_field_activa_to_instituciones.rb	/^  def self.down$/;"	F	class:AddFieldActivaToInstituciones
+down	db/migrate/20101008024016_add_field_usasolicitudesprivadas_to_instituciones.rb	/^  def self.down$/;"	F	class:AddFieldUsasolicitudesprivadasToInstituciones
+down	db/migrate/20101028003305_add_field_origen_id_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddFieldOrigenIdToSolicitudes
+down	db/migrate/20101028112108_add_field_unidad_ejecutora_to_instituciones.rb	/^  def self.down$/;"	F	class:AddFieldUnidadEjecutoraToInstituciones
+down	db/migrate/20101103145631_add_modulo_id_to_estados.rb	/^  def self.down$/;"	F	class:AddModuloIdToEstados
+down	db/migrate/20101103214535_create_documentoclasificaciones.rb	/^  def self.down$/;"	F	class:CreateDocumentoclasificaciones
+down	db/migrate/20101103214606_create_documentocategorias.rb	/^  def self.down$/;"	F	class:CreateDocumentocategorias
+down	db/migrate/20101103214952_add_field_documentoclasificacion_id_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddFieldDocumentoclasificacionIdToSolicitudes
+down	db/migrate/20101103215031_add_field_documentoclasificacion_id_to_resoluciones.rb	/^  def self.down$/;"	F	class:AddFieldDocumentoclasificacionIdToResoluciones
+down	db/migrate/20101103215053_add_field_documentoclasificacion_id_to_recursosrevision.rb	/^  def self.down$/;"	F	class:AddFieldDocumentoclasificacionIdToRecursosrevision
+down	db/migrate/20101105160653_create_documentodestinatarios.rb	/^  def self.down$/;"	F	class:CreateDocumentodestinatarios
+down	db/migrate/20101116035232_remove_resoluciones_from_solicitudes.rb	/^  def self.down$/;"	F	class:RemoveResolucionesFromSolicitudes
+down	db/migrate/20101119121232_add_webpage_to_instituciones.rb	/^  def self.down$/;"	F	class:AddWebpageToInstituciones
+down	db/migrate/20101230162907_devise_create_users.rb	/^  def self.down   $/;"	F	class:DeviseCreateUsers
+down	db/migrate/20110105174720_create_vestal_versions.rb	/^  def self.down$/;"	F	class:CreateVestalVersions
+down	db/migrate/20110112080136_create_notas.rb	/^  def self.down$/;"	F	class:CreateNotas
+down	db/migrate/20110113035500_create_idiomas.rb	/^  def self.down$/;"	F	class:CreateIdiomas
+down	db/migrate/20110113040220_add_idioma_id_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddIdiomaIdToSolicitudes
+down	db/migrate/20110113161428_create_archivos.rb	/^  def self.down$/;"	F	class:CreateArchivos
+down	db/migrate/20110113161657_add_archivo_id_to_documentos.rb	/^  def self.down$/;"	F	class:AddArchivoIdToDocumentos
+down	db/migrate/20110113175033_create_documentotraslados.rb	/^  def self.down$/;"	F	class:CreateDocumentotraslados
+down	db/migrate/20110113191755_add_descripcion_to_documentotraslados.rb	/^  def self.down$/;"	F	class:AddDescripcionToDocumentotraslados
+down	db/migrate/20110203225654_add_informacion_publica_to_notas.rb	/^  def self.down$/;"	F	class:AddInformacionPublicaToNotas
+down	db/migrate/20110207170742_add_fecha_to_resoluciones.rb	/^  def self.down$/;"	F	class:AddFechaToResoluciones
+down	db/migrate/20110207174002_add_fecha_notificacion_to_resoluciones.rb	/^  def self.down$/;"	F	class:AddFechaNotificacionToResoluciones
+down	db/migrate/20110207174109_add_actualiza_fecha_notificacion_to_tiposresoluciones.rb	/^  def self.down$/;"	F	class:AddActualizaFechaNotificacionToTiposresoluciones
+down	db/migrate/20110209143335_create_delayed_jobs.rb	/^  def self.down$/;"	F	class:CreateDelayedJobs
+down	db/migrate/20110226173548_add_field_email_to_instituciones.rb	/^  def self.down$/;"	F	class:AddFieldEmailToInstituciones
+down	db/migrate/20110317161441_create_feriados.rb	/^  def self.down$/;"	F	class:CreateFeriados
+down	db/migrate/20110318043800_add_field_fecha_to_feriados.rb	/^  def self.down$/;"	F	class:AddFieldFechaToFeriados
+down	db/migrate/20110420041440_add_positiva_to_tiporesoluciones.rb	/^  def self.down$/;"	F	class:AddPositivaToTiporesoluciones
+down	db/migrate/20110420150723_add_anulada_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddAnuladaToSolicitudes
+down	db/migrate/20110421201519_add_fields_tiempo_respuesta_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddFieldsTiempoRespuestaToSolicitudes
+down	db/migrate/20110613181238_add_active_to_users.rb	/^  def self.down$/;"	F	class:AddActiveToUsers
+down	db/migrate/20110912215344_add_reserva_temporal_to_solicitudes.rb	/^  def self.down$/;"	F	class:AddReservaTemporalToSolicitudes
+down	db/migrate/20110920185416_create_worker_logs.rb	/^  def self.down$/;"	F	class:CreateWorkerLogs
+down	db/migrate/20110920200512_create_temp_assets.rb	/^  def self.down$/;"	F	class:CreateTempAssets
+down	db/migrate/20110920200624_add_attachment_archivo_to_temp_asset.rb	/^  def self.down$/;"	F	class:AddAttachmentArchivoToTempAsset
+down	db/migrate/20120313151734_create_simple_captcha_data.rb	/^  def self.down$/;"	F	class:CreateSimpleCaptchaData
+down	db/migrate/20120313203152_add_queue_to_delayed_jobs.rb	/^  def self.down$/;"	F	class:AddQueueToDelayedJobs
+download	app/controllers/laip/adjuntos_controller.rb	/^  def download$/;"	f	class:Laip
+edit	app/controllers/admin/motivosprorroga_controller.rb	/^  def edit$/;"	f	class:MotivosprorrogaController
+edit	app/controllers/admin/rangosedad_controller.rb	/^  def edit$/;"	f	class:RangosedadController
+edit	app/controllers/admin/tipomensajes_controller.rb	/^  def edit$/;"	f	class:TipomensajesController
+edit	app/controllers/admin/usuarios_controller.rb	/^  def edit$/;"	f	class:Admin
+edit	app/controllers/archivo/documentos_controller.rb	/^  def edit$/;"	f	class:DocumentosController
+edit	app/controllers/archivo/documentotraslados_controller.rb	/^  def edit$/;"	f	class:DocumentotrasladosController
+edit	app/controllers/archivo/mensajes_controller.rb	/^  def edit$/;"	f	class:MensajesController
+edit	app/controllers/laip/actividades_controller.rb	/^  def edit$/;"	f	class:Laip
+edit	app/controllers/laip/motivosnegativa_controller.rb	/^  def edit$/;"	f	class:MotivosnegativaController
+edit	app/controllers/laip/notas_controller.rb	/^  def edit$/;"	f	class:NotasController
+edit	app/controllers/laip/recursosrevision_controller.rb	/^  def edit$/;"	f	class:RecursosrevisionController
+edit	app/controllers/laip/resoluciones_controller.rb	/^  def edit$/;"	f	class:ResolucionesController
+edit	app/controllers/laip/seguimientos_controller.rb	/^  def edit$/;"	f	class:Laip
+edit	app/controllers/laip/sentidosresolucion_controller.rb	/^  def edit$/;"	f	class:SentidosresolucionController
+edit	app/controllers/laip/solicitudes_controller.rb	/^  def edit$/;"	f	class:Laip
+encargado_udip	app/models/institucion.rb	/^  def encargado_udip$/;"	f	class:Institucion
+entregada?	app/models/solicitud.rb	/^  def entregada?$/;"	f	class:Solicitud
+error	app/models/worker_log.rb	/^  def self.error(error)$/;"	F	class:WorkerLog
+es_dia_laboral?	app/models/feriado.rb	/^  def es_dia_laboral?(hoy = nil)$/;"	f	class:Feriado
+es_pertinente?	app/models/solicitud.rb	/^  def es_pertinente?(u)$/;"	f	class:Solicitud
+estadisticas	app/controllers/reportes_controller.rb	/^  def estadisticas$/;"	f	class:ReportesController
+estadisticas_bar_chart	app/helpers/estadisticas_helper.rb	/^  def estadisticas_bar_chart(opts = {})$/;"	f	class:EstadisticasHelper
+estadisticas_solicitudes_completadas_por_ano	app/helpers/estadisticas_helper.rb	/^  def estadisticas_solicitudes_completadas_por_ano(solicitudes, opts = {})$/;"	f	class:EstadisticasHelper
+estadisticas_solicitudes_completadas_por_mes_ano	app/helpers/estadisticas_helper.rb	/^  def estadisticas_solicitudes_completadas_por_mes_ano(solicitudes)$/;"	f	class:EstadisticasHelper
+estado_actual	app/models/solicitud.rb	/^  def estado_actual$/;"	f	class:Solicitud
+estado_nombre	app/models/documento.rb	/^  def estado_nombre$/;"	f	class:Documento
+export_to_csv	app/models/solicitud.rb	/^      def self.export_to_csv(opts = {})$/;"	F	class:Solicitud
+exportar	app/controllers/portal_controller.rb	/^  def exportar$/;"	f	class:PortalController
+extracto	app/models/solicitud.rb	/^  def extracto(user = nil)$/;"	f	class:Solicitud
+extraer_valores	app/models/herramienta.rb	/^  def extraer_valores(row, campos)$/;"	f	class:Herramienta
+familia	app/models/institucion.rb	/^  def familia$/;"	f	class:Institucion
+familia_activa	app/models/institucion.rb	/^  def familia_activa$/;"	f	class:Institucion
+fecha_notificacion_prorroga	app/models/solicitud.rb	/^  def fecha_notificacion_prorroga$/;"	f	class:Solicitud
+fecha_notificacion_revision	app/models/solicitud.rb	/^  def fecha_notificacion_revision$/;"	f	class:Solicitud
+fecha_revision	app/models/solicitud.rb	/^  def fecha_revision$/;"	f	class:Solicitud
+fecha_ultima_resolucion	app/models/solicitud.rb	/^  def fecha_ultima_resolucion$/;"	f	class:Solicitud
+find	app/controllers/laip/solicitudes_controller.rb	/^  def find$/;"	f	class:Laip
+fix_date	app/controllers/application_controller.rb	/^  def fix_date(c_date)$/;"	f	class:ApplicationController
+gap	config/initializers/will_paginate.rb	/^      def gap$/;"	f	class:WillPaginate.ActionView.BootstrapLinkRenderer
+generar_codigo	app/models/solicitud.rb	/^      def generar_codigo$/;"	f	class:Solicitud
+generar_colores	app/helpers/estadisticas_helper.rb	/^  def generar_colores(series)$/;"	f	class:EstadisticasHelper
+generar_data	app/helpers/estadisticas_helper.rb	/^  def generar_data(datos, campo, group_by = nil)$/;"	f	class:EstadisticasHelper
+generar_data_mes_ano	app/helpers/estadisticas_helper.rb	/^  def generar_data_mes_ano(datos, campo, group_by)$/;"	f	class:EstadisticasHelper
+generar_labels	app/helpers/estadisticas_helper.rb	/^  def generar_labels(datos, campo, series)$/;"	f	class:EstadisticasHelper
+generar_numero?	app/models/documento.rb	/^  def generar_numero?$/;"	f	class:Documento
+generar_rango	app/helpers/estadisticas_helper.rb	/^  def generar_rango(datos, campo)$/;"	f	class:EstadisticasHelper
+generar_series	app/helpers/estadisticas_helper.rb	/^  def generar_series(rango, series = 1)$/;"	f	class:EstadisticasHelper
+generar_series_labels	app/helpers/estadisticas_helper.rb	/^  def generar_series_labels(datos, campo, group_by)$/;"	f	class:EstadisticasHelper
+generate_memo	app/models/plantilla.rb	/^  def generate_memo(documento)$/;"	f	class:Plantilla
+get_csv_record	app/models/solicitud.rb	/^  def self.get_csv_record(s)$/;"	F	class:Solicitud
+get_csv_records	app/models/solicitud.rb	/^  def self.get_csv_records(csv, solicitudes)$/;"	F	class:Solicitud
+get_data	app/controllers/admin/instituciones_controller.rb	/^  def get_data$/;"	f	class:Admin
+get_data	app/controllers/archivo/mensajes_controller.rb	/^  def get_data$/;"	f	class:MensajesController
+get_data	app/controllers/laip/actividades_controller.rb	/^  def get_data$/;"	f	class:Laip
+get_data	app/controllers/laip/seguimientos_controller.rb	/^  def get_data$/;"	f	class:Laip
+get_data	app/controllers/laip/solicitudes_controller.rb	/^  def get_data$/;"	f	class:Laip
+get_data	app/controllers/solicitud_informacion_controller.rb	/^  def get_data$/;"	f	class:SolicitudInformacionController
+get_extra_data	app/controllers/admin/usuarios_controller.rb	/^  def get_extra_data$/;"	f	class:Admin
+get_institucion	app/controllers/laip/seguimientos_controller.rb	/^  def get_institucion$/;"	f	class:Laip
+get_institucion	app/controllers/laip/solicitudes_controller.rb	/^  def get_institucion$/;"	f	class:Laip
+get_institucion	app/controllers/solicitud_informacion_controller.rb	/^  def get_institucion$/;"	f	class:SolicitudInformacionController
+get_solicitud	app/controllers/laip/notas_controller.rb	/^  def get_solicitud$/;"	f	class:NotasController
+get_solicitud	app/controllers/laip/recursosrevision_controller.rb	/^  def get_solicitud$/;"	f	class:RecursosrevisionController
+get_solicitud	app/controllers/laip/resoluciones_controller.rb	/^  def get_solicitud$/;"	f	class:ResolucionesController
+get_solicitud	app/controllers/portal_controller.rb	/^  def get_solicitud$/;"	f	class:PortalController
+get_solicitudes_por_estado	app/helpers/dashboard_helper.rb	/^  def get_solicitudes_por_estado(user, ano = Date.today.year)$/;"	f	class:DashboardHelper
+get_solicitudes_por_mes_en_ano	app/helpers/dashboard_helper.rb	/^  def get_solicitudes_por_mes_en_ano(user, ano, data_max_range)$/;"	f	class:DashboardHelper
+get_usuario	app/controllers/admin/usuarios_controller.rb	/^  def get_usuario$/;"	f	class:Admin
+get_usuario	app/controllers/application_controller.rb	/^  def get_usuario$/;"	f	class:ApplicationController
+guardar_version?	app/models/actividad.rb	/^  def guardar_version?$/;"	f	class:Actividad
+guardar_version?	app/models/solicitud.rb	/^  def guardar_version?$/;"	f	class:Solicitud
+hay_feriado	app/models/feriado.rb	/^  def self.hay_feriado?(opts = {})$/;"	F	class:Feriado
+hay_prorroga	app/models/solicitud.rb	/^  def hay_prorroga$/;"	f	class:Solicitud
+hay_revision	app/models/solicitud.rb	/^  def hay_revision$/;"	f	class:Solicitud
+html_container	config/initializers/will_paginate.rb	/^      def html_container(html)$/;"	f	class:WillPaginate.ActionView.BootstrapLinkRenderer
+importar	app/models/temp_asset.rb	/^  def importar$/;"	f	class:TempAsset
+importar_archivo	app/models/temp_asset.rb	/^  def importar_archivo$/;"	f	class:TempAsset
+importar_registros	app/models/herramienta.rb	/^  def importar_registros(csv_doc, campos, usuario_id, institucion, enlace)$/;"	f	class:Herramienta
+importar_solicitud	app/models/herramienta.rb	/^  def importar_solicitud(row, campos, usuario_id, institucion, enlace)$/;"	f	class:Herramienta
+importar_solicitudes	app/models/herramienta.rb	/^  def importar_solicitudes(options)$/;"	f	class:Herramienta
+index	app/controllers/admin/archivos_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/clasificaciones_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/departamentos_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/documentocategorias_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/documentoclasificaciones_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/estados_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/feriados_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/fuentes_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/idiomas_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/importar_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/instituciones_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/motivosprorroga_controller.rb	/^  def index$/;"	f	class:MotivosprorrogaController
+index	app/controllers/admin/municipios_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/profesiones_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/rangosedad_controller.rb	/^  def index$/;"	f	class:RangosedadController
+index	app/controllers/admin/razonestiposresoluciones_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/roles_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/tipomensajes_controller.rb	/^  def index$/;"	f	class:TipomensajesController
+index	app/controllers/admin/tiposresoluciones_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/usuarios_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/admin/vias_controller.rb	/^  def index$/;"	f	class:Admin
+index	app/controllers/archivo/documentos_controller.rb	/^  def index$/;"	f	class:DocumentosController
+index	app/controllers/archivo/documentotraslados_controller.rb	/^  def index$/;"	f	class:DocumentotrasladosController
+index	app/controllers/archivo/mensajes_controller.rb	/^  def index$/;"	f	class:MensajesController
+index	app/controllers/archivos_controller.rb	/^  def index$/;"	f	class:ArchivosController
+index	app/controllers/estadisticas_controller.rb	/^  def index$/;"	f	class:EstadisticasController
+index	app/controllers/laip/actividades_controller.rb	/^  def index$/;"	f	class:Laip
+index	app/controllers/laip/motivosnegativa_controller.rb	/^  def index$/;"	f	class:MotivosnegativaController
+index	app/controllers/laip/notas_controller.rb	/^  def index$/;"	f	class:NotasController
+index	app/controllers/laip/recursosrevision_controller.rb	/^  def index$/;"	f	class:RecursosrevisionController
+index	app/controllers/laip/resoluciones_controller.rb	/^  def index$/;"	f	class:ResolucionesController
+index	app/controllers/laip/seguimientos_controller.rb	/^  def index$/;"	f	class:Laip
+index	app/controllers/laip/sentidosresolucion_controller.rb	/^  def index$/;"	f	class:SentidosresolucionController
+index	app/controllers/laip/solicitudes_controller.rb	/^  def index$/;"	f	class:Laip
+index	app/controllers/main_controller.rb	/^  def index$/;"	f	class:MainController
+index	app/controllers/portal_controller.rb	/^  def index$/;"	f	class:PortalController
+index	app/controllers/solicitud_informacion_controller.rb	/^  def index$/;"	f	class:SolicitudInformacionController
+inicializar_busqueda	app/controllers/estadisticas_controller.rb	/^  def inicializar_busqueda$/;"	f	class:EstadisticasController
+inicializar_busqueda	app/controllers/portal_controller.rb	/^  def inicializar_busqueda$/;"	f	class:PortalController
+inicializar_busqueda	app/controllers/solicitud_informacion_controller.rb	/^  def inicializar_busqueda$/;"	f	class:SolicitudInformacionController
+initialize	app/models/ability.rb	/^  def initialize(user)$/;"	f	class:Ability
+initialize	app/models/busqueda.rb	/^  def initialize(args = {})$/;"	f	class:Busqueda
+initialize	app/models/herramienta.rb	/^  def initialize$/;"	f	class:Herramienta
+inspect	app/models/busqueda.rb	/^  def inspect$/;"	f	class:Busqueda
+institucion	app/controllers/portal_controller.rb	/^  def institucion$/;"	f	class:PortalController
+institucion_nombre	app/models/documento.rb	/^  def institucion_nombre$/;"	f	class:Documento
+instituciones_activas	app/controllers/reportes_controller.rb	/^  def instituciones_activas$/;"	f	class:ReportesController
+layout_por_recurso	app/controllers/application_controller.rb	/^  def layout_por_recurso$/;"	f	class:ApplicationController
+link_to_solicitud_portal	app/helpers/portal_helper.rb	/^  def link_to_solicitud_portal(solicitud, popup = false)$/;"	f	class:PortalHelper
+log	app/models/worker_log.rb	/^  def self.log(status)$/;"	F	class:WorkerLog
+logger	app/models/herramienta.rb	/^  def logger$/;"	f	class:Herramienta
+marcar_como_completada	app/controllers/laip/actividades_controller.rb	/^  def marcar_como_completada$/;"	f	class:Laip
+marcar_como_no_terminada	app/models/solicitud.rb	/^  def marcar_como_no_terminada$/;"	f	class:Solicitud
+marcar_como_terminada	app/models/actividad.rb	/^  def marcar_como_terminada(fecha = Date.today)$/;"	f	class:Actividad
+marcar_como_terminada	app/models/solicitud.rb	/^  def marcar_como_terminada(fecha = Date.today)$/;"	f	class:Solicitud
+marcar_entregada	app/controllers/laip/solicitudes_controller.rb	/^  def marcar_entregada$/;"	f	class:Laip
+memo	app/models/plantilla.rb	/^  def memo(documento)$/;"	f	class:Plantilla
+menu_item	app/helpers/application_helper.rb	/^  def menu_item(text, url, title='', image = 'file16.png')$/;"	f	class:ApplicationHelper
+menu_item_remote	app/helpers/application_helper.rb	/^  def menu_item_remote(text, url, update, title='', image = 'file16.png')$/;"	f	class:ApplicationHelper
+mostrar_datos_solicitante	app/controllers/portal_controller.rb	/^  def mostrar_datos_solicitante$/;"	f	class:PortalController
+new	app/controllers/admin/motivosprorroga_controller.rb	/^  def new$/;"	f	class:MotivosprorrogaController
+new	app/controllers/admin/rangosedad_controller.rb	/^  def new$/;"	f	class:RangosedadController
+new	app/controllers/admin/tipomensajes_controller.rb	/^  def new$/;"	f	class:TipomensajesController
+new	app/controllers/admin/usuarios_controller.rb	/^  def new$/;"	f	class:Admin
+new	app/controllers/archivo/documentos_controller.rb	/^  def new$/;"	f	class:DocumentosController
+new	app/controllers/archivo/documentotraslados_controller.rb	/^  def new$/;"	f	class:DocumentotrasladosController
+new	app/controllers/archivo/mensajes_controller.rb	/^  def new$/;"	f	class:MensajesController
+new	app/controllers/laip/actividades_controller.rb	/^  def new$/;"	f	class:Laip
+new	app/controllers/laip/adjuntos_controller.rb	/^  def new$/;"	f	class:Laip
+new	app/controllers/laip/motivosnegativa_controller.rb	/^  def new$/;"	f	class:MotivosnegativaController
+new	app/controllers/laip/notas_controller.rb	/^  def new$/;"	f	class:NotasController
+new	app/controllers/laip/recursosrevision_controller.rb	/^  def new$/;"	f	class:RecursosrevisionController
+new	app/controllers/laip/resoluciones_controller.rb	/^  def new$/;"	f	class:ResolucionesController
+new	app/controllers/laip/seguimientos_controller.rb	/^  def new$/;"	f	class:Laip
+new	app/controllers/laip/sentidosresolucion_controller.rb	/^  def new$/;"	f	class:SentidosresolucionController
+new	app/controllers/laip/solicitudes_controller.rb	/^  def new$/;"	f	class:Laip
+new	app/controllers/solicitud_informacion_controller.rb	/^  def new$/;"	f	class:SolicitudInformacionController
+nivel_seguridad	app/controllers/application_controller.rb	/^  def nivel_seguridad(u = nil, nivel = 'public')$/;"	f	class:ApplicationController
+nivel_seguridad	app/helpers/application_helper.rb	/^  def nivel_seguridad(u = nil, nivel = 'public')$/;"	f	class:ApplicationHelper
+nombre_cargo	app/models/usuario.rb	/^  def nombre_cargo$/;"	f	class:Usuario
+nombre_completo	app/models/municipio.rb	/^  def nombre_completo$/;"	f	class:Municipio
+nombre_completo	app/models/puesto.rb	/^  def nombre_completo$/;"	f	class:Puesto
+nombre_institucion	app/models/usuario.rb	/^  def nombre_institucion$/;"	f	class:Usuario
+nombre_modulo	app/models/estado.rb	/^  def nombre_modulo$/;"	f	class:Estado
+nombres_enlaces	app/models/solicitud.rb	/^  def nombres_enlaces$/;"	f	class:Solicitud
+notificar_asignacion	app/models/actividad.rb	/^  def notificar_asignacion$/;"	f	class:Actividad
+notificar_creacion	app/models/nota.rb	/^  def notificar_creacion$/;"	f	class:Nota
+notificar_creacion	app/models/resolucion.rb	/^  def notificar_creacion$/;"	f	class:Resolucion
+notificar_creacion	app/models/solicitud.rb	/^      def notificar_creacion$/;"	f	class:Solicitud
+nueva_asignacion	app/mailers/notificaciones.rb	/^  def nueva_asignacion(actividad, sent_at = Time.now)$/;"	f	class:Notificaciones
+nueva_nota_seguimiento	app/mailers/notificaciones.rb	/^  def nueva_nota_seguimiento(nota)$/;"	f	class:Notificaciones
+nueva_resolucion	app/mailers/notificaciones.rb	/^  def nueva_resolucion(resolucion,sent_at = Time.now)$/;"	f	class:Notificaciones
+nueva_solicitud	app/mailers/notificaciones.rb	/^  def nueva_solicitud(solicitud = nil,  sent_at = Time.now, a_ciudadano = true)$/;"	f	class:Notificaciones
+nuevo_numero	app/models/recursorevision.rb	/^  def nuevo_numero$/;"	f	class:Recursorevision
+nuevo_numero	app/models/resolucion.rb	/^  def nuevo_numero$/;"	f	class:Resolucion
+obtener_estado	app/models/herramienta.rb	/^  def obtener_estado(estado_nombre, d_creacion, d_programada, d_entregada, d_completada, d_prorroga)$/;"	f	class:Herramienta
+obtener_estado_solicitud	app/models/herramienta.rb	/^  def obtener_estado_solicitud(row, campos)$/;"	f	class:Herramienta
+obtener_fecha_valida	app/models/feriado.rb	/^  def self.obtener_fecha_valida(d_fecha_entrega, institucion_id)$/;"	F	class:Feriado
+obtener_nivel_de_seguridad	app/controllers/admin/usuarios_controller.rb	/^  def obtener_nivel_de_seguridad$/;"	f	class:Admin
+obtener_nivel_de_seguridad	app/controllers/application_controller.rb	/^  def obtener_nivel_de_seguridad$/;"	f	class:ApplicationController
+obtener_privilegios	app/controllers/laip/actividades_controller.rb	/^  def obtener_privilegios$/;"	f	class:Laip
+obtener_privilegios	app/controllers/laip/resoluciones_controller.rb	/^  def obtener_privilegios$/;"	f	class:ResolucionesController
+obtener_proceso	app/controllers/laip/adjuntos_controller.rb	/^  def obtener_proceso$/;"	f	class:Laip
+obtener_valor	app/models/herramienta.rb	/^  def obtener_valor(campo, valor_predeterminado)$/;"	f	class:Herramienta
+origen_nombre	app/models/documento.rb	/^  def origen_nombre$/;"	f	class:Documento
+page_number	config/initializers/will_paginate.rb	/^      def page_number(page)$/;"	f	class:WillPaginate.ActionView.BootstrapLinkRenderer
+parametros_fecha	app/controllers/reportes_controller.rb	/^  def parametros_fecha$/;"	f	class:ReportesController
+parse_date	app/controllers/application_controller.rb	/^  def parse_date(fecha)$/;"	f	class:ApplicationController
+perfil	app/controllers/admin/usuarios_controller.rb	/^  def perfil$/;"	f	class:Admin
+persisted?	app/models/busqueda.rb	/^  def persisted? ; false ; end;$/;"	f	class:Busqueda
+plantilla	app/controllers/archivo/documentos_controller.rb	/^  def plantilla$/;"	f	class:DocumentosController
+preparar_institucion	app/models/herramienta.rb	/^  def preparar_institucion(institucion_id)$/;"	f	class:Herramienta
+previous_or_next_page	config/initializers/will_paginate.rb	/^      def previous_or_next_page(page, text, classname)$/;"	f	class:WillPaginate.ActionView.BootstrapLinkRenderer
+print	app/controllers/laip/solicitudes_controller.rb	/^  def print$/;"	f	class:Laip
+print	app/controllers/portal_controller.rb	/^  def print$/;"	f	class:PortalController
+print_documento	app/controllers/portal_controller.rb	/^  def print_documento$/;"	f	class:PortalController
+proximo_numero_solicitud	app/models/solicitud.rb	/^      def proximo_numero_solicitud$/;"	f	class:Solicitud
+puede_borrar?	app/models/usuario.rb	/^  def puede_borrar?$/;"	f	class:Usuario
+puede_descargar?	app/models/adjunto.rb	/^  def puede_descargar?(user = nil)$/;"	f	class:Adjunto
+puede_mostrar_informacion?	app/models/solicitud.rb	/^  def puede_mostrar_informacion?$/;"	f	class:Solicitud
+razon_ampliacion	app/models/solicitud.rb	/^  def razon_ampliacion$/;"	f	class:Solicitud
+razon_negativa	app/models/solicitud.rb	/^  def razon_negativa$/;"	f	class:Solicitud
+razon_nopositiva	app/models/solicitud.rb	/^  def razon_nopositiva$/;"	f	class:Solicitud
+razon_prorroga	app/models/solicitud.rb	/^  def razon_prorroga$/;"	f	class:Solicitud
+razon_resolucion	app/models/solicitud.rb	/^  def razon_resolucion$/;"	f	class:Solicitud
+razon_revision	app/models/solicitud.rb	/^  def razon_revision$/;"	f	class:Solicitud
+refresh_tab	app/controllers/laip/solicitudes_controller.rb	/^  def refresh_tab$/;"	f	class:Laip
+resoluciones_emitidas	app/controllers/reportes_controller.rb	/^  def resoluciones_emitidas$/;"	f	class:ReportesController
+revertir_resolucion	app/models/resolucion.rb	/^  def revertir_resolucion$/;"	f	class:Resolucion
+set_home_breadcrumb	app/controllers/application_controller.rb	/^  def set_home_breadcrumb$/;"	f	class:ApplicationController
+show	app/controllers/admin/motivosprorroga_controller.rb	/^  def show$/;"	f	class:MotivosprorrogaController
+show	app/controllers/admin/rangosedad_controller.rb	/^  def show$/;"	f	class:RangosedadController
+show	app/controllers/admin/tipomensajes_controller.rb	/^  def show$/;"	f	class:TipomensajesController
+show	app/controllers/admin/usuarios_controller.rb	/^  def show$/;"	f	class:Admin
+show	app/controllers/archivo/documentos_controller.rb	/^  def show$/;"	f	class:DocumentosController
+show	app/controllers/archivo/documentotraslados_controller.rb	/^  def show$/;"	f	class:DocumentotrasladosController
+show	app/controllers/archivo/mensajes_controller.rb	/^  def show$/;"	f	class:MensajesController
+show	app/controllers/estadisticas_controller.rb	/^  def show$/;"	f	class:EstadisticasController
+show	app/controllers/laip/actividades_controller.rb	/^  def show$/;"	f	class:Laip
+show	app/controllers/laip/motivosnegativa_controller.rb	/^  def show$/;"	f	class:MotivosnegativaController
+show	app/controllers/laip/notas_controller.rb	/^  def show$/;"	f	class:NotasController
+show	app/controllers/laip/recursosrevision_controller.rb	/^  def show$/;"	f	class:RecursosrevisionController
+show	app/controllers/laip/resoluciones_controller.rb	/^  def show$/;"	f	class:ResolucionesController
+show	app/controllers/laip/seguimientos_controller.rb	/^  def show$/;"	f	class:Laip
+show	app/controllers/laip/sentidosresolucion_controller.rb	/^  def show$/;"	f	class:SentidosresolucionController
+show	app/controllers/laip/solicitudes_controller.rb	/^  def show$/;"	f	class:Laip
+show	app/controllers/solicitud_informacion_controller.rb	/^  def show$/;"	f	class:SolicitudInformacionController
+si_no	app/helpers/application_helper.rb	/^  def si_no(valor)$/;"	f	class:ApplicationHelper
+solicitud	app/controllers/portal_controller.rb	/^  def solicitud$/;"	f	class:PortalController
+solicitud_boton_adjuntar_documento	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_adjuntar_documento(solicitud, pertinente = false, udip = false)$/;"	f
+solicitud_boton_asignar_enlace	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_asignar_enlace(solicitud, pertinente = false, udip = false)$/;"	f
+solicitud_boton_editar	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_editar(solicitud, pertinente = false, supervisor = false)$/;"	f	class:SolicitudesHelper
+solicitud_boton_eliminar	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_eliminar(solicitud, pertinente = false, supervisor = false)$/;"	f	class:SolicitudesHelper
+solicitud_boton_emitir_resolucion	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_emitir_resolucion(solicitud, pertinente = false, supervisor = false)$/;"	f
+solicitud_boton_imprimir	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_imprimir(solicitud, mostrar = true)$/;"	f	class:SolicitudesHelper
+solicitud_boton_recurso_revision	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_recurso_revision(solicitud, pertinente = false, udip = false)$/;"	f
+solicitud_boton_regresar	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_regresar$/;"	f	class:SolicitudesHelper
+solicitud_boton_seguimientos	app/helpers/solicitudes_helper.rb	/^  def solicitud_boton_seguimientos(solicitud, pertinente = false, supervisor = false)$/;"	f
+solicitud_dias_restantes_badge	app/helpers/solicitudes_helper.rb	/^  def solicitud_dias_restantes_badge(solicitud)$/;"	f	class:SolicitudesHelper
+solicitud_entregada	app/models/solicitud.rb	/^  def solicitud_entregada(date = Date.today)$/;"	f	class:Solicitud
+solicitud_title	app/helpers/portal_helper.rb	/^  def solicitud_title(solicitud)$/;"	f	class:PortalHelper
+solicitudes	app/controllers/reportes_controller.rb	/^  def solicitudes$/;"	f	class:ReportesController
+solicitudes	app/models/busqueda.rb	/^  def solicitudes$/;"	f	class:Busqueda.persisted?
+solicitudes_atrasadas	app/controllers/reportes_controller.rb	/^  def solicitudes_atrasadas$/;"	f	class:ReportesController
+solicitudes_csv	app/controllers/reportes_controller.rb	/^  def solicitudes_csv$/;"	f	class:ReportesController
+solicitudes_ingresadas	app/controllers/reportes_controller.rb	/^  def solicitudes_ingresadas$/;"	f	class:ReportesController
+solicitudes_por_ano	app/models/institucion.rb	/^  def solicitudes_por_ano$/;"	f	class:Institucion
+solicitudes_por_estado	app/controllers/reportes_controller.rb	/^  def solicitudes_por_estado$/;"	f	class:ReportesController
+solicitudes_por_estado	app/helpers/dashboard_helper.rb	/^  def solicitudes_por_estado(user = nil, title = 'Solicitudes+por+estado+')$/;"	f	class:DashboardHelper
+solicitudes_por_estado	app/models/institucion.rb	/^  def solicitudes_por_estado(ano = Date.today.year)$/;"	f	class:Institucion
+solicitudes_por_genero_ano	app/models/institucion.rb	/^  def solicitudes_por_genero_ano$/;"	f	class:Institucion
+solicitudes_por_mes	app/helpers/dashboard_helper.rb	/^  def solicitudes_por_mes(user = nil, title = 'Solicitudes+Recibidas+')$/;"	f	class:DashboardHelper
+solicitudes_por_mes_ano	app/models/institucion.rb	/^  def solicitudes_por_mes_ano$/;"	f	class:Institucion
+solicitudes_por_vencer	app/mailers/notificaciones.rb	/^  def solicitudes_por_vencer(institucion, dias_desde = 0, dias_hasta = 3)$/;"	f	class:Notificaciones
+solicitudes_por_via_solicitud	app/models/institucion.rb	/^  def solicitudes_por_via_solicitud(ano = Date.today.year)$/;"	f	class:Institucion
+solicitudes_xml	app/controllers/reportes_controller.rb	/^  def solicitudes_xml$/;"	f	class:ReportesController
+status	app/controllers/admin/importar_controller.rb	/^  def status$/;"	f	class:Admin
+submit_popup	app/helpers/application_helper.rb	/^  def submit_popup(text = 'Grabar', image = 'accept16.png')$/;"	f	class:ApplicationHelper
+terminada?	app/models/solicitud.rb	/^  def terminada?$/;"	f	class:Solicitud
+texto_solicitud	app/models/solicitud.rb	/^  def texto_solicitud(user = nil)$/;"	f	class:Solicitud
+tiempo_ampliacion	app/models/solicitud.rb	/^  def tiempo_ampliacion$/;"	f	class:Solicitud
+tiempo_respuesta_promedio	app/models/institucion.rb	/^  def tiempo_respuesta_promedio(ano = Date.today.year)$/;"	f	class:Institucion
+tiene_informacion_minima?	app/models/herramienta.rb	/^  def tiene_informacion_minima?(row, campos)$/;"	f	class:Herramienta
+tipo_feriado	app/models/feriado.rb	/^  def tipo_feriado$/;"	f	class:Feriado
+tipo_nombre	app/models/institucion.rb	/^  def tipo_nombre$/;"	f	class:Institucion
+tipo_nombre	app/models/nota.rb	/^  def tipo_nombre$/;"	f	class:Nota
+tipo_resolucion	app/models/solicitud.rb	/^  def tipo_resolucion(r = nil)$/;"	f	class:Solicitud
+to_item	app/models/solicitud.rb	/^  def to_item$/;"	f	class:Solicitud
+to_label	app/models/archivo.rb	/^  def to_label$/;"	f	class:Archivo
+to_label	app/models/clasificacion.rb	/^  def to_label$/;"	f	class:Clasificacion
+to_label	app/models/departamento.rb	/^  def to_label$/;"	f	class:Departamento
+to_label	app/models/documentocategoria.rb	/^  def to_label$/;"	f	class:Documentocategoria
+to_label	app/models/documentoclasificacion.rb	/^  def to_label$/;"	f	class:Documentoclasificacion
+to_label	app/models/estado.rb	/^  def to_label$/;"	f	class:Estado
+to_label	app/models/genero.rb	/^  def to_label$/;"	f	class:Genero
+to_label	app/models/idioma.rb	/^  def to_label$/;"	f	class:Idioma
+to_label	app/models/institucion.rb	/^  def to_label$/;"	f	class:Institucion
+to_label	app/models/motivonegativa.rb	/^  def to_label$/;"	f	class:Motivonegativa
+to_label	app/models/motivoprorroga.rb	/^  def to_label$/;"	f	class:Motivoprorroga
+to_label	app/models/municipio.rb	/^  def to_label$/;"	f	class:Municipio
+to_label	app/models/profesion.rb	/^  def to_label$/;"	f	class:Profesion
+to_label	app/models/rangoedad.rb	/^  def to_label$/;"	f	class:Rangoedad
+to_label	app/models/razontiporesolucion.rb	/^  def to_label$/;"	f	class:Razontiporesolucion
+to_label	app/models/sentidoresolucion.rb	/^  def to_label$/;"	f	class:Sentidoresolucion
+to_label	app/models/tipomensaje.rb	/^  def to_label$/;"	f	class:Tipomensaje
+to_label	app/models/tiporesolucion.rb	/^  def to_label$/;"	f	class:Tiporesolucion
+to_label	app/models/usuario.rb	/^  def to_label$/;"	f	class:Usuario
+to_label	app/models/via.rb	/^  def to_label$/;"	f	class:Via
+total_solicitudes	app/models/institucion.rb	/^  def total_solicitudes(ano = Date.today.year)$/;"	f	class:Institucion
+trasladar	app/controllers/archivo/documentos_controller.rb	/^  def trasladar$/;"	f	class:DocumentosController
+twitterized_type	app/helpers/application_helper.rb	/^def twitterized_type(type)$/;"	f	class:ApplicationHelper
+up	db/migrate/20090811002731_create_usuarios.rb	/^  def self.up$/;"	F	class:CreateUsuarios
+up	db/migrate/20090913024811_create_instituciones.rb	/^  def self.up$/;"	F	class:CreateInstituciones
+up	db/migrate/20090913160804_create_puestos.rb	/^  def self.up$/;"	F	class:CreatePuestos
+up	db/migrate/20090913170219_agregar_campos_to_usuarios.rb	/^  def self.up$/;"	F	class:AgregarCamposToUsuarios
+up	db/migrate/20090913174220_create_departamentos.rb	/^  def self.up$/;"	F	class:CreateDepartamentos
+up	db/migrate/20090913174242_create_municipios.rb	/^  def self.up$/;"	F	class:CreateMunicipios
+up	db/migrate/20090914015453_add_fields_codigo_abreviatura_to_instituciones.rb	/^  def self.up$/;"	F	class:AddFieldsCodigoAbreviaturaToInstituciones
+up	db/migrate/20090914031202_create_vias.rb	/^  def self.up$/;"	F	class:CreateVias
+up	db/migrate/20090914034415_create_estados.rb	/^  def self.up$/;"	F	class:CreateEstados
+up	db/migrate/20090914035143_create_solicitudes.rb	/^  def self.up$/;"	F	class:CreateSolicitudes
+up	db/migrate/20090914175413_add_field_texto_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddFieldTextoToSolicitudes
+up	db/migrate/20090914200125_create_actividades.rb	/^  def self.up$/;"	F	class:CreateActividades
+up	db/migrate/20090914200755_add_field_asignada_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddFieldAsignadaToSolicitudes
+up	db/migrate/20090914224117_add_field_final_to_estados.rb	/^  def self.up$/;"	F	class:AddFieldFinalToEstados
+up	db/migrate/20090914225347_add_field_ano_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddFieldAnoToSolicitudes
+up	db/migrate/20090914233753_add_field_solicitud_id_to_actividades.rb	/^  def self.up$/;"	F	class:AddFieldSolicitudIdToActividades
+up	db/migrate/20090915183636_create_seguimientos.rb	/^  def self.up$/;"	F	class:CreateSeguimientos
+up	db/migrate/20091025155813_create_adjuntos.rb	/^  def self.up$/;"	F	class:CreateAdjuntos
+up	db/migrate/20091026032801_add_attachments_archivo_to_adjunto.rb	/^  def self.up$/;"	F	class:AddAttachmentsArchivoToAdjunto
+up	db/migrate/20091027042355_add_attachments_archivo_to_seguimiento.rb	/^  def self.up$/;"	F	class:AddAttachmentsArchivoToSeguimiento
+up	db/migrate/20091216175250_create_documentos.rb	/^  def self.up$/;"	F	class:CreateDocumentos
+up	db/migrate/20091216221043_create_tipomensajes.rb	/^  def self.up$/;"	F	class:CreateTipomensajes
+up	db/migrate/20091216221150_create_fuentes.rb	/^  def self.up$/;"	F	class:CreateFuentes
+up	db/migrate/20100811170252_add_usuarios_open_id_field.rb	/^  def self.up$/;"	F	class:AddUsuariosOpenIdField
+up	db/migrate/20100818133700_create_roles.rb	/^  def self.up$/;"	F	class:CreateRoles
+up	db/migrate/20100819015644_create_profesiones.rb	/^  def self.up$/;"	F	class:CreateProfesiones
+up	db/migrate/20100819073952_add_field_profesion_id_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddFieldProfesionIdToSolicitudes
+up	db/migrate/20100819075151_create_generos.rb	/^  def self.up$/;"	F	class:CreateGeneros
+up	db/migrate/20100819081123_add_extra_fields_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddExtraFieldsToSolicitudes
+up	db/migrate/20100819081628_create_rangosedad.rb	/^  def self.up$/;"	F	class:CreateRangosedad
+up	db/migrate/20100819081644_create_clasificaciones.rb	/^  def self.up$/;"	F	class:CreateClasificaciones
+up	db/migrate/20100819081658_create_motivosprorroga.rb	/^  def self.up$/;"	F	class:CreateMotivosprorroga
+up	db/migrate/20100819081709_create_motivosnegativa.rb	/^  def self.up$/;"	F	class:CreateMotivosnegativa
+up	db/migrate/20100819132833_add_resoluciones_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddResolucionesToSolicitudes
+up	db/migrate/20100824035759_add_open_id_authentication_tables.rb	/^  def self.up$/;"	F	class:AddOpenIdAuthenticationTables
+up	db/migrate/20100825034756_add_audits_table.rb	/^  def self.up$/;"	F	class:AddAuditsTable
+up	db/migrate/20100825160732_add_direccion_to_instituciones.rb	/^  def self.up$/;"	F	class:AddDireccionToInstituciones
+up	db/migrate/20100901123943_create_resoluciones.rb	/^  def self.up$/;"	F	class:CreateResoluciones
+up	db/migrate/20100901124314_create_tiposresoluciones.rb	/^  def self.up$/;"	F	class:CreateTiposresoluciones
+up	db/migrate/20100901124635_create_razonestiposresoluciones.rb	/^  def self.up$/;"	F	class:CreateRazonestiposresoluciones
+up	db/migrate/20100901131839_add_publica_to_solicitud.rb	/^  def self.up$/;"	F	class:AddPublicaToSolicitud
+up	db/migrate/20101005040220_add_attachments_logo_to_institucion.rb	/^  def self.up$/;"	F	class:AddAttachmentsLogoToInstitucion
+up	db/migrate/20101006144701_create_recursosrevision.rb	/^  def self.up$/;"	F	class:CreateRecursosrevision
+up	db/migrate/20101006145703_create_sentidosresolucion.rb	/^  def self.up$/;"	F	class:CreateSentidosresolucion
+up	db/migrate/20101006151153_add_field_numero_to_recursosrevision.rb	/^  def self.up$/;"	F	class:AddFieldNumeroToRecursosrevision
+up	db/migrate/20101008001944_add_field_activa_to_instituciones.rb	/^  def self.up$/;"	F	class:AddFieldActivaToInstituciones
+up	db/migrate/20101008024016_add_field_usasolicitudesprivadas_to_instituciones.rb	/^  def self.up$/;"	F	class:AddFieldUsasolicitudesprivadasToInstituciones
+up	db/migrate/20101028003305_add_field_origen_id_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddFieldOrigenIdToSolicitudes
+up	db/migrate/20101028112108_add_field_unidad_ejecutora_to_instituciones.rb	/^  def self.up$/;"	F	class:AddFieldUnidadEjecutoraToInstituciones
+up	db/migrate/20101103145631_add_modulo_id_to_estados.rb	/^  def self.up$/;"	F	class:AddModuloIdToEstados
+up	db/migrate/20101103214535_create_documentoclasificaciones.rb	/^  def self.up$/;"	F	class:CreateDocumentoclasificaciones
+up	db/migrate/20101103214606_create_documentocategorias.rb	/^  def self.up$/;"	F	class:CreateDocumentocategorias
+up	db/migrate/20101103214952_add_field_documentoclasificacion_id_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddFieldDocumentoclasificacionIdToSolicitudes
+up	db/migrate/20101103215031_add_field_documentoclasificacion_id_to_resoluciones.rb	/^  def self.up$/;"	F	class:AddFieldDocumentoclasificacionIdToResoluciones
+up	db/migrate/20101103215053_add_field_documentoclasificacion_id_to_recursosrevision.rb	/^  def self.up$/;"	F	class:AddFieldDocumentoclasificacionIdToRecursosrevision
+up	db/migrate/20101105160653_create_documentodestinatarios.rb	/^  def self.up$/;"	F	class:CreateDocumentodestinatarios
+up	db/migrate/20101116035232_remove_resoluciones_from_solicitudes.rb	/^  def self.up$/;"	F	class:RemoveResolucionesFromSolicitudes
+up	db/migrate/20101119121232_add_webpage_to_instituciones.rb	/^  def self.up$/;"	F	class:AddWebpageToInstituciones
+up	db/migrate/20101230162907_devise_create_users.rb	/^  def self.up$/;"	F	class:DeviseCreateUsers
+up	db/migrate/20110105174720_create_vestal_versions.rb	/^  def self.up$/;"	F	class:CreateVestalVersions
+up	db/migrate/20110112080136_create_notas.rb	/^  def self.up$/;"	F	class:CreateNotas
+up	db/migrate/20110113035500_create_idiomas.rb	/^  def self.up$/;"	F	class:CreateIdiomas
+up	db/migrate/20110113040220_add_idioma_id_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddIdiomaIdToSolicitudes
+up	db/migrate/20110113161428_create_archivos.rb	/^  def self.up$/;"	F	class:CreateArchivos
+up	db/migrate/20110113161657_add_archivo_id_to_documentos.rb	/^  def self.up$/;"	F	class:AddArchivoIdToDocumentos
+up	db/migrate/20110113175033_create_documentotraslados.rb	/^  def self.up$/;"	F	class:CreateDocumentotraslados
+up	db/migrate/20110113191755_add_descripcion_to_documentotraslados.rb	/^  def self.up$/;"	F	class:AddDescripcionToDocumentotraslados
+up	db/migrate/20110203225654_add_informacion_publica_to_notas.rb	/^  def self.up$/;"	F	class:AddInformacionPublicaToNotas
+up	db/migrate/20110207170742_add_fecha_to_resoluciones.rb	/^  def self.up$/;"	F	class:AddFechaToResoluciones
+up	db/migrate/20110207174002_add_fecha_notificacion_to_resoluciones.rb	/^  def self.up$/;"	F	class:AddFechaNotificacionToResoluciones
+up	db/migrate/20110207174109_add_actualiza_fecha_notificacion_to_tiposresoluciones.rb	/^  def self.up$/;"	F	class:AddActualizaFechaNotificacionToTiposresoluciones
+up	db/migrate/20110209143335_create_delayed_jobs.rb	/^  def self.up$/;"	F	class:CreateDelayedJobs
+up	db/migrate/20110226173548_add_field_email_to_instituciones.rb	/^  def self.up$/;"	F	class:AddFieldEmailToInstituciones
+up	db/migrate/20110317161441_create_feriados.rb	/^  def self.up$/;"	F	class:CreateFeriados
+up	db/migrate/20110318043800_add_field_fecha_to_feriados.rb	/^  def self.up$/;"	F	class:AddFieldFechaToFeriados
+up	db/migrate/20110420041440_add_positiva_to_tiporesoluciones.rb	/^  def self.up$/;"	F	class:AddPositivaToTiporesoluciones
+up	db/migrate/20110420150723_add_anulada_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddAnuladaToSolicitudes
+up	db/migrate/20110421201519_add_fields_tiempo_respuesta_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddFieldsTiempoRespuestaToSolicitudes
+up	db/migrate/20110613181238_add_active_to_users.rb	/^  def self.up$/;"	F	class:AddActiveToUsers
+up	db/migrate/20110912215344_add_reserva_temporal_to_solicitudes.rb	/^  def self.up$/;"	F	class:AddReservaTemporalToSolicitudes
+up	db/migrate/20110920185416_create_worker_logs.rb	/^  def self.up$/;"	F	class:CreateWorkerLogs
+up	db/migrate/20110920200512_create_temp_assets.rb	/^  def self.up$/;"	F	class:CreateTempAssets
+up	db/migrate/20110920200624_add_attachment_archivo_to_temp_asset.rb	/^  def self.up$/;"	F	class:AddAttachmentArchivoToTempAsset
+up	db/migrate/20120313151734_create_simple_captcha_data.rb	/^  def self.up$/;"	F	class:CreateSimpleCaptchaData
+up	db/migrate/20120313203152_add_queue_to_delayed_jobs.rb	/^  def self.up$/;"	F	class:AddQueueToDelayedJobs
+update	app/controllers/admin/motivosprorroga_controller.rb	/^  def update$/;"	f	class:MotivosprorrogaController
+update	app/controllers/admin/rangosedad_controller.rb	/^  def update$/;"	f	class:RangosedadController
+update	app/controllers/admin/tipomensajes_controller.rb	/^  def update$/;"	f	class:TipomensajesController
+update	app/controllers/admin/usuarios_controller.rb	/^  def update$/;"	f	class:Admin
+update	app/controllers/archivo/documentos_controller.rb	/^  def update$/;"	f	class:DocumentosController
+update	app/controllers/archivo/documentotraslados_controller.rb	/^  def update$/;"	f	class:DocumentotrasladosController
+update	app/controllers/archivo/mensajes_controller.rb	/^  def update$/;"	f	class:MensajesController
+update	app/controllers/laip/actividades_controller.rb	/^  def update$/;"	f	class:Laip
+update	app/controllers/laip/motivosnegativa_controller.rb	/^  def update$/;"	f	class:MotivosnegativaController
+update	app/controllers/laip/notas_controller.rb	/^  def update$/;"	f	class:NotasController
+update	app/controllers/laip/recursosrevision_controller.rb	/^  def update$/;"	f	class:RecursosrevisionController
+update	app/controllers/laip/resoluciones_controller.rb	/^  def update$/;"	f	class:ResolucionesController
+update	app/controllers/laip/seguimientos_controller.rb	/^  def update$/;"	f	class:Laip
+update	app/controllers/laip/sentidosresolucion_controller.rb	/^  def update$/;"	f	class:SentidosresolucionController
+update	app/controllers/laip/solicitudes_controller.rb	/^  def update$/;"	f	class:Laip
+will_paginate	config/initializers/will_paginate.rb	/^    def will_paginate(collection = nil, options = {})$/;"	f	class:WillPaginate.ActionView
+xml_options	app/models/solicitud.rb	/^  def self.xml_options$/;"	F	class:Solicitud
+xml_options	app/models/solicitud.rb	/^  def xml_options$/;"	f	class:Solicitud

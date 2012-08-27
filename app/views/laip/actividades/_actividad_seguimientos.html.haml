@@ -1,0 +1,14 @@
+%h3 Seguimiento
+- hay_seguimientos = (actividad.seguimientos.count != 0)
+- unless hay_seguimientos
+  .alert.alert-error
+    No se ha dado seguimiento a esta asignacion.
+= actividad_boton_agregar_seguimiento(actividad)
+= actividad_boton_marcar_completada(actividad) if hay_seguimientos
+%table.table#minimalist-b
+  %thead
+    %th.col{:width => "10%"} &nbsp;
+    %th.col{:width => "10%"} &nbsp;
+    %th.col{:width => "15%"}= t("seguimientos.label_fecha_creacion")
+    %th.col= t("seguimientos.label_textoseguimiento")
+  %tbody= render :partial => actividad.seguimientos

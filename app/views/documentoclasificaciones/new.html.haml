@@ -1,7 +1,0 @@
-.mantform
-  %h2
-    Nuevo #{Documentoclasificacion.model_name.human}
-  = simple_form_for @documentoclasificacion do |form|
-
-    = render :partial => 'form', :locals => {:form => form}
-    = buttons_create(documentoclasificaciones_path)

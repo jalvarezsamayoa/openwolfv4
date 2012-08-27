@@ -1,0 +1,17 @@
+#page-title.clearfix
+  %h1= Via.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_via_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_vias_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Via.human_attribute_name(:nombre)
+      %tbody
+        - @vias.each do |via|
+          %tr
+            %td= link_to via.nombre, [:admin,via]
+    = will_paginate @vias

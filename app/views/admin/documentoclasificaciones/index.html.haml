@@ -1,0 +1,17 @@
+#page-title.clearfix
+  %h1= Documentoclasificacion.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_documentoclasificacion_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_documentoclasificaciones_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Documentoclasificacion.human_attribute_name(:nombre)
+      %tbody
+        - @documentoclasificaciones.each do |documentoclasificacion|
+          %tr
+            %td= link_to documentoclasificacion.nombre, [:admin,documentoclasificacion]
+    = will_paginate @documentoclasificaciones

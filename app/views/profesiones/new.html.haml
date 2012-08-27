@@ -1,7 +1,0 @@
-.mantform
-  %h2
-    Nueva #{Profesion.model_name.human}
-  = simple_form_for @profesion do |form|
-
-    = render :partial => 'form', :locals => {:form => form}
-    = buttons_create(profesiones_path)

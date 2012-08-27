@@ -1,13 +1,5 @@
-#flash-messages
-  - if flash[:notice]
-    %div
-      %p.notice= flash[:notice]
-  - if flash[:error]
-    %div
-      %p.error= flash[:error]
-  - if flash[:success]
-    %div
-      %p.success= flash[:success]
-  - if flash[:alert]
-    %div
-      %p.notice= flash[:alert]
+- flash.each do |type, message|
+  %div.alert.fade.in{ "data-alert" => "alert", :class => twitterized_type(type) }
+    %a.close{:href => "#", "data-dismiss"=>"alert"} ×
+    %p
+      = message

@@ -1,0 +1,183 @@
+/ solicitud.pdf.html.haml
+.row
+  .span12
+    .documento.rounded-shadow-box.glow-border
+      %h1.center Solicitud de Información Pública
+      %h2.center= @solicitud.codigo
+
+      - unless @informacion_publica
+        %h3#info-not-public
+          Información de esta solicitud bajo reserva por solicitud del solicitante.
+
+      %fieldset
+        %legend Datos Generales
+        %br
+        %table.table
+          %tr
+            %th Estado Actual:
+            %td= @solicitud.estado_actual
+          %tr
+            %th{:width => "20%"}= Solicitud.human_attribute_name(:codigo)
+            %td{:width => "80%"}= @solicitud.codigo
+          %tr
+            %th= Solicitud.human_attribute_name(:fecha_creacion)
+            %td= l(@solicitud.fecha_creacion)
+          %tr
+            %th= Solicitud.human_attribute_name(:institucion_id)
+            %td= @solicitud.usuario.nombre_institucion
+          %tr
+            %th= Solicitud.human_attribute_name(:via_id)
+            %td= @solicitud.via.nombre
+          %tr
+            %th= Solicitud.human_attribute_name(:forma_entrega)
+            %td= @solicitud.forma_entrega
+
+      %fieldset
+        %legend Asignado A:
+        #solicitud_no_asignada.error{ @actividades.size > 0 ? {:style => "display:none"} : {} }
+          La solicitud no ha sido asignada.
+        #asignaciones
+          %table.table#table
+            %thead
+              %th.col= t("actividades.label_numero")
+              %th.col= t("actividades.label_usuario_id")
+              %th.col= t("actividades.label_cargo")
+              %th.col= t("actividades.label_institucion")
+              %th.col= t("actividades.label_fecha_asignacion")
+              %th.col= t("actividades.label_estado")
+            %tbody
+              - for actividad in @solicitud.actividades do
+                %tr
+                  %td= actividad.id
+                  %td= actividad.usuario.nombre
+                  %td= actividad.usuario.cargo
+                  %td= actividad.usuario.institucion.abreviatura
+                  %td= l(actividad.fecha_asignacion)
+                  %td= actividad.estado.nombre
+
+      %fieldset
+        %legend Datos del Solicitante
+        %table.table
+          %tr
+            %th{:width => "20%"}= label :solicitud, t("solicitudes.label_solicitante_nombre")
+            %td= @solicitud.solicitante_nombre
+          %tr
+            %th= label :solicitud, t("solicitudes.label_solicitante_identificacion")
+            %td= @solicitud.solicitante_identificacion
+          %tr
+            %th= label :solicitud, t("solicitudes.label_solicitante_telefonos")
+            %td= @solicitud.solicitante_telefonos
+          %tr
+            %th= label :solicitud, t("solicitudes.label_email")
+            %td= @solicitud.email
+          %tr
+            %th= label :solicitud, t("solicitudes.label_solicitante_direccion")
+            %td= @solicitud.solicitante_direccion
+          %tr
+            %th= label :solicitud, t("solicitudes.label_departamento_municipio")
+            %td= @solicitud.municipio.nombre_completo unless @solicitud.municipio.nil?
+
+      %fieldset
+        %legend Detalle de la Solicitud
+
+        %table.table
+          %tr
+            %th{:width => "20%"}= t("solicitudes.label_estado_id")
+            %td= @solicitud.estado.nombre
+          %tr
+            %th= t("solicitudes.label_fecha_programada")
+            %td= l(@solicitud.fecha_programada)
+          %tr
+            %th= t("solicitudes.label_fecha_entregada")
+            %td= l(@solicitud.fecha_entregada) unless @solicitud.fecha_entregada.nil?
+          %tr
+            %th= t("solicitudes.label_fecha_resolucion")
+            %td= l(@solicitud.fecha_resolucion) unless @solicitud.fecha_resolucion.nil?
+          %tr
+            %th= t("solicitudes.label_fecha_prorroga")
+            %td= l(@solicitud.fecha_prorroga) unless @solicitud.fecha_prorroga.nil?
+          %tr
+            %th= t("solicitudes.label_forma_entrega")
+            %td= @solicitud.forma_entrega
+          %tr
+            %th= t("solicitudes.label_observaciones")
+            %td= @solicitud.observaciones
+
+      %fieldset
+        %legend= t("solicitudes.label_textosolicitud")
+        #texto-solicitud
+          = @solicitud.texto_solicitud(current_usuario)
+
+      - if @informacion_publica
+        %fieldset
+          %legend= "Seguimientos de enlances"
+          #seguimientos
+            %table.table
+              %thead
+                %th= Actividad.human_attribute_name(:id)
+                %th= Actividad.human_attribute_name(:fecha_asignacion)
+                %th= Actividad.human_attribute_name(:usuario_id)
+                %th= Seguimiento.human_attribute_name(:fecha_creacion)
+                %th= Seguimiento.human_attribute_name(:textoseguimiento)
+              %tbody
+                - for seguimiento in @solicitud.seguimientos do
+                  %tr
+                    %td= seguimiento.actividad_id
+                    %td= l(seguimiento.actividad.fecha_asignacion)
+                    %td= seguimiento.actividad.usuario.nombre
+                    %td= l(seguimiento.fecha_creacion)
+                    %td= seguimiento.textoseguimiento
+
+      - if @informacion_publica
+        %fieldset
+          %legend= Resolucion.model_name.human
+          #resoluciones
+            %table.table
+              %thead
+                %th= Resolucion.human_attribute_name(:numero)
+                %th= Resolucion.human_attribute_name(:fecha)
+                %th= Resolucion.human_attribute_name(:tiporesolucion_id)
+                %th= Resolucion.human_attribute_name(:tiporazonresolucion_id)
+              %tbody
+                - for resolucion in @solicitud.resoluciones do
+                  %tr
+                    %td= resolucion.numero
+                    %td= l(resolucion.fecha)
+                    %td= resolucion.tiporesolucion.nombre
+                    %td= resolucion.razontiporesolucion.nombre
+
+      - if @informacion_publica
+        %fieldset
+          %legend= t("activerecord.models.recursosrevision")
+          #recursosrevision
+            %table.table
+              %thead
+                %th{:width => "20%"}= Recursorevision.human_attribute_name(:numero)
+                %th= Recursorevision.human_attribute_name(:fecha_presentacion)
+                %th= Sentidoresolucion.model_name.human
+                %th= Recursorevision.human_attribute_name(:descripcion)
+              %tbody
+                - for recursorevision in @solicitud.recursosrevision
+                  %tr
+                    %td= recursorevision.numero
+                    %td= l(recursorevision.fecha_presentacion)
+                    %td= recursorevision.sentidoresolucion.nombre
+                    %td= recursorevision.descripcion
+            %hr/
+
+      - if @informacion_publica
+        %fieldset
+          %legend= t("activerecord.models.nota")
+          #notasseguimiento
+            %table.table
+              %thead
+                %th= Nota.human_attribute_name(:created_at)
+                %th= Nota.human_attribute_name(:usuario_id)
+                %th= Nota.human_attribute_name(:texto)
+              %tbody
+                - for nota in @solicitud.notas.restringir(@restringir_seguimientos_privados)
+                  %tr
+                    %td= l(nota.created_at.to_date)
+                    %td= nota.usuario.nombre
+                    %td= nota.texto
+            %hr/

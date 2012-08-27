@@ -1,0 +1,34 @@
+/ _actividad.html.haml
+= div_for actividad, :class => "widget" do
+  - solicitud = actividad.solicitud
+  %table.table
+    %tr
+      %th{:width => "20%"}= label_tag t("solicitudes.label_codigo")
+      %td= link_to solicitud.codigo, laip_solicitud_path(solicitud)
+    %tr
+      %th= label_tag t("solicitudes.label_fecha_creacion")
+      %td= l(solicitud.fecha_creacion)
+    %tr
+      %th= label_tag t("solicitudes.label_estado_id")
+      %td
+        = solicitud.estado.nombre
+    %tr
+      %th
+        = label_tag t("solicitudes.label_dias_restantes")
+      %td= solicitud.dias_restantes
+    %tr
+      %th
+        = label_tag t("solicitudes.label_forma_entrega")
+      %td
+        = solicitud.forma_entrega
+  %p
+    = label_tag t("solicitudes.label_textosolicitud")
+    %br
+    = solicitud.texto_solicitud(current_usuario)
+  %p
+    = label_tag t("actividades.label_textoactividad")
+    %br
+    = actividad.textoactividad
+
+  %div{:id => "seguimientos_actividad_#{actividad.id}"}
+    = render :partial => 'laip/actividades/actividad_seguimientos', :locals => {:actividad => actividad}

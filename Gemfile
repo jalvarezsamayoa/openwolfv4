@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,9 +9,6 @@ gem 'pg'
 
 # Servidor
 gem 'thin'
-
-# DEPLOYMENT
-gem 'capistrano' # herramienta para hacer deployment de la aplicacion
 
 # AUTENTICACION
 gem 'devise' # libreria de autenticacion
@@ -40,6 +37,7 @@ gem 'jquery-rails' #jquery para rails, remplaza prototype y scriptaculous
 gem 'paperclip' # modulo para hacer upload a archivos
 gem 'galetahub-simple_captcha', :require => 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
 gem "crummy", "~> 1.6.0" # manejo de breadcrumbs
+gem 'client_side_validations' #validacion javascript para forms
 
 # INDEXAMIENTO
 gem 'pg_search'
@@ -94,11 +92,16 @@ group :development, :test do
   gem 'guard-livereload'
   gem 'guard-bundler'
   gem 'guard-rails'
+  gem 'guard-delayed'
   gem 'rb-inotify'
   gem 'libnotify'
   gem 'debugger'
   gem 'rvm-capistrano'
   gem 'quiet_assets'
+
+
+  # DEPLOYMENT
+  gem 'capistrano' # herramienta para hacer deployment de la aplicacion
 end
 
 

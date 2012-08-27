@@ -1,4 +1,6 @@
 class Archivo < ActiveRecord::Base
+  attr_accessible :nombre, :institucion_id
+
   validates :nombre, :presence => true, :uniqueness => true
   validates :institucion_id, :presence => true
 
@@ -16,7 +18,7 @@ class Archivo < ActiveRecord::Base
   def to_label
     nombre
   end
-  
+
 end
 
 # == Schema Information

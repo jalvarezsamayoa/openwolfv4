@@ -1,10 +1,10 @@
 class Documentoclasificacion < ActiveRecord::Base
-  #versioned
-  
+  attr_accessible :nombre, :documentocategoria_id, :codigo, :plantilla
+
   SOLICITUDINFOPUBLICA = '9001'
   RESOLUCION = '9002'
   REVISION = '9003'
-  
+
   has_many :documentos
   belongs_to :documentocategoria
 

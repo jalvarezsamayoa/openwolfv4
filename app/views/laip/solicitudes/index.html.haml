@@ -1,0 +1,43 @@
+= content_for :javascripts do
+  :javascript
+    $(document).ready(function () {
+      $('#tabs-solicitudes a:first').tab('show');
+
+      $('a[data-toggle="tab"]').on('shown', function (e) {
+          var tabPane = e.target.attributes[0].value;
+          $.ajax({
+            url: '/laip/solicitudes/refresh_tab.js',
+            data: {tab: tabPane},
+            dataType: "script"
+          });
+      });
+    });
+
+#page-title.clearfix
+  %h1 Tareas y Solicitudes
+  = render :partial => "shared/breadcrumbs"
+
+.widget
+  .widget-header
+    %h3 Solicitudes de Información Pública
+  .widget-tabs
+    %ul.nav.nav-tabs{:id => 'tabs-solicitudes'}
+      = render partial: "tab", locals: {url: "#tareas", title: "Tareas que debo de completar.", text: "Tareas Asignadas", badge: '', cnt: @asignaciones.count, active: false }
+      - if @usuario_es_udip
+        = render partial: "tab", locals: {url: "#no-asignadas", title: "Nuevas solicitudes que debo asignar a enlaces.", text: "No Asignadas", badge: '', cnt: @noasignadas.count, active: false }
+        = render partial: "tab", locals: {url: "#en-tramite", title: "Solicitudes ya asignadas que enlaces deben completar.", text: "En Trámite", badge: '', cnt: @entramite.count, active: false }
+        = render partial: "tab", locals: {url: "#pendientes-resolucion", title: "Asignaciones completadas por enlaces pendientes de emitir resolución.", text: "Pend. Resolución", badge: '', cnt: @pendresolucion.count, active: false }
+        = render partial: "tab", locals: {url: "#terminadas", title: "Asignaciones listas para entregar a ciudadano.", text: "Terminadas", badge: '', cnt: @terminadas.count, active: false }
+        = render partial: "tab", locals: {url: "#entregadas", title: "Asignaciones entregadas a ciudadano.", text: "Entregadas", badge: '', cnt: @entregadas.count, active: false }
+        = render partial: "tab", locals: {url: "#anuladas", title: "Asignaciones anuladas.", text: "Anuladas", badge: '', cnt: @anuladas.count, active: false }
+  .widget-content
+    .tab-content
+      = render :partial => 'laip/actividades/mis_actividades'
+      - if @usuario_es_udip
+        #no-asignadas.tab-pane
+          hello
+        #en-tramite.tab-pane
+        #pendientes-resolucion.tab-pane
+        #terminadas.tab-pane
+        #entregadas.tab-pane
+        #anuladas.tab-pane

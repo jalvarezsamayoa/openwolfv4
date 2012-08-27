@@ -1,0 +1,4 @@
+$("#newactividad").modal('toggle');
+$("#asignaciones").slideToggle();
+$('#asignaciones').html("<%= escape_javascript(render :partial => 'laip/solicitudes/asignaciones') %>");
+$("#asignaciones").slideToggle();

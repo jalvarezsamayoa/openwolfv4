@@ -1,0 +1,36 @@
+
+
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"} ×
+  %h3 Asignación
+.modal-body
+  %table.table
+    %tr
+      %th{:width => "30%"}= label :actividad, t("actividades.label_numero")
+      %td= @actividad.id
+    %tr
+      %th= label :actividad, t("actividades.label_fecha_asignacion")
+      %td= l(@actividad.fecha_asignacion)
+    %tr
+      %th= label :actividad, t("actividades.label_estado")
+      %td= @actividad.estado.nombre
+    %tr
+      %th= label :actividad, t("actividades.label_fecha_resolucion")
+      %td= l(@actividad.fecha_resolucion) unless @actividad.fecha_resolucion.nil?
+    %tr
+      %th= label :actividad, t("actividades.label_textoactividad")
+      %td= @actividad.textoactividad
+  %table.table
+    %thead
+      %tr
+        %th{:width => "30%"}= Seguimiento.human_attribute_name(:fecha_creacion)
+        %th= Seguimiento.human_attribute_name(:texto_seguimiento)
+    %tbody
+      - for seguimiento in @actividad.seguimientos  do
+        %tr
+          %td
+            = l(seguimiento.fecha_creacion)
+          %td= seguimiento.textoseguimiento
+  %br/
+.modal-footer
+  %a.btn{"data-dismiss" => "modal", :href => "#"} Cerrar

@@ -1,0 +1,24 @@
+#page-title.clearfix
+  %h1= Municipio.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @municipio.errors.any?
+  .error
+    %ul
+    - @municipio.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_municipio_path)
+    = button_edit(edit_admin_municipio_path(@municipio))
+    = button_delete(admin_municipio_path(@municipio))
+    = button_cancel(admin_municipios_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Municipio.human_attribute_name(:nombre)
+        %td= @municipio.nombre
+      %tr
+        %th= Municipio.human_attribute_name(:departamento_id)
+        %td= @municipio.departamento.nombre

@@ -1,0 +1,27 @@
+#page-title.clearfix
+  %h1= Razontiporesolucion.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @razontiporesolucion.errors.any?
+  .error
+    %ul
+    - @razontiporesolucion.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_razontiporesolucion_path)
+    = button_edit(edit_admin_razontiporesolucion_path(@razontiporesolucion))
+    = button_delete(admin_razontiporesolucion_path(@razontiporesolucion))
+    = button_cancel(admin_razonestiposresoluciones_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Razontiporesolucion.human_attribute_name(:nombre)
+        %td= @razontiporesolucion.nombre
+      %tr
+        %th= label :tiporesolucion_id, Razontiporesolucion.human_attribute_name(:tiporesolucion_id)
+        %td= @razontiporesolucion.tiporesolucion.nombre
+      %tr
+        %th= label :informacion_publica, Razontiporesolucion.human_attribute_name(:informacion_publica)
+        %td= @razontiporesolucion.informacion_publica

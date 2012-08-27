@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 class Solicitud < ActiveRecord::Base
+  require 'csv'
   include PgSearch
+
 
   ORIGEN_DEFAULT = 1
   ORIGEN_PORTAL = 2
@@ -30,7 +32,10 @@ class Solicitud < ActiveRecord::Base
 
   attr_accessible :solicitante_nombre, :email, :textosolicitud, :reserva_temporal, \
     :genero_id, :idioma_id, :captcha, :origen_id, :institucion_id, \
-    :solicitante_telefonos, :captcha_key
+    :solicitante_telefonos, :captcha_key, :fecha_creacion, :via_id, \
+    :forma_entrega, :solicitante_identificacion, :solicitante_direccion, \
+    :departamento_id, :municipio_id, :rangoedad_id, :clasificacion_id, \
+    :profesion_id, :observaciones
 
   #####################
   # Modulos y Plugins
@@ -49,41 +54,13 @@ class Solicitud < ActiveRecord::Base
                   :against => [:codigo, :solicitante_nombre, :textosolicitud],
                   :using => [:tsearch])
 
-  #######################
-  # Configuracion Solr
-  ######################
-
-  # searchable do
-  #   text :codigo
-  #   integer :numero
-  #   text :solicitante_nombre
-  #   text :textosolicitud, :default_boost => 2
-  #   text :observaciones
-  #   date :fecha_creacion
-  #   date :fecha_programada
-  #   time :created_at
-  #   integer :institucion_id, :references => Institucion
-  #   integer :municipio_id, :references => Municipio
-  #   integer :departamento_id, :references => Departamento
-  #   integer :via_id, :references => Via
-  #   integer :estado_id, :references => Estado
-  #   integer :clasificacion_id, :references => Clasificacion
-  #   integer :documentoclasificacion_id, :references => Documentoclasificacion
-  #   integer :idioma_id, :references => Idioma
-  #   boolean :anulada
-  #   text :lowcase_solicitante_nombre do
-  #     clean_string(solicitante_nombre.downcase)
-  #   end
-  #   text :lowcase_textosolicitud do
-  #     clean_string(textosolicitud.downcase)
-  #   end
-  # end
 
   ##################
   # Callbacks
   # http://apidock.com/rails/v2.3.8/ActiveRecord/Callback
   ##################
 
+  after_initialize :cargar_predeterminados
   before_validation :cleanup
   before_validation(:on => :create) do
     completar_informacion
@@ -450,7 +427,7 @@ class Solicitud < ActiveRecord::Base
   end
 
   def dias_restantes
-    dias = (fecha_programada - Date.today)
+    dias = (fecha_programada - Date.today).to_i
     return 0 if self.terminada? or dias < 0
     return dias
   end
@@ -656,7 +633,7 @@ class Solicitud < ActiveRecord::Base
           end
         end
 
-        csv_string = FasterCSV.generate do |csv|
+        csv_string = CSV.generate do |csv|
           csv <<  [Solicitud.human_attribute_name(:rpt_institucion),
                    Solicitud.human_attribute_name(:rpt_correlativo),
                    Solicitud.human_attribute_name(:rpt_solicitud),
@@ -750,6 +727,13 @@ class Solicitud < ActiveRecord::Base
       end
 
       private
+
+      def cargar_predeterminados
+        self.fecha_creacion = Date.today if self.fecha_creacion.blank?
+        self.solicitante_identificacion = "No Disponible" if self.solicitante_identificacion.blank?
+        self.motivonegativa_id = 1 if self.motivonegativa_id.blank?
+        self.motivoprorroga_id = 1 if self.motivoprorroga_id.blank?
+      end
 
       def completar_informacion
         #validamos el origen de la solicitud

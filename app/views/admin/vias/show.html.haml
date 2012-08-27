@@ -1,0 +1,21 @@
+#page-title.clearfix
+  %h1= Via.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @via.errors.any?
+  .error
+    %ul
+    - @via.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_via_path)
+    = button_edit(edit_admin_via_path(@via))
+    = button_delete(admin_via_path(@via))
+    = button_cancel(admin_vias_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Via.human_attribute_name(:nombre)
+        %td= @via.nombre

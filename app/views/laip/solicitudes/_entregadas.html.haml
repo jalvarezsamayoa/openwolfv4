@@ -1,0 +1,24 @@
+#entregadas
+  %h3
+    Entregadas a Ciudadano
+  .alert-notice Ultimas 50 solicitudes entregadas
+  %table.table
+    %thead
+      %th.col= t("solicitudes.label_codigo")
+      %th.col= t("solicitudes.label_fecha_creacion")
+      %th.col= t("solicitudes.fecha_entregada")
+      %th.col= t("solicitudes.label_institucion_id")
+      %th.col= t("solicitudes.label_estado_id")
+    %tbody
+      - @entregadas.each do |solicitud|
+        %tr
+          %td= link_to solicitud.codigo, laip_solicitud_path(solicitud.institucion_id, solicitud)
+          %td= l(solicitud.fecha_creacion)
+          %td= l(solicitud.fecha_entregada)
+          %td= solicitud.institucion.nombre
+          %td
+            = solicitud.estado.nombre
+            = "[COMPLETA]" if solicitud.terminada?
+    %tfoot
+      %td{:colspan => "10"}
+        *Solicitudes que han sido entregadas a ciudadanos.

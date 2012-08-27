@@ -1,0 +1,19 @@
+#page-title.clearfix
+  %h1= Documentocategoria.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_documentocategoria_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_documentocategorias_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Documentocategoria.human_attribute_name(:nombre)
+          %th= Documentocategoria.human_attribute_name(:parent_id)
+      %tbody
+        - @documentocategorias.each do |documentocategoria|
+          %tr
+            %td= link_to documentocategoria.nombre.strip, [:admin,documentocategoria]
+            %td= documentocategoria.parent.nombre rescue ''
+    = will_paginate @documentocategorias

@@ -1,0 +1,17 @@
+#page-title.clearfix
+  %h1= Role.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_role_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_roles_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Role.human_attribute_name(:name)
+      %tbody
+        - @roles.each do |role|
+          %tr
+            %td= link_to role.name, [:admin,role]
+    = will_paginate @roles

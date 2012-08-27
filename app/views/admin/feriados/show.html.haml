@@ -1,0 +1,33 @@
+#page-title.clearfix
+  %h1= Feriado.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @feriado.errors.any?
+  .error
+    %ul
+    - @feriado.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_feriado_path)
+    = button_edit(edit_admin_feriado_path(@feriado))
+    = button_delete(admin_feriado_path(@feriado))
+    = button_cancel(admin_feriados_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Feriado.human_attribute_name(:nombre)
+        %td= @feriado.nombre
+      %tr
+        %th= Feriado.human_attribute_name(:dia)
+        %td= @feriado.dia
+      %tr
+        %th= Feriado.human_attribute_name(:mes)
+        %td= @feriado.mes
+      %tr
+        %th= Feriado.human_attribute_name(:institucion_id)
+        %td= @feriado.institucion.nombre
+      %tr
+        %th= Feriado.human_attribute_name(:tipoferiado)
+        %td= @feriado.tipo_feriado

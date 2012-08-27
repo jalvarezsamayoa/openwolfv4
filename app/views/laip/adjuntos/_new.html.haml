@@ -1,0 +1,9 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"} ×
+  %h3= t("adjuntos.title")
+.modal-body
+  = simple_form_for([:laip, @proceso, @adjunto], :html => {:class => 'form-vertical validate-remote', :multipart => true }, :remote => true ) do |form|
+    = render :partial => 'form', :locals => {:f => form, :submittext => t("data.submit_new")}
+    = form.submit
+.modal-footer
+  %a.btn{"data-dismiss" => "modal", :href => "#"} Cerrar

@@ -1,0 +1,24 @@
+#page-title.clearfix
+  %h1= Documentocategoria.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @documentocategoria.errors.any?
+  .error
+    %ul
+    - @documentocategoria.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_documentocategoria_path)
+    = button_edit(edit_admin_documentocategoria_path(@documentocategoria))
+    = button_delete(admin_documentocategoria_path(@documentocategoria))
+    = button_cancel(admin_documentocategorias_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Documentocategoria.human_attribute_name(:nombre)
+        %td= @documentocategoria.nombre
+      %tr
+        %th= Documentocategoria.human_attribute_name(:parent_id)
+        %td= @documentocategoria.parent.nombre rescue ''

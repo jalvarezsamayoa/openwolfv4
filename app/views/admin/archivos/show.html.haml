@@ -1,0 +1,25 @@
+#page-title.clearfix
+  %h1= Archivo.model_name.human
+  = render :partial => "shared/breadcrumbs"
+
+- if @archivo.errors.any?
+  .error
+    %ul
+    - @archivo.errors.full_messages.each do |msg|
+      %li= msg
+
+.show.widget.widget-table
+  #options.widget-toolbar
+    = button_new(new_admin_archivo_path)
+    = button_edit(edit_admin_archivo_path(@archivo))
+    = button_delete(admin_archivo_path(@archivo))
+    = button_cancel(admin_archivos_path)
+  .widget-content
+    %table.table.table-bordered
+      %tr
+        %th= Archivo.human_attribute_name(:nombre)
+        %td= @archivo.nombre
+      %tr
+        %th= Archivo.human_attribute_name(:institucion_id)
+        %td= @archivo.institucion.nombre
+

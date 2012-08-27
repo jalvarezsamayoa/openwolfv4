@@ -8,51 +8,63 @@
           %a{:href => main_index_path}
             %i.icon-home
             %span Inicio
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
-            %i.icon-th
-            LAIP
-            %b.caret
-          %ul.dropdown-menu
-            - if nivel_seguridad(current_usuario,'personaludip')
-              %li= link_to "Nueva Solicitud", new_solicitud_path
-            %li= link_to "Información Solicitudes", solicitudes_path
-            %li= link_to "Histórico Asignaciones", actividades_path
-            %li= link_to "Búsqueda Solicitudes", buscar_path
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
-            %i.icon-th
-            Reportes
-            %b.caret
-          %ul.dropdown-menu
-            %li= link_to "Generar Reporte PDH", reporte_solicitudes_csv_url, :title => "Reporte en formato de la PDH en formato texto CSV."
-            %li= link_to "Exportar Solicitudes", reporte_solicitudes_xml_url(:format => 'xml'), :confirm => "Este proceso puede tomar algunos minutos en completar. ¿Desea continuar?", :title => "Generar archivo de respaldo de la base de datos en XML"
-            - if nivel_seguridad(current_usuario, 'superadmin')
-              %li= link_to "Instituciones activas", instituciones_activas_reportes_url, :title => "Instituciones activas"
 
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
-            %i.icon-th
-            Administración
-            %b.caret
-          %ul.dropdown-menu
-            %li= link_to( 'Usuarios', usuarios_path, :title => 'Administracion de Usuarios')
-            %li= link_to( 'Departamentos', departamentos_path, :title => 'Departamentos Republica' )
-            %li= link_to( 'Municipios', municipios_path, :title => 'Municipios Republica')
-            %li= link_to "Idiomas", idiomas_path, :title => "Idiomas solicitantes"
-            %li= link_to( 'Instituciones', instituciones_path, :title => 'Instituciones Estatales')
-            %li= link_to( "Fuentes Solicitudes", fuentes_path )
-            %li= link_to( "Vias", vias_path)
-            %li= link_to( "Estados", estados_path)
-            %li= link_to( 'Roles Seguridad', roles_path, :title => 'Administracion de Roles')
-            %li= link_to( 'Tipos de Resoluciones', tiposresoluciones_path, :title => 'Administracion de Tipos de Resoluciones')
-            %li= link_to( 'Razones Resoluciones', razonestiposresoluciones_path, :title => 'Administracion de Razones de Resoluciones')
-            %li= link_to "Clasificaciones Documentales", documentoclasificaciones_path, :title=>"Administracion Clasificaciones Documentales"
-            %li= link_to "Categorías Documentales", documentocategorias_path, :title=>"Administracion Categorías Documentales"
-            %li= link_to "Archivos", archivos_path, :title => "Administración de Archivos documentales"
-            %li= link_to "Importar Solicitudes", importar_index_path, :title => "Importar solicitudes en formato CSV"
-            %li= link_to( "Profesiones", profesiones_path, :title => "Profesiones de solicitantes")
-            %li= link_to "Feriados", feriados_path, :title => "Feriados Nacionales y Locales"
+        - if can? :ver_menu_laip, current_usuario
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
+              %i.icon-th
+              LAIP
+              %b.caret
+            %ul.dropdown-menu
+              - if nivel_seguridad(current_usuario,'personaludip')
+                %li= link_to "Nueva Solicitud", new_laip_solicitud_path
+              %li= link_to "Información Solicitudes", laip_solicitudes_path
+              %li= link_to "Histórico Asignaciones", laip_actividades_path
+              %li= link_to "Búsqueda Solicitudes", buscar_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
+              %i.icon-th
+              Reportes
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to "Generar Reporte PDH", reporte_solicitudes_csv_url, :title => "Reporte en formato de la PDH en formato texto CSV."
+              %li= link_to "Exportar Solicitudes", reporte_solicitudes_xml_url(:format => 'xml'), :confirm => "Este proceso puede tomar algunos minutos en completar. ¿Desea continuar?", :title => "Generar archivo de respaldo de la base de datos en XML"
+              - if nivel_seguridad(current_usuario, 'superadmin')
+                %li= link_to "Instituciones activas", instituciones_activas_reportes_url, :title => "Instituciones activas"
+
+        - if can? :ver_menu_admin, current_usuario
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
+              %i.icon-th
+              Catálogos
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to( 'Usuarios', admin_usuarios_path, :title => 'Administracion de Usuarios')
+              - if can? :ver_menu_admin_catalogos, current_usuario
+                %li= link_to( 'Departamentos', admin_departamentos_path, :title => 'Departamentos Republica' )
+                %li= link_to( 'Municipios', admin_municipios_path, :title => 'Municipios Republica')
+                %li= link_to "Idiomas", admin_idiomas_path, :title => "Idiomas solicitantes"
+                %li= link_to( 'Instituciones', admin_instituciones_path, :title => 'Instituciones Estatales')
+                %li= link_to( "Fuentes Solicitudes", admin_fuentes_path )
+                %li= link_to( "Vias", admin_vias_path)
+                %li= link_to( "Estados", admin_estados_path)
+                %li= link_to( 'Roles Seguridad', admin_roles_path, :title => 'Administracion de Roles')
+                %li= link_to( 'Tipos de Resoluciones', admin_tiposresoluciones_path, :title => 'Administracion de Tipos de Resoluciones')
+                %li= link_to( 'Razones Resoluciones', admin_razonestiposresoluciones_path, :title => 'Administracion de Razones de Resoluciones')
+                %li= link_to "Clasificaciones Documentales", admin_documentoclasificaciones_path, :title=>"Administracion Clasificaciones Documentales"
+                %li= link_to "Categorías Documentales", admin_documentocategorias_path, :title=>"Administracion Categorías Documentales"
+                %li= link_to "Archivos", admin_archivos_path, :title => "Administración de Archivos documentales"
+                %li= link_to( "Profesiones", admin_profesiones_path, :title => "Profesiones de solicitantes")
+                %li= link_to "Feriados", admin_feriados_path, :title => "Feriados Nacionales y Locales"
+
+        - if can? :ver_menu_herramientas, current_usuario
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
+              %i.icon-th
+              Herramientas
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to "Importar Solicitudes", admin_importar_index_path, :title => "Importar solicitudes en formato CSV"
       %ul.nav.pull-right
         %li
           %form.navbar-search.pull-left

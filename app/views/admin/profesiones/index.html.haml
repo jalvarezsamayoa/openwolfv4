@@ -1,0 +1,17 @@
+#page-title.clearfix
+  %h1= Profesion.model_name.human.pluralize
+  = render :partial => "shared/breadcrumbs"
+.widget
+  #options.widget-toolbar
+    = button_new(new_admin_profesion_path)
+    = render :partial => 'shared/findbox', :locals => {:url => admin_profesiones_path}
+  .widget-content
+    %table.table
+      %thead
+        %tr
+          %th= Profesion.human_attribute_name(:nombre)
+      %tbody
+        - @profesiones.each do |profesion|
+          %tr
+            %td= link_to profesion.nombre, [:admin,profesion]
+    = will_paginate @profesiones

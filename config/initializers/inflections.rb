@@ -26,5 +26,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'documentocategoria', 'documentocategorias'
   inflect.irregular 'nota', 'notas'
   inflect.irregular 'idioma', 'idiomas'
+  inflect.irregular 'documentoclasificacion', 'documentoclasificaciones'
+  inflect.irregular 'documental', 'documentales'
   inflect.uncountable %w( portal solicitud_informacion importar)
 end
