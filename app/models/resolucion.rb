@@ -103,7 +103,7 @@ class Resolucion < ActiveRecord::Base
     self.solicitud.fecha_prorroga = nil
     self.solicitud.fecha_resolucion = nil
     self.solicitud.fecha_programada = self.solicitud.calcular_fecha_entrega()
-    self.solicitud.save(false)
+    self.solicitud.save(:validate => false)
 
     #obtener ultima resolucion
     r = self.solicitud.resoluciones.last

@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require tinymce
+//= require tinymce-jquery
 //= require rails.validations
 //= require jquery.validate
 //= require_tree .

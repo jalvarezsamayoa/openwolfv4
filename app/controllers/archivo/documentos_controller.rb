@@ -1,5 +1,4 @@
 class DocumentosController < ApplicationController
-  uses_tiny_mce
 
   def index
 #    @documentos =

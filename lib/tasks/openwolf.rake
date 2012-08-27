@@ -1,4 +1,6 @@
 require 'highline'
+require 'progress_bar'
+
 
 
 def get_institucion(ui)
@@ -32,7 +34,22 @@ end
 
 namespace :openwolf do
 
- 
+  namespace :db do
+
+    desc "Limpia DB y deja solo info de mingob"
+    task :heroku => :environment do
+      instituciones = Institucion.where("id <> ?", 21)
+
+      bar = ProgressBar.new(instituciones.count)
+
+      instituciones.each do |institucion|
+       institucion.solicitudes.destroy_all
+       bar.increment!
+      end
+    end
+  end
+
+
 
   namespace :cleanup do
 
@@ -139,7 +156,7 @@ and resoluciones.solicitud_id = solicitudes.id"
                        [16, '2011-01-25']]
 
       instituciones.each do |institucion|
-        
+
         fecha_importacion = institucion[1]
         institucion_id = institucion[0]
 
