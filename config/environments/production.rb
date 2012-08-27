@@ -71,5 +71,4 @@ OpenwolfV4::Application.configure do
   #configuracion para metodo de envio de correos
   config.action_mailer.delivery_method = :sendmail
 
-  config.assets.initialize_on_precompile = false
 end
