@@ -1,5 +1,5 @@
-set :stages, %w(production staging test)
-set :default_stage, "test"
+set :stages, %w(production staging testing)
+set :default_stage, "testing"
 
 require 'bundler/capistrano'
 require 'delayed/recipes'
@@ -16,9 +16,6 @@ set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
 
 default_run_options[:pty] = true
-
-set :application, "openwolf"
-
 
 set :scm, "git"
 
@@ -90,28 +87,35 @@ namespace :openwolf do
       text.close
 
       puts "Backup database..."
-      system "pg_dump --clean --no-owner --no-privileges -U#{yaml['development']['username']} -h#{yaml['development']['host']} #{yaml['development']['database']} | bzip2 > #{file_path}" do |ch, stream, out|
-        ch.send_data "#{yaml['development']['password']}\n" if out =~ /^Password:/
-        puts out
-      end
+      # system "pg_dump --clean --no-owner --no-privileges -U#{yaml['development']['username']} -h#{yaml['development']['host']} #{yaml['development']['database']} | bzip2 > #{file_path}" do |ch, stream, out|
+      #   ch.send_data "#{yaml['development']['password']}\n" if out =~ /^Password:/
+      #   puts out
+      # end
+      system "pg_dump --clean --no-owner --no-privileges -U#{yaml['development']['username']} -h#{yaml['development']['host']} #{yaml['development']['database']} | bzip2 > #{file_path}"
 
-      backup_file = "#{backup_dir}/#{filename}"
+      backup_file = "/tmp/#{filename}"
 
       puts "Uploading file: #{file_path} to #{backup_file}"
-      system("scp -C #{file_path} transparencia@transparencia.gob.gt://#{backup_file}")
+#      system("scp -C #{file_path} transparencia@transparencia.gob.gt://#{backup_file}")
+      system("scp -i ~/.ssh/openwolf.pem -C #{file_path} ubuntu@test.openwolf.org:/#{backup_file}")
 
       puts "Extracting file #{backup_file}"
       run "bunzip2 #{backup_file}"
 
       puts "Restoring Backup"
-      user_name = yaml[rails_env]['username']
-      db_name = yaml[rails_env]['database']
-      pwd = yaml[rails_env]['password']
+      #user_name = yaml[rails_env]['username']
+      #db_name = yaml[rails_env]['database']
+      
+#      pwd = yaml[rails_env]['password']
+      user_name = "openwolf"
+      db_name = "openwolf"
 
-      run "psql -h localhost -p 5432 -U #{user_name} -W -d #{db_name} < #{backup_dir}/#{clean_filename}" do |ch, stream, out|
-        ch.send_data "#{pwd}\n" if out =~ /^Password for user #{user_name}:/
-        puts out
-      end
+      # run "psql -h localhost -p 5432 -U #{user_name} -W -d #{db_name} < #{backup_dir}/#{clean_filename}" do |ch, stream, out|
+      #   ch.send_data "#{pwd}\n" if out =~ /^Password for user #{user_name}:/
+      #   puts out
+      # end
+      run "psql -h localhost -p 5432 -U #{user_name} -d #{db_name} < /tmp/#{clean_filename}"
+
 
     end
 

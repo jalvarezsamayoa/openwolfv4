@@ -1,3 +1,4 @@
+set :application, "openwolf"
 set :applicationdir, "/home/transparencia/public_html/#{application}"
 set :deploy_to, "/home/transparencia/public_html/#{application}"
 

@@ -123,17 +123,15 @@ defaults: &defaults
   encoding: unicode
   pool: 5
   username: openwolf
-  host: localhost
-  port: 5432
+  database: openwolf
 
 staging:
-  database: openwolf_staging
-  password: Bless777
   <<: *defaults
-
+  
 production:
-  database: openwolf
   password: Bless777
+  host: localhost
+  port: 5432
   <<: *defaults
 
         EOF
