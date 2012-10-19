@@ -38,6 +38,7 @@ gem 'paperclip' # modulo para hacer upload a archivos
 gem 'galetahub-simple_captcha', :require => 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
 gem "crummy", "~> 1.6.0" # manejo de breadcrumbs
 gem 'client_side_validations' #validacion javascript para forms
+gem 'remotipart', :git => "git://github.com/JangoSteve/remotipart.git" # upload con ajax
 
 # INDEXAMIENTO
 gem 'pg_search'
@@ -51,6 +52,9 @@ gem 'serenity-odt' #generacion de templates ODT
 gem 'fastercsv' #manejo de archivos CSV
 gem 'progress_bar' # muestra barra progreso en consola
 
+
+# procesos en el background
+gem 'foreman'
 gem 'daemons'
 gem 'delayed_job_active_record'
 gem "delayed_job", "~> 3.0.3" # envia procesos a background - en uso para enviar correos
@@ -87,7 +91,6 @@ group :development, :test do
   gem 'faker' # herramienta para generacion de datos de prueba
   gem 'ruby-prof'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-  gem 'foreman'
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-bundler'

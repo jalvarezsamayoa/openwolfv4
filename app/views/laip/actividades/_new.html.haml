@@ -1,5 +1,5 @@
 .modal-header
-  %button.close{"data-dismiss" => "modal", :type => "button"} ×
+  %button.close{"data-dismiss" => "modal", :type => "button"} x
   %h3 Asignar tarea a enlace
 .modal-body
   = simple_form_for([:laip, @solicitud,@actividad], :html => {:class => 'form-vertical validate-remote' }, :remote => true ) do |form|

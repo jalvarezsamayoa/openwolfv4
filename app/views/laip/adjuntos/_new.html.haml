@@ -1,5 +1,5 @@
 .modal-header
-  %button.close{"data-dismiss" => "modal", :type => "button"} ×
+  %button.close{"data-dismiss" => "modal", :type => "button"} x
   %h3= t("adjuntos.title")
 .modal-body
   = simple_form_for([:laip, @proceso, @adjunto], :html => {:class => 'form-vertical validate-remote', :multipart => true }, :remote => true ) do |form|

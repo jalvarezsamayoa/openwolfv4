@@ -1,3 +1,4 @@
-$("#newadjunto").hide();
-$("#newadjunto").html('');
-$('#adjuntos').html("<%= escape_javascript(render :partial => 'solicitudes/adjuntos') %>");
+$("#newadjunto").modal('toggle');
+$("#adjuntos").slideToggle();
+$("#adjuntos").html("<%= escape_javascript(render :partial => 'laip/solicitudes/adjuntos') %>");
+$("#adjuntos").slideToggle();

@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/JangoSteve/remotipart.git
+  revision: fcb78911169c06cf5dbf8ef455b4861b44fc833e
+  specs:
+    remotipart (1.0.2)
+
+GIT
   remote: git://github.com/ctran/annotate_models.git
   revision: 98d00635c41c4bfe66b361196241505a5c778b7a
   specs:
@@ -410,6 +416,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 3.2.7)
   rb-inotify
+  remotipart!
   rmagick
   rspec!
   rspec-core!

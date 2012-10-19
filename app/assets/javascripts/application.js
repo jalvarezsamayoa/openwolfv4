@@ -16,4 +16,5 @@
 //= require tinymce-jquery
 //= require rails.validations
 //= require jquery.validate
+//= require jquery.remotipart
 //= require_tree .

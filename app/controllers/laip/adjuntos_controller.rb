@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Laip::AdjuntosController < ApplicationController
   respond_to :html, :js
 
@@ -28,13 +29,12 @@ class Laip::AdjuntosController < ApplicationController
       if @adjunto.save
         @adjuntos = @proceso.adjuntos
         flash[:notice] = 'Adjunto grabado con exito.'
-        format.js { responds_to_parent {render} }
+        format.js
       else
         flash[:error] = 'Ha ocurrido un error al grabar el adjunto.'
-        format.js { responds_to_parent {render 'error'} }
+        format.js { render :failed }
       end
     end #respond_to
-
   end
 
   def destroy

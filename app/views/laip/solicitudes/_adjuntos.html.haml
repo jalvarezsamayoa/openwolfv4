@@ -1,3 +1,4 @@
+# encoding: utf-8
 %table.table
   %thead
     %tr
@@ -6,7 +7,7 @@
       %th{:scope => "col"} Usuario
       %th{:scope => "col"} &nbsp;
   %tbody
-    = render :partial => 'adjunto', :collection => @adjuntos
+    = render :partial => 'laip/solicitudes/adjunto', :collection => @adjuntos
   %tfoot
     %td{:colspan => "2"}
       *Documentos de Referencia sobre solicitud
