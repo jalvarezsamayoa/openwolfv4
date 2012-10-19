@@ -114,7 +114,7 @@ namespace :openwolf do
       #   ch.send_data "#{pwd}\n" if out =~ /^Password for user #{user_name}:/
       #   puts out
       # end
-      run "psql -h localhost -p 5432 -U #{user_name} -d #{db_name} < /tmp/#{clean_filename}"
+      run "psql -U #{user_name} -d #{db_name} < /tmp/#{clean_filename}"
 
 
     end
