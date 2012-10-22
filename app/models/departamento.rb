@@ -1,8 +1,9 @@
 class Departamento < ActiveRecord::Base
   attr_accessible :nombre, :abreviatura
 
-  validates :nombre, :presence => true, :uniqueness => true
-  validates :abreviatura, :presence => true, :uniqueness => true
+  validates_presence_of :nombre
+  validates_presence_of :abreviatura
+  validates_uniqueness_of :nombre, :abreviatura
   has_many :municipios, :dependent => :destroy
 
   default_scope :order => :nombre

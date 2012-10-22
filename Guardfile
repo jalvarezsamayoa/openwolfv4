@@ -22,7 +22,7 @@ end
 
 guard 'rails' do
   watch('Gemfile.lock')
-  watch(%r{^(config|lib)/.*})
+  #watch(%r{^(config|lib)/.*})
 end
 
 guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
@@ -35,6 +35,7 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch('spec/spec_helper.rb') { :rspec }
   watch('test/test_helper.rb') { :test_unit }
   watch(%r{features/support/}) { :cucumber }
+  watch(%r{^(config|lib)/.*})
 end
 
 

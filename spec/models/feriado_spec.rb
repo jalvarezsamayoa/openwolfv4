@@ -35,7 +35,7 @@ describe Feriado do
   end
 
   before(:each) do
-    @feriado = Factory :feriado
+    @feriado = FactoryGirl.build( :feriado )
   end
 
   it "debe ser valido" do

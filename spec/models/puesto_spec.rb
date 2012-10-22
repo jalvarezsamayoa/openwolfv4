@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Puesto do
 
   before(:each) do
-    @puesto = FactoryGirl(:puesto)
+    @puesto = FactoryGirl.build(:puesto)
   end
 
   it "debe ser valido" do

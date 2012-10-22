@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Documentodestinatario do
 
   before(:each) do
-    @documentodestinatario = FactoryGirl(:documentodestinatario)
+    @documentodestinatario = FactoryGirl.build(:documentodestinatario)
   end
 
   it "debe ser valido" do

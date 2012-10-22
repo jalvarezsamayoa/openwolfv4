@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Seguimiento do
 
   before(:each) do
-    @seguimiento = FactoryGirl(:seguimiento)
+    @seguimiento = FactoryGirl.build(:seguimiento)
   end
 
   it "debe ser valido" do

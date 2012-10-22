@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Usuario do
 
   before(:each) do
-    @usuario = FactoryGirl(:usuario)
+    @usuario = FactoryGirl.build(:usuario)
   end
 
   it { should validate_presence_of(:email) }
@@ -18,8 +18,7 @@ describe Usuario do
   it { should belong_to(:institucion) }
   it { should have_and_belong_to_many(:roles) }
   it { should have_many(:actividades) }
-  it { should have_many(:solicitudes) }
-  it { should have_many(:documentos) }
+#  it { should have_many(:documentos) }
 
   it "debe ser valido" do
     @usuario.should be_valid

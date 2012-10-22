@@ -1,5 +1,5 @@
---- 
-estado_00006: 
+---
+estado_00006:
   created_at: 2010-11-17 19:05:42 Z
   nombre: Desechada
   final: true
@@ -7,7 +7,7 @@ estado_00006:
   puede_entregar: false
   id: 6
   modulo_id: 1
-estado_00007: 
+estado_00007:
   created_at: 2010-11-17 19:05:42 Z
   nombre: No Recogida
   final: true
@@ -15,7 +15,7 @@ estado_00007:
   puede_entregar: true
   id: 7
   modulo_id: 1
-estado_00001: 
+estado_00001:
   created_at: 2010-11-17 19:05:42 Z
   nombre: "En tr\xC3\xA1mite"
   final: false
@@ -23,7 +23,7 @@ estado_00001:
   puede_entregar: false
   id: 1
   modulo_id: 1
-estado_00002: 
+estado_00002:
   created_at: 2010-11-17 19:05:42 Z
   nombre: "Pr\xC3\xB3rroga"
   final: false
@@ -31,7 +31,7 @@ estado_00002:
   puede_entregar: true
   id: 2
   modulo_id: 1
-estado_00003: 
+estado_00003:
   created_at: 2010-11-17 19:05:42 Z
   nombre: Entregada
   final: true
@@ -39,7 +39,7 @@ estado_00003:
   puede_entregar: true
   id: 3
   modulo_id: 1
-estado_00004: 
+estado_00004:
   created_at: 2010-11-17 19:05:42 Z
   nombre: Entregada Parcial
   final: true
@@ -47,7 +47,7 @@ estado_00004:
   puede_entregar: true
   id: 4
   modulo_id: 1
-estado_00005: 
+estado_00005:
   created_at: 2010-11-17 19:05:42 Z
   nombre: Denegada
   final: true

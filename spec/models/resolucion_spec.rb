@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Resolucion do
 
   before(:each) do
-    @resolucion = FactoryGirl(:resolucion)
+    @resolucion = FactoryGirl.build(:resolucion)
   end
 
   it "debe ser valido" do

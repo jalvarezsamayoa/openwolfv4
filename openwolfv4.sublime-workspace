@@ -196,107 +196,65 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/laip/actividades_controller.rb",
+			"file": "app/models/genero.rb",
 			"settings":
 			{
-				"buffer_size": 4205,
+				"buffer_size": 346,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/laip/actividades/_new.html.haml",
+			"file": "app/models/documento.rb",
 			"settings":
 			{
-				"buffer_size": 436,
+				"buffer_size": 1909,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/javascripts/application.js",
+			"file": "app/models/documentotraslado.rb",
 			"settings":
 			{
-				"buffer_size": 786,
+				"buffer_size": 1189,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/laip/actividades/create.js.erb",
+			"file": "lib/openwolf/openwolf/archivo/traslado.rb",
 			"settings":
 			{
-				"buffer_size": 208,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gemfile",
-			"settings":
-			{
-				"buffer_size": 3898,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/laip/adjuntos_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1960,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/laip/adjuntos/create.js.erb",
-			"settings":
-			{
-				"buffer_size": 190,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "# encoding: utf-8\n%table.table\n  %thead\n    %tr\n      %th{:scope => \"col\"} NĂşmero Ref. Adjunto\n      %th{:scope => \"col\"} Comentario\n      %th{:scope => \"col\"} Usuario\n      %th{:scope => \"col\"} &nbsp;\n  %tbody\n    = render :partial => 'laip/solicitudes/adjunto', :collection => @adjuntos\n  %tfoot\n    %td{:colspan => \"2\"}\n      *Documentos de Referencia sobre solicitud\n#newadjunto.modal.hide.fade\n",
-			"file": "app/views/laip/solicitudes/_adjuntos.html.haml",
-			"file_size": 400,
-			"file_write_time": 1346160632000000,
-			"settings":
-			{
-				"buffer_size": 400,
+				"buffer_size": 848,
 				"line_ending": "Unix",
-				"scratch": true
+				"name": "documento_traslado.rb"
 			}
 		},
 		{
-			"contents": ".modal-header\n  %button.close{\"data-dismiss\" => \"modal\", :type => \"button\"} x\n  %h3= t(\"adjuntos.title\")\n.modal-body\n  = simple_form_for([:laip, @proceso, @adjunto], :html => {:class => 'form-vertical validate-remote', :multipart => true }, :remote => true ) do |form|\n    = render :partial => 'form', :locals => {:f => form, :submittext => t(\"data.submit_new\")}\n    = form.submit\n.modal-footer\n  %a.btn{\"data-dismiss\" => \"modal\", :href => \"#\"} Cerrar",
-			"file": "app/views/laip/adjuntos/_new.html.haml",
-			"file_size": 451,
-			"file_write_time": 1346161445000000,
+			"file": "lib/openwolf/openwolf/laip/busqueda.rb",
 			"settings":
 			{
-				"buffer_size": 451,
+				"buffer_size": 3597,
 				"line_ending": "Unix",
-				"scratch": true
-			}
-		},
-		{
-			"file": "app/views/laip/solicitudes/_adjunto.html.haml",
-			"settings":
-			{
-				"buffer_size": 402,
-				"line_ending": "Unix"
+				"name": "busqueda.rb"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 264.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
 				"",
 				"BeautifyRuby"
+			],
+			[
+				"be",
+				"BeautifyRuby"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
 			],
 			[
 				"instal",
@@ -375,10 +333,6 @@
 				"Indentation: Reindent Lines"
 			],
 			[
-				"be",
-				"BeautifyRuby"
-			],
-			[
 				"beu",
 				"BeautifyRuby"
 			],
@@ -444,19 +398,62 @@
 	},
 	"file_history":
 	[
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/archivo/documento.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/herramienta.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/herramienta.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/temp_asset.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/solicitud_informacion_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/portal_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/estadisticas_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/busqueda.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/feriado.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/actividad.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/institucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/resolucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/solicitud.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/worker_log.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/departamento_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/documento_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/documentodestinatario_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/institucion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/motivonegativa_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/motivoprorroga_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/profesion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/puesto_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/rangoedad_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/razontiporesolucion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/recursorevision_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/resolucion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/seguimiento_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/sentidoresolucion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/solicitud_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/tipomensaje_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/tiporesolucion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/resolucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/solicitud.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/application.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/core/institucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/core/feriado.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/laip/actividad.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/actividad.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/javascripts/application.js",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/actividad.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/adjuntos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/create.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_adjuntos.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_adjunto.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/actividades_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/create.js.erb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Gemfile",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/_form.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/ability.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/solicitud.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Procfile",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Guardfile",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/adjunto.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/institucion.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_adjuntos.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_adjunto.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/create.js.erb",
 		"/home/javier/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
 		"/home/javier/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/javier/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
@@ -464,23 +461,18 @@
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/new.js.erb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_actividad.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/_new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/actividades_controller.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/seguimientos_controller.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_asignadas_no_completadas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_new.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_form.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/general.css.scss",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/new.js.erb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/tasks/openwolf.rake",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/resolucion.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/archivo/documentos_controller.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/deploy/production.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/environments/production.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/busqueda.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estadisticas/show.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/javascripts/solicitudes.js.coffee",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/javascripts/application.js",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/application.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/tiny_mce.yml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/deploy.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/deploy/staging.rb",
@@ -502,14 +494,11 @@
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/usuario.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/actualizar_usuarios.js.erb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/helpers/application_helper.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/adjuntos_controller.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/edit.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_opciones.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/new.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_form.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/application_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/actividad.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/create.js.erb",
 		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/solicitudes/show.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/solicitudes/_opciones.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/mailers/notificaciones.rb",
@@ -534,44 +523,9 @@
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate-reports.css.scss",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/application.css",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/solicitud.pdf.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/portal_controller.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/print.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/solicitud.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_asignaciones.pdf.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/reportes/solicitudes_csv.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/widget.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/admin/usuarios_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios/new.html.haml",
-		"/home/javier/Documents/Projects/Vripple/Vripple/app/models/resume.rb",
-		"/home/javier/Documents/Projects/Vripple/Vripple/app/models/interest.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_navigation.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios/_form.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/usuario_sessions/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/portal.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/archivos_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/initializers/inflections.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/importar/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/admin/importar_controller.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/reportes/instituciones_activas.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_header.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/_breadcrumbs.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos/edit.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/index.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/new.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/show.html.haml",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias/edit.html.haml"
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_asignaciones.pdf.html.haml"
 	],
 	"find":
 	{
@@ -579,9 +533,11 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec",
 			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4",
 			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app",
 			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados",
@@ -610,6 +566,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"herramienta",
+			"Busqueda",
+			"Factory(",
+			"estado_activa",
 			"asignaciones",
 			"actividad",
 			"ctrl+shift+u",
@@ -733,11 +693,7 @@
 			"linked_ima",
 			"    ",
 			"basic",
-			"read",
-			"recomen",
-			"redomended",
-			"minimum",
-			"minium"
+			"read"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -745,6 +701,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"FactoryGirl(",
 			"adjuntos",
 			"adjunto",
 			"solicitudes.fecha_creacion",
@@ -819,61 +776,56 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/laip/actividades_controller.rb",
+					"file": "app/models/genero.rb",
 					"settings":
 					{
-						"buffer_size": 4205,
+						"buffer_size": 346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								169,
-								169
+								34,
+								34
 							]
 						],
 						"settings":
 						{
-							"in_converting": true,
-							"origin_encoding": "GBK",
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/laip/actividades/_new.html.haml",
+					"file": "app/models/documento.rb",
 					"settings":
 					{
-						"buffer_size": 436,
+						"buffer_size": 1909,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								77,
-								77
+								677,
+								677
 							]
 						],
 						"settings":
 						{
-							"force_encoding": "UTF-8",
-							"in_converting": true,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -884,51 +836,58 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/assets/javascripts/application.js",
+					"file": "app/models/documentotraslado.rb",
 					"settings":
 					{
-						"buffer_size": 786,
+						"buffer_size": 1189,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								766,
-								766
+								449,
+								449
 							]
 						],
 						"settings":
 						{
 							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"sheets":
+			[
 				{
 					"buffer": 3,
-					"file": "app/views/laip/actividades/create.js.erb",
+					"file": "lib/openwolf/openwolf/archivo/traslado.rb",
 					"settings":
 					{
-						"buffer_size": 208,
+						"buffer_size": 848,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								208,
-								208
+								771,
+								771
 							]
 						],
 						"settings":
 						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage"
+							"auto_name": "documento_traslado.rb",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -938,181 +897,27 @@
 				},
 				{
 					"buffer": 4,
-					"file": "Gemfile",
+					"file": "lib/openwolf/openwolf/laip/busqueda.rb",
 					"settings":
 					{
-						"buffer_size": 3898,
+						"buffer_size": 3597,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								516,
-								516
+								1006,
+								1006
 							]
 						],
 						"settings":
 						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"auto_name": "busqueda.rb",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 5,
-					"file": "app/controllers/laip/adjuntos_controller.rb",
-					"settings":
-					{
-						"buffer_size": 1960,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								297,
-								297
-							]
-						],
-						"settings":
-						{
-							"check_times": 0,
-							"clone_numbers": 1,
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/laip/adjuntos/create.js.erb",
-					"settings":
-					{
-						"buffer_size": 190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								190
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/laip/solicitudes/_adjuntos.html.haml",
-					"settings":
-					{
-						"buffer_size": 400,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								400,
-								400
-							]
-						],
-						"settings":
-						{
-							"in_converting": true,
-							"origin_encoding": "ISO-8859-2",
-							"revert_to_scratch": true,
-							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/views/laip/adjuntos/_new.html.haml",
-					"settings":
-					{
-						"buffer_size": 451,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								77,
-								77
-							]
-						],
-						"settings":
-						{
-							"in_converting": true,
-							"origin_encoding": "ISO-8859-2",
-							"revert_to_scratch": true,
-							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/views/laip/solicitudes/_adjunto.html.haml",
-					"settings":
-					{
-						"buffer_size": 402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								169,
-								169
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Haml/Syntaxes/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1177,6 +982,34 @@
 		"selected_items":
 		[
 			[
+				"soli",
+				"app/models/solicitud.rb"
+			],
+			[
+				"ins",
+				"app/models/institucion.rb"
+			],
+			[
+				"acti",
+				"app/models/actividad.rb"
+			],
+			[
+				"applica",
+				"config/application.rb"
+			],
+			[
+				"appli",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"liba",
+				"lib/openwolf/openwolf/actividad.rb"
+			],
+			[
+				"activi",
+				"app/models/actividad.rb"
+			],
+			[
 				"gem",
 				"Gemfile"
 			],
@@ -1187,10 +1020,6 @@
 			[
 				"adjuntonew",
 				"app/views/laip/adjuntos/_new.html.haml"
-			],
-			[
-				"appli",
-				"app/assets/javascripts/application.js"
 			],
 			[
 				"adjuntos",
@@ -1245,10 +1074,6 @@
 				"app/models/institucion.rb"
 			],
 			[
-				"soli",
-				"app/models/solicitud.rb"
-			],
-			[
 				"in",
 				"app/models/institucion.rb"
 			],
@@ -1267,10 +1092,6 @@
 			[
 				"produ",
 				"config/deploy/production.rb"
-			],
-			[
-				"applica",
-				"app/assets/javascripts/application.js"
 			],
 			[
 				"tin",
@@ -1485,10 +1306,6 @@
 				"app/mailers/notificaciones.rb"
 			],
 			[
-				"acti",
-				"app/models/actividad.rb"
-			],
-			[
 				"new.js",
 				"app/views/laip/actividades/new.js.erb"
 			],
@@ -1503,10 +1320,6 @@
 			[
 				"cient",
 				"config/initializers/client_side_validations.rb"
-			],
-			[
-				"activi",
-				"app/models/actividad.rb"
 			],
 			[
 				"jquer",
@@ -1679,14 +1492,6 @@
 			[
 				"solicitudes_c",
 				"app/views/reportes/solicitudes_csv.html.haml"
-			],
-			[
-				"gene",
-				"app/assets/stylesheets/general.css.scss"
-			],
-			[
-				"usuarionew",
-				"app/views/admin/usuarios/new.html.haml"
 			]
 		],
 		"width": 0.0
@@ -1707,6 +1512,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 233.0,
+	"side_bar_width": 300.0,
 	"status_bar_visible": true
 }

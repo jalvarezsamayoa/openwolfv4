@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Solicitud do
 
   before(:each) do
-    @solicitud = FactoryGirl(:solicitud)
+    @solicitud = FactoryGirl.build(:solicitud)
   end
 
   it "debe ser valido" do

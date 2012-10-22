@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Tipomensaje do
 
   before(:each) do
-    @tipomensaje = FactoryGirl(:tipomensaje)
+    @tipomensaje = FactoryGirl.build(:tipomensaje)
   end
 
   it "debe ser valido" do

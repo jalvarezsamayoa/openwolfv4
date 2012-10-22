@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Tiporesolucion do
 
   before(:each) do
-    @tiporesolucion = FactoryGirl(:tiporesolucion)
+    @tiporesolucion = FactoryGirl.build(:tiporesolucion)
   end
 
   it "debe ser valido" do

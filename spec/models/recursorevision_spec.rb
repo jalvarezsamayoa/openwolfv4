@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Recursorevision do
 
   before(:each) do
-    @recurso = FactoryGirl(:recursorevision)
+    @recurso = FactoryGirl.build(:recursorevision)
   end
 
   it "debe ser valido" do

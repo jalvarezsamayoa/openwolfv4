@@ -13,6 +13,9 @@ module Openwolf
       COPIA = 0
 
       module ClassMethods
+        def nuevo_numero(institucion, codigo)
+          return true
+        end
 
       end
 
@@ -78,11 +81,11 @@ module Openwolf
           #asignamos numero a documento si este es interno
           if generar_numero?
 
-            self.numero = Documento.nuevo_numero(self.institucion, codigo)
+            self.numero = self.class.nuevo_numero(self.institucion, nil)
 
             codigo = self.documentoclasificacion.codigo
 
-            i = Documento.count(:conditions => ["documentos.institucion_id = ? and date_part(\'year\',documentos.created_at) = ?", self.institucion_id, Date.today.year ] ).to_i + 1
+            i = self.class.count(:conditions => ["documentos.institucion_id = ? and date_part(\'year\',documentos.created_at) = ?", self.institucion_id, Date.today.year ] ).to_i + 1
             self.numero = self.institucion.codigo + '-'+ codigo + '-' +  Date.today.year.to_s + '-' + i.to_s.rjust(6,'0')
 
           end

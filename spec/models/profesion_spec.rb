@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Profesion do
 
   before(:each) do
-    @profesion = FactoryGirl(:profesion)
+    @profesion = FactoryGirl.build(:profesion)
   end
 
   it "debe ser valido" do

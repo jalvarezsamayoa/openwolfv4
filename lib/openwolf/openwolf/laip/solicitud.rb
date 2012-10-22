@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # solicitud.rb
 module Openwolf
   module Laip
@@ -85,6 +86,7 @@ module Openwolf
                      }
           return options
         end
+
         def get_csv_records(csv, solicitudes)
           if solicitudes.respond_to?(:each)
             solicitudes.each do |s|
@@ -160,18 +162,18 @@ module Openwolf
         end
 
         def calcular_fecha_entrega(d_fecha_creacion = Date.today, d_fecha_entrega = nil, i_institucion_id = 1)
-          logger.debug { "Solicitud: calculando fecha de entrega" }
+          # logger.debug { "Solicitud: calculando fecha de entrega" }
           d_fecha_creacion = d_fecha_creacion.to_date if d_fecha_creacion.class == String
           d_fecha_entrega = d_fecha_creacion + 14.days unless d_fecha_entrega
 
-          logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+          # logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
 
           #obtenemos feriados entre las fechas
           feriados_locales = []
           feriados_nacionales = Feriado.nacional.entre_fechas(d_fecha_creacion, d_fecha_entrega)
           feriados_locales = Feriado.local.por_institucion(i_institucion_id).entre_fechas(d_fecha_creacion, d_fecha_entrega) unless i_institucion_id == 1
 
-          logger.debug { "Solicitud Aumentando dias segun feriados nacinales" }
+          # logger.debug { "Solicitud Aumentando dias segun feriados nacinales" }
           #aumentamos los dias de la solicitud segun los feriados
           unless feriados_nacionales.blank?
             for feriado in feriados_nacionales
@@ -181,9 +183,9 @@ module Openwolf
             end
           end
 
-          logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+          # logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
 
-          logger.debug { "Solicitud Aumentando dias segun feriados locales" }
+          # logger.debug { "Solicitud Aumentando dias segun feriados locales" }
           unless feriados_locales.blank?
             for feriado in feriados_locales
               if feriado.es_dia_laboral?
@@ -192,22 +194,25 @@ module Openwolf
             end
           end
 
-          logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+          # logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
 
-          logger.debug { "Solicitud Aumentando dias segun dias laborales" }
+          # logger.debug { "Solicitud Aumentando dias segun dias laborales" }
           # verificamos que la nueve fecha sea dia laboral
           d_fecha_entrega += 1.day if (d_fecha_entrega.wday == 6)
           d_fecha_entrega += 1.day if (d_fecha_entrega.wday == 0)
 
-          logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+          # logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
 
           d_fecha_entrega = Feriado.obtener_fecha_valida(d_fecha_entrega, i_institucion_id)
 
 
-          logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
+          # logger.debug { "Solcitud fecha: #{d_fecha_entrega}" }
 
           return d_fecha_entrega
         end
+
+
+
 
 
       end
@@ -419,7 +424,7 @@ module Openwolf
           c_texto = self.textosolicitud
           unless self.puede_mostrar_informacion?
             if user.nil? or !user.has_role?(:superudip)
-              c_texto ='Información bajo reserva.'
+              c_texto = 'Información bajo reserva.'
             end
           end
           return c_texto
@@ -429,7 +434,7 @@ module Openwolf
           c_texto = self.textosolicitud[0..100] + '...'
           unless self.puede_mostrar_informacion?
             if user.nil? or !user.has_role?(:superudip)
-              c_texto ='Información bajo reserva'
+              c_texto = 'Información bajo reserva'
             end
           end
           return c_texto
@@ -466,6 +471,7 @@ module Openwolf
           return ( (!self.fecha_resolucion.nil?) and (self.estado.final == true) )
         end
 
+
         def avance
           n_avance = 0.00
           if terminada?
@@ -474,224 +480,226 @@ module Openwolf
             i_actividades = self.actividades.count
             unless i_actividades == 0
               i_completadas = self.actividades.completadas.count
-              n_avance = ((i_completadas * 100)/i_actividades).to_f
-      else
-        n_avance = 0.00
-      end
-    end
-    return n_avance
-  end
-
-  def dias_restantes
-    dias = (fecha_programada - Date.today).to_i
-    return 0 if self.terminada? or dias < 0
-    return dias
-  end
-
-  def actualizar_asignaciones
-    cnt_asignaciones = self.actividades.count
-
-    #actualizamos el estado de entrega
-    if cnt_asignaciones > 0
-      #actualizamos el estado de asignacion
-      self.asignada = true
-      self.marcar_como_terminada
-    else
-      self.asignada = false
-      self.marcar_como_no_terminada
-    end
-
-    self.save!
-  end
-
-  #actualiza el estado de la solicitud segun el estado de sus
-  #actividades
-  def actividad_terminada(fecha = Date.today)
-    self.marcar_como_terminada(fecha)
-    self.save
-  end
-
-  # marca solicitud como terminada
-  def marcar_como_terminada(fecha = Date.today)
-    self.fecha_completada = fecha if ( self.actividades.count == self.actividades.completadas.count)
-  end
-
-
-  #marca la solicitud como no terminada
-  def marcar_como_no_terminada
-    self.fecha_completada = nil
-    #actualizamos los tiempos de entrega
-    self.tiempo_respuesta = 0
-    self.tiempo_respuesta_calendario = 0
-  end
-
-  #actualiza el estado a Entregada a Solicitante
-  def solicitud_entregada(date = Date.today)
-    self.fecha_entregada = date
-    self.estado_id = ESTADO_ENTREGADA
-    self.save!
-  end
-
-  #retorna string con nombres de enlaces asignados
-  def nombres_enlaces
-    return 'Solicitud no tiene enlaces.' if self.enlaces.count == 0
-
-    c_nombres = ''
-    self.enlaces.each do |e|
-      c_nombres += e.nombre + ', '
-    end
-    c_nombres = c_nombres.strip.chop
-
-    return c_nombres
-  end
-
-  #retorna un arreglo con los correos electronicos
-  # de las personas relacionadas a la notificacion
-  def correos_interesados(l_incluir_ciudadano = true)
-    correos = []
-
-    #usuarios unidad informacion
-    usuarios_udip = self.institucion.usuarios.activos.udip
-    usuarios_udip.each { |u|
-      correos << u.email unless u.email.empty?
-    }
-
-    #ciudadano si hay correo
-    if l_incluir_ciudadano
-      correos << self.email unless self.email.empty?
-    end
-
-    #enlaces
-    self.enlaces.each { |e|
-      correos << e.email unless e.email.empty?
-    }
-
-    return correos
-  end
-
-  #indica si se graba una version
-  def guardar_version?
-    return (self.origen_id == ORIGEN_MIGRACION ? false : true)
-  end
-
-   # retorna configuracion para exportacion a xml
-  def xml_options
-    Solicitud.xml_options
-  end
-
-    def notificar_creacion
-        unless (self.email.nil? or self.email.blank?)
-          Notificaciones.delay.nueva_solicitud(self, Time.now, true) unless (self.dont_send_email == true)
+              n_avance = ( (i_completadas * 100) / i_actividades ).to_f
+            end
+          end
+          n_avance
         end
 
-        Notificaciones.delay.nueva_solicitud(self, Time.now, false) unless (self.dont_send_email == true)
-      end
 
-      def calcular_fecha_entrega
-        Solicitud.calcular_fecha_entrega(self.fecha_creacion, nil,  self.institucion_id)
-      end
+        def dias_restantes
+          dias = (fecha_programada - Date.today).to_i
+          return 0 if self.terminada? or dias < 0
+          return dias
+        end
 
-      def cargar_predeterminados
-        self.fecha_creacion = Date.today if self.fecha_creacion.blank?
-        self.solicitante_identificacion = "No Disponible" if self.solicitante_identificacion.blank?
-        self.motivonegativa_id = 1 if self.motivonegativa_id.blank?
-        self.motivoprorroga_id = 1 if self.motivoprorroga_id.blank?
-      end
+        def actualizar_asignaciones
+          cnt_asignaciones = self.actividades.count
 
-      def completar_informacion
-        #validamos el origen de la solicitud
-        # y determinamos institucion y usuario a utilizar
-
-        if self.origen_id == ORIGEN_DEFAULT
-          # usa current_user para obtenerlo
-          self.institucion_id = self.usuario.institucion_id
-        elsif self.origen_id == ORIGEN_PORTAL
-          #si el orgen es el portal no hay usuario
-          # asi que usamos el usuario de tipo ciudadano
-
-          #verificamos si hay institucion
-          unless self.institucion_id.nil?
-            ciudadano = self.institucion.usuarios.activos.ciudadanos.first
-            self.usuario_id = ciudadano.id
+          #actualizamos el estado de entrega
+          if cnt_asignaciones > 0
+            #actualizamos el estado de asignacion
+            self.asignada = true
+            self.marcar_como_terminada
+          else
+            self.asignada = false
+            self.marcar_como_no_terminada
           end
 
-          #si es orgien portal la via es internet
-          self.via_id = 4 #internet
-        else
-          # si es migracion usamos al primer usario de UDIP
-          superudip = self.institucion.usuarios.activos.supervisores.first
-          self.usuario_id = superudip.id
+          self.save!
         end
 
-        # validamos si hay institucion asignada
-        unless self.institucion.nil?
+        #actualiza el estado de la solicitud segun el estado de sus
+        #actividades
+        def actividad_terminada(fecha = Date.today)
+          self.marcar_como_terminada(fecha)
+          self.save
+        end
 
-          if self.origen_id != ORIGEN_MIGRACION
-            logger.debug { "#{self.fecha_creacion}" }
-            self.fecha_creacion = Date.today if self.fecha_creacion.nil?
-            logger.debug { "#{self.fecha_creacion}" }
+        # marca solicitud como terminada
+        def marcar_como_terminada(fecha = Date.today)
+          self.fecha_completada = fecha if ( self.actividades.count == self.actividades.completadas.count)
+        end
 
-            self.fecha_programada = calcular_fecha_entrega()
 
-            self.departamento_id = municipio.departamento_id unless municipio.nil?
+        #marca la solicitud como no terminada
+        def marcar_como_no_terminada
+          self.fecha_completada = nil
+          #actualizamos los tiempos de entrega
+          self.tiempo_respuesta = 0
+          self.tiempo_respuesta_calendario = 0
+        end
 
-            if self.dont_set_estado.nil?
-              self.estado_id = ESTADO_NORMAL if self.estado_id.nil?
+        #actualiza el estado a Entregada a Solicitante
+        def solicitud_entregada(date = Date.today)
+          self.fecha_entregada = date
+          self.estado_id = ESTADO_ENTREGADA
+          self.save!
+        end
+
+        #retorna string con nombres de enlaces asignados
+        def nombres_enlaces
+          return 'Solicitud no tiene enlaces.' if self.enlaces.count == 0
+
+          c_nombres = ''
+          self.enlaces.each do |e|
+            c_nombres += e.nombre + ', '
+          end
+          c_nombres = c_nombres.strip.chop
+
+          return c_nombres
+        end
+
+
+        #retorna un arreglo con los correos electronicos
+        # de las personas relacionadas a la notificacion
+        def correos_interesados(l_incluir_ciudadano = true)
+          correos = []
+
+          #usuarios unidad informacion
+          usuarios_udip = self.institucion.usuarios.activos.udip
+          usuarios_udip.each { |u|
+            correos << u.email unless u.email.empty?
+          }
+
+          #ciudadano si hay correo
+          if l_incluir_ciudadano
+            correos << self.email unless self.email.empty?
+          end
+
+          #enlaces
+          self.enlaces.each { |e|
+            correos << e.email unless e.email.empty?
+          }
+
+          return correos
+        end
+
+        #indica si se graba una version
+        def guardar_version?
+          return (self.origen_id == ORIGEN_MIGRACION ? false : true)
+        end
+
+        # retorna configuracion para exportacion a xml
+        def xml_options
+          Solicitud.xml_options
+        end
+
+        def notificar_creacion
+          unless (self.email.nil? or self.email.blank?)
+            Notificaciones.delay.nueva_solicitud(self, Time.now, true) unless (self.dont_send_email == true)
+          end
+
+          Notificaciones.delay.nueva_solicitud(self, Time.now, false) unless (self.dont_send_email == true)
+        end
+
+        # def calcular_fecha_entrega
+        #  self.class.calcular_fecha_entrega(self.fecha_creacion, nil,  self.institucion_id)
+        # end
+
+        def cargar_predeterminados
+          self.fecha_creacion = Date.today if self.fecha_creacion.blank?
+          self.solicitante_identificacion = "No Disponible" if self.solicitante_identificacion.blank?
+          self.motivonegativa_id = 1 if self.motivonegativa_id.blank?
+          self.motivoprorroga_id = 1 if self.motivoprorroga_id.blank?
+        end
+
+        def completar_informacion
+          #validamos el origen de la solicitud
+          # y determinamos institucion y usuario a utilizar
+
+          if self.origen_id == ORIGEN_DEFAULT
+            # usa current_user para obtenerlo
+            self.institucion_id = self.usuario.institucion_id
+          elsif self.origen_id == ORIGEN_PORTAL
+            #si el orgen es el portal no hay usuario
+            # asi que usamos el usuario de tipo ciudadano
+
+            #verificamos si hay institucion
+            unless self.institucion_id.nil?
+              ciudadano = self.institucion.usuarios.activos.ciudadanos.first
+              self.usuario_id = ciudadano.id
             end
 
-            self.asignada = false
-            self.solicitante_identificacion = 'No Disponible' if self.solicitante_identificacion.nil?
+            #si es orgien portal la via es internet
+            self.via_id = 4 #internet
+          else
+            # si es migracion usamos al primer usario de UDIP
+            superudip = self.institucion.usuarios.activos.supervisores.first
+            self.usuario_id = superudip.id
           end
 
-          self.ano = self.fecha_creacion.year
-          self.tiposolicitud_id = TIPO_INFORMACION
-          self.documentoclasificacion_id = Documentoclasificacion.find_by_codigo(Documentoclasificacion::SOLICITUDINFOPUBLICA).id
-          self.numero = proximo_numero_solicitud
-          self.codigo = generar_codigo()
-          self.forma_entrega = 'No Disponible' if self.forma_entrega.nil?
-          self.idioma_id = IDIOMA_DEFAULT if self.idioma_id.nil?
+          # validamos si hay institucion asignada
+          unless self.institucion.nil?
 
-        end # institucion.nil?
+            if self.origen_id != ORIGEN_MIGRACION
+              # logger.debug { "#{self.fecha_creacion}" }
+              self.fecha_creacion = Date.today if self.fecha_creacion.nil?
+              # logger.debug { "#{self.fecha_creacion}" }
 
-      end
+              self.fecha_programada = self.class.calcular_fecha_entrega(self.fecha_creacion, nil, self.institucion_id)
 
-      def proximo_numero_solicitud
-        Solicitud.maximum(:numero, :conditions => ["solicitudes.institucion_id = ? and solicitudes.ano = ?",self.institucion_id, self.ano]).to_i + 1
-      end
+              self.departamento_id = municipio.departamento_id unless municipio.nil?
 
-      def generar_codigo
-        self.institucion.codigo + '-'+Documentoclasificacion::SOLICITUDINFOPUBLICA+'-' +  self.ano.to_s + '-' + self.numero.to_s.rjust(6,'0')
-      end
+              if self.dont_set_estado.nil?
+                self.estado_id = ESTADO_NORMAL if self.estado_id.nil?
+              end
 
-      #limpia la informacion de la solicitud
-      def cleanup
-        self.solicitante_nombre = self.solicitante_nombre.slice(0..254)
-      end
+              self.asignada = false
+              self.solicitante_identificacion = 'No Disponible' if self.solicitante_identificacion.nil?
+            end
 
-      #removes spetial characters for indexing
-      def clean_string(c_name)
+            self.ano = self.fecha_creacion.year
+            self.tiposolicitud_id = TIPO_INFORMACION
+            self.documentoclasificacion_id = Documentoclasificacion.find_by_codigo(Documentoclasificacion::SOLICITUDINFOPUBLICA).id
+            self.numero = proximo_numero_solicitud
+            self.codigo = generar_codigo()
+            self.forma_entrega = 'No Disponible' if self.forma_entrega.nil?
+            self.idioma_id = IDIOMA_DEFAULT if self.idioma_id.nil?
 
-        c_name = c_name.tr('á','a')
-        c_name = c_name.tr('é','e')
-        c_name = c_name.tr('í','i')
-        c_name = c_name.tr('ó','o')
-        c_name = c_name.tr('ú','u')
+          end # institucion.nil?
 
-        c_name = c_name.tr('Á','A')
-        c_name = c_name.tr('É','E')
-        c_name = c_name.tr('Í','I')
-        c_name = c_name.tr('Ó','O')
-        c_name = c_name.tr('Ú','U')
+        end
 
-        return c_name
-      end
+        def proximo_numero_solicitud
+          self.class.maximum(:numero, :conditions => ["solicitudes.institucion_id = ? and solicitudes.ano = ?",self.institucion_id, self.ano]).to_i + 1
+        end
 
-      end
+        def generar_codigo
+          self.institucion.codigo + '-'+Documentoclasificacion::SOLICITUDINFOPUBLICA+'-' +  self.ano.to_s + '-' + self.numero.to_s.rjust(6,'0')
+        end
+
+        #limpia la informacion de la solicitud
+        def cleanup
+          self.solicitante_nombre = self.solicitante_nombre.slice(0..254)
+        end
+
+        #removes spetial characters for indexing
+        def clean_string(c_name)
+
+          c_name = c_name.tr('á','a')
+          c_name = c_name.tr('é','e')
+          c_name = c_name.tr('í','i')
+          c_name = c_name.tr('ó','o')
+          c_name = c_name.tr('ú','u')
+
+          c_name = c_name.tr('Á','A')
+          c_name = c_name.tr('É','E')
+          c_name = c_name.tr('Í','I')
+          c_name = c_name.tr('Ó','O')
+          c_name = c_name.tr('Ú','U')
+
+          return c_name
+        end
+
+
+      end #instance methods
 
       def self.included(receiver)
         receiver.extend         ClassMethods
         receiver.send :include, InstanceMethods
       end
+
     end
   end
 end

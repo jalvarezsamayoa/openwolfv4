@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Sentidoresolucion do
 
   before(:each) do
-    @sentidoresolucion = FactoryGirl(:sentidoresolucion)
+    @sentidoresolucion = FactoryGirl.build(:sentidoresolucion)
   end
 
   it "debe ser valido" do

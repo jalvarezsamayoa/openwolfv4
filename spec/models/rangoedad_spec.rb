@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Rangoedad do
 
   before(:each) do
-    @rangoedad = FactoryGirl(:rangoedad)
+    @rangoedad = FactoryGirl.build(:rangoedad)
   end
 
   it "debe ser valido" do

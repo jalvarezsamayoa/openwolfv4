@@ -76,7 +76,7 @@ FactoryGirl.define do
     d.association :documentoclasificacion
     d.association :documentocategoria
     d.fecha_documento Date.today
-    d.association :autor, :FactoryGirl => :usuario
+    d.association :autor, :factory => :usuario
     d.asunto { Faker::Lorem.sentence }
     d.texto { Faker::Lorem.paragraphs }
     d.fecha_recepcion Date.today
@@ -135,6 +135,10 @@ FactoryGirl.define do
     rtr.sequence(:nombre) {|rtr| "razontiporesolucion_#{FactoryGirl.generate(:count)}"}
     rtr.association :tiporesolucion
     rtr.informacion_publica true
+  end
+
+  factory :sentidoresolucion do |s|
+    s.sequence(:nombre) { |s| "sentidoresolucion_#{FactoryGirl.generate(:count)}"}
   end
 
   factory :recursorevision do |rr|

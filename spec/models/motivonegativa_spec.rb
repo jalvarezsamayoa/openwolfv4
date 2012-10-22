@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Motivonegativa do
 
   before(:each) do
-    @motivonegativa = FactoryGirl(:motivonegativa)
+    @motivonegativa = FactoryGirl.build(:motivonegativa)
   end
 
   it "debe ser valido" do
