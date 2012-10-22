@@ -6,45 +6,48 @@ GIT
 
 GIT
   remote: git://github.com/ctran/annotate_models.git
-  revision: 98d00635c41c4bfe66b361196241505a5c778b7a
+  revision: 4a96f3a15902c58e6044f8229d81a7554149219a
   specs:
-    annotate (2.5.0)
-      rake
+    annotate (2.6.0.beta1)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
 
 GIT
   remote: git://github.com/galetahub/simple-captcha.git
-  revision: f0d5a6d4ca233511d84bfba139dfacdded4bdbb9
+  revision: 7bf17fe6bceda3313b3cce37853f685cbc64afde
   specs:
     galetahub-simple_captcha (0.1.3)
 
 GIT
   remote: git://github.com/rspec/rspec-core.git
-  revision: 07be957b7f69447bf59ffe3ede9530436e6267ee
+  revision: 5d28318b51bf212c215ba1392fb24cc5a52dbe06
   specs:
     rspec-core (2.11.1)
 
 GIT
   remote: git://github.com/rspec/rspec-expectations.git
-  revision: d427bac95e17046aadf7f4a4c65b544dacd9f34e
+  revision: f4f2a29acf6969f499dacda0259a38cbf5f3fb42
   specs:
-    rspec-expectations (2.11.2)
+    rspec-expectations (2.11.3)
       diff-lcs (~> 1.1.3)
 
 GIT
   remote: git://github.com/rspec/rspec-mocks.git
-  revision: 37e095c32cff4c4ed7bbeb2c6fa5e7f925f41c47
+  revision: eb931c1318537a4f06c6c00cbfe761d8e1882a60
   specs:
-    rspec-mocks (2.11.1)
+    rspec-mocks (2.11.3)
 
 GIT
   remote: git://github.com/rspec/rspec-rails.git
-  revision: 6b4b5cfe652e1b00e540a1a386938833d31eca9f
+  revision: 738fd0d73603e4ab43a8ee8ff909f79405542fb6
   specs:
-    rspec-rails (2.11.0)
+    rspec-rails (2.11.4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec (~> 2.11.0)
+      rspec-core (~> 2.11.0)
+      rspec-expectations (~> 2.11.0)
+      rspec-mocks (~> 2.11.0)
 
 GIT
   remote: git://github.com/rspec/rspec.git
@@ -57,25 +60,24 @@ GIT
 
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: ca703a2349e9a0c26dc5a8a5bb8f5d6dee3b0cff
+  revision: 52a85ef94b995d0091761aaac73aa63e8ae24fb3
   specs:
-    twitter-bootstrap-rails (2.1.1)
+    twitter-bootstrap-rails (2.1.4)
       actionpack (>= 3.1)
       less-rails (~> 2.2.3)
       railties (>= 3.1)
-      therubyracer (= 0.10.1)
+      therubyracer (>= 0.10.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    ZenTest (4.8.2)
     acl9 (0.12.0)
-    actionmailer (3.2.7)
-      actionpack (= 3.2.7)
+    actionmailer (3.2.8)
+      actionpack (= 3.2.8)
       mail (~> 2.4.4)
-    actionpack (3.2.7)
-      activemodel (= 3.2.7)
-      activesupport (= 3.2.7)
+    actionpack (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
       journey (~> 1.0.4)
@@ -83,37 +85,45 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.3)
-    activemodel (3.2.7)
-      activesupport (= 3.2.7)
+    activemodel (3.2.8)
+      activesupport (= 3.2.8)
       builder (~> 3.0.0)
-    activerecord (3.2.7)
-      activemodel (= 3.2.7)
-      activesupport (= 3.2.7)
+    activerecord (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activerecord-import (0.2.10)
+    activerecord-import (0.2.11)
       activerecord (~> 3.0)
       activerecord (~> 3.0)
-    activeresource (3.2.7)
-      activemodel (= 3.2.7)
-      activesupport (= 3.2.7)
-    activesupport (3.2.7)
+    activeresource (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
+    activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.2)
-    airbrake (3.1.2)
-      activesupport
+    airbrake (3.1.5)
       builder
+      girl_friday
     arel (3.0.2)
-    awesome_nested_set (2.1.3)
+    awesome_nested_set (2.1.5)
       activerecord (>= 3.0.0)
-    backup (3.0.25)
-      open4 (~> 1.3.0)
-      thor (~> 0.15.4)
+    backup (2.4.5.1)
+      activerecord (>= 2.3.5)
+      cloudfiles (>= 1.4.7)
+      dropbox (>= 1.1.2)
+      fog (~> 0.3.5)
+      hirb (>= 0.2.9)
+      json_pure (~> 1.4.6)
+      net-scp (>= 1.0.2)
+      net-sftp (>= 2.0.4)
+      net-ssh (>= 2.0.15)
+      pony (>= 0.5)
     bcrypt-ruby (3.0.1)
-    builder (3.0.0)
+    builder (3.0.4)
     cancan (1.6.8)
-    capistrano (2.12.0)
+    capistrano (2.13.4)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -126,12 +136,14 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    childprocess (0.3.4)
+    childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chronic (0.6.7)
-    client_side_validations (3.1.4)
-    cocaine (0.2.1)
-    coderay (1.0.7)
+    client_side_validations (3.2.0)
+    cloudfiles (1.5.0.1)
+      json
+    cocaine (0.4.2)
+    coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -141,26 +153,31 @@ GEM
     coffee-script-source (1.3.3)
     columnize (0.3.6)
     commonjs (0.2.6)
+    connection_pool (0.9.2)
     crummy (1.6.0)
-    daemons (1.1.8)
-    debugger (1.2.0)
+    daemons (1.1.9)
+    debugger (1.2.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
-      debugger-ruby_core_source (~> 1.1.3)
+      debugger-ruby_core_source (~> 1.1.4)
     debugger-linecache (1.1.2)
       debugger-ruby_core_source (>= 1.1.1)
-    debugger-ruby_core_source (1.1.3)
+    debugger-ruby_core_source (1.1.4)
     delayed_job (3.0.3)
       activesupport (~> 3.0)
-    delayed_job_active_record (0.3.2)
-      activerecord (> 2.1.0)
-      delayed_job (~> 3.0.0)
+    delayed_job_active_record (0.3.3)
+      activerecord (>= 2.1.0, < 4)
+      delayed_job (~> 3.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.1.3)
+    dropbox (1.3.0)
+      json (>= 1.2.0)
+      multipart-post (>= 1.1.0)
+      oauth (>= 0.3.6)
     em-websocket (0.3.8)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -168,22 +185,35 @@ GEM
       mail (~> 2.2)
       rspec (~> 2.0)
     erubis (2.7.0)
-    eventmachine (0.12.10)
+    eventmachine (1.0.0)
+    excon (0.16.7)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.0.0)
+    factory_girl (4.1.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.0.0)
-      factory_girl (~> 4.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
       railties (>= 3.0.0)
-    faker (1.0.1)
-      i18n (~> 0.4)
+    faker (1.1.2)
+      i18n (~> 0.5)
     fastercsv (1.5.5)
     fattr (2.2.1)
-    ffi (1.1.4)
-    foreman (0.53.0)
+    ffi (1.1.5)
+    fog (0.3.34)
+      builder
+      excon (>= 0.3.6)
+      formatador (>= 0.0.16)
+      json
+      mime-types
+      net-ssh (>= 2.0.23)
+      nokogiri (>= 1.4.4)
+      ruby-hmac
+    foreman (0.60.2)
       thor (>= 0.13.6)
-    guard (1.3.0)
+    formatador (0.2.3)
+    girl_friday (0.10.0)
+      connection_pool (~> 0.9.0)
+    guard (1.4.0)
       listen (>= 0.4.2)
       thor (>= 0.14.6)
     guard-bundler (1.0.0)
@@ -193,78 +223,89 @@ GEM
       daemons
       delayed_job
       guard (> 0.3)
-    guard-livereload (1.0.0)
+    guard-livereload (1.0.1)
       em-websocket (>= 0.2.0)
       guard (>= 1.1.0)
       multi_json (~> 1.0)
-    guard-rails (0.1.0)
+    guard-rails (0.1.1)
       guard (>= 0.2.2)
-    haml (3.1.6)
-    haml-rails (0.3.4)
-      actionpack (~> 3.0)
-      activesupport (~> 3.0)
-      haml (~> 3.0)
-      railties (~> 3.0)
+    guard-rspec (2.1.0)
+      guard (>= 1.1)
+      rspec (~> 2.11)
+    guard-spork (1.2.1)
+      childprocess (>= 0.2.3)
+      guard (>= 1.1)
+      spork (>= 0.8.4)
+      sys-proctable
+    haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     has_scope (0.5.1)
-    highline (1.6.13)
+    highline (1.6.15)
     hike (1.2.1)
+    hirb (0.7.0)
     hpricot (0.8.6)
-    i18n (0.6.0)
+    i18n (0.6.1)
     inherited_resources (1.3.1)
       has_scope (~> 0.5.0)
       responders (~> 0.6)
     journey (1.0.4)
-    jquery-rails (2.0.2)
-      railties (>= 3.2.0, < 5.0)
+    jquery-rails (2.1.3)
+      railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
-    json (1.7.4)
-    launchy (2.1.1)
+    json (1.7.5)
+    json_pure (1.4.6)
+    launchy (2.1.2)
       addressable (~> 2.3)
-    less (2.2.1)
+    less (2.2.2)
       commonjs (~> 0.2.6)
     less-rails (2.2.3)
       actionpack (>= 3.1)
       less (~> 2.2.0)
-    libnotify (0.7.3)
+    libnotify (0.8.0)
+      ffi (>= 1.0.11)
     libv8 (3.3.10.4)
     libwebsocket (0.1.5)
       addressable
-    listen (0.4.7)
-      rb-fchange (~> 0.0.5)
-      rb-fsevent (~> 0.9.1)
-      rb-inotify (~> 0.8.8)
+    listen (0.5.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    method_source (0.8)
+    method_source (0.8.1)
     mime-types (1.19)
     multi_json (1.3.6)
+    multipart-post (1.1.5)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.5.2)
+    net-ssh (2.6.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
-    newrelic_rpm (3.4.1)
+    newrelic_rpm (3.5.0)
     nokogiri (1.5.5)
-    notifier (0.2.1)
-    open4 (1.3.0)
+    notifier (0.4.1)
+    oauth (0.4.7)
     options (2.3.0)
       fattr
     orm_adapter (0.4.0)
-    paperclip (3.1.4)
+    paperclip (3.3.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
-      cocaine (>= 0.0.2)
+      cocaine (~> 0.4.0)
       mime-types
-    pg (0.14.0)
-    pg_search (0.5.1)
+    pg (0.14.1)
+    pg_search (0.5.7)
       activerecord (>= 3)
       activesupport (>= 3)
     polyglot (0.3.3)
+    pony (1.4)
+      mail (> 2.0)
     progress_bar (0.4.0)
       highline (~> 1.6.1)
       options (~> 2.3.0)
@@ -279,41 +320,39 @@ GEM
       rack (>= 0.4)
     rack-ssl (1.3.2)
       rack
-    rack-test (0.6.1)
+    rack-test (0.6.2)
       rack (>= 1.0)
-    rails (3.2.7)
-      actionmailer (= 3.2.7)
-      actionpack (= 3.2.7)
-      activerecord (= 3.2.7)
-      activeresource (= 3.2.7)
-      activesupport (= 3.2.7)
+    rails (3.2.8)
+      actionmailer (= 3.2.8)
+      actionpack (= 3.2.8)
+      activerecord (= 3.2.8)
+      activeresource (= 3.2.8)
+      activesupport (= 3.2.8)
       bundler (~> 1.0)
-      railties (= 3.2.7)
-    railties (3.2.7)
-      actionpack (= 3.2.7)
-      activesupport (= 3.2.7)
+      railties (= 3.2.8)
+    railties (3.2.8)
+      actionpack (= 3.2.8)
+      activesupport (= 3.2.8)
       rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (0.9.2.2)
-    rb-fchange (0.0.5)
-      ffi
-    rb-fsevent (0.9.1)
     rb-inotify (0.8.8)
       ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
-    responders (0.9.2)
+    responders (0.9.3)
       railties (~> 3.1)
     rmagick (2.13.1)
+    ruby-hmac (0.4.0)
     ruby-prof (0.11.2)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
     rubyzip (0.9.9)
-    rvm-capistrano (1.2.5)
+    rvm-capistrano (1.2.7)
       capistrano (>= 2.0.0)
-    sass (3.1.20)
+    sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -327,36 +366,41 @@ GEM
       rubyzip (>= 0.9.1)
     sexp_processor (3.2.0)
     silent-postgres (0.1.1)
-    simple_form (2.0.2)
+    simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    slop (3.3.2)
+    slop (3.3.3)
     spork (0.9.2)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    test_notifier (1.0.0)
+    sys-proctable (0.9.2)
+    test_notifier (1.0.1)
       notifier
-    therubyracer (0.10.1)
+    therubyracer (0.10.2)
       libv8 (~> 3.3.10)
-    thin (1.4.1)
+    thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.15.4)
+    thor (0.16.0)
     tilt (1.3.3)
-    tinymce-rails (3.5.6)
+    tinymce-rails (3.5.7.1)
       railties (>= 3.1.1)
-    treetop (1.4.10)
+    treetop (1.4.11)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.33)
-    uglifier (1.2.7)
+    uglifier (1.3.0)
       execjs (>= 0.3.0)
-      multi_json (~> 1.3)
+      multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
     whenever (0.7.3)
       activesupport (>= 2.3.4)
       chronic (~> 0.6.3)
@@ -369,7 +413,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ZenTest
   acl9
   activerecord-import (~> 0.2.9)
   airbrake
@@ -398,6 +441,8 @@ DEPENDENCIES
   guard-delayed
   guard-livereload
   guard-rails
+  guard-rspec
+  guard-spork
   haml
   haml-rails
   highline
@@ -414,7 +459,7 @@ DEPENDENCIES
   progress_bar
   pry
   quiet_assets
-  rails (= 3.2.7)
+  rails (= 3.2.8)
   rb-inotify
   remotipart!
   rmagick
@@ -429,13 +474,14 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   serenity-odt
   silent-postgres
-  simple_form (~> 2.0.2)
+  simple_form
   spork
   test_notifier
   thin
   tinymce-rails
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
+  webrat
   whenever
   wicked_pdf
   will_paginate

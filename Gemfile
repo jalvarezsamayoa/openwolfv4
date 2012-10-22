@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,7 +29,7 @@ gem 'ruby_parser'
 gem 'inherited_resources' #encapsula operaciones basicas para controladores
 
 # VIEWS
-gem "simple_form", "~> 2.0.2"
+gem "simple_form"
 gem 'tinymce-rails' # editor html
 gem 'wicked_pdf' # generacion de pdf
 gem 'will_paginate' # pagineo de resultados
@@ -91,11 +91,16 @@ group :development, :test do
   gem 'faker' # herramienta para generacion de datos de prueba
   gem 'ruby-prof'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-delayed'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+
+
   gem 'rb-inotify'
   gem 'libnotify'
   gem 'debugger'
@@ -127,11 +132,13 @@ group  :test do
   gem 'libnotify'
   gem 'test_notifier'
 
-  gem 'ZenTest'
+  #gem 'ZenTest'
 
   gem "spork"
 
   gem 'email_spec'
+
+  gem 'webrat'
 end
 
 # To use ActiveModel has_secure_password
