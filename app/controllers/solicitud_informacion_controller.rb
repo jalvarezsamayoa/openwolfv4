@@ -64,6 +64,6 @@ class SolicitudInformacionController < ApplicationController
   end
 
   def inicializar_busqueda
-     @busqueda = Busqueda.new
+     @busqueda = Openwolf::Laip::Busqueda.new
   end
 end

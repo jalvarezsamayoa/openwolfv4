@@ -1,5 +1,5 @@
 class Actividad < ActiveRecord::Base
-  include Openwolf::Actividad
+  include Openwolf::Laip::Actividad
 
   attr_accessible :textoactividad, :usuario_id, :institucion_id
   attr_accessor :dont_send_email

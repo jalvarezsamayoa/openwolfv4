@@ -79,7 +79,7 @@ class PortalController < ApplicationController
 
     session[:last_search] = params
 
-    @busqueda = Busqueda.new(params)
+    @busqueda = Openwolf::Laip::Busqueda.new(params)
     @solicitudes = @busqueda.solicitudes
 
     @desde = @busqueda.fecha_desde
@@ -131,7 +131,7 @@ class PortalController < ApplicationController
   end
 
   def inicializar_busqueda
-     @busqueda = Busqueda.new
+     @busqueda = OpenWolf::Laip::Busqueda.new
   end
 
 end

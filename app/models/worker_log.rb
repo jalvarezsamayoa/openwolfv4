@@ -1,7 +1,7 @@
 class WorkerLog < ActiveRecord::Base
 
   default_scope order('id desc')
-  
+
   def self.clear
     WorkerLog.delete_all
   end
@@ -13,7 +13,7 @@ class WorkerLog < ActiveRecord::Base
   def self.error(error)
     WorkerLog.create!(:status => 'ERROR', :last_error => error)
   end
-  
+
 end
 
 # == Schema Information
