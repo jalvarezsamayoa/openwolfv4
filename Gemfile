@@ -87,7 +87,7 @@ end
 group :development, :test do
   gem 'highline'
   gem 'pry'
-  gem 'silent-postgres' #elimina la salida de el log de postgresql
+  #gem 'silent-postgres' #elimina la salida de el log de postgresql
   gem 'faker' # herramienta para generacion de datos de prueba
   gem 'ruby-prof'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'

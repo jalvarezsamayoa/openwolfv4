@@ -144,14 +144,14 @@ FactoryGirl.define do
   factory :recursorevision do |rr|
     rr.association :solicitud
     rr.fecha_presentacion Date.today
-    rr.fecha_notifiacion Date.today
+    rr.fecha_notificacion Date.today
     rr.fecha_resolucion Date.today
     rr.descripcion { Faker::Lorem.sentence }
     rr.association :sentidoresolucion
     rr.association :institucion
     rr.association :usuario
     rr.sequence(:numero) {|rtr| "numero_#{FactoryGirl.generate(:count)}"}
-    rr.association :documentoclasificacion
+    #rr.association :documentoclasificacion
   end
 
   factory :resolucion do |r|
@@ -164,13 +164,13 @@ FactoryGirl.define do
     r.association :razontiporesolucion
     r.nueva_fecha nil
     r.informacion_publica true
-    r.association :documentoclasificacion
+  #  r.association :documentoclasificacion
   end
 
   factory :tiporesolucion do |tr|
     tr.sequence(:nombre) {|tr| "tiporesolucion_#{FactoryGirl.generate(:count)}"}
     tr.actualiza_fecha false
-    tr.associtation :estado
+    tr.association :estado
   end
 
   factory :via do |via|
@@ -255,5 +255,15 @@ FactoryGirl.define do
 
   factory :idioma do |i|
     i.sequence(:nombre) {|i| "idioma_#{FactoryGirl.generate(:count)}"}
+  end
+
+  factory :seguimiento do |s|
+    s.association :actividad
+    s.association :institucion
+    s.association :usuario
+    s.fecha_creacion Date.today
+    s.textoseguimiento { Faker::Lorem.sentence }
+    s.informacion_publica true
+    #s.archivo File.open(Rails.root + 'spec/fixtures/documentos/documento.doc')
   end
 end

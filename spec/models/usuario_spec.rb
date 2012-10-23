@@ -7,17 +7,17 @@ describe Usuario do
     @usuario = FactoryGirl.build(:usuario)
   end
 
-  it { should validate_presence_of(:email) }
-  it { should validate_presence_of(:nombre) }
-  it { should validate_presence_of(:cargo) }
-  it { should validate_presence_of(:institucion_id) }
+  # it { should validate_presence_of(:email) }
+  # it { should validate_presence_of(:nombre) }
+  # it { should validate_presence_of(:cargo) }
+  # it { should validate_presence_of(:institucion_id) }
 
-  it { should validate_uniqueness_of(:email) }
-  it { should validate_uniqueness_of(:nombre) }
+  # it { should validate_uniqueness_of(:email) }
+  # it { should validate_uniqueness_of(:nombre) }
 
-  it { should belong_to(:institucion) }
-  it { should have_and_belong_to_many(:roles) }
-  it { should have_many(:actividades) }
+  # it { should belong_to(:institucion) }
+  # it { should have_and_belong_to_many(:roles) }
+  # it { should have_many(:actividades) }
 #  it { should have_many(:documentos) }
 
   it "debe ser valido" do
@@ -55,18 +55,18 @@ describe Usuario do
     end
   end
 
-  describe 'Registro de cambios' do
-    it "debe tener version 1 al ser nuevo" do
-      @usuario.version.should == 1
-    end
+#   describe 'Registro de cambios' do
+#     it "debe tener version 1 al ser nuevo" do
+#       @usuario.version.should == 1
+#     end
 
-    it "debe de generar registro en el log si hay cambio en los campos" do
-#      @usuario.nombre = "Nuevo Nombre"
-      @usuario.nombre = "Nuevo nombre"
-      @usuario.save!
-      @usuario.version.should == 2
-    end
-  end
+#     it "debe de generar registro en el log si hay cambio en los campos" do
+# #      @usuario.nombre = "Nuevo Nombre"
+#       @usuario.nombre = "Nuevo nombre"
+#       @usuario.save!
+#       @usuario.version.should == 2
+#     end
+#   end
 
   describe 'Notificacion de nueva cuenta de usuario' do
     pending

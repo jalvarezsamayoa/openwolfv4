@@ -5,8 +5,8 @@ describe Via do
     @via = FactoryGirl.create(:via)
   end
 
-  it { should validate_presence_of(:nombre) }
-  it { should validate_uniqueness_of(:nombre)  }
+  # it { should validate_presence_of(:nombre) }
+  # it { should validate_uniqueness_of(:nombre)  }
 
   it "es valido" do
     @via.should be_valid
