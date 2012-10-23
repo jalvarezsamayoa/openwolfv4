@@ -18,7 +18,7 @@ describe Usuario do
   # it { should belong_to(:institucion) }
   # it { should have_and_belong_to_many(:roles) }
   # it { should have_many(:actividades) }
-#  it { should have_many(:documentos) }
+  #  it { should have_many(:documentos) }
 
   it "debe ser valido" do
     @usuario.should be_valid
@@ -55,21 +55,54 @@ describe Usuario do
     end
   end
 
-#   describe 'Registro de cambios' do
-#     it "debe tener version 1 al ser nuevo" do
-#       @usuario.version.should == 1
-#     end
+  #   describe 'Registro de cambios' do
+  #     it "debe tener version 1 al ser nuevo" do
+  #       @usuario.version.should == 1
+  #     end
 
-#     it "debe de generar registro en el log si hay cambio en los campos" do
-# #      @usuario.nombre = "Nuevo Nombre"
-#       @usuario.nombre = "Nuevo nombre"
-#       @usuario.save!
-#       @usuario.version.should == 2
-#     end
-#   end
+  #     it "debe de generar registro en el log si hay cambio en los campos" do
+  # #      @usuario.nombre = "Nuevo Nombre"
+  #       @usuario.nombre = "Nuevo nombre"
+  #       @usuario.save!
+  #       @usuario.version.should == 2
+  #     end
+  #   end
 
   describe 'Notificacion de nueva cuenta de usuario' do
     pending
+  end
+
+   describe "#puede_borrar" do
+    context "puede borrar un usuario si" do
+      it "no tiene relaciones" do
+        @usuario.puede_borrar?.should be true
+      end
+    end
+
+    context "no permite borrar un usuario si" do
+
+      before(:each) do
+        @usuario.save
+      end
+
+      it "hay actividades relacionadas" do
+        FactoryGirl.create :actividad, :usuario => @usuario
+        @usuario.reload
+        @usuario.puede_borrar?.should be false
+      end
+
+      it "hay solicitudes relacionadas " do
+        FactoryGirl.create :solicitud, :usuario => @usuario
+        @usuario.reload
+        @usuario.puede_borrar?.should be false
+      end
+
+      it "hay documentos relacionados" do
+        FactoryGirl.create :documento, :usuario => @usuario
+        @usuario.reload
+        @usuario.puede_borrar?.should be false
+      end
+    end
   end
 
 end
@@ -111,4 +144,3 @@ end
 #  locked_at            :datetime
 #  activo               :boolean         default(TRUE)
 #
-

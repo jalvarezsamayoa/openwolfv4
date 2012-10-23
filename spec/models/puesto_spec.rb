@@ -10,12 +10,13 @@ describe Puesto do
     @puesto.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
-    end
+  describe "nombre_completo" do
+   it "debe convinar nombrel del pueso e institucion" do
+    @puesto.nombre = "Nombre"
+    @puesto.institucion.nombre = "Institucion"
+    @puesto.nombre_completo.should == "Nombre en Institucion"
+   end
   end
-
 end
 # == Schema Information
 #

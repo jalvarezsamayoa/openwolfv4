@@ -139,6 +139,8 @@ group  :test do
   gem 'email_spec'
 
   gem 'webrat'
+
+  gem 'simplecov', :require => false
 end
 
 # To use ActiveModel has_secure_password

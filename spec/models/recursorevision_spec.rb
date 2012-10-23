@@ -10,12 +10,50 @@ describe Recursorevision do
     @recurso.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
+  describe "#nuevo_numero" do
+    context "debe generar un codigo" do
+
+      it "tipo string" do
+        @recurso.nuevo_numero.should be_instance_of(String)
+      end
+
+      context "que incluye" do
+        before(:each) do
+          @codigo = @recurso.nuevo_numero.split('-')
+        end
+
+        it "codigo de la institucion" do
+          institucion = @recurso.institucion
+          @codigo[0].should == institucion.codigo
+        end
+
+        it "codigo de clasificacion documental" do
+          @codigo[1].should == Documentoclasificacion::REVISION
+        end
+
+        it "ano de generacion" do
+          @codigo[2].should == Date.today.year.to_s
+        end
+
+        it "correlativo" do
+          @codigo[3].should == '000001'
+        end
+
+      end
     end
   end
 
+  describe "cleanup" do
+    it "debe proveer predeterminados" do
+      @recurso.institucion_id = nil
+      @recurso.numero = nil
+
+      @recurso.cleanup
+
+      @recurso.institucion_id.should_not be(nil)
+      @recurso.numero.should_not be(nil)
+    end
+  end
 end
 # == Schema Information
 #
@@ -35,4 +73,3 @@ end
 #  numero                    :string(255)
 #  documentoclasificacion_id :integer         default(3)
 #
-

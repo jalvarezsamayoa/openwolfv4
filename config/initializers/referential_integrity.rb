@@ -9,7 +9,7 @@ class ActiveRecord::Base
     relationships.each do |key, value|
       n = self.send(key).count
       if n > 0
-        errors.add_to_base("No es posible borrar este registro ya que tiene #{n} #{value} asociados.")
+        errors[:base] << "No es posible borrar este registro ya que tiene #{n} #{value} asociados."
         l_ok_to_delete = false
       end
     end
