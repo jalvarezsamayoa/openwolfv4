@@ -9,8 +9,8 @@ class Archivo < ActiveRecord::Base
 
   scope :nombre_like, lambda { |nombre|
     unless nombre.nil? || nombre.empty? || nombre.first.nil?
-      valor = "%#{nombre}%".upcase
-      where("UPPER(archivos.nombre) like ?", valor )
+      valor = "%#{nombre}%"
+      where("archivos.nombre ilike ?", valor )
    end
   }
 

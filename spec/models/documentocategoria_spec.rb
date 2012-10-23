@@ -13,6 +13,20 @@ describe Documentocategoria do
     @documentocategoria.should be_valid
   end
 
+   describe "to_label" do
+    it "es un alias al campo nombre" do
+      @documentocategoria.nombre.should == @documentocategoria.to_label
+    end
+  end
+
+  describe "nombre_like" do
+    it "busca registros donde el nombre coincide con el parametro" do
+      @documentocategoria.nombre = "ABC123"
+      @documentocategoria.save
+      Documentocategoria.nombre_like('123').should have(1).registro
+    end
+  end
+
 
 end
 # == Schema Information

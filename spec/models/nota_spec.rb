@@ -1,7 +1,31 @@
+# -*- coding: utf-8 -*-
 require 'spec_helper'
 
 describe Nota do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @nota = FactoryGirl.create(:nota)
+  end
+
+
+  it "es valido" do
+    @nota.should be_valid
+  end
+
+  it "es invalido" do
+    @nota.texto = nil
+    @nota.should_not be_valid
+  end
+
+  describe "#tipo_nombre" do
+    it "regresa valor segun estado de #informacion_publica" do
+      @nota.informacion_publica = false
+      @nota.tipo_nombre.should == 'Interno'
+
+      @nota.informacion_publica = true
+      @nota.tipo_nombre.should == 'Pública'
+    end
+  end
+
 end
 # == Schema Information
 #

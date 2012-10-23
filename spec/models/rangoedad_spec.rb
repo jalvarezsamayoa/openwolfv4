@@ -10,9 +10,9 @@ describe Rangoedad do
     @rangoedad.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @rangoedad.nombre.should == @rangoedad.to_label
     end
   end
 

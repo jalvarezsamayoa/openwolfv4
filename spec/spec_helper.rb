@@ -1,5 +1,7 @@
-require 'simplecov'
-SimpleCov.start 'rails'
+# Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f }
+
+# require 'simplecov'
+# SimpleCov.start 'rails'
 
 require 'rubygems'
 require 'spork'

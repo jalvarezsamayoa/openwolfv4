@@ -3,17 +3,31 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe Departamento do
 
   before(:each) do
-    @depto = FactoryGirl.build(:departamento)
+    @departamento = FactoryGirl.build(:departamento)
   end
 
   it "es valido" do
-    @depto.should be_valid
+    @departamento.should be_valid
   end
 
   it "es invalido" do
-    @depto.nombre = nil
-    @depto.abreviatura = nil
-    @depto.should_not be_valid
+    @departamento.nombre = nil
+    @departamento.abreviatura = nil
+    @departamento.should_not be_valid
+  end
+
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @departamento.nombre.should == @departamento.to_label
+    end
+  end
+
+  describe "nombre_like" do
+    it "busca registros donde el nombre coincide con el parametro" do
+      @departamento.nombre = "ABC123"
+      @departamento.save
+      Departamento.nombre_like('123').should have(1).registro
+    end
   end
 
 

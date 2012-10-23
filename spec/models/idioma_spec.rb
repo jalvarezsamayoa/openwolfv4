@@ -9,6 +9,20 @@ describe Idioma do
     @idioma.should be_valid
   end
 
+    describe "to_label" do
+    it "es un alias al campo nombre" do
+      @idioma.nombre.should == @idioma.to_label
+    end
+  end
+
+  describe "nombre_like" do
+    it "busca registros donde el nombre coincide con el parametro" do
+      @idioma.nombre = "ABC123"
+      @idioma.save
+      Idioma.nombre_like('123').should have(1).registro
+    end
+  end
+
 end
 
 # == Schema Information

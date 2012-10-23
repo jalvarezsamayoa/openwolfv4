@@ -10,11 +10,21 @@ describe Razontiporesolucion do
     @razontiporesolucion.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
+
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @razontiporesolucion.nombre.should == @razontiporesolucion.to_label
     end
   end
+
+  describe "nombre_like" do
+    it "busca registros donde el nombre coincide con el parametro" do
+      @razontiporesolucion.nombre = "ABC123"
+      @razontiporesolucion.save
+      Razontiporesolucion.nombre_like('123').should have(1).registro
+    end
+  end
+
 
 end
 # == Schema Information

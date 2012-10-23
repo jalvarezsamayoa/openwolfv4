@@ -10,9 +10,17 @@ describe Tiporesolucion do
     @tiporesolucion.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @tiporesolucion.nombre.should == @tiporesolucion.to_label
+    end
+  end
+
+  describe "nombre_like" do
+    it "busca registros donde el nombre coincide con el parametro" do
+      @tiporesolucion.nombre = "ABC123"
+      @tiporesolucion.save
+      Tiporesolucion.nombre_like('123').should have(1).registro
     end
   end
 

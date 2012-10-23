@@ -10,12 +10,11 @@ describe Motivoprorroga do
     @motivoprorroga.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @motivoprorroga.nombre.should == @motivoprorroga.to_label
     end
   end
-
 end
 # == Schema Information
 #

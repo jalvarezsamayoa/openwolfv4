@@ -11,7 +11,7 @@ class Departamento < ActiveRecord::Base
   scope :nombre_like, lambda { |nombre|
     unless nombre.nil? || nombre.empty? || nombre.first.nil?
       valor = "%#{nombre}%".upcase
-      where("UPPER(departamentos.nombre) like ?", valor )
+      where("departamentos.nombre ilike ?", valor )
    end
   }
 

@@ -9,6 +9,10 @@ class Fuente < ActiveRecord::Base
       where("fuentes.nombre ilike ?", "%#{nombre}%" )
     end
   }
+
+  def to_label
+    nombre
+  end
 end
 
 # == Schema Information
@@ -20,14 +24,3 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
-
-# == Schema Information
-#
-# Table name: fuentes
-#
-#  id         :integer          not null, primary key
-#  nombre     :string(255)      not null
-#  created_at :datetime
-#  updated_at :datetime
-#
-

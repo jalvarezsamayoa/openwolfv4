@@ -13,7 +13,7 @@ class Tiporesolucion < ActiveRecord::Base
 
   scope :nombre_like, lambda { |nombre|
     unless nombre.nil? || nombre.empty? || nombre.first.nil?
-      where("tiporesoluciones.nombre like ?", "%#{nombre}%" )
+      where("tiposresoluciones.nombre like ?", "%#{nombre}%" )
    end
   }
 

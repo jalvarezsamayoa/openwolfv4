@@ -10,9 +10,13 @@ describe Seguimiento do
     @seguimiento.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
+  describe "completar_informacion" do
+    it "deber proveer predeterminados" do
+      @seguimiento.institucion_id = nil
+      @seguimiento.fecha_creacion = nil
+      @seguimiento.completar_informacion
+      @seguimiento.institucion_id.should_not be nil
+      @seguimiento.fecha_creacion.should_not be nil
     end
   end
 

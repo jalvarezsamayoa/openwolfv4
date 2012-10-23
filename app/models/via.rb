@@ -7,7 +7,7 @@ class Via < ActiveRecord::Base
 
   scope :nombre_like, lambda { |nombre|
     unless nombre.nil? || nombre.empty? || nombre.first.nil?
-      where("vias.nombre like ?", "%#{nombre}%" )
+      where("vias.nombre ilike ?", "%#{nombre}%" )
     end
   }
 

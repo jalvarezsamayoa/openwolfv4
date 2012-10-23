@@ -10,6 +10,12 @@ describe Motivonegativa do
     @motivonegativa.should be_valid
   end
 
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @motivonegativa.nombre.should == @motivonegativa.to_label
+    end
+  end
+
 end
 # == Schema Information
 #

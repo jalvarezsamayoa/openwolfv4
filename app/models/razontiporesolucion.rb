@@ -9,7 +9,7 @@ class Razontiporesolucion < ActiveRecord::Base
 
   scope :nombre_like, lambda { |nombre|
     unless nombre.nil? || nombre.empty? || nombre.first.nil?
-      where("razonresoluciones.nombre like ?", "%#{nombre}%" )
+      where("razonestiposresoluciones.nombre like ?", "%#{nombre}%" )
    end
   }
 

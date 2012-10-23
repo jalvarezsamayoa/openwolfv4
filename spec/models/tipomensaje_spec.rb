@@ -10,9 +10,9 @@ describe Tipomensaje do
     @tipomensaje.should be_valid
   end
 
-  describe '#metodo' do
-    it 'debe hacer algo' do
-      pending
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @tipomensaje.nombre.should == @tipomensaje.to_label
     end
   end
 

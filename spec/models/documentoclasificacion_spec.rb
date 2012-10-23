@@ -10,7 +10,19 @@ describe Documentoclasificacion do
     @documentoclasificacion.should be_valid
   end
 
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @documentoclasificacion.nombre.should == @documentoclasificacion.to_label
+    end
+  end
 
+  describe "nombre_like" do
+    it "busca registros donde el nombre coincide con el parametro" do
+      @documentoclasificacion.nombre = "ABC123"
+      @documentoclasificacion.save
+      Documentoclasificacion.nombre_like('123').should have(1).registro
+    end
+  end
 end
 # == Schema Information
 #
@@ -24,4 +36,3 @@ end
 #  created_at            :datetime
 #  updated_at            :datetime
 #
-

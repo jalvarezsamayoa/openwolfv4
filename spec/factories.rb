@@ -266,4 +266,17 @@ FactoryGirl.define do
     s.informacion_publica true
     #s.archivo File.open(Rails.root + 'spec/fixtures/documentos/documento.doc')
   end
+
+  factory :archivo do |a|
+    a.sequence(:nombre) {|f| "archivo_#{FactoryGirl.generate(:count)}"}
+    a.association :institucion
+  end
+
+  factory :nota do |t|
+    association :proceso, :factory => :solicitud
+    association :usuario
+    texto { Faker::Lorem.sentence }
+    informacion_publica true
+  end
+
 end

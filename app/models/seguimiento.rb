@@ -9,11 +9,10 @@ class Seguimiento < ActiveRecord::Base
 
   validates :textoseguimiento, :actividad_id, :institucion_id, :usuario_id, :fecha_creacion, :presence => true
 
-  private
 
   def completar_informacion
-    self.institucion_id = self.usuario.institucion_id
-    self.fecha_creacion = Date.today
+    self.institucion_id = self.usuario.institucion_id if self.institucion_id.nil?
+    self.fecha_creacion = Date.today if self.fecha_creacion.nil?
   end
 
 end

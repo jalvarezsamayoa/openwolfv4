@@ -10,7 +10,11 @@ describe Genero do
     @genero.should be_valid
   end
 
-
+  describe "to_label" do
+    it "es un alias al campo nombre" do
+      @genero.nombre.should == @genero.to_label
+    end
+  end
 end
 # == Schema Information
 #
