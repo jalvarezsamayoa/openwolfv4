@@ -437,7 +437,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   email_spec
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   faker
   fastercsv
   foreman

@@ -4,7 +4,11 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Openwolf::Laip::Estadistica do
 
-  let(:estadistica) { Openwolf::Laip::Estadistica.new( FactoryGirl.create(:institucion ) )}
+
+  def estadistica(institucion = nil)
+    institucion ||= FactoryGirl.create :institucion
+    Openwolf::Laip::Estadistica.new(institucion)
+  end
 
   describe ".new" do
     it "debe cargar una institucion" do
@@ -17,6 +21,49 @@ describe Openwolf::Laip::Estadistica do
       Institucion.any_instance.stub_chain(:solicitudes, :minimum).and_return(nil)
       estadistica.ano_minimo.should == Date.today.year
     end
+  end
+
+  describe "total_solicitudes" do
+    it "debe regresar las solcitudes activas creadas en un ano" do
+      solicitud = FactoryGirl.create :solicitud, :fecha_creacion => Date.today
+      estadistica(solicitud.institucion).total_solicitudes(Date.today.year).should == 1
+    end
+  end
+
+  describe "solicitudes_por_estado" do
+    it "debe regresar las solicitudes creadas en un ano agrupadas por estado" do
+      institucion = FactoryGirl.create(:institucion)
+
+      Estado.all.each do |estado|
+        FactoryGirl.create(:solicitud, :institucion => institucion, :estado_id => estado.id)
+      end
+
+      estadistica(institucion).solicitudes_por_estado(Date.today.year).size.should have(Estado.count).items
+    end
+  end
+
+  describe "solicitudes_por_via_solicitud" do
+    pending
+  end
+
+  describe "solicitudes_por_ano" do
+    pending
+  end
+
+  describe "solicitudes_por_mes_ano" do
+    pending
+  end
+
+  describe "solicitudes_por_mes_ano" do
+    pending
+  end
+
+  describe "tiempo_respuesta_promedio" do
+    pending
+  end
+
+  describe "solicitudes_por_genero_ano" do
+    pending
   end
 
   # def setup_defaults

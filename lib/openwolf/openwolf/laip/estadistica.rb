@@ -5,7 +5,7 @@ module Openwolf
       attr_reader :institucion
 
       def initialize(institucion)
-        @institucion = ( institucion ||= Institucion.new )
+        @institucion = institucion
       end
 
       ######################################
@@ -23,8 +23,10 @@ module Openwolf
       end
 
       def solicitudes_por_estado(ano = Date.today.year)
-        estados = Estado.select('estados.nombre, count(solicitudes.estado_id) as total_solicitudes').joins(:solicitudes).where("solicitudes.anulada = ? and solicitudes.institucion_id = ? and extract(year from solicitudes.fecha_creacion) = ?",false,institucion.id,ano).group('estados.nombre')
-        return estados
+        Estado.select('estados.nombre, count(solicitudes.estado_id) as total_solicitudes')
+        .joins(:solicitudes)
+        .where("solicitudes.anulada = ? and solicitudes.institucion_id = ? and extract(year from solicitudes.fecha_creacion) = ?",false, @institucion.id, ano)
+        .group('estados.nombre')
       end
 
       def solicitudes_por_via_solicitud(ano = Date.today.year)

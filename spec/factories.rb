@@ -190,44 +190,45 @@ FactoryGirl.define do
     fuente.sequence(:nombre) {|fuente| "fuente_#{FactoryGirl.generate(:count)}"}
   end
 
-  factory :solicitud do |s|
-    s.association :usuario
-    s.sequence(:codigo) {|n| "solicitud_#{FactoryGirl.generate(:count)}"}
-    s.association :institucion
-    s.association :via
-    s.fecha_creacion Date.today
-    s.fecha_programada Date.today + 10
-    s.fecha_entregada nil
-    s.fecha_resolucion nil
-    s.fecha_prorroga nil
-    s.fecha_completada nil
-    s.solicitante_nombre { Faker::Name.name }
-    s.solicitante_identificacion 'XXX-123456'
-    s.solicitante_direccion { Faker::Address.street_address }
-    s.solicitante_telefonos { Faker::PhoneNumber.phone_number }
-    s.solicitante_institucion 'Nombre Institucion'
-    s.association :departamento
-    s.association :municipio
-    s.email { Faker::Internet.email }
-    s.forma_entrega 'Escrita'
-    s.observaciones { Faker::Lorem.sentence }
-    s.ubicacion_url nil
-    s.estado_id Solicitud::ESTADO_NORMAL
-    s.textosolicitud { Faker::Lorem.sentence }
-    s.asignada false
-    s.ano Date.today.year
-    s.sequence(:numero) {|n| FactoryGirl.generate(:count) }
-    s.association :profesion
-    s.association :genero
-    s.association :rangoedad
-    s.association :clasificacion
-    s.dias_respuesta nil
-    s.dias_prorroga nil
-    s.motivonegativa_id nil
-    s.motivoprorroga_id nil
-    s.informacion_publica true
-    s.origen_id Solicitud::ORIGEN_DEFAULT
-    s.association :documentoclasificacion
+  factory :solicitud do
+    usuario { |instance| FactoryGirl.create(:usuario, :institucion => instance.institucion )}
+    sequence(:codigo) {|n| "solicitud_#{FactoryGirl.generate(:count)}"}
+    institucion
+    via
+    fecha_creacion Date.today
+    fecha_programada Date.today + 10
+    fecha_entregada nil
+    fecha_resolucion nil
+    fecha_prorroga nil
+    fecha_completada nil
+    solicitante_nombre { Faker::Name.name }
+    solicitante_identificacion 'XXX-123456'
+    solicitante_direccion { Faker::Address::street_address }
+    solicitante_telefonos { Faker::PhoneNumber.phone_number }
+    solicitante_institucion 'Nombre Institucion'
+    departamento
+    municipio
+    email { Faker::Internet.email }
+    forma_entrega 'Escrita'
+    observaciones { Faker::Lorem.sentence }
+    ubicacion_url nil
+    estado_id Solicitud::ESTADO_NORMAL
+    textosolicitud { Faker::Lorem.sentence }
+    asignada false
+    ano Date.today.year
+    sequence(:numero) {|n| FactoryGirl.generate(:count) }
+    profesion
+    genero
+    rangoedad
+    clasificacion
+    dias_respuesta nil
+    dias_prorroga nil
+    motivonegativa_id nil
+    motivoprorroga_id nil
+    informacion_publica true
+    origen_id Solicitud::ORIGEN_DEFAULT
+    documentoclasificacion
+    anulada false
   end
 
   factory :tipomensaje do |tm|

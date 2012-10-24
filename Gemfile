@@ -37,7 +37,7 @@ gem 'jquery-rails' #jquery para rails, remplaza prototype y scriptaculous
 gem 'paperclip' # modulo para hacer upload a archivos
 gem 'galetahub-simple_captcha', :require => 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
 gem "crummy", "~> 1.6.0" # manejo de breadcrumbs
-gem 'client_side_validations' #validacion javascript para forms
+gem 'client_side_validations' #validacion javascript para ffacforms
 gem 'remotipart', :git => "git://github.com/JangoSteve/remotipart.git" # upload con ajax
 
 # INDEXAMIENTO
@@ -125,7 +125,7 @@ group  :test do
 
 
   gem "capybara"
-  gem "factory_girl_rails"
+  gem "factory_girl_rails", "~> 4.0"
   gem "launchy"
 
   gem 'rb-inotify'
