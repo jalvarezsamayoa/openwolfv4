@@ -30,30 +30,62 @@ module Openwolf
       end
 
       def solicitudes_por_via_solicitud(ano = Date.today.year)
-        estados = Via.select('vias.nombre, count(solicitudes.via_id) as total_solicitudes').joins(:solicitudes).where("solicitudes.anulada = ? and solicitudes.institucion_id = ? and extract(year from solicitudes.fecha_creacion) = ?",false,institucion.id,ano).group('vias.nombre')
-        return estados
+        Via.select('vias.nombre, count(solicitudes.via_id) as total_solicitudes')
+        .joins(:solicitudes)
+        .where("solicitudes.anulada = ? and solicitudes.institucion_id = ? and extract(year from solicitudes.fecha_creacion) = ?",false,institucion.id,ano)
+        .group('vias.nombre')
       end
 
 
 
       def solicitudes_por_ano
-        solicitudes =  Solicitud.find_by_sql("select extract(year from solicitudes.fecha_creacion) as ano,  count(solicitudes.id) as total_solicitudes, avg(solicitudes.tiempo_respuesta) as promedio_dias_respuesta  from solicitudes where institucion_id = #{institucion.id} and anulada = #{false} and solicitudes.fecha_completada is not null group by extract(year from solicitudes.fecha_creacion) order by extract(year from solicitudes.fecha_creacion) asc")
-
-        return solicitudes
+        ::Solicitud.find_by_sql("select extract(year from solicitudes.fecha_creacion) as ano,  \
+          count(solicitudes.id) as total_solicitudes, \
+          avg(solicitudes.tiempo_respuesta) as promedio_dias_respuesta  \
+          from solicitudes \
+          where institucion_id = #{institucion.id} \
+          and anulada = #{false} \
+          and solicitudes.fecha_completada is not null \
+          group by extract(year from solicitudes.fecha_creacion) \
+          order by extract(year from solicitudes.fecha_creacion) asc")
       end
 
       def solicitudes_por_mes_ano
-        solicitudes =  Solicitud.find_by_sql("select extract(year from solicitudes.fecha_creacion) as ano, extract(month from solicitudes.fecha_creacion) as mes,  count(solicitudes.id) as total_solicitudes, avg(solicitudes.tiempo_respuesta) as promedio_dias_respuesta from solicitudes where institucion_id = #{institucion.id} and anulada = #{false} and solicitudes.fecha_completada is not null group by extract(year from solicitudes.fecha_creacion), extract(month from solicitudes.fecha_creacion) order by extract(year from solicitudes.fecha_creacion) asc, extract(month from solicitudes.fecha_creacion) asc")
-        return solicitudes
+        ::Solicitud.find_by_sql("select extract(year from solicitudes.fecha_creacion) as ano, \
+          extract(month from solicitudes.fecha_creacion) as mes,  \
+          count(solicitudes.id) as total_solicitudes, \
+          avg(solicitudes.tiempo_respuesta) as promedio_dias_respuesta \
+          from solicitudes \
+          where institucion_id = #{institucion.id} \
+          and anulada = #{false} \
+          and solicitudes.fecha_completada is not null \
+          group by extract(year from solicitudes.fecha_creacion), \
+          extract(month from solicitudes.fecha_creacion) \
+          order by extract(year from solicitudes.fecha_creacion) asc, \
+          extract(month from solicitudes.fecha_creacion) asc")
       end
 
       def tiempo_respuesta_promedio(ano = Date.today.year)
-        tiempo = Solicitud.find_by_sql("select avg(solicitudes.tiempo_respuesta) as promedio from solicitudes where solicitudes.institucion_id = #{institucion.id} and anulada = #{false} and solicitudes.fecha_completada is not null and extract(year from solicitudes.fecha_creacion) = #{ano}")
+        tiempo = ::Solicitud.find_by_sql("select avg(solicitudes.tiempo_respuesta) as promedio \
+          from solicitudes \
+          where solicitudes.institucion_id = #{institucion.id} \
+          and anulada = #{false} \
+          and solicitudes.fecha_completada is not null \
+          and extract(year from solicitudes.fecha_creacion) = #{ano}")
         return tiempo[0].promedio.to_f.round()
       end
 
       def solicitudes_por_genero_ano
-        solicitudes = Solicitud.find_by_sql("select genero_id, extract(year from solicitudes.fecha_creacion) as ano,  count(solicitudes.id) as total_solicitudes from solicitudes where institucion_id = #{institucion.id} and anulada = #{false}  group by genero_id, extract(year from solicitudes.fecha_creacion)  order by genero_id, extract(year from solicitudes.fecha_creacion) desc")
+        ::Solicitud.find_by_sql("select genero_id, \
+          extract(year from solicitudes.fecha_creacion) as ano,  \
+          count(solicitudes.id) as total_solicitudes \
+          from solicitudes \
+          where institucion_id = #{institucion.id} \
+          and anulada = #{false}  \
+          group by genero_id, \
+          extract(year from solicitudes.fecha_creacion)  \
+          order by genero_id, \
+          extract(year from solicitudes.fecha_creacion) desc")
       end
     end
   end

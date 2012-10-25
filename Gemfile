@@ -83,7 +83,6 @@ group :assets do
   gem 'twitter-bootstrap-rails',  :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
 
-
 group :development, :test do
   gem 'highline'
   gem 'pry'
@@ -110,6 +109,7 @@ group :development, :test do
 
   # DEPLOYMENT
   gem 'capistrano' # herramienta para hacer deployment de la aplicacion
+
 end
 
 

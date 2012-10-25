@@ -1,0 +1,11 @@
+---
+generos_001:
+  id: '2'
+  nombre: Femenino
+  created_at: '2010-11-17 19:05:42'
+  updated_at: '2010-11-17 19:05:42'
+generos_002:
+  id: '1'
+  nombre: Masculino
+  created_at: '2010-11-17 19:05:42'
+  updated_at: '2010-11-17 19:05:42'

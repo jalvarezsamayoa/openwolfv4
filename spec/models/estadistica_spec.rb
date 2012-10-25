@@ -43,27 +43,83 @@ describe Openwolf::Laip::Estadistica do
   end
 
   describe "solicitudes_por_via_solicitud" do
-    pending
+    it "debe regresar la solcitudes creadas en un ano agrupadas por via de solicitud" do
+      institucion = FactoryGirl.create(:institucion)
+
+      Via.all.each { |via|
+        FactoryGirl.create(:solicitud, :institucion => institucion, :via => via)
+      }
+
+      estadistica(institucion).
+        solicitudes_por_via_solicitud(Date.today.year).
+        size.should have(Via.count).items
+    end
   end
 
   describe "solicitudes_por_ano" do
-    pending
+    it "regresa total de solicitudes completadas con dias promedio de entrega agrupadas por ano" do
+      institucion = FactoryGirl.create(:institucion)
+
+      FactoryGirl.create(:solicitud, :institucion => institucion, \
+                         :fecha_completada => Date.today, :tiempo_respuesta => 1)
+
+      FactoryGirl.create(:solicitud, :institucion => institucion, \
+                         :fecha_creacion => Date.today - 1.year, \
+                         :fecha_completada => Date.today - 1.year, \
+                         :tiempo_respuesta => 1)
+
+      estadistica(institucion).
+        solicitudes_por_ano.
+        size.should == 2
+    end
   end
 
   describe "solicitudes_por_mes_ano" do
-    pending
-  end
+    it "regresa total de solicitudes y tiempo respuesta agrupadas por mes y ano" do
+      institucion = FactoryGirl.create(:institucion)
 
-  describe "solicitudes_por_mes_ano" do
-    pending
+      FactoryGirl.create(:solicitud, :institucion => institucion, \
+                         :fecha_completada => Date.today, :tiempo_respuesta => 1)
+
+      FactoryGirl.create(:solicitud, :institucion => institucion, \
+                         :fecha_creacion => Date.today - 1.month, \
+                         :fecha_completada => Date.today - 1.month, \
+                         :tiempo_respuesta => 1)
+
+      estadistica(institucion).
+        solicitudes_por_mes_ano.
+        size.should == 2
+
+    end
   end
 
   describe "tiempo_respuesta_promedio" do
-    pending
+    it "regresa el tiempo promedio de respuesta de solicitudes creadas en ano" do
+      institucion = FactoryGirl.create(:institucion)
+
+      FactoryGirl.create(:solicitud, :institucion => institucion, \
+                         :fecha_completada => Date.today, :tiempo_respuesta => 1)
+
+      estadistica(institucion).
+        tiempo_respuesta_promedio(Date.today.year).should == 1.0
+    end
   end
 
   describe "solicitudes_por_genero_ano" do
-    pending
+    fixtures :generos
+    it "regresa total de solicitudes creadas agrupadas por genero y ano" do
+      institucion = FactoryGirl.create(:institucion)
+
+      Genero.all.each { |g|
+        FactoryGirl.create(:solicitud,
+                           :institucion => institucion, \
+                           :genero => g)
+      }
+
+      estadistica(institucion).
+        solicitudes_por_genero_ano.size.should == 2
+
+    end
   end
 
   # def setup_defaults

@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"ins",
+				"institucion"
+			],
+			[
+				"soli",
+				"solicitudes"
+			],
+			[
+				"solici",
+				"solicitudes_por_estado"
+			],
+			[
+				"facto",
+				"FactoryGirl"
+			],
+			[
+				"fa",
+				"FactoryGirl"
+			],
+			[
 				"in",
 				"institucion_id"
 			],
@@ -50,10 +70,6 @@
 			[
 				"motivo",
 				"motivonegativa_id"
-			],
-			[
-				"soli",
-				"solicitante_identificacion"
 			],
 			[
 				"fech",
@@ -219,6 +235,49 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "lib/openwolf/openwolf/laip/estadistica.rb",
+			"settings":
+			{
+				"buffer_size": 3448,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/factories.rb",
+			"settings":
+			{
+				"buffer_size": 8958,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "# -*- coding: utf-8 -*-\nclass Solicitud < ActiveRecord::Base\n  require 'csv'\n  include PgSearch\n  include Openwolf::Laip::Solicitud\n\n\n  attr_accessor :dont_send_email\n  attr_accessor :dont_set_estado\n\n  attr_accessible :solicitante_nombre, :email, :textosolicitud, :reserva_temporal, \\\n    :genero_id, :idioma_id, :captcha, :origen_id, :institucion_id, \\\n    :solicitante_telefonos, :captcha_key, :fecha_creacion, :via_id, \\\n    :forma_entrega, :solicitante_identificacion, :solicitante_direccion, \\\n    :departamento_id, :municipio_id, :rangoedad_id, :clasificacion_id, \\\n    :profesion_id, :observaciones\n\n  #####################\n  # Modulos y Plugins\n  #####################\n\n  #versioned :if => :guardar_version?\n\napply_simple_captcha\n\n\n  #--------------------------------\n  # Configuracion indexamiento pg_search\n  #--------------------------------\n\n  pg_search_scope(:text_search,\n                  :against => [:codigo, :solicitante_nombre, :textosolicitud],\n                  :using => [:tsearch])\n\n\n  ##################\n  # Callbacks\n  # http://apidock.com/rails/v2.3.8/ActiveRecord/Callback\n  ##################\n\n  #after_initialize :cargar_predeterminados\n  before_validation :cleanup\n  before_validation(:on => :create) do\n    cargar_predeterminados\n    completar_informacion\n  end\n  after_create :notificar_creacion\n\n  #################\n  # Relaciones\n  #################\n\n\n  belongs_to :institucion\n  belongs_to :usuario\n  belongs_to :municipio\n  belongs_to :departamento\n  belongs_to :via\n  belongs_to :estado\n  belongs_to :profesion\n  belongs_to :genero\n  belongs_to :rangoedad\n  belongs_to :clasificacion\n  belongs_to :motivonegativa\n  belongs_to :motivoprorroga\n  belongs_to :documentoclasificacion\n  belongs_to :idioma\n\n  has_many :actividades, :dependent => :destroy\n  has_many :seguimientos, :through => :actividades\n\n  has_many :adjuntos, :as => :proceso, :dependent => :destroy\n  has_many :notas, :as => :proceso, :dependent => :destroy\n  has_many :resoluciones, :dependent => :destroy\n  has_many :recursosrevision, :dependent => :destroy\n\n  has_many :enlaces, :through => :actividades, :uniq => true, :source => :usuario\n\n  #######################\n  # Validaciones\n  ######################\n\n  validates_presence_of :fecha_creacion, :solicitante_nombre, :textosolicitud, :institucion_id\n  validates_presence_of :solicitante_telefonos, :if => Proc.new{ |s| (s.origen_id == ORIGEN_PORTAL ? true : false) }\n\n  validates_presence_of :email, :if => Proc.new{ |s| (s.origen_id == ORIGEN_PORTAL ? true : false) }\n  validates_format_of :email, :with => /\\A([^@\\s]+)@((?:[-a-z0-9]+\\.)+[a-z]{2,})\\Z/i, :unless => Proc.new{ |s| s.email.nil? or s.email.empty? }, :message => \"Correo electrónico no es válido.\"\n\n\n  validates_associated :estado\n\n  ########################\n  # Filtros\n  ########################\n  default_scope :include => [:usuario, :institucion, :via, :estado]\n\n  scope :activas, where(\"solicitudes.anulada = ?\", false)\n  scope :anuladas, where(\"solicitudes.anulada = ?\", true)\n\n  #  scope :asignadas, :conditions=>[\"solicitudes.asignada = ?\", true ]\n  scope :asignadas, where(\"solicitudes.asignada = ?\", true )\n  scope :noasignadas, where(\"solicitudes.asignada = ?\", false)\n\n  scope :completadas, where(\"solicitudes.fecha_completada is not null\")\n  scope :nocompletadas, where(\"solicitudes.fecha_completada is null\")\n\n  scope :sinresolucion, where(\"solicitudes.fecha_resolucion is null\")\n  scope :conresolucion, where(\"solicitudes.fecha_resolucion is not null\")\n\n  scope :sinresolucionfinal, where(\"(solicitudes.fecha_resolucion is null) or (solicitudes.fecha_resolucion is not null and estados.final = ?)\",false )\n  scope :conresolucionfinal, where(\"(solicitudes.fecha_resolucion is not null) and (estados.final = ?)\", true )\n\n\n  scope :entregadas, where(\"solicitudes.fecha_entregada is not null\")\n  scope :noentregadas, where(\"solicitudes.fecha_entregada is null\")\n\n  scope :recientes, :order => \"fecha_creacion desc\"\n  scope :correlativo, :order => \"ano desc, numero desc\"\n\n  scope :creadas_en_ano, lambda {|ano| where( \"date_part(\\'year\\',fecha_creacion) = ?\",ano) }\n\n  scope :tiempoejecucion, lambda { |tiempo_desde, tiempo_hasta| {\n      :conditions => [\"(((fecha_programada - ?)*100)/10) between ? and ?\",Date.today, tiempo_desde, tiempo_hasta]\n  }}\n\n  scope :tiempo_transcurrido, lambda { |tiempo_desde, tiempo_hasta| {\n      :conditions => [\"(current_date - fecha_creacion) between ? and ?\",tiempo_desde, tiempo_hasta]\n  }}\n\n  scope :tiempo_restante, lambda { |tiempo_desde, tiempo_hasta| {\n      :conditions => [\"(fecha_programada - current_date) between ? and ?\",tiempo_desde, tiempo_hasta]\n  }}\n\n  scope :ingresadas, lambda { |desde, hasta| {\n      :conditions => [\"solicitudes.fecha_creacion between ? and ?\",desde, hasta]\n  }}\n\n\n\nend\n\n# == Schema Information\n#\n# Table name: solicitudes\n#\n#  id                          :integer          not null, primary key\n#  usuario_id                  :integer          not null\n#  codigo                      :string(255)      default(\"XXXXX-999999-9999\"), not null\n#  institucion_id              :integer          not null\n#  tiposolicitud_id            :integer          default(1)\n#  via_id                      :integer          default(1), not null\n#  fecha_creacion              :date\n#  fecha_programada            :date\n#  fecha_entregada             :date\n#  fecha_resolucion            :date\n#  fecha_prorroga              :date\n#  fecha_completada            :date\n#  solicitante_nombre          :string(255)      not null\n#  solicitante_identificacion  :string(255)\n#  solicitante_direccion       :string(255)\n#  solicitante_telefonos       :string(255)\n#  solicitante_institucion     :string(255)\n#  departamento_id             :integer\n#  municipio_id                :integer\n#  email                       :string(255)\n#  forma_entrega               :string(255)\n#  observaciones               :text\n#  ubicacion_url               :string(255)\n#  estado_id                   :integer          default(1)\n#  created_at                  :datetime\n#  updated_at                  :datetime\n#  textosolicitud              :text\n#  asignada                    :boolean\n#  ano                         :integer          not null\n#  numero                      :integer          not null\n#  profesion_id                :integer\n#  genero_id                   :integer\n#  rangoedad_id                :integer\n#  clasificacion_id            :integer\n#  dias_respuesta              :integer\n#  dias_prorroga               :integer\n#  motivonegativa_id           :integer\n#  motivoprorroga_id           :integer\n#  informacion_publica         :boolean          default(TRUE), not null\n#  origen_id                   :integer          default(1)\n#  documentoclasificacion_id   :integer          default(1)\n#  idioma_id                   :integer          default(12), not null\n#  anulada                     :boolean          default(FALSE)\n#  tiempo_respuesta            :integer          default(0)\n#  tiempo_respuesta_calendario :integer          default(0)\n#  reserva_temporal            :boolean          default(FALSE)\n#\n",
+			"file": "app/models/solicitud.rb",
+			"file_size": 7115,
+			"file_write_time": 1350914674000000,
+			"settings":
+			{
+				"buffer_size": 7111,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/models/estado_spec.rb",
+			"settings":
+			{
+				"buffer_size": 758,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/models/estadistica_spec.rb",
+			"settings":
+			{
+				"buffer_size": 4248,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -388,6 +447,8 @@
 	},
 	"file_history":
 	[
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/solicitud.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Gemfile",
 		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/spec/controllers/estadisticas_controller_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/sentidoresolucion_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/tiporesolucion_spec.rb",
@@ -430,7 +491,6 @@
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/spec_helper.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/puesto.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/environments/test.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/solicitud.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/estadistica_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/institucion_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/estadistica.rb",
@@ -443,7 +503,6 @@
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/documento_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/archivo/documento.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/feriado.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Gemfile",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/actividad_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/core/feriado.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf.rb",
@@ -558,6 +617,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"@institucion",
+			"institucion",
+			"association :",
+			"s.",
+			"solicitud",
 			"Profesion",
 			"profesion",
 			"tipomensaje",
@@ -680,12 +744,7 @@
 			"clasificacions",
 			"razonestiposresoluciones_path",
 			"Razón",
-			"razontiporesolucions",
-			"tiporesolucions",
-			"nombre",
-			"Estados",
-			"institucions",
-			"Usuario"
+			"razontiporesolucions"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -693,6 +752,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"via",
 			"departamento",
 			"clasificacion",
@@ -781,13 +841,165 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "lib/openwolf/openwolf/laip/estadistica.rb",
+					"settings":
+					{
+						"buffer_size": 3448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								610,
+								610
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "spec/factories.rb",
+					"settings":
+					{
+						"buffer_size": 8958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6379,
+								6379
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2540.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/solicitud.rb",
+					"settings":
+					{
+						"buffer_size": 7111,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								738,
+								738
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GBK",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 3,
+					"file": "spec/models/estado_spec.rb",
+					"settings":
+					{
+						"buffer_size": 758,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"clone_numbers": 1,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "spec/models/estadistica_spec.rb",
+					"settings":
+					{
+						"buffer_size": 4248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1369,
+								1369
+							]
+						],
+						"settings":
+						{
+							"check_times": 0,
+							"clone_numbers": 1,
+							"in_converting": true,
+							"origin_encoding": "EUC-JP",
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 31.0,
+						"translation.y": 182.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -848,6 +1060,30 @@
 		"selected_items":
 		[
 			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"laipsoli",
+				"lib/openwolf/openwolf/laip/solicitud.rb"
+			],
+			[
+				"solici",
+				"app/models/solicitud.rb"
+			],
+			[
+				"fac",
+				"spec/factories.rb"
+			],
+			[
+				"estadistica",
+				"lib/openwolf/openwolf/laip/estadistica.rb"
+			],
+			[
+				"esta",
+				"spec/models/estadistica_spec.rb"
+			],
+			[
 				"nota",
 				"app/models/nota.rb"
 			],
@@ -894,10 +1130,6 @@
 			[
 				"notaspe",
 				"spec/models/nota_spec.rb"
-			],
-			[
-				"fac",
-				"spec/factories.rb"
 			],
 			[
 				"notasp",
@@ -992,10 +1224,6 @@
 				"spec/models/puesto_spec.rb"
 			],
 			[
-				"estadistica",
-				"lib/openwolf/openwolf/laip/estadistica.rb"
-			],
-			[
 				"libsoli",
 				"lib/openwolf/openwolf/laip/solicitud.rb"
 			],
@@ -1006,14 +1234,6 @@
 			[
 				"ins",
 				"app/models/institucion.rb"
-			],
-			[
-				"solici",
-				"app/models/solicitud.rb"
-			],
-			[
-				"laipsoli",
-				"lib/openwolf/openwolf/laip/solicitud.rb"
 			],
 			[
 				"inst",
@@ -1042,10 +1262,6 @@
 			[
 				"archivodocu",
 				"lib/openwolf/openwolf/archivo/documento.rb"
-			],
-			[
-				"gem",
-				"Gemfile"
 			],
 			[
 				"departa",
@@ -1354,10 +1570,6 @@
 			[
 				"activinew.j",
 				"app/views/laip/actividades/new.js.erb"
-			],
-			[
-				"usuario.",
-				"app/models/usuario.rb"
 			]
 		],
 		"width": 0.0
