@@ -1,0 +1,1627 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"institucion_id"
+			],
+			[
+				"nombre",
+				"nombre_completo"
+			],
+			[
+				"des",
+				"des	describe (String)"
+			],
+			[
+				"puede",
+				"puede_borrar"
+			],
+			[
+				"info",
+				"informacion_publica"
+			],
+			[
+				"insti",
+				"instituciones"
+			],
+			[
+				"nam",
+				"namespace"
+			],
+			[
+				"moti",
+				"motivoprorroga_id"
+			],
+			[
+				"motivo",
+				"motivonegativa_id"
+			],
+			[
+				"soli",
+				"solicitante_identificacion"
+			],
+			[
+				"fech",
+				"fecha_creacion"
+			],
+			[
+				"con",
+				"content_tag"
+			],
+			[
+				"usua",
+				"usuario_id"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"j",
+				"jqready	jquery-document-ready"
+			],
+			[
+				"en",
+				"entregadas"
+			],
+			[
+				"penre",
+				"pendresolucion"
+			],
+			[
+				"widget",
+				"widget_actions"
+			],
+			[
+				"ass",
+				"association"
+			],
+			[
+				"documen",
+				"documentocategoria_id"
+			],
+			[
+				"actua",
+				"actualiza_fecha_notificacion"
+			],
+			[
+				"es",
+				"estado_id"
+			],
+			[
+				"td",
+				"td	text-decoration: line-through"
+			],
+			[
+				"t",
+				"td	text-decoration: overline"
+			],
+			[
+				"contain",
+				"container-fluid"
+			],
+			[
+				"dep",
+				"departamento_id"
+			],
+			[
+				"has",
+				"has_role"
+			],
+			[
+				"f",
+				"fw	font-weight"
+			],
+			[
+				"para",
+				"params"
+			],
+			[
+				"solic",
+				"Solicitudes"
+			],
+			[
+				"da",
+				"portal-dark-gray"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"light",
+				"light-blue"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"do",
+				"dob	Insert do |variable| … end"
+			],
+			[
+				"service",
+				"service_images"
+			],
+			[
+				"curren",
+				"current_region"
+			],
+			[
+				"cu",
+				"current_category"
+			],
+			[
+				"cur",
+				"current_region"
+			],
+			[
+				"in_ca",
+				"in_category_region"
+			],
+			[
+				"region",
+				"region_id"
+			],
+			[
+				"categor",
+				"category_id"
+			],
+			[
+				"cla",
+				"cla	class .. end"
+			],
+			[
+				"intens",
+				"intensity-levels"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"b",
+				"b	border: all"
+			],
+			[
+				"home",
+				"homepage"
+			],
+			[
+				"base",
+				"base-green"
+			],
+			[
+				"sc",
+				"scroll"
+			],
+			[
+				"servi",
+				"service_image"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "spec/models/recursorevision_spec.rb",
+			"settings":
+			{
+				"buffer_size": 1852,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/recursorevision.rb",
+			"settings":
+			{
+				"buffer_size": 1408,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"BeautifyRuby"
+			],
+			[
+				"set ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"setrs",
+				"Set Syntax: RSpec"
+			],
+			[
+				"be",
+				"BeautifyRuby"
+			],
+			[
+				"setru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"rspe",
+				"Snippet: Require spec_helper"
+			],
+			[
+				"rspec",
+				"Set Syntax: RSpec"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: j	",
+				"Snippet: jquery-document-ready"
+			],
+			[
+				"Snippet: jrea",
+				"Snippet: jquery-document-ready"
+			],
+			[
+				"b",
+				"BeautifyRuby"
+			],
+			[
+				"Snippet: div",
+				"Snippet: div"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"bea",
+				"BeautifyRuby"
+			],
+			[
+				"beau",
+				"BeautifyRuby"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"dele",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"delete",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"de",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"del",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"bra",
+				"Bracket Highlighter: Match Brackets"
+			],
+			[
+				"TRA",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"DEL",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"REIN",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"beu",
+				"BeautifyRuby"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"disco",
+				"Package Control: Discover Packages"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"refres",
+				"Preferences: Browse Packages"
+			],
+			[
+				"sass",
+				"Set Syntax: CSS"
+			],
+			[
+				"rails",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"paca",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/usuario.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/initializers/referential_integrity.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/puesto_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/puesto.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/usuario_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/spec_helper.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/script/rails",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Gemfile",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/.gitignore",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/solicitud.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/seguimiento.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/recursorevision.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/resolucion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/seguimiento_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/municipio_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/razontiporesolucion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/factories.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/actividad.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/adjunto.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/via_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/application.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Guardfile",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/clasificacion.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/clasificacion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/documentocategoria_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/documentoclasificacion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/estado_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/feriado_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/fuente_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/genero_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/idioma_spec.rb",
+		"/home/javier/Projects/OpenWolf/openwolf_v3/spec/models/clasificacion_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/busqueda_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/archivo_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/archivo.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/actividad.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/adjunto_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/actividad_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/spec/models/actividad_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/initializers/client_side_validations.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/adjuntos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/create.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_adjuntos.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_adjunto.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/actividades_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/javascripts/application.js",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/create.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/ability.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Procfile",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/institucion.rb",
+		"/home/javier/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/javier/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/javier/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/javier/.config/sublime-text-2/Packages/User/utf8.sublime-snippet",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/new.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_actividad.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/_new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/seguimientos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_asignadas_no_completadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/general.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/new.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/tasks/openwolf.rake",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/archivo/documentos_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/deploy/production.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/environments/production.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/busqueda.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/estadisticas/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/javascripts/solicitudes.js.coffee",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/tiny_mce.yml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/deploy.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/deploy/staging.rb",
+		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/config/deploy.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/seguimientos/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_actividad_seguimientos.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/helpers/solicitudes_helper.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_mis_actividades.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/main/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/main_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/laip/solicitudes_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/index.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/show.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/adjuntos/new.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_entramite.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_noasignadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/routes.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/actualizar_usuarios.js.erb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/helpers/application_helper.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/edit.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_opciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/new.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/application_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/solicitudes/show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/app/views/solicitudes/_opciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/mailers/notificaciones.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_asignaciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/javascripts/jquery.validate.js",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/solicitud_informacion/_form.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_show.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_asignaciones.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_entregadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_anuladas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/locales/en.yml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_terminadas.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_pendientesresolucion.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/_tab.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/solicitudes/refresh_tab.js.erb",
+		"/home/javier/.config/sublime-text-2/Packages/User/jquery-document-ready.sublime-snippet",
+		"/home/javier/.config/sublime-text-2/Packages/User/attribute_asseccible.sublime-snippet",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/application.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/_widget.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/vendor/assets/stylesheets/slate-reports.css.scss",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/application.css",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/solicitud.pdf.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/portal_controller.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/layouts/print.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/solicitud.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/portal/_asignaciones.pdf.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/reportes/solicitudes_csv.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/shared/widget.html.haml",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/admin/usuarios_controller.rb"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/feriados",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/profesiones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/archivos",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentocategorias",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/documentoclasificaciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/razonestiposresoluciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/tiposresoluciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/roles",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/estados",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/vias",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/fuentes",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/instituciones",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/idiomas",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/municipios",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/departamentos",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/admin/usuarios",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views",
+			"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4",
+			"/home/javier/Documents/Projects/OpenWolf/openwolf_v3"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			":seguimiento",
+			"tiporesolucion",
+			"tiporesolu",
+			"Factory.",
+			"Factory",
+			"FactoryGirl.next",
+			"FactoryGirl.define",
+			"Factory",
+			"asignaciones",
+			"actividad",
+			"ctrl+shift+u",
+			"ctrl+shift+c",
+			"encodi",
+			"tiempo_respuesta_prom",
+			"cargar_pre",
+			"tiempo_respuesta_promedio",
+			"tiempo_respuesta",
+			"fecha",
+			"fecha_creacion",
+			"cargar_pre",
+			"fecha_creacion",
+			"uses_tiny",
+			"save(false)",
+			"rever",
+			"informacion",
+			"solicitud.",
+			"show",
+			"newseguimiento",
+			"solicitud.",
+			"nstitucion_id",
+			"(.",
+			"solicitud",
+			"dias_re",
+			"newadjunto",
+			"def show",
+			"#newactividad",
+			"actividades",
+			"actividad:",
+			"actividad",
+			"new_actividad",
+			"fecha_entre",
+			"dias_re",
+			"nivel",
+			"solicitante_nombre",
+			"solicitante_nom",
+			"laip_menu",
+			"importar_index",
+			"admin_admin",
+			"feriados_path",
+			"feriado_path",
+			"ctrl+alt+s",
+			"profesiones_path",
+			"profesion_path",
+			"archivos_path",
+			"archivo_path",
+			"documentocategorias_path",
+			"documentocategoria_path",
+			"documentoclasificaciones_path",
+			"documentoclasificacion_path",
+			"razonestiposresoluciones_path",
+			"razonestiporesoluciones_path",
+			"razontiporesolucion_path",
+			"tiposresoluciones_path",
+			"tiporesolucion_path",
+			"roles_path",
+			"role_path",
+			"estados_path",
+			"estado_path",
+			"vias_path",
+			"via_path",
+			"fuentes_path",
+			"fuente_path",
+			"instituciones_path",
+			"institucion_path",
+			"admin_admin",
+			"idiomas_path",
+			"idioma_path",
+			"municipios_path",
+			"municipio_path",
+			"departamentos_path",
+			"departamento_path",
+			"usuarios_path",
+			"usuario_path",
+			"busquedas",
+			"busque",
+			"profesions",
+			"archivos_path",
+			"Archivos",
+			"razonestiposresoluciones_path",
+			"documentocate",
+			"documentocla",
+			"documentoclasificacions",
+			"razonestiposresoluciones_path",
+			"clasificacions",
+			"razonestiposresoluciones_path",
+			"Razón",
+			"razontiporesolucions",
+			"tiporesolucions",
+			"nombre",
+			"Estados",
+			"institucions",
+			"Usuario",
+			"../font/",
+			"radius",
+			"position:",
+			"../themes/slate/",
+			"../img/",
+			"Departamentos",
+			".table.table",
+			"%table",
+			"close_fil",
+			"form_cla",
+			"form",
+			"- simple_",
+			"3-",
+			"- form",
+			"btn negative",
+			"btn positive",
+			"negative",
+			"positive",
+			"dash",
+			".minimalist-b",
+			"close",
+			"usuarios",
+			"defaults.js",
+			"default.js",
+			"../images/",
+			"pdfkit"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"FactoryGirl.",
+			"FactoryGirl.generate",
+			"factory",
+			"FactoryGirl",
+			"adjuntos",
+			"adjunto",
+			"solicitudes.fecha_creacion",
+			"save(validate: false)",
+			"\nactividad.solicitud.\nactividad.solicitud.",
+			"\n\nactividad.solicitud.",
+			"admin_importar_index",
+			"admin",
+			"admin_feriados_path",
+			"admin_feriado_path",
+			"admin_profesiones_path",
+			"admin_profesion_path",
+			"admin_archivos_path",
+			"admin_archivo_path",
+			"admin_documentocategorias_path",
+			"admin_documentocategoria_path",
+			"admin_documentoclasificaciones_path",
+			"admin_documentoclasificacion_path",
+			"admin_razonestiposresoluciones_path",
+			"admin_razonestiporesoluciones_path",
+			"admin_razontiporesolucion_path",
+			"admin_tiposresoluciones_path",
+			"admin_tiporesolucion_path",
+			"admin_roles_path",
+			"admin_role_path",
+			"admin_estados_path",
+			"admin_estado_path",
+			"admin_vias_path",
+			"admin_via_path",
+			"admin_fuentes_path",
+			"admin_fuente_path",
+			"admin_instituciones_path",
+			"admin_institucion_path",
+			"admin",
+			"admin_idiomas_path",
+			"admin_idioma_path",
+			"admin_municipios_path",
+			"admin_municipio_path",
+			"admin_departamentos_path",
+			"admin_departamento_path",
+			"admin_usuarios_path",
+			"admin_usuario_path",
+			"profesiones",
+			"documentoclasificaciones",
+			"clasificaciones",
+			"razonestiposresoluciones",
+			"tiposresoluciones",
+			"name",
+			"instituciones",
+			"",
+			".table",
+			"%table.table",
+			"= simple_",
+			"=",
+			"= form",
+			"btn-danger",
+			"btn",
+			"btn-danger",
+			"",
+			".table",
+			"",
+			"green",
+			"light-blue",
+			"blue"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "spec/models/recursorevision_spec.rb",
+					"settings":
+					{
+						"buffer_size": 1852,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"clone_numbers": 1,
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"origin_encoding": "ASCII",
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 52.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "app/models/recursorevision.rb",
+					"settings":
+					{
+						"buffer_size": 1408,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								973,
+								973
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"origin_encoding": "ASCII",
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"recu",
+				"app/models/recursorevision.rb"
+			],
+			[
+				"recur",
+				"spec/models/recursorevision_spec.rb"
+			],
+			[
+				"pue",
+				"app/models/puesto.rb"
+			],
+			[
+				"puest",
+				"spec/models/puesto_spec.rb"
+			],
+			[
+				"puesto",
+				"spec/models/puesto_spec.rb"
+			],
+			[
+				"speh",
+				"spec/spec_helper.rb"
+			],
+			[
+				"refe",
+				"config/initializers/referential_integrity.rb"
+			],
+			[
+				"usua",
+				"app/models/usuario.rb"
+			],
+			[
+				"usu",
+				"spec/models/usuario_spec.rb"
+			],
+			[
+				".gi",
+				".gitignore"
+			],
+			[
+				"script/ra",
+				"script/rails"
+			],
+			[
+				"spech",
+				"spec/spec_helper.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"soli",
+				"app/models/solicitud.rb"
+			],
+			[
+				"via",
+				"spec/models/via_spec.rb"
+			],
+			[
+				"us",
+				"app/models/usuario.rb"
+			],
+			[
+				"adju",
+				"app/models/adjunto.rb"
+			],
+			[
+				"acti",
+				"app/models/actividad.rb"
+			],
+			[
+				"seguim",
+				"app/models/seguimiento.rb"
+			],
+			[
+				"seguimi",
+				"spec/models/seguimiento_spec.rb"
+			],
+			[
+				"resolu",
+				"app/models/resolucion.rb"
+			],
+			[
+				"recurso",
+				"app/models/recursorevision.rb"
+			],
+			[
+				"fac",
+				"spec/factories.rb"
+			],
+			[
+				"razontipo",
+				"spec/models/razontiporesolucion_spec.rb"
+			],
+			[
+				"munic",
+				"spec/models/municipio_spec.rb"
+			],
+			[
+				"app",
+				"config/application.rb"
+			],
+			[
+				"gua",
+				"Guardfile"
+			],
+			[
+				"archi",
+				"app/models/archivo.rb"
+			],
+			[
+				"adjun",
+				"app/models/adjunto.rb"
+			],
+			[
+				"fa",
+				"spec/factories.rb"
+			],
+			[
+				"hel",
+				"spec/spec_helper.rb"
+			],
+			[
+				"cli",
+				"config/initializers/client_side_validations.rb"
+			],
+			[
+				"clien",
+				"config/initializers/client_side_validations.rb"
+			],
+			[
+				"gu",
+				"Guardfile"
+			],
+			[
+				"adjunto",
+				"app/views/laip/solicitudes/_adjunto.html.haml"
+			],
+			[
+				"adjuntonew",
+				"app/views/laip/adjuntos/_new.html.haml"
+			],
+			[
+				"appli",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"adjuntos",
+				"app/views/laip/solicitudes/_adjuntos.html.haml"
+			],
+			[
+				"abi",
+				"app/models/ability.rb"
+			],
+			[
+				"create.js",
+				"app/views/laip/adjuntos/create.js.erb"
+			],
+			[
+				"solishow",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"actinew",
+				"app/views/laip/actividades/_new.html.haml"
+			],
+			[
+				"adjunnew",
+				"app/views/laip/adjuntos/_new.html.haml"
+			],
+			[
+				"actividadcon",
+				"app/controllers/laip/actividades_controller.rb"
+			],
+			[
+				"adjuntocrea",
+				"app/views/laip/adjuntos/create.js.erb"
+			],
+			[
+				"adjuntoscon",
+				"app/controllers/laip/adjuntos_controller.rb"
+			],
+			[
+				"laipsolicisho",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"adjunt",
+				"app/models/adjunto.rb"
+			],
+			[
+				"guar",
+				"Guardfile"
+			],
+			[
+				"insti",
+				"app/models/institucion.rb"
+			],
+			[
+				"in",
+				"app/models/institucion.rb"
+			],
+			[
+				"estadishow",
+				"app/views/estadisticas/show.html.haml"
+			],
+			[
+				"busque",
+				"app/views/portal/busqueda.html.haml"
+			],
+			[
+				"produc",
+				"config/environments/production.rb"
+			],
+			[
+				"produ",
+				"config/deploy/production.rb"
+			],
+			[
+				"applica",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"tin",
+				"config/tiny_mce.yml"
+			],
+			[
+				"resolucion",
+				"app/models/resolucion.rb"
+			],
+			[
+				".rake",
+				"lib/tasks/openwolf.rake"
+			],
+			[
+				"depl",
+				"config/deploy.rb"
+			],
+			[
+				"segui",
+				"app/models/seguimiento.rb"
+			],
+			[
+				"actividanewjs",
+				"app/views/laip/actividades/new.js.erb"
+			],
+			[
+				"js",
+				"app/assets/javascripts/solicitudes.js.coffee"
+			],
+			[
+				"css",
+				"app/assets/stylesheets/general.css.scss"
+			],
+			[
+				"activinew",
+				"app/views/laip/actividades/_new.html.haml"
+			],
+			[
+				"nocom",
+				"app/views/laip/actividades/_asignadas_no_completadas.html.haml"
+			],
+			[
+				"seguimicon",
+				"app/controllers/laip/seguimientos_controller.rb"
+			],
+			[
+				"seguimientosnew",
+				"app/views/laip/seguimientos/new.js.erb"
+			],
+			[
+				"actividadse",
+				"app/views/laip/actividades/_actividad_seguimientos.html.haml"
+			],
+			[
+				"actividadesacti",
+				"app/views/laip/actividades/_actividad.html.haml"
+			],
+			[
+				"no_com",
+				"app/views/laip/actividades/_asignadas_no_completadas.html.haml"
+			],
+			[
+				"mis",
+				"app/views/laip/actividades/_mis_actividades.html.haml"
+			],
+			[
+				"solicitudcon",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"solicitudshow",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"soliciind",
+				"app/views/laip/solicitudes/index.html.haml"
+			],
+			[
+				"solicon",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"maincon",
+				"app/controllers/main_controller.rb"
+			],
+			[
+				"mainin",
+				"app/views/main/index.html.haml"
+			],
+			[
+				"seguimientnew",
+				"app/views/laip/seguimientos/_new.html.haml"
+			],
+			[
+				"activishow",
+				"app/views/laip/actividades/show.js.erb"
+			],
+			[
+				"seguinew.js",
+				"app/views/laip/seguimientos/new.js.erb"
+			],
+			[
+				"solicicon",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"seguimien",
+				"app/controllers/laip/seguimientos_controller.rb"
+			],
+			[
+				"help",
+				"app/helpers/solicitudes_helper.rb"
+			],
+			[
+				"soliccon",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"actividadseui",
+				"app/views/laip/actividades/_actividad_seguimientos.html.haml"
+			],
+			[
+				"asignadas",
+				"app/views/laip/actividades/_asignadas_no_completadas.html.haml"
+			],
+			[
+				"laipactivinew",
+				"app/views/laip/actividades/_new.html.haml"
+			],
+			[
+				"activinew.j",
+				"app/views/laip/actividades/new.js.erb"
+			],
+			[
+				"usuario.",
+				"app/models/usuario.rb"
+			],
+			[
+				"actuali",
+				"app/views/laip/actividades/actualizar_usuarios.js.erb"
+			],
+			[
+				"actividaco",
+				"app/controllers/laip/actividades_controller.rb"
+			],
+			[
+				"entra",
+				"app/views/laip/solicitudes/_entramite.html.haml"
+			],
+			[
+				"_noas",
+				"app/views/laip/solicitudes/_noasignadas.html.haml"
+			],
+			[
+				"solicishow",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"",
+				"app/views/laip/seguimientos/_new.html.haml"
+			],
+			[
+				"asignnew",
+				"app/views/laip/seguimientos/_new.html.haml"
+			],
+			[
+				"op",
+				"app/views/laip/solicitudes/_opciones.html.haml"
+			],
+			[
+				"appicahel",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"solicitu",
+				"app/helpers/solicitudes_helper.rb"
+			],
+			[
+				"solicitudescon",
+				"app/controllers/laip/solicitudes_controller.rb"
+			],
+			[
+				"solici",
+				"app/models/solicitud.rb"
+			],
+			[
+				"solinew",
+				"app/views/laip/solicitudes/new.html.haml"
+			],
+			[
+				"soliedi",
+				"app/views/laip/solicitudes/edit.html.haml"
+			],
+			[
+				"solicitudesshow",
+				"app/views/laip/solicitudes/show.html.haml"
+			],
+			[
+				"opcion",
+				"app/views/laip/solicitudes/_opciones.html.haml"
+			],
+			[
+				"noti",
+				"app/mailers/notificaciones.rb"
+			],
+			[
+				"new.js",
+				"app/views/laip/actividades/new.js.erb"
+			],
+			[
+				"solicitudnew",
+				"app/views/laip/solicitudes/new.html.haml"
+			],
+			[
+				"cient",
+				"config/initializers/client_side_validations.rb"
+			],
+			[
+				"activi",
+				"app/models/actividad.rb"
+			],
+			[
+				"jquer",
+				"vendor/assets/javascripts/jquery.validate.js"
+			],
+			[
+				"actividadform",
+				"app/views/laip/actividades/_form.html.haml"
+			],
+			[
+				"_form",
+				"app/views/solicitud_informacion/_form.html.haml"
+			],
+			[
+				"_show",
+				"app/views/laip/actividades/_show.html.haml"
+			],
+			[
+				"_asigna",
+				"app/views/laip/solicitudes/_asignaciones.html.haml"
+			],
+			[
+				"asignacio",
+				"app/views/laip/solicitudes/_asignaciones.html.haml"
+			],
+			[
+				"asigna",
+				"app/views/portal/_asignaciones.html.haml"
+			],
+			[
+				"actividadnew.js",
+				"app/views/laip/actividades/new.js.erb"
+			],
+			[
+				"en.y",
+				"config/locales/en.yml"
+			],
+			[
+				"actividacon",
+				"app/controllers/laip/actividades_controller.rb"
+			],
+			[
+				"a",
+				"app/models/ability.rb"
+			],
+			[
+				"activiadsho",
+				"app/views/laip/actividades/_show.html.haml"
+			],
+			[
+				"actividadshowjs",
+				"app/views/laip/actividades/show.js.erb"
+			],
+			[
+				"actividades",
+				"app/controllers/laip/actividades_controller.rb"
+			],
+			[
+				"laipasigna",
+				"app/views/laip/solicitudes/_asignaciones.html.haml"
+			],
+			[
+				"asig",
+				"app/views/portal/_asignaciones.html.haml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/javier/Projects/Urtak/urtak.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 233.0,
+	"status_bar_visible": true
+}

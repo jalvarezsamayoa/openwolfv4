@@ -1,6 +1,12 @@
 class Documento < ActiveRecord::Base
   include Openwolf::Archivo::Documento
 
+  attr_accessible :id, :numero, :origen_id, :documentoclasificacion_id, \
+  :documentocategoria_id, :fecha_documento, :autor_id, :asunto, :texto, \
+  :fecha_recepcion, :remitente_nombre, :remitente_direccion, :remitente_telefonos, \
+  :remitente_email, :estado_envio_id, :original, :usuario_id, :institucion_id, \
+  :parent_id, :created_at, :updated_at, :archivo_id
+
   acts_as_nested_set
 
   before_validation(:on => :create) do

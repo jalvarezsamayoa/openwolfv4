@@ -9,24 +9,27 @@ module Openwolf
       module InstanceMethods
         #creamos el documento que se traslada
         def crear_documento
-          old_doc =  self.documento
-
-          n = Documento.where('documentos.numero like ?','%'+old_doc.numero+'%').count
-
-          n = n + 1 if n > 1
-
-          old_doc.numero = old_doc.numero + '-' + n.to_s.rjust(3,'0')
-          old_doc.original = self.original
-
-
-          new_doc =  Documento.new( old_doc.attributes )
-
-          new_doc.save!
-
-          new_doc.move_to_child_of(old_doc)
-
+          new_doc = clone_documento(self.documento)
+          new_doc.move_to_child_of(self.documento)
           self.documento_destinatario_id = new_doc.id
+          new_doc
         end
+
+        def nuevo_numero_documento(old_doc)
+          n = ::Documento.where('documentos.numero like ?','%'+old_doc.numero+'%').count
+          n = n + 1 if n > 1
+          old_doc.numero + '-' + n.to_s.rjust(3,'0')
+        end
+
+        def clone_documento(old_doc)
+          new_doc = old_doc.dup
+          new_doc.numero = nuevo_numero_documento(old_doc)
+          new_doc.original = self.original
+          new_doc.save!
+          new_doc
+        end
+
+
       end
 
       def self.included(receiver)

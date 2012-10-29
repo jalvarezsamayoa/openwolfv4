@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"tiempo_re",
+				"tiempo_respuesta_promedio"
+			],
+			[
+				"esta",
+				"estadistica"
+			],
+			[
+				"In",
+				"institucion"
+			],
+			[
 				"ins",
 				"institucion"
 			],
@@ -239,7 +251,7 @@
 			"file": "lib/openwolf/openwolf/laip/estadistica.rb",
 			"settings":
 			{
-				"buffer_size": 3448,
+				"buffer_size": 3747,
 				"line_ending": "Unix"
 			}
 		},
@@ -263,10 +275,10 @@
 			}
 		},
 		{
-			"file": "spec/models/estado_spec.rb",
+			"file": "lib/openwolf/openwolf/laip/solicitud.rb",
 			"settings":
 			{
-				"buffer_size": 758,
+				"buffer_size": 24855,
 				"line_ending": "Unix"
 			}
 		},
@@ -274,7 +286,7 @@
 			"file": "spec/models/estadistica_spec.rb",
 			"settings":
 			{
-				"buffer_size": 4248,
+				"buffer_size": 6636,
 				"line_ending": "Unix"
 			}
 		}
@@ -447,8 +459,11 @@
 	},
 	"file_history":
 	[
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/solicitud.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/spec_helper.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/Gemfile",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/tasks/openwolf.rake",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/estado_spec.rb",
+		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/laip/solicitud.rb",
 		"/home/javier/Documents/Projects/OpenWolf/openwolf_v3/spec/controllers/estadisticas_controller_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/sentidoresolucion_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/tiporesolucion_spec.rb",
@@ -488,7 +503,6 @@
 		"/home/javier/.config/sublime-text-2/Packages/User/rspec_factory.sublime-snippet",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/tiporesolucion.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/puesto_spec.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/spec_helper.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/puesto.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/environments/test.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/estadistica_spec.rb",
@@ -497,7 +511,6 @@
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/solicitud.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/institucion.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/openwolf/openwolf/core/institucion.rb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/estado_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/feriado_spec.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/models/documento.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/spec/models/documento_spec.rb",
@@ -559,7 +572,6 @@
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/_form.html.haml",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/assets/stylesheets/general.css.scss",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/views/laip/actividades/new.js.erb",
-		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/lib/tasks/openwolf.rake",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/app/controllers/archivo/documentos_controller.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/deploy/production.rb",
 		"/home/javier/Documents/Projects/OpenWolf/OpenwolfV4/config/environments/production.rb",
@@ -849,15 +861,15 @@
 					"file": "lib/openwolf/openwolf/laip/estadistica.rb",
 					"settings":
 					{
-						"buffer_size": 3448,
+						"buffer_size": 3747,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								610,
-								610
+								3443,
+								3443
 							]
 						],
 						"settings":
@@ -868,7 +880,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 630.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -885,8 +897,8 @@
 						"selection":
 						[
 							[
-								6379,
-								6379
+								6228,
+								6228
 							]
 						],
 						"settings":
@@ -914,8 +926,8 @@
 						"selection":
 						[
 							[
-								738,
-								738
+								1458,
+								1458
 							]
 						],
 						"settings":
@@ -927,7 +939,37 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/openwolf/openwolf/laip/solicitud.rb",
+					"settings":
+					{
+						"buffer_size": 24855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21980,
+								21980
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"origin_encoding": "GBK",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9345.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -935,53 +977,23 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 3,
-					"file": "spec/models/estado_spec.rb",
-					"settings":
-					{
-						"buffer_size": 758,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"clone_numbers": 1,
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/RSpec/RSpec.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
 				{
 					"buffer": 4,
 					"file": "spec/models/estadistica_spec.rb",
 					"settings":
 					{
-						"buffer_size": 4248,
+						"buffer_size": 6636,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1369,
-								1369
+								6533,
+								6533
 							]
 						],
 						"settings":
@@ -994,8 +1006,8 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 31.0,
-						"translation.y": 182.0,
+						"translation.x": 0.0,
+						"translation.y": 2385.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1060,8 +1072,20 @@
 		"selected_items":
 		[
 			[
+				"spe",
+				"spec/spec_helper.rb"
+			],
+			[
 				"gem",
 				"Gemfile"
+			],
+			[
+				"speche",
+				"spec/spec_helper.rb"
+			],
+			[
+				"libsolici",
+				"lib/openwolf/openwolf/laip/solicitud.rb"
 			],
 			[
 				"laipsoli",
@@ -1216,10 +1240,6 @@
 				"config/environments/test.rb"
 			],
 			[
-				"speche",
-				"spec/spec_helper.rb"
-			],
-			[
 				"puesto",
 				"spec/models/puesto_spec.rb"
 			],
@@ -1322,10 +1342,6 @@
 			[
 				"guar",
 				"Guardfile"
-			],
-			[
-				"spe",
-				"spec/spec_helper.rb"
 			],
 			[
 				"ga",
@@ -1566,10 +1582,6 @@
 			[
 				"laipactivinew",
 				"app/views/laip/actividades/_new.html.haml"
-			],
-			[
-				"activinew.j",
-				"app/views/laip/actividades/new.js.erb"
 			]
 		],
 		"width": 0.0
@@ -1579,6 +1591,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"encu",
+				"/home/javier/Projects/CursoRails/encuenstas/encuestas.sublime-project"
+			],
 			[
 				"",
 				"/home/javier/Projects/Urtak/urtak.sublime-project"

@@ -1,6 +1,7 @@
 class Documentotraslado < ActiveRecord::Base
   include Openwolf::Archivo::Traslado
 
+
   belongs_to :institucion #del documento
   belongs_to :usuario #quien genero el traslado
   belongs_to :destinatario, :class_name => "Usuario", :foreign_key => "destinatario_id"

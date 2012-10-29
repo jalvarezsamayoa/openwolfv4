@@ -70,6 +70,19 @@ FactoryGirl.define do
     dd.departamento 'Nombre Departamento'
   end
 
+  factory :documentotraslado do |t|
+    t.institucion
+    t.usuario
+    t.association :destinatario, :factory => :usuario
+    t.documento
+    t.association :documentodestino, :factory => :documento
+    t.original true
+    t.estado_entrega_id 1
+    t.fecha_envio Date.today
+    t.fecha_respuesta nil
+    t.descripcion Faker::Lorem.sentence
+  end
+
   factory :documento do |d|
     d.sequence(:numero) {|d| "numero_#{FactoryGirl.generate(:count)}"}
     d.origen_id Documento::ORIGEN_INTERNO

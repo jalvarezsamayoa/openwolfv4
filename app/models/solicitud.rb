@@ -21,7 +21,7 @@ class Solicitud < ActiveRecord::Base
 
   #versioned :if => :guardar_version?
 
-  apply_simple_captcha
+apply_simple_captcha
 
 
   #--------------------------------
