@@ -1,4 +1,4 @@
-== OpenWolf - Open Workflow Facilty
+== OpenWolf - Open Workflow Facility
 
 Plataforma para la gestión de solicitudes públicas de información.
 
